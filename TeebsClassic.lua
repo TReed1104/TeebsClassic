@@ -1,3 +1,4 @@
+
 -- Frames
 local frame = CreateFrame("Frame")
 
@@ -26,3 +27,19 @@ frame:SetScript("OnEvent", function(self, event, ...)
         -- Equipment Changes Event Trigger
     end
 end)
+
+local function slashHandler(msg, editbox)
+    if msg == "stats" then
+        printHiddenStats()
+    end
+end
+
+-- Slash Commands
+SLASH_TEEBSCLASSIC1 = "/teebs"
+SlashCmdList["TEEBSCLASSIC"] = slashHandler
+
+function printHiddenStats()
+    print("Crit Chance", GetCritChance())
+    print("Melee Hit Chance", GetHitModifier())
+    print("Spell Hit Chance", GetSpellHitModifier())
+end
