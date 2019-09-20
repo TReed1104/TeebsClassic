@@ -1,0 +1,10 @@
+## Interface: 11302
+## Author: Teebs
+## Version: 0.1a
+## SavedVariables: TeebsClassicDB
+## DefaultState: Enabled
+
+## Title: TeebsHelper
+## Data dumper for hidden stats and account statistics (gold, honor, etc.)
+
+TeebsClassic.lua
