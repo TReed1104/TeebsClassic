@@ -39,9 +39,9 @@ SLASH_TEEBSCLASSIC1 = "/teebs"
 SlashCmdList["TEEBSCLASSIC"] = slashHandler
 
 function printHiddenStats()
-    print("Crit Chance " .. GetCritChance() .. "%")
-    print("Melee Hit Chance " .. GetHitModifier() .. "%")
-    print("Spell Hit Chance " .. GetSpellHitModifier() .. "%")
+    print("Crit Chance " .. round(GetCritChance(), 2) .. "%")
+    print("Melee Hit Chance " .. round(GetHitModifier(), 2) .. "%")
+    print("Spell Hit Chance " .. round(GetSpellHitModifier(), 2) .. "%")
 end
 
 function round(num, numDecimalPlaces)
