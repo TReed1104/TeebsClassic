@@ -42,6 +42,9 @@ function printHiddenStats()
     print("Crit Chance " .. round(GetCritChance(), 2) .. "%")
     print("Melee Hit Chance " .. round(GetHitModifier(), 2) .. "%")
     print("Spell Hit Chance " .. round(GetSpellHitModifier(), 2) .. "%")
+    print("Dodge Chance " .. round(GetDodgeChance(), 2) .. "%")
+    print("Parry Chance " .. round(GetParryChance(), 2) .. "%")
+    print("Block Chance " .. round(GetBlockChance(), 2) .. "%")
 end
 
 function round(num, numDecimalPlaces)
