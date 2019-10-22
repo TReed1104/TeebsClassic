@@ -1,4 +1,3 @@
-
 -- Frames
 local frame = CreateFrame("Frame")
 
