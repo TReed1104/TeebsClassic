@@ -20,12 +20,15 @@ end)
 local function slashHandler(msg, editbox)
     if msg == "all" then
         printHiddenStats()
-    else if msg == "melee" then
+    elseif msg == "melee" then
         printMeleeStats()
-    else if msg == "def" then
+    elseif msg == "def" then
         printDefensiveStats()
-    else if msg == "spell" then
+    elseif msg == "spell" then
         printMagicStats()
+    else
+        print("Oops! Not recognised mode")
+    end
 end
 
 -- Slash Commands
