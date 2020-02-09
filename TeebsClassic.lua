@@ -18,9 +18,14 @@ frame:SetScript("OnEvent", function(self, event, ...)
 end)
 
 local function slashHandler(msg, editbox)
-    if msg == "stats" then
+    if msg == "all" then
         printHiddenStats()
-    end
+    else if msg == "melee" then
+        printMeleeStats()
+    else if msg == "def" then
+        printDefensiveStats()
+    else if msg == "spell" then
+        printMagicStats()
 end
 
 -- Slash Commands
