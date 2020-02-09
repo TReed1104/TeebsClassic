@@ -52,6 +52,13 @@ function printHiddenStats()
     print("Spell Crit Chance (Arcane) " .. round( GetSpellCritChance(7), 2) .. "%")
 end
 
+function printMeleeStats()
+    print("-------------------------------")
+    print("Melee Stats")
+    print("-------------------------------")
+    print("Melee Hit Chance " .. round(GetHitModifier(), 2) .. "%")
+    print("Melee Crit Chance " .. round(GetCritChance(), 2) .. "%")
+end
 function round(num, numDecimalPlaces)
     local mult = 10^(numDecimalPlaces or 0)
     return math.floor(num * mult + 0.5) / mult
