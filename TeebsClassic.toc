@@ -1,6 +1,6 @@
-## Interface: 11302
+## Interface: 11303
 ## Author: Teebs
-## Version: 0.1a
+## Version: 0.2a
 ## SavedVariables: TeebsClassicDB
 ## DefaultState: Enabled
 
