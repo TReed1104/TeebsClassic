@@ -59,6 +59,16 @@ function printMeleeStats()
     print("Melee Hit Chance " .. round(GetHitModifier(), 2) .. "%")
     print("Melee Crit Chance " .. round(GetCritChance(), 2) .. "%")
 end
+
+function printDefensiveStats()
+    print("-------------------------------")
+    print("Defensive Stats")
+    print("-------------------------------")
+    print("Dodge Chance " .. round(GetDodgeChance(), 2) .. "%")
+    print("Parry Chance " .. round(GetParryChance(), 2) .. "%")
+    print("Block Chance " .. round(GetBlockChance(), 2) .. "%")
+end
+
 function round(num, numDecimalPlaces)
     local mult = 10^(numDecimalPlaces or 0)
     return math.floor(num * mult + 0.5) / mult
