@@ -26,6 +26,8 @@ local function slashHandler(msg, editbox)
         printDefensiveStats()
     elseif msg == "spell" then
         printMagicStats()
+    elseif msg == "" then
+        print("Please enter your selection: all, melee, def or spell")
     else
         print("Oops! Not recognised mode")
     end
