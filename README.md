@@ -1,2 +1,2 @@
 # TeebsClassic
-Classic wow addon, data dumping account and character stats
+Classic wow addon for dumping hidden character stats to the chatbox
