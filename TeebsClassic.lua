@@ -48,10 +48,20 @@ function initialiseDB()
         TeebsClassicDB.realms = {}
     end
 
-    -- Check if there is a database entry for the current realm
+    -- Get the base details about the logged in session
     local realm = GetRealmName()
+    local playerName = UnitName("player");
+
+    -- Check if there is a database entry for the current realm
     if TeebsClassicDB.realms[realm] == nil then
         TeebsClassicDB.realms[realm] = {}
+        TeebsClassicDB.realms[realm].characters = {}
+    end
+
+    -- Check if there is a table entry for the current character in the realm table
+    if TeebsClassicDB.realms[realm].characters[playerName] == nil then
+        -- Create a table for the character
+        TeebsClassicDB.realms[realm].characters[playerName] = {}
     end
 end
 
