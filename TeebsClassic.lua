@@ -39,6 +39,14 @@ end
 
 -- Create/load the addon database
 function initialiseDB()
+    -- Seed the schema of the database table
+    if TeebsClassicDB == nil then
+        -- Initialise the database
+        TeebsClassicDB = {}
+
+        -- Initialise the databases tables
+        TeebsClassicDB.realms = {}
+    end
 end
 
 -- Slash Commands
