@@ -47,6 +47,12 @@ function initialiseDB()
         -- Initialise the databases tables
         TeebsClassicDB.realms = {}
     end
+
+    -- Check if there is a database entry for the current realm
+    local realm = GetRealmName()
+    if TeebsClassicDB.realms[realm] == nil then
+        TeebsClassicDB.realms[realm] = {}
+    end
 end
 
 -- Slash Commands
