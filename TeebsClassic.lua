@@ -69,6 +69,11 @@ function initialiseDB()
         TeebsClassicDB.realms[realm].characters[playerName].gear = {}
         TeebsClassicDB.realms[realm].characters[playerName].reputation = {}
         TeebsClassicDB.realms[realm].characters[playerName].professions = {}
+
+        -- Setup the currency keys
+        TeebsClassicDB.realms[realm].characters[playerName].currency["gold"] = 0
+        TeebsClassicDB.realms[realm].characters[playerName].currency["silver"] = 0
+        TeebsClassicDB.realms[realm].characters[playerName].currency["copper"] = 0
     end
 end
 
