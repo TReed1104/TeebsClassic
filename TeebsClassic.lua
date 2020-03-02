@@ -64,7 +64,7 @@ function initialiseDB()
         TeebsClassicDB.realms[realm].characters[playerName] = {}
 
         -- Create each of the variables and tables to store on the character
-        TeebsClassicDB.realms[realm].characters[playerName].gold = {}
+        TeebsClassicDB.realms[realm].characters[playerName].currency = {}
         TeebsClassicDB.realms[realm].characters[playerName].stats = {}
         TeebsClassicDB.realms[realm].characters[playerName].gear = {}
         TeebsClassicDB.realms[realm].characters[playerName].reputation = {}
