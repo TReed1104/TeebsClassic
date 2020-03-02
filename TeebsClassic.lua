@@ -82,6 +82,13 @@ function initialiseDB()
         TeebsClassicDB.realms[realm].characters[playerName].stats["intellect"] = 0
         TeebsClassicDB.realms[realm].characters[playerName].stats["spirit"] = 0
         TeebsClassicDB.realms[realm].characters[playerName].stats["armor"] = 0
+
+        -- Setup the professions keys
+        TeebsClassicDB.realms[realm].characters[playerName].professions["main_one"] = {}
+        TeebsClassicDB.realms[realm].characters[playerName].professions["main_two"] = {}
+        TeebsClassicDB.realms[realm].characters[playerName].professions["first_aid"] = {}
+        TeebsClassicDB.realms[realm].characters[playerName].professions["fishing"] = {}
+        TeebsClassicDB.realms[realm].characters[playerName].professions["cooking"] = {}
     end
 end
 
