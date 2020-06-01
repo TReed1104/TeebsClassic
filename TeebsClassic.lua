@@ -40,6 +40,11 @@ frame:SetScript("OnEvent", function(self, event, ...)
         -- Player Gear Change Trigger
         getCharacterItemsID()
     end
+    if event == "PLAYER_XP_UPDATE" then
+        -- Player XP value update - Quest/NPC Kill
+        getCharacterExperience()
+        getCharacterLevel()
+    end
 end)
 
 -- Custom Split string
