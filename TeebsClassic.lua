@@ -180,5 +180,7 @@ function round(num, numDecimalPlaces)
 end
 
 function getCharacterInfo(slot)
-
+    -- Get the base details about the logged in session
+    local realm = GetRealmName()
+    local playerName = UnitName("player");
 end
