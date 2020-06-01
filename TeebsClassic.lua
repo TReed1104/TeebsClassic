@@ -70,18 +70,21 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
         if TeebsClassicDB.realms[realm].characters[messageSplit[2]] == nil then
             print("Unknown Charater", messageSplit[2])
         else
+            -- Check if the slot is recognised
             if TeebsClassicDB.realms[realm].characters[messageSplit[2]].gear[messageSplit[3]] == nil then
                 print("Unknwon Slot", messageSplit[3])
             else
+                -- Check we have anything equipped
                 if messageSplit[3] == 0 then
                     print("Item Slot Empty")
                 else
-                    local _, link = GetItemInfo(TeebsClassicDB.realms[realm].characters[messageSplit[2]].gear[messageSplit[3]])
-                    if link == nil then
-                        print("Item Not Cached Yet")
-                    else
-                        print(messageSplit[2], "has", link, "equipped in slot", messageSplit[3])
-                    end
+                    -- Load the item data
+                    local item = Item:CreateFromItemID(TeebsClassicDB.realms[realm].characters[messageSplit[2]].gear[messageSplit[3]])
+                    -- When loaded, print the link
+                    item:ContinueOnItemLoad(function()
+                        local classColourR, classColourG, classColourB, classColourHex = GetClassColor(TeebsClassicDB.realms[realm].characters[messageSplit[2]].class:upper())
+                        print(string.format("%s%s", "|c" .. classColourHex, messageSplit[2]), string.format("%s%s", "|cffffffff", "has"), item:GetItemLink(), "equipped in slot", messageSplit[3])
+                    end)
                 end
             end
         end
