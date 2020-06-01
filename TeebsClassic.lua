@@ -183,4 +183,14 @@ function getCharacterInfo(slot)
     -- Get the base details about the logged in session
     local realm = GetRealmName()
     local playerName = UnitName("player");
+
+    -- Set each character slot
+    for i = 0, 19 do
+        local itemID, unknown = GetInventoryItemID("player", i)
+        if itemID == nil then
+            TeebsClassicDB.realms[realm].characters[playerName].gear[tostring(i)] = 0
+        else
+            TeebsClassicDB.realms[realm].characters[playerName].gear[tostring(i)] = itemID
+        end
+    end
 end
