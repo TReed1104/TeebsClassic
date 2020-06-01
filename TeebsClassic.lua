@@ -55,6 +55,8 @@ end
 
 -- Slash Commands
 SLASH_TEEBSCLASSIC1 = "/teebs"
+SLASH_TEEBSCLASSIC2 = "/tbs"
+SLASH_TEEBSCLASSIC3 = "/th"
 SlashCmdList["TEEBSCLASSIC"] = function(msg)
     -- Get the base details about the logged in session
     local realm = GetRealmName()
