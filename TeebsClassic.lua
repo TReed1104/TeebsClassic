@@ -113,6 +113,12 @@ function initialiseDB()
         TeebsClassicDB.realms[realm].characters[playerName].gear[17] = nil      -- Off Hand
         TeebsClassicDB.realms[realm].characters[playerName].gear[18] = nil      -- Ranged
         TeebsClassicDB.realms[realm].characters[playerName].gear[19] = nil      -- Tabard
+
+        -- Setup the bag slot keys
+        TeebsClassicDB.realms[realm].characters[playerName].bags[0] = nil       -- Right most bag
+        TeebsClassicDB.realms[realm].characters[playerName].bags[1] = nil
+        TeebsClassicDB.realms[realm].characters[playerName].bags[2] = nil
+        TeebsClassicDB.realms[realm].characters[playerName].bags[3] = nil       -- Left most bag
     end
 end
 
