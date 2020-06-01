@@ -18,11 +18,11 @@ frame:SetScript("OnEvent", function(self, event, ...)
     if event == "PLAYER_LOGIN" then
         -- Player Login Event Trigger
         print("Welcome to Teebs Classic, use /teebs")
-        getCharacterInfo();
+        getCharacterItemsID();
     end
     if event == "PLAYER_EQUIPMENT_CHANGED" then
         -- Player Gear Change Trigger
-        getCharacterInfo();
+        getCharacterItemsID();
     end
 end)
 
@@ -184,7 +184,7 @@ function round(num, numDecimalPlaces)
     return math.floor(num * mult + 0.5) / mult
 end
 
-function getCharacterInfo(slot)
+function getCharacterItemsID(slot)
     -- Get the base details about the logged in session
     local realm = GetRealmName()
     local playerName = UnitName("player");
