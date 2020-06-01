@@ -90,6 +90,28 @@ function initialiseDB()
         TeebsClassicDB.realms[realm].characters[playerName].professions["first_aid"] = {}
         TeebsClassicDB.realms[realm].characters[playerName].professions["fishing"] = {}
         TeebsClassicDB.realms[realm].characters[playerName].professions["cooking"] = {}
+
+        -- Setup the gear slot Keys
+        TeebsClassicDB.realms[realm].characters[playerName].gear[0] = nil       -- Ammo
+        TeebsClassicDB.realms[realm].characters[playerName].gear[1] = nil       -- Head
+        TeebsClassicDB.realms[realm].characters[playerName].gear[2] = nil       -- Neck
+        TeebsClassicDB.realms[realm].characters[playerName].gear[3] = nil       -- Shoulder
+        TeebsClassicDB.realms[realm].characters[playerName].gear[4] = nil       -- Shirt
+        TeebsClassicDB.realms[realm].characters[playerName].gear[5] = nil       -- Chest
+        TeebsClassicDB.realms[realm].characters[playerName].gear[6] = nil       -- Belt
+        TeebsClassicDB.realms[realm].characters[playerName].gear[7] = nil       -- Legs
+        TeebsClassicDB.realms[realm].characters[playerName].gear[8] = nil       -- Feet
+        TeebsClassicDB.realms[realm].characters[playerName].gear[9] = nil       -- Wrist
+        TeebsClassicDB.realms[realm].characters[playerName].gear[10] = nil      -- Gloves
+        TeebsClassicDB.realms[realm].characters[playerName].gear[11] = nil      -- Ring 1
+        TeebsClassicDB.realms[realm].characters[playerName].gear[12] = nil      -- Ring 2
+        TeebsClassicDB.realms[realm].characters[playerName].gear[13] = nil      -- Trinket 1
+        TeebsClassicDB.realms[realm].characters[playerName].gear[14] = nil      -- Trinket 2
+        TeebsClassicDB.realms[realm].characters[playerName].gear[15] = nil      -- Back
+        TeebsClassicDB.realms[realm].characters[playerName].gear[16] = nil      -- Main Hand
+        TeebsClassicDB.realms[realm].characters[playerName].gear[17] = nil      -- Off Hand
+        TeebsClassicDB.realms[realm].characters[playerName].gear[18] = nil      -- Ranged
+        TeebsClassicDB.realms[realm].characters[playerName].gear[19] = nil      -- Tabard
     end
 end
 
