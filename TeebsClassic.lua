@@ -144,3 +144,17 @@ function getCharacterItemsID(slot)
         end
     end
 end
+
+function getCharacterMoney()
+    -- Get the base details about the logged in session
+    local realm = GetRealmName()
+    local playerName = UnitName("player");
+
+    -- Get the characters money value, returns in copper
+    local copper = GetMoney()
+
+    -- Map to our current table
+    TeebsClassicDB.realms[realm].characters[playerName].currency["gold"] = math.floor(copper / 100 / 100)
+    TeebsClassicDB.realms[realm].characters[playerName].currency["silver"] = math.floor((copper / 100) % 100)
+    TeebsClassicDB.realms[realm].characters[playerName].currency["copper"] = copper % 100
+end
