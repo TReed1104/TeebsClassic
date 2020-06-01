@@ -8,6 +8,7 @@ frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:RegisterEvent("PLAYER_LEVEL_UP")
 frame:RegisterEvent("PLAYER_MONEY")
 frame:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
+frame:RegisterEvent("PLAYER_XP_UPDATE")
 
 -- Handle Events Triggering
 frame:SetScript("OnEvent", function(self, event, ...)
