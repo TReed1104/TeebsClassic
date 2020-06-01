@@ -81,6 +81,14 @@ function initialiseDB()
     end
 end
 
+function getCharacterLevel()
+    -- Get the base details about the logged in session
+    local realm = GetRealmName()
+    local playerName = UnitName("player")
+
+    TeebsClassicDB.realms[realm].characters[playerName].level = UnitLevel("player")
+end
+
 function getCharacterItemsID(slot)
     -- Get the base details about the logged in session
     local realm = GetRealmName()
