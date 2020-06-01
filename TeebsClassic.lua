@@ -22,7 +22,6 @@ frame:SetScript("OnEvent", function(self, event, ...)
     if event == "PLAYER_ENTERING_WORLD" then
         -- Player Enter World Trigger
         getCharacterItemsID()
-        cachePlayerCharacterItems()
         getCharacterMoney()
         getCharacterExperience()
         getCharacterLevel()
@@ -39,7 +38,6 @@ frame:SetScript("OnEvent", function(self, event, ...)
     if event == "PLAYER_EQUIPMENT_CHANGED" then
         -- Player Gear Change Trigger
         getCharacterItemsID()
-        cachePlayerCharacterItems()
     end
 end)
 
