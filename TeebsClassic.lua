@@ -37,6 +37,11 @@ local function slashHandler(msg, editbox)
 
 end
 
+-- Check is a table contains a key
+function checkTableKey(table, key)
+    return table[key] ~= nil
+end
+
 -- Create/load the addon database
 function initialiseDB()
     -- Seed the schema of the database table
