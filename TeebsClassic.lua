@@ -82,7 +82,7 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
                     if link == nil then
                         print("Item Not Cached Yet")
                     else
-                        print(link)
+                        print(messageSplit[2], "has", link, "equipped in slot", messageSplit[3])
                     end
                 end
             end
