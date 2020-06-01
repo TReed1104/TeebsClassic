@@ -165,5 +165,21 @@ function getCharacterMoney()
 end
 
 function getCharacterStats()
+    -- Get the base details about the logged in session
+    local realm = GetRealmName()
+    local playerName = UnitName("player");
 
+
+    local _, stamina = UnitStat("player", 3)
+    local _, strength = UnitStat("player", 1)
+    local _, agility = UnitStat("player", 2)
+    local _, intellect = UnitStat("player", 4)
+    local _, spirit = UnitStat("player", 5)
+    local _, armor = UnitArmor("player")
+    TeebsClassicDB.realms[realm].characters[playerName].stats["stamina"] = stamina
+    TeebsClassicDB.realms[realm].characters[playerName].stats["agility"] = agility
+    TeebsClassicDB.realms[realm].characters[playerName].stats["strength"] = strength
+    TeebsClassicDB.realms[realm].characters[playerName].stats["intellect"] = intellect
+    TeebsClassicDB.realms[realm].characters[playerName].stats["spirit"] = spirit
+    TeebsClassicDB.realms[realm].characters[playerName].stats["armor"] = armor
 end
