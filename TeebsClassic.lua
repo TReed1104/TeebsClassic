@@ -67,6 +67,9 @@ function initialiseDB()
     end
 
     -- Create each of the variables and tables to store on the character
+    if TeebsClassicDB.realms[realm].characters[playerName].faction == nil then
+        TeebsClassicDB.realms[realm].characters[playerName].faction = UnitFactionGroup("player")
+    end
     if TeebsClassicDB.realms[realm].characters[playerName].currency == nil then
         TeebsClassicDB.realms[realm].characters[playerName].currency = {}
     end
