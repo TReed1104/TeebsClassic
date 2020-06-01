@@ -162,18 +162,30 @@ function getCharacterExperience()
     local realm = GetRealmName()
     local playerName = UnitName("player")
 
-    if UnitLevel("player") < 60 then
-        local currentExp = UnitXP("player")
-        local maxExp = UnitXPMax("player")
-        local restedExp = GetXPExhaustion()
-        local expPercentage = math.floor((currentExp / maxExp) * 100)
-        local restedPercentage = math.floor((restedExp / maxExp) * 100)
-        TeebsClassicDB.realms[realm].characters[playerName].experienceCurrentPercentage = expPercentage
-        TeebsClassicDB.realms[realm].characters[playerName].experienceRestedPercentage = restedPercentage
-    else
+    -- Check the player level, if 60 
+    if UnitLevel("player") == 60 then
+        -- As the character is level 60, set the data fields to 0 as no more rested or exp can be gained
         TeebsClassicDB.realms[realm].characters[playerName].experienceCurrentPercentage = 0
         TeebsClassicDB.realms[realm].characters[playerName].experienceRestedPercentage = 0
+        return  -- Return as we've got our data
     end
+
+    -- Current Exp Calculations
+    local currentExp = UnitXP("player")
+    local maxExp = UnitXPMax("player")
+    local expPercentage = math.floor((currentExp / maxExp) * 100)
+
+    -- Rested Exp Calculations
+    local restedExp = GetXPExhaustion()
+    local restedPercentage = 0;
+    -- If the API call doesn't return nil, calculate the percentage
+    if restedExp then
+        restedPercentage = math.floor((restedExp / maxExp) * 100)
+    end
+
+    -- Set the data fields for the character
+    TeebsClassicDB.realms[realm].characters[playerName].experienceCurrentPercentage = expPercentage
+    TeebsClassicDB.realms[realm].characters[playerName].experienceRestedPercentage = restedPercentage
 end
 
 function getCharacterItemsID(slot)
