@@ -19,10 +19,15 @@ frame:SetScript("OnEvent", function(self, event, ...)
         -- Player Login Event Trigger
         print("Welcome to Teebs Classic, use /teebs")
         getCharacterItemsID();
+        getCharacterMoney();
     end
     if event == "PLAYER_EQUIPMENT_CHANGED" then
         -- Player Gear Change Trigger
         getCharacterItemsID();
+    end
+    if event == "PLAYER_MONEY" then
+        -- Player Current Change Trigger
+        getCharacterMoney();
     end
 end)
 
