@@ -89,6 +89,25 @@ function getCharacterLevel()
     TeebsClassicDB.realms[realm].characters[playerName].level = UnitLevel("player")
 end
 
+function getCharacterExperience()
+    -- Get the base details about the logged in session
+    local realm = GetRealmName()
+    local playerName = UnitName("player")
+
+    if UnitLevel("player") < 60 then
+        local currentExp = UnitXP("player")
+        local maxExp = UnitXPMax("player")
+        local restedExp = GetXPExhaustion()
+        local expPercentage = math.floor((currentExp / maxExp) * 100)
+        local restedPercentage = math.floor((restedExp / maxExp) * 100)
+        TeebsClassicDB.realms[realm].characters[playerName].experienceCurrentPercentage = expPercentage
+        TeebsClassicDB.realms[realm].characters[playerName].experienceRestedPercentage = restedPercentage
+    else
+        TeebsClassicDB.realms[realm].characters[playerName].experienceCurrentPercentage = 0
+        TeebsClassicDB.realms[realm].characters[playerName].experienceRestedPercentage = 0
+    end
+end
+
 function getCharacterItemsID(slot)
     -- Get the base details about the logged in session
     local realm = GetRealmName()
