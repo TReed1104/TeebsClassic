@@ -20,6 +20,10 @@ frame:SetScript("OnEvent", function(self, event, ...)
         print("Welcome to Teebs Classic, use /teebs")
         getCharacterInfo();
     end
+    if event == "PLAYER_EQUIPMENT_CHANGED" then
+        -- Player Gear Change Trigger
+        getCharacterInfo();
+    end
 end)
 
 local function slashHandler(msg, editbox)
