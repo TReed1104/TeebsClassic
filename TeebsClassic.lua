@@ -69,7 +69,7 @@ function initialiseDB()
         TeebsClassicDB.realms[realm].characters[playerName] = {}
     end
 
-        -- Create each of the variables and tables to store on the character
+    -- Create each of the variables and tables to store on the character
     if not checkTableKey(TeebsClassicDB.realms[realm].characters[playerName], "currency") then
         TeebsClassicDB.realms[realm].characters[playerName].currency = {}
     end
