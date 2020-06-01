@@ -67,62 +67,32 @@ function initialiseDB()
     if TeebsClassicDB.realms[realm].characters[playerName] == nil then
         -- Create a table for the character
         TeebsClassicDB.realms[realm].characters[playerName] = {}
+    end
 
         -- Create each of the variables and tables to store on the character
+    if not checkTableKey(TeebsClassicDB.realms[realm].characters[playerName], "currency") then
         TeebsClassicDB.realms[realm].characters[playerName].currency = {}
+    end
+    if not checkTableKey(TeebsClassicDB.realms[realm].characters[playerName], "stats") then
         TeebsClassicDB.realms[realm].characters[playerName].stats = {}
+    end
+    if not checkTableKey(TeebsClassicDB.realms[realm].characters[playerName], "gear") then
         TeebsClassicDB.realms[realm].characters[playerName].gear = {}
+    end
+    if not checkTableKey(TeebsClassicDB.realms[realm].characters[playerName], "reputation") then
         TeebsClassicDB.realms[realm].characters[playerName].reputation = {}
+    end
+    if not checkTableKey(TeebsClassicDB.realms[realm].characters[playerName], "professions") then
         TeebsClassicDB.realms[realm].characters[playerName].professions = {}
+    end
+    if not checkTableKey(TeebsClassicDB.realms[realm].characters[playerName], "gear") then
         TeebsClassicDB.realms[realm].characters[playerName].gear = {}
+    end
+    if not checkTableKey(TeebsClassicDB.realms[realm].characters[playerName], "bags") then
         TeebsClassicDB.realms[realm].characters[playerName].bags = {}
-
-        -- Setup the currency keys
-        TeebsClassicDB.realms[realm].characters[playerName].currency["gold"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].currency["silver"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].currency["copper"] = 0
-
-        -- Setup the stats keys
-        TeebsClassicDB.realms[realm].characters[playerName].stats["stamina"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].stats["agility"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].stats["strength"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].stats["intellect"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].stats["spirit"] = 0
-
-        -- Setup the professions keys
-        TeebsClassicDB.realms[realm].characters[playerName].professions["main_one"] = {}
-        TeebsClassicDB.realms[realm].characters[playerName].professions["main_two"] = {}
-        TeebsClassicDB.realms[realm].characters[playerName].professions["first_aid"] = {}
-        TeebsClassicDB.realms[realm].characters[playerName].professions["fishing"] = {}
-        TeebsClassicDB.realms[realm].characters[playerName].professions["cooking"] = {}
-
-        -- Setup the gear slot Keys
-        TeebsClassicDB.realms[realm].characters[playerName].gear["0"] = 0         -- Ammo
-        TeebsClassicDB.realms[realm].characters[playerName].gear["1"] = 0         -- Head
-        TeebsClassicDB.realms[realm].characters[playerName].gear["2"] = 0         -- Neck
-        TeebsClassicDB.realms[realm].characters[playerName].gear["3"] = 0         -- Shoulder
-        TeebsClassicDB.realms[realm].characters[playerName].gear["4"] = 0         -- Shirt
-        TeebsClassicDB.realms[realm].characters[playerName].gear["5"] = 0         -- Chest
-        TeebsClassicDB.realms[realm].characters[playerName].gear["6"] = 0         -- Belt
-        TeebsClassicDB.realms[realm].characters[playerName].gear["7"] = 0         -- Legs
-        TeebsClassicDB.realms[realm].characters[playerName].gear["8"] = 0         -- Feet
-        TeebsClassicDB.realms[realm].characters[playerName].gear["9"] = 0         -- Wrist
-        TeebsClassicDB.realms[realm].characters[playerName].gear["10"] = 0        -- Gloves
-        TeebsClassicDB.realms[realm].characters[playerName].gear["11"] = 0        -- Ring 1
-        TeebsClassicDB.realms[realm].characters[playerName].gear["12"] = 0        -- Ring 2
-        TeebsClassicDB.realms[realm].characters[playerName].gear["13"] = 0        -- Trinket 1
-        TeebsClassicDB.realms[realm].characters[playerName].gear["14"] = 0        -- Trinket 2
-        TeebsClassicDB.realms[realm].characters[playerName].gear["15"] = 0        -- Back
-        TeebsClassicDB.realms[realm].characters[playerName].gear["16"] = 0        -- Main Hand
-        TeebsClassicDB.realms[realm].characters[playerName].gear["17"] = 0        -- Off Hand
-        TeebsClassicDB.realms[realm].characters[playerName].gear["18"] = 0        -- Ranged
-        TeebsClassicDB.realms[realm].characters[playerName].gear["19"] = 0        -- Tabard
-
-        -- Setup the bag slot keys
-        TeebsClassicDB.realms[realm].characters[playerName].bags["0"] = 0       -- Right most bag
-        TeebsClassicDB.realms[realm].characters[playerName].bags["1"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].bags["2"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].bags["3"] = 0       -- Left most bag
+    end
+    if not checkTableKey(TeebsClassicDB.realms[realm].characters[playerName], "test") then
+        TeebsClassicDB.realms[realm].characters[playerName].test = {}
     end
 end
 
