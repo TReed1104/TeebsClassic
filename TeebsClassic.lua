@@ -198,4 +198,14 @@ function getCharacterInfo(slot)
             TeebsClassicDB.realms[realm].characters[playerName].gear[tostring(i)] = itemID
         end
     end
+
+    -- Set each bag slot
+    for i = 0, 3 do
+        local itemID, unknown = GetInventoryItemID("player", (i + 20))
+        if itemID == nil then
+            TeebsClassicDB.realms[realm].characters[playerName].bags[tostring(i)] = 0
+        else
+            TeebsClassicDB.realms[realm].characters[playerName].bags[tostring(i)] = itemID
+        end
+    end
 end
