@@ -33,8 +33,10 @@ frame:SetScript("OnEvent", function(self, event, ...)
     end
 end)
 
-local function slashHandler(msg, editbox)
-
+-- Slash Commands
+SLASH_TEEBSCLASSIC1 = "/teebs"
+SlashCmdList["TEEBSCLASSIC"] = function(msg)
+    print(msg)
 end
 
 -- Create/load the addon database
@@ -75,10 +77,6 @@ function initialiseDB()
         TeebsClassicDB.realms[realm].characters[playerName].bags = {}
     end
 end
-
--- Slash Commands
-SLASH_TEEBSCLASSIC1 = "/teebs"
-SlashCmdList["TEEBSCLASSIC"] = slashHandler
 
 function getCharacterItemsID(slot)
     -- Get the base details about the logged in session
