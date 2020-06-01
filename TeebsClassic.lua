@@ -75,7 +75,7 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
                 print("Unknwon Slot", messageSplit[3])
             else
                 -- Check we have anything equipped
-                if messageSplit[3] == 0 then
+                if TeebsClassicDB.realms[realm].characters[messageSplit[2]].gear[messageSplit[3]] == 0 then
                     print("Item Slot Empty")
                 else
                     -- Load the item data
