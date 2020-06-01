@@ -93,32 +93,32 @@ function initialiseDB()
         TeebsClassicDB.realms[realm].characters[playerName].professions["cooking"] = {}
 
         -- Setup the gear slot Keys
-        TeebsClassicDB.realms[realm].characters[playerName].gear["ammo"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["head"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["neck"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["shoulder"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["shirt"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["chest"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["belt"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["legs"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["feet"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["wrist"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["gloves"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["ring_1"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["ring_2"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["trinket_1"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["trinket_2"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["back"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["main_hand"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["off_hand"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["ranged"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].gear["tabard"] = 0
+        TeebsClassicDB.realms[realm].characters[playerName].gear["0"] = 0         -- Ammo
+        TeebsClassicDB.realms[realm].characters[playerName].gear["1"] = 0         -- Head
+        TeebsClassicDB.realms[realm].characters[playerName].gear["2"] = 0         -- Neck
+        TeebsClassicDB.realms[realm].characters[playerName].gear["3"] = 0         -- Shoulder
+        TeebsClassicDB.realms[realm].characters[playerName].gear["4"] = 0         -- Shirt
+        TeebsClassicDB.realms[realm].characters[playerName].gear["5"] = 0         -- Chest
+        TeebsClassicDB.realms[realm].characters[playerName].gear["6"] = 0         -- Belt
+        TeebsClassicDB.realms[realm].characters[playerName].gear["7"] = 0         -- Legs
+        TeebsClassicDB.realms[realm].characters[playerName].gear["8"] = 0         -- Feet
+        TeebsClassicDB.realms[realm].characters[playerName].gear["9"] = 0         -- Wrist
+        TeebsClassicDB.realms[realm].characters[playerName].gear["10"] = 0        -- Gloves
+        TeebsClassicDB.realms[realm].characters[playerName].gear["11"] = 0        -- Ring 1
+        TeebsClassicDB.realms[realm].characters[playerName].gear["12"] = 0        -- Ring 2
+        TeebsClassicDB.realms[realm].characters[playerName].gear["13"] = 0        -- Trinket 1
+        TeebsClassicDB.realms[realm].characters[playerName].gear["14"] = 0        -- Trinket 2
+        TeebsClassicDB.realms[realm].characters[playerName].gear["15"] = 0        -- Back
+        TeebsClassicDB.realms[realm].characters[playerName].gear["16"] = 0        -- Main Hand
+        TeebsClassicDB.realms[realm].characters[playerName].gear["17"] = 0        -- Off Hand
+        TeebsClassicDB.realms[realm].characters[playerName].gear["18"] = 0        -- Ranged
+        TeebsClassicDB.realms[realm].characters[playerName].gear["19"] = 0        -- Tabard
 
         -- Setup the bag slot keys
-        TeebsClassicDB.realms[realm].characters[playerName].bags["bag_0"] = 0       -- Right most bag
-        TeebsClassicDB.realms[realm].characters[playerName].bags["bag_1"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].bags["bag_2"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].bags["bag_3"] = 0       -- Left most bag
+        TeebsClassicDB.realms[realm].characters[playerName].bags["0"] = 0       -- Right most bag
+        TeebsClassicDB.realms[realm].characters[playerName].bags["1"] = 0
+        TeebsClassicDB.realms[realm].characters[playerName].bags["2"] = 0
+        TeebsClassicDB.realms[realm].characters[playerName].bags["3"] = 0       -- Left most bag
     end
 end
 
