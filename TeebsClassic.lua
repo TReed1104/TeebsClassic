@@ -14,11 +14,11 @@ frame:SetScript("OnEvent", function(self, event, ...)
     if event == "ADDON_LOADED" then
         -- Addon Loaded Trigger
         initialiseDB()
-        getCharacterInfo();
     end
     if event == "PLAYER_LOGIN" then
         -- Player Login Event Trigger
         print("Welcome to Teebs Classic, use /teebs")
+        getCharacterInfo();
     end
 end)
 
