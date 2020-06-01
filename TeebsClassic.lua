@@ -83,7 +83,6 @@ function initialiseDB()
         TeebsClassicDB.realms[realm].characters[playerName].stats["strength"] = 0
         TeebsClassicDB.realms[realm].characters[playerName].stats["intellect"] = 0
         TeebsClassicDB.realms[realm].characters[playerName].stats["spirit"] = 0
-        TeebsClassicDB.realms[realm].characters[playerName].stats["armor"] = 0
 
         -- Setup the professions keys
         TeebsClassicDB.realms[realm].characters[playerName].professions["main_one"] = {}
@@ -171,17 +170,17 @@ function getCharacterStats()
     local realm = GetRealmName()
     local playerName = UnitName("player");
 
-
+    -- Get the character stats
     local _, stamina = UnitStat("player", 3)
     local _, strength = UnitStat("player", 1)
     local _, agility = UnitStat("player", 2)
     local _, intellect = UnitStat("player", 4)
     local _, spirit = UnitStat("player", 5)
-    local _, armor = UnitArmor("player")
+
+    -- Set the character stats in the stats table
     TeebsClassicDB.realms[realm].characters[playerName].stats["stamina"] = stamina
     TeebsClassicDB.realms[realm].characters[playerName].stats["agility"] = agility
     TeebsClassicDB.realms[realm].characters[playerName].stats["strength"] = strength
     TeebsClassicDB.realms[realm].characters[playerName].stats["intellect"] = intellect
     TeebsClassicDB.realms[realm].characters[playerName].stats["spirit"] = spirit
-    TeebsClassicDB.realms[realm].characters[playerName].stats["armor"] = armor
 end
