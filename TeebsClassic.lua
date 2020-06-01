@@ -70,29 +70,14 @@ function initialiseDB()
     end
 
     -- Create each of the variables and tables to store on the character
-    if not checkTableKey(TeebsClassicDB.realms[realm].characters[playerName], "currency") then
+    if TeebsClassicDB.realms[realm].characters[playerName].currency == nil then
         TeebsClassicDB.realms[realm].characters[playerName].currency = {}
     end
-    if not checkTableKey(TeebsClassicDB.realms[realm].characters[playerName], "stats") then
-        TeebsClassicDB.realms[realm].characters[playerName].stats = {}
-    end
-    if not checkTableKey(TeebsClassicDB.realms[realm].characters[playerName], "gear") then
+    if TeebsClassicDB.realms[realm].characters[playerName].gear == nil then
         TeebsClassicDB.realms[realm].characters[playerName].gear = {}
     end
-    if not checkTableKey(TeebsClassicDB.realms[realm].characters[playerName], "reputation") then
-        TeebsClassicDB.realms[realm].characters[playerName].reputation = {}
-    end
-    if not checkTableKey(TeebsClassicDB.realms[realm].characters[playerName], "professions") then
-        TeebsClassicDB.realms[realm].characters[playerName].professions = {}
-    end
-    if not checkTableKey(TeebsClassicDB.realms[realm].characters[playerName], "gear") then
-        TeebsClassicDB.realms[realm].characters[playerName].gear = {}
-    end
-    if not checkTableKey(TeebsClassicDB.realms[realm].characters[playerName], "bags") then
+    if TeebsClassicDB.realms[realm].characters[playerName].bags == nil then
         TeebsClassicDB.realms[realm].characters[playerName].bags = {}
-    end
-    if not checkTableKey(TeebsClassicDB.realms[realm].characters[playerName], "test") then
-        TeebsClassicDB.realms[realm].characters[playerName].test = {}
     end
 end
 
