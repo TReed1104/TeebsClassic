@@ -224,20 +224,3 @@ function getCharacterStats()
     TeebsClassicDB.realms[realm].characters[playerName].stats["intellect"] = intellect
     TeebsClassicDB.realms[realm].characters[playerName].stats["spirit"] = spirit
 end
-
-function cachePlayerCharacterItems()
-    -- Get the base details about the logged in session
-    local realm = GetRealmName()
-
-    -- For each character we have registered in the data cache
-    for characterName, characterData in pairs(TeebsClassicDB.realms[realm].characters) do
-        -- For each item they have equipped
-        for itemSlot, itemID in pairs(TeebsClassicDB.realms[realm].characters[characterName].gear) do
-            -- If the slot is equipped
-            if itemID > 0 then
-                -- Cache the item information
-                GetItemInfo(itemID)
-            end
-        end
-    end
-end
