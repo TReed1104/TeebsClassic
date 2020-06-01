@@ -70,6 +70,9 @@ function initialiseDB()
     if TeebsClassicDB.realms[realm].characters[playerName].faction == nil then
         TeebsClassicDB.realms[realm].characters[playerName].faction = UnitFactionGroup("player")
     end
+    if TeebsClassicDB.realms[realm].characters[playerName].class == nil then
+        TeebsClassicDB.realms[realm].characters[playerName].class = UnitClass("player")
+    end
     if TeebsClassicDB.realms[realm].characters[playerName].currency == nil then
         TeebsClassicDB.realms[realm].characters[playerName].currency = {}
     end
