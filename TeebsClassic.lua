@@ -163,3 +163,7 @@ function getCharacterMoney()
     TeebsClassicDB.realms[realm].characters[playerName].currency["silver"] = math.floor((copper / 100) % 100)
     TeebsClassicDB.realms[realm].characters[playerName].currency["copper"] = copper % 100
 end
+
+function getCharacterStats()
+
+end
