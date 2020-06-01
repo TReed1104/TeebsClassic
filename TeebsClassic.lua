@@ -56,7 +56,38 @@ end
 -- Slash Commands
 SLASH_TEEBSCLASSIC1 = "/teebs"
 SlashCmdList["TEEBSCLASSIC"] = function(msg)
-    print(msg)
+    -- Get the base details about the logged in session
+    local realm = GetRealmName()
+
+    -- Message syntax
+        -- [1] - Command
+        -- [2] - Character
+        -- [3] - Slot/value
+    local messageSplit = splitString(msg)
+
+    if messageSplit[1] == "get-slot" then
+        -- Get character item slot
+        if TeebsClassicDB.realms[realm].characters[messageSplit[2]] == nil then
+            print("Unknown Charater", messageSplit[2])
+        else
+            if TeebsClassicDB.realms[realm].characters[messageSplit[2]].gear[messageSplit[3]] == nil then
+                print("Unknwon Slot", messageSplit[3])
+            else
+                if messageSplit[3] == 0 then
+                    print("Item Slot Empty")
+                else
+                    local _, link = GetItemInfo(TeebsClassicDB.realms[realm].characters[messageSplit[2]].gear[messageSplit[3]])
+                    if link == nil then
+                        print("Item Not Cached Yet")
+                    else
+                        print(link)
+                    end
+                end
+            end
+        end
+    else
+        print("Unknown Command", messageSplit[1])
+    end
 end
 
 -- Create/load the addon database
