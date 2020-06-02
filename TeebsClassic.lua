@@ -48,15 +48,19 @@ frame:SetScript("OnEvent", function(self, event, ...)
 end)
 
 -- Custom Split string
-function splitString(inputstr, sep)
-    if sep == nil then
-        sep = "%s"
+function splitString(stringToSplit, seperatorToken)
+    -- Check if no custom seperator has been supplied, if not default to a blank space (' ')
+    if seperatorToken == nil then
+        seperatorToken = "%s"
     end
-    local t={}
-    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
-        table.insert(t, str)
+
+    -- Split the string
+    local seperatedString = {}
+    for stringChunk in string.gmatch(stringToSplit, "([^"..seperatorToken.."]+)") do
+        -- Chunk found, insert into response
+        table.insert(seperatedString, stringChunk)
     end
-    return t
+    return seperatedString
 end
 
 -- Slash Commands
