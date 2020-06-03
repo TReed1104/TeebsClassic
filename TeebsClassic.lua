@@ -79,7 +79,7 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
 
     -- Check we have our three inputs
     if messageSplit[1] == nil or messageSplit[2] == nil then
-        print("Unknown Command - Please Check Your Syntax - ", msg)
+        print("Unknown Command - Please Check Your Syntax -", msg)
         return
     end
 
