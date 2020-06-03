@@ -346,7 +346,11 @@ function cmdupdateCharacterExperience(realm, character)
 
 -- Command function for retrieving a characters level from the cache
 function cmdupdateCharacterLevel(realm, character)
-    print(string.format("%s%s", "|cffff0000", "To Be Implemented - updateCharacterLevel()"))
+    -- Check the character exists
+    if TeebsClassicDB.realms[realm].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
 end
 
 -- Command function for retrieving a characters currencies from the cache
