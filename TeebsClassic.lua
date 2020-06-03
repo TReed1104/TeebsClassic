@@ -271,3 +271,7 @@ function cmdGetCharacterExperience(realm, character)
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - getCharacterExperience()"))
 end
 
+function cmdGetCharacterLevel(realm, character)
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - getCharacterLevel()"))
+end
+
