@@ -1,5 +1,5 @@
 ------------------------------------------------------------------
--- Event Registration and Handling Functions
+-- Addon Core Creation, Event Registration And Handling
 ------------------------------------------------------------------
 -- Frame Creation
 local frame = CreateFrame("Frame")
