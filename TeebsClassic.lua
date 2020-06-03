@@ -343,6 +343,11 @@ function cmdupdateCharacterExperience(realm, character)
         print("Unknown Charater", character)
         return
     end
+    -- Check if the slot is recognised
+    if TeebsClassicDB.realms[realm].characters[character].experienceCurrentPercentage == nil or TeebsClassicDB.realms[realm].characters[character].experienceRestedPercentage == nil then
+        print("Experience data not cached")
+        return
+    end
 
 -- Command function for retrieving a characters level from the cache
 function cmdupdateCharacterLevel(realm, character)
