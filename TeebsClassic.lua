@@ -22,28 +22,28 @@ frame:SetScript("OnEvent", function(self, event, ...)
     end
     if event == "PLAYER_ENTERING_WORLD" then
         -- Player Enter World Trigger
-        getCharacterItemsID()
-        getCharacterMoney()
-        getCharacterExperience()
-        getCharacterLevel()
+        updateCharacterItemSlots()
+        updateCharacterMoney()
+        updateCharacterExperience()
+        updateCharacterLevel()
     end
     if event == "PLAYER_LEVEL_UP" then
         -- Player Level Up Trigger
-        getCharacterExperience()
-        getCharacterLevel()
+        updateCharacterExperience()
+        updateCharacterLevel()
     end
     if event == "PLAYER_MONEY" then
         -- Player Current Change Trigger
-        getCharacterMoney()
+        updateCharacterMoney()
     end
     if event == "PLAYER_EQUIPMENT_CHANGED" then
         -- Player Gear Change Trigger
-        getCharacterItemsID()
+        updateCharacterItemSlots()
     end
     if event == "PLAYER_XP_UPDATE" then
         -- Player XP value update - Quest/NPC Kill
-        getCharacterExperience()
-        getCharacterLevel()
+        updateCharacterExperience()
+        updateCharacterLevel()
     end
 end)
 
@@ -89,9 +89,9 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
     elseif messageSplit[1] == "get-bags" then
         cmdGetCharacterBags(realm, messageSplit[2], messageSplit[3])
     elseif messageSplit[1] == "get-exp" then
-        cmdGetCharacterExperience(realm, messageSplit[2])
+        cmdupdateCharacterExperience(realm, messageSplit[2])
     elseif messageSplit[1] == "get-level" then
-        cmdGetCharacterLevel(realm, messageSplit[2])
+        cmdupdateCharacterLevel(realm, messageSplit[2])
     elseif messageSplit[1] == "get-gold" then
         cmdGetCharacterGold(realm, messageSplit[2])
     else
@@ -134,7 +134,7 @@ function initialiseDB()
         TeebsClassicDB.realms[realm].characters[playerName].class = UnitClass("player")
     end
     if TeebsClassicDB.realms[realm].characters[playerName].level == nil then
-        getCharacterLevel()
+        updateCharacterLevel()
     end
     if TeebsClassicDB.realms[realm].characters[playerName].currency == nil then
         TeebsClassicDB.realms[realm].characters[playerName].currency = {}
@@ -147,7 +147,7 @@ function initialiseDB()
     end
 end
 
-function getCharacterLevel()
+function updateCharacterLevel()
     -- Get the base details about the logged in session
     local realm = GetRealmName()
     local playerName = UnitName("player")
@@ -155,7 +155,7 @@ function getCharacterLevel()
     TeebsClassicDB.realms[realm].characters[playerName].level = UnitLevel("player")
 end
 
-function getCharacterExperience()
+function updateCharacterExperience()
     -- Get the base details about the logged in session
     local realm = GetRealmName()
     local playerName = UnitName("player")
@@ -186,7 +186,7 @@ function getCharacterExperience()
     TeebsClassicDB.realms[realm].characters[playerName].experienceRestedPercentage = restedPercentage
 end
 
-function getCharacterItemsID(slot)
+function updateCharacterItemSlots(slot)
     -- Get the base details about the logged in session
     local realm = GetRealmName()
     local playerName = UnitName("player");
@@ -212,7 +212,7 @@ function getCharacterItemsID(slot)
     end
 end
 
-function getCharacterMoney()
+function updateCharacterMoney()
     -- Get the base details about the logged in session
     local realm = GetRealmName()
     local playerName = UnitName("player");
@@ -226,7 +226,7 @@ function getCharacterMoney()
     TeebsClassicDB.realms[realm].characters[playerName].currency["copper"] = copper % 100
 end
 
-function getCharacterStats()
+function updateCharacterStats()
     -- Get the base details about the logged in session
     local realm = GetRealmName()
     local playerName = UnitName("player");
@@ -275,12 +275,12 @@ function cmdGetCharacterBags(realm, character, slotNumber)
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - getCharacterBags()"))
 end
 
-function cmdGetCharacterExperience(realm, character)
-    print(string.format("%s%s", "|cffff0000", "To Be Implemented - getCharacterExperience()"))
+function cmdupdateCharacterExperience(realm, character)
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - updateCharacterExperience()"))
 end
 
-function cmdGetCharacterLevel(realm, character)
-    print(string.format("%s%s", "|cffff0000", "To Be Implemented - getCharacterLevel()"))
+function cmdupdateCharacterLevel(realm, character)
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - updateCharacterLevel()"))
 end
 
 function cmdGetCharacterGold(realm, character)
