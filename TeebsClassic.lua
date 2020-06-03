@@ -267,3 +267,7 @@ function cmdGetCharacterBags(realm, character, slotNumber)
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - getCharacterBags()"))
 end
 
+function cmdGetCharacterExperience(realm, character)
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - getCharacterExperience()"))
+end
+
