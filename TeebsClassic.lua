@@ -114,7 +114,7 @@ end
 
 
 ------------------------------------------------------------------
--- Setup Helper Functions
+-- Data Caching Functions
 ------------------------------------------------------------------
 -- Create/load the addon database
 function initialiseDB()
@@ -164,10 +164,6 @@ function initialiseDB()
     end
 end
 
-
-------------------------------------------------------------------
--- Data Caching Functions
-------------------------------------------------------------------
 function updateCharacterLevel()
     -- Get the base details about the logged in session
     local realm = GetRealmName()
