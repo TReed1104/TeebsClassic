@@ -15,39 +15,46 @@ frame:RegisterEvent("PLAYER_XP_UPDATE")
 
 -- Handle Events Triggering
 frame:SetScript("OnEvent", function(self, event, ...)
+    -- Addon Loaded Trigger
     if event == "ADDON_LOADED" then
-        -- Addon Loaded Trigger
         initialiseDB()
     end
+
+    -- Player Login Event Trigger
     if event == "PLAYER_LOGIN" then
-        -- Player Login Event Trigger
         print("Welcome to Teebs Classic, use /teebs")
     end
+
+    -- Player Enter World Trigger
     if event == "PLAYER_ENTERING_WORLD" then
-        -- Player Enter World Trigger
         updateCharacterItemSlots()
         updateCharacterMoney()
         updateCharacterExperience()
         updateCharacterLevel()
     end
+
+    -- Player Level Up Trigger
     if event == "PLAYER_LEVEL_UP" then
-        -- Player Level Up Trigger
         updateCharacterExperience()
         updateCharacterLevel()
     end
+
+    -- Player Current Change Trigger
     if event == "PLAYER_MONEY" then
-        -- Player Current Change Trigger
         updateCharacterMoney()
     end
+
+    -- Player Gear Change Trigger
     if event == "PLAYER_EQUIPMENT_CHANGED" then
-        -- Player Gear Change Trigger
         updateCharacterItemSlots()
     end
+
+    -- Player XP value update - Quest/NPC Kill
     if event == "PLAYER_XP_UPDATE" then
-        -- Player XP value update - Quest/NPC Kill
         updateCharacterExperience()
         updateCharacterLevel()
     end
+
 end)
 
 
@@ -116,7 +123,7 @@ end
 ------------------------------------------------------------------
 -- Data Caching Functions
 ------------------------------------------------------------------
--- Create/load the addon database
+-- Create the addon database and layout its data tables
 function initialiseDB()
     -- Seed the schema of the database table
     if TeebsClassicDB == nil then
@@ -164,6 +171,7 @@ function initialiseDB()
     end
 end
 
+-- Caching of the current characters level
 function updateCharacterLevel()
     -- Get the base details about the logged in session
     local realm = GetRealmName()
@@ -172,6 +180,7 @@ function updateCharacterLevel()
     TeebsClassicDB.realms[realm].characters[playerName].level = UnitLevel("player")
 end
 
+-- Caching of the current characters experience (current + rested %s)
 function updateCharacterExperience()
     -- Get the base details about the logged in session
     local realm = GetRealmName()
@@ -203,6 +212,7 @@ function updateCharacterExperience()
     TeebsClassicDB.realms[realm].characters[playerName].experienceRestedPercentage = restedPercentage
 end
 
+-- Caching of the current characters equipped items
 function updateCharacterItemSlots(slot)
     -- Get the base details about the logged in session
     local realm = GetRealmName()
@@ -229,6 +239,7 @@ function updateCharacterItemSlots(slot)
     end
 end
 
+-- Caching of the current characters currencies
 function updateCharacterMoney()
     -- Get the base details about the logged in session
     local realm = GetRealmName()
@@ -243,6 +254,7 @@ function updateCharacterMoney()
     TeebsClassicDB.realms[realm].characters[playerName].currency["copper"] = copper % 100
 end
 
+-- Caching of the current characters stats - Currently unused
 function updateCharacterStats()
     -- Get the base details about the logged in session
     local realm = GetRealmName()
@@ -267,6 +279,7 @@ end
 ------------------------------------------------------------------
 -- Addon Command Functions
 ------------------------------------------------------------------
+-- Command function for retrieving a characters equipped items from the cache
 function cmdGetCharacterItemSlot(realm, character, slotNumber)
     -- Check the character exists
     if TeebsClassicDB.realms[realm].characters[character] == nil then
@@ -292,18 +305,22 @@ function cmdGetCharacterItemSlot(realm, character, slotNumber)
     end)
 end
 
+-- Command function for retrieving a characters equipped bags from the cache
 function cmdGetCharacterBags(realm, character, slotNumber)
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - getCharacterBags()"))
 end
 
+-- Command function for retrieving a characters current and rested experience %s from the cache
 function cmdupdateCharacterExperience(realm, character)
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - updateCharacterExperience()"))
 end
 
+-- Command function for retrieving a characters level from the cache
 function cmdupdateCharacterLevel(realm, character)
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - updateCharacterLevel()"))
 end
 
+-- Command function for retrieving a characters currencies from the cache
 function cmdGetCharacterGold(realm, character)
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - getCharacterGold()"))
 end
