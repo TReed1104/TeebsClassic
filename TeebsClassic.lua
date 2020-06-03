@@ -370,6 +370,12 @@ function cmdupdateCharacterLevel(realm, character)
         print("Level data not cached")
         return
     end
+    -- Get the Character details
+    local currentLevel = TeebsClassicDB.realms[realm].characters[character].level
+    -- Get the class colour
+    local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[realm].characters[character].class:upper())
+    -- Output the results in-game
+    print(colourText(classColourHex, character) .. colourText("ffffff00", " is currently level " .. currentLevel))
 end
 
 -- Command function for retrieving a characters currencies from the cache
