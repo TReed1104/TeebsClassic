@@ -239,26 +239,26 @@ function getCharacterStats()
 end
 
 function getCharacterItemSlot(realm, character, slotNumber)
-    -- Get character item slot
+    -- Check the character exists
     if TeebsClassicDB.realms[realm].characters[character] == nil then
         print("Unknown Charater", character)
-    else
-        -- Check if the slot is recognised
-        if TeebsClassicDB.realms[realm].characters[character].gear[slotNumber] == nil then
-            print("Unknwon Slot", slotNumber)
-        else
-            -- Check we have anything equipped
-            if TeebsClassicDB.realms[realm].characters[character].gear[slotNumber] == 0 then
-                print("Item Slot Empty")
-            else
-                -- Load the item data
-                local item = Item:CreateFromItemID(TeebsClassicDB.realms[realm].characters[character].gear[slotNumber])
-                -- When loaded, print the link
-                item:ContinueOnItemLoad(function()
-                    local classColourR, classColourG, classColourB, classColourHex = GetClassColor(TeebsClassicDB.realms[realm].characters[character].class:upper())
-                    print(string.format("%s%s", "|c" .. classColourHex, character), string.format("%s%s", "|cffffffff", "has"), item:GetItemLink(), "equipped in slot", slotNumber)
-                end)
-            end
-        end
+        return
     end
+    -- Check if the slot is recognised
+    if TeebsClassicDB.realms[realm].characters[character].gear[slotNumber] == nil then
+        print("Unknwon Slot", slotNumber)
+        return
+    end
+    -- Check we have anything equipped in the desired slot
+    if TeebsClassicDB.realms[realm].characters[character].gear[slotNumber] == 0 then
+        print("Item Slot Empty")
+    end
+    -- Load the item data
+    local item = Item:CreateFromItemID(TeebsClassicDB.realms[realm].characters[character].gear[slotNumber])
+    -- Use the Item Mixin callback to await for the item to be cached
+    item:ContinueOnItemLoad(function()
+        -- Now the item has been cached, format the output string to use the class colour and print the item link
+        local classColourR, classColourG, classColourB, classColourHex = GetClassColor(TeebsClassicDB.realms[realm].characters[character].class:upper())
+        print(string.format("%s%s", "|c" .. classColourHex, character), string.format("%s%s", "|cffffffff", "has"), item:GetItemLink(), "equipped in slot", slotNumber)
+    end)
 end
