@@ -348,6 +348,10 @@ function cmdupdateCharacterExperience(realm, character)
         print("Experience data not cached")
         return
     end
+    -- Get the Character details
+    local currentLevel = TeebsClassicDB.realms[realm].characters[character].level
+    local currentPercent = TeebsClassicDB.realms[realm].characters[character].experienceCurrentPercentage
+    local currentRestedPercent = TeebsClassicDB.realms[realm].characters[character].experienceRestedPercentage
 
 -- Command function for retrieving a characters level from the cache
 function cmdupdateCharacterLevel(realm, character)
