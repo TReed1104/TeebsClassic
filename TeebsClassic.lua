@@ -77,6 +77,11 @@ function splitString(stringToSplit, seperatorToken)
     return seperatedString
 end
 
+-- custom colour text wrapper
+function colourText(colour, text)
+    return string.format("%s%s", "|c" .. colour, text)
+end
+
 
 ------------------------------------------------------------------
 -- Slash Command Registration and Functions
