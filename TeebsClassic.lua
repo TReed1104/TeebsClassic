@@ -251,3 +251,28 @@ function getCharacterStats()
     TeebsClassicDB.realms[realm].characters[playerName].stats["intellect"] = intellect
     TeebsClassicDB.realms[realm].characters[playerName].stats["spirit"] = spirit
 end
+
+function getCharacterItemSlot(realm, character, slotNumber)
+    -- Get character item slot
+    if TeebsClassicDB.realms[realm].characters[character] == nil then
+        print("Unknown Charater", character)
+    else
+        -- Check if the slot is recognised
+        if TeebsClassicDB.realms[realm].characters[character].gear[slotNumber] == nil then
+            print("Unknwon Slot", slotNumber)
+        else
+            -- Check we have anything equipped
+            if TeebsClassicDB.realms[realm].characters[character].gear[slotNumber] == 0 then
+                print("Item Slot Empty")
+            else
+                -- Load the item data
+                local item = Item:CreateFromItemID(TeebsClassicDB.realms[realm].characters[character].gear[slotNumber])
+                -- When loaded, print the link
+                item:ContinueOnItemLoad(function()
+                    local classColourR, classColourG, classColourB, classColourHex = GetClassColor(TeebsClassicDB.realms[realm].characters[character].class:upper())
+                    print(string.format("%s%s", "|c" .. classColourHex, character), string.format("%s%s", "|cffffffff", "has"), item:GetItemLink(), "equipped in slot", slotNumber)
+                end)
+            end
+        end
+    end
+end
