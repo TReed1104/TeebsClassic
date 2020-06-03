@@ -74,11 +74,11 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
     -- Message syntax
         -- [1] - Command
         -- [2] - Character
-        -- [3] - Slot/value
+        -- [3] - Slot/value - Might not always been required, depending on the function
     local messageSplit = splitString(msg)
 
     -- Check we have our three inputs
-    if messageSplit[1] == nil or messageSplit[2] == nil or messageSplit[3] == nil then
+    if messageSplit[1] == nil or messageSplit[2] == nil then
         print("Unknown Command - Please Check Your Syntax - ", msg)
         return
     end
