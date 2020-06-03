@@ -85,7 +85,7 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
 
     -- Work out which addon function to use
     if messageSplit[1] == "get-slot" then
-        getCharacterItemSlot(realm, messageSplit[2], messageSplit[3])
+        cmdGetCharacterItemSlot(realm, messageSplit[2], messageSplit[3])
     else
         print("Unknown Command", messageSplit[1])
     end
@@ -238,7 +238,7 @@ function getCharacterStats()
     TeebsClassicDB.realms[realm].characters[playerName].stats["spirit"] = spirit
 end
 
-function getCharacterItemSlot(realm, character, slotNumber)
+function cmdGetCharacterItemSlot(realm, character, slotNumber)
     -- Check the character exists
     if TeebsClassicDB.realms[realm].characters[character] == nil then
         print("Unknown Charater", character)
