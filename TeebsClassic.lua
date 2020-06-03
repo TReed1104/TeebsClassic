@@ -77,29 +77,9 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
         -- [3] - Slot/value
     local messageSplit = splitString(msg)
 
+    -- Work out which addon function to use
     if messageSplit[1] == "get-slot" then
-        -- Get character item slot
-        if TeebsClassicDB.realms[realm].characters[messageSplit[2]] == nil then
-            print("Unknown Charater", messageSplit[2])
-        else
-            -- Check if the slot is recognised
-            if TeebsClassicDB.realms[realm].characters[messageSplit[2]].gear[messageSplit[3]] == nil then
-                print("Unknwon Slot", messageSplit[3])
-            else
-                -- Check we have anything equipped
-                if TeebsClassicDB.realms[realm].characters[messageSplit[2]].gear[messageSplit[3]] == 0 then
-                    print("Item Slot Empty")
-                else
-                    -- Load the item data
-                    local item = Item:CreateFromItemID(TeebsClassicDB.realms[realm].characters[messageSplit[2]].gear[messageSplit[3]])
-                    -- When loaded, print the link
-                    item:ContinueOnItemLoad(function()
-                        local classColourR, classColourG, classColourB, classColourHex = GetClassColor(TeebsClassicDB.realms[realm].characters[messageSplit[2]].class:upper())
-                        print(string.format("%s%s", "|c" .. classColourHex, messageSplit[2]), string.format("%s%s", "|cffffffff", "has"), item:GetItemLink(), "equipped in slot", messageSplit[3])
-                    end)
-                end
-            end
-        end
+        getCharacterItemSlot(realm, messageSplit[2], messageSplit[3])
     else
         print("Unknown Command", messageSplit[1])
     end
