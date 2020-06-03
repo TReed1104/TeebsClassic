@@ -262,3 +262,8 @@ function cmdGetCharacterItemSlot(realm, character, slotNumber)
         print(string.format("%s%s", "|c" .. classColourHex, character), string.format("%s%s", "|cffffffff", "has"), item:GetItemLink(), "equipped in slot", slotNumber)
     end)
 end
+
+function cmdGetCharacterBags(realm, character, slotNumber)
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - getCharacterBags()"))
+end
+
