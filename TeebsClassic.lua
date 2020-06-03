@@ -77,6 +77,12 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
         -- [3] - Slot/value
     local messageSplit = splitString(msg)
 
+    -- Check we have our three inputs
+    if messageSplit[1] == nil or messageSplit[2] == nil or messageSplit[3] == nil then
+        print("Unknown Command - Please Check Your Syntax - ", msg)
+        return
+    end
+
     -- Work out which addon function to use
     if messageSplit[1] == "get-slot" then
         getCharacterItemSlot(realm, messageSplit[2], messageSplit[3])
