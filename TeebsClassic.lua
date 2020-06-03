@@ -86,6 +86,14 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
     -- Work out which addon function to use
     if messageSplit[1] == "get-slot" then
         cmdGetCharacterItemSlot(realm, messageSplit[2], messageSplit[3])
+    elseif messageSplit[1] == "get-bags" then
+        cmdGetCharacterBags(realm, messageSplit[2], messageSplit[3])
+    elseif messageSplit[1] == "get-exp" then
+        cmdGetCharacterExperience(realm, messageSplit[2])
+    elseif messageSplit[1] == "get-level" then
+        cmdGetCharacterLevel(realm, messageSplit[2])
+    elseif messageSplit[1] == "get-gold" then
+        cmdGetCharacterGold(realm, messageSplit[2])
     else
         print("Unknown Command", messageSplit[1])
     end
