@@ -1,10 +1,9 @@
--- Frames
-local frame = CreateFrame("Frame")
-
-
 ------------------------------------------------------------------
 -- Event Registration and Handling Functions
 ------------------------------------------------------------------
+-- Frame Creation
+local frame = CreateFrame("Frame")
+
 -- Register Event Listeners
 frame:RegisterEvent("ADDON_LOADED")
 frame:RegisterEvent("PLAYER_LOGIN")
