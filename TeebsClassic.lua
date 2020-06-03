@@ -229,8 +229,8 @@ function updateCharacterItemSlots(slot)
     end
 
     -- Set each bag slot
-    for i = 0, 3 do
-        local itemID, unknown = GetInventoryItemID("player", (i + 20))
+    for i = 1, 4 do
+        local itemID, unknown = GetInventoryItemID("player", (i + 19))
         if itemID == nil then
             TeebsClassicDB.realms[realm].characters[playerName].bags[tostring(i)] = 0
         else
