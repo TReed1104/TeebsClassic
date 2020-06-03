@@ -354,6 +354,9 @@ function cmdupdateCharacterExperience(realm, character)
     local currentRestedPercent = TeebsClassicDB.realms[realm].characters[character].experienceRestedPercentage
     -- Get the class colour
     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[realm].characters[character].class:upper())
+    -- Output the results in-game
+    print(colourText(classColourHex, character) .. colourText("ffffff00", " is " .. currentPercent .. "% into level " .. currentLevel .. " and has ") .. colourText(currentRestedPercent == 150 and "ffff0000" or "ffffff00", currentRestedPercent .. "%") .. colourText("ffffff00", " rested experience remaining"))
+end
 
 -- Command function for retrieving a characters level from the cache
 function cmdupdateCharacterLevel(realm, character)
