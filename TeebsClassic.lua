@@ -352,6 +352,8 @@ function cmdupdateCharacterExperience(realm, character)
     local currentLevel = TeebsClassicDB.realms[realm].characters[character].level
     local currentPercent = TeebsClassicDB.realms[realm].characters[character].experienceCurrentPercentage
     local currentRestedPercent = TeebsClassicDB.realms[realm].characters[character].experienceRestedPercentage
+    -- Get the class colour
+    local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[realm].characters[character].class:upper())
 
 -- Command function for retrieving a characters level from the cache
 function cmdupdateCharacterLevel(realm, character)
