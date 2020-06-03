@@ -1,6 +1,10 @@
 -- Frames
 local frame = CreateFrame("Frame")
 
+
+------------------------------------------------------------------
+-- Event Registration and Handling Functions
+------------------------------------------------------------------
 -- Register Event Listeners
 frame:RegisterEvent("ADDON_LOADED")
 frame:RegisterEvent("PLAYER_LOGIN")
@@ -47,6 +51,10 @@ frame:SetScript("OnEvent", function(self, event, ...)
     end
 end)
 
+
+------------------------------------------------------------------
+-- General Helper Functions
+------------------------------------------------------------------
 -- Custom Split string
 function splitString(stringToSplit, seperatorToken)
     -- Check if no custom seperator has been supplied, if not default to a blank space (' ')
@@ -63,10 +71,16 @@ function splitString(stringToSplit, seperatorToken)
     return seperatedString
 end
 
+
+------------------------------------------------------------------
+-- Slash Command Registration and Functions
+------------------------------------------------------------------
 -- Slash Commands
 SLASH_TEEBSCLASSIC1 = "/teebs"
 SLASH_TEEBSCLASSIC2 = "/tbs"
 SLASH_TEEBSCLASSIC3 = "/th"
+
+-- Slash Command Handler Function
 SlashCmdList["TEEBSCLASSIC"] = function(msg)
     -- Get the base details about the logged in session
     local realm = GetRealmName()
@@ -99,6 +113,10 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
     end
 end
 
+
+------------------------------------------------------------------
+-- Setup Helper Functions
+------------------------------------------------------------------
 -- Create/load the addon database
 function initialiseDB()
     -- Seed the schema of the database table
@@ -147,6 +165,10 @@ function initialiseDB()
     end
 end
 
+
+------------------------------------------------------------------
+-- Data Caching Functions
+------------------------------------------------------------------
 function updateCharacterLevel()
     -- Get the base details about the logged in session
     local realm = GetRealmName()
@@ -246,6 +268,10 @@ function updateCharacterStats()
     TeebsClassicDB.realms[realm].characters[playerName].stats["spirit"] = spirit
 end
 
+
+------------------------------------------------------------------
+-- Addon Command Functions
+------------------------------------------------------------------
 function cmdGetCharacterItemSlot(realm, character, slotNumber)
     -- Check the character exists
     if TeebsClassicDB.realms[realm].characters[character] == nil then
