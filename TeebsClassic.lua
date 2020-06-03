@@ -305,8 +305,8 @@ function cmdGetCharacterItemSlot(realm, character, slotNumber)
     -- Use the Item Mixin callback to await for the item to be cached
     item:ContinueOnItemLoad(function()
         -- Now the item has been cached, format the output string to use the class colour and print the item link
-        local classColourR, classColourG, classColourB, classColourHex = GetClassColor(TeebsClassicDB.realms[realm].characters[character].class:upper())
-        print(string.format("%s%s", "|c" .. classColourHex, character), string.format("%s%s", "|cffffffff", "has"), item:GetItemLink(), "equipped in slot", slotNumber)
+        local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[realm].characters[character].class:upper())
+        print(colourText(classColourHex, character) .. colourText("ffffff00", " has ") ..  item:GetItemLink() .. colourText("ffffff00", " equipped in gear slot " .. slotNumber))
     end)
 end
 
