@@ -275,3 +275,6 @@ function cmdGetCharacterLevel(realm, character)
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - getCharacterLevel()"))
 end
 
+function cmdGetCharacterGold(realm, character)
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - getCharacterGold()"))
+end
