@@ -307,7 +307,28 @@ end
 
 -- Command function for retrieving a characters equipped bags from the cache
 function cmdGetCharacterBags(realm, character, slotNumber)
-    print(string.format("%s%s", "|cffff0000", "To Be Implemented - getCharacterBags()"))
+    -- Check the character exists
+    if TeebsClassicDB.realms[realm].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
+    -- Check if the slot is recognised
+    if TeebsClassicDB.realms[realm].characters[character].bags[slotNumber] == nil then
+        print("Unknwon Bag Slot", slotNumber)
+        return
+    end
+    -- Check we have anything equipped in the desired slot
+    if TeebsClassicDB.realms[realm].characters[character].bags[slotNumber] == 0 then
+        print("Bag Slot Empty")
+    end
+    -- Load the item data
+    local item = Item:CreateFromItemID(TeebsClassicDB.realms[realm].characters[character].bags[slotNumber])
+    -- Use the Item Mixin callback to await for the item to be cached
+    item:ContinueOnItemLoad(function()
+        -- Now the item has been cached, format the output string to use the class colour and print the item link
+        local classColourR, classColourG, classColourB, classColourHex = GetClassColor(TeebsClassicDB.realms[realm].characters[character].class:upper())
+        print(string.format("%s%s", "|c" .. classColourHex, character), string.format("%s%s", "|cffffffff", "has"), item:GetItemLink(), "equipped in bag slot", slotNumber)
+    end)
 end
 
 -- Command function for retrieving a characters current and rested experience %s from the cache
