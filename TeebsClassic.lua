@@ -356,6 +356,11 @@ function cmdupdateCharacterLevel(realm, character)
         print("Unknown Charater", character)
         return
     end
+    -- Check if the slot is recognised
+    if TeebsClassicDB.realms[realm].characters[character].level == nil then
+        print("Level data not cached")
+        return
+    end
 end
 
 -- Command function for retrieving a characters currencies from the cache
