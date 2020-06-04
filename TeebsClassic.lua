@@ -82,6 +82,11 @@ function colourText(colour, text)
     return string.format("%s%s", "|c" .. colour, text)
 end
 
+-- Capitalise first letter of string
+function upperCaseFirst(inputString)
+    return inputString:sub(1,1):upper()..inputString:sub(2)
+end
+
 
 ------------------------------------------------------------------
 -- Slash Command Registration and Functions
