@@ -1,8 +1,8 @@
 ------------------------------------------------------------------
 -- Globals Variables
 ------------------------------------------------------------------
-playerRealm = ""
-playerName = ""
+CURRENT_REALM = ""
+CURRENT_CHARACTER_NAME = ""
 
 ------------------------------------------------------------------
 -- Addon Core Creation, Event Registration And Handling
@@ -23,8 +23,8 @@ frame:RegisterEvent("PLAYER_XP_UPDATE")
 frame:SetScript("OnEvent", function(self, event, ...)
     -- Addon Loaded Trigger
     if event == "ADDON_LOADED" then
-        playerRealm = GetRealmName():lower()
-        playerName = UnitName("player"):lower()
+        CURRENT_REALM = GetRealmName():lower()
+        CURRENT_CHARACTER_NAME = UnitName("player"):lower()
         initialiseDB()
     end
 
@@ -153,42 +153,42 @@ function initialiseDB()
     end
 
     -- Check if there is a database entry for the current realm
-    if TeebsClassicDB.realms[playerRealm] == nil then
-        TeebsClassicDB.realms[playerRealm] = {}
-        TeebsClassicDB.realms[playerRealm].characters = {}
+    if TeebsClassicDB.realms[CURRENT_REALM] == nil then
+        TeebsClassicDB.realms[CURRENT_REALM] = {}
+        TeebsClassicDB.realms[CURRENT_REALM].characters = {}
     end
 
     -- Check if there is a table entry for the current character in the realm table
-    if TeebsClassicDB.realms[playerRealm].characters[playerName] == nil then
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME] == nil then
         -- Create a table for the character
-        TeebsClassicDB.realms[playerRealm].characters[playerName] = {}
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME] = {}
     end
 
     -- Create each of the variables and tables to store on the character
-    if TeebsClassicDB.realms[playerRealm].characters[playerName].faction == nil then
-        TeebsClassicDB.realms[playerRealm].characters[playerName].faction = UnitFactionGroup("player")
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].faction == nil then
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].faction = UnitFactionGroup("player")
     end
-    if TeebsClassicDB.realms[playerRealm].characters[playerName].class == nil then
-        TeebsClassicDB.realms[playerRealm].characters[playerName].class = UnitClass("player")
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].class == nil then
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].class = UnitClass("player")
     end
-    if TeebsClassicDB.realms[playerRealm].characters[playerName].level == nil then
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].level == nil then
         updateCharacterLevel()
     end
-    if TeebsClassicDB.realms[playerRealm].characters[playerName].currency == nil then
-        TeebsClassicDB.realms[playerRealm].characters[playerName].currency = {}
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].currency == nil then
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].currency = {}
     end
-    if TeebsClassicDB.realms[playerRealm].characters[playerName].gear == nil then
-        TeebsClassicDB.realms[playerRealm].characters[playerName].gear = {}
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].gear == nil then
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].gear = {}
     end
-    if TeebsClassicDB.realms[playerRealm].characters[playerName].bags == nil then
-        TeebsClassicDB.realms[playerRealm].characters[playerName].bags = {}
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].bags == nil then
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].bags = {}
     end
 end
 
 -- Caching of the current characters level
 function updateCharacterLevel()
     -- Set the character level in the DB
-    TeebsClassicDB.realms[playerRealm].characters[playerName].level = UnitLevel("player")
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].level = UnitLevel("player")
 end
 
 -- Caching of the current characters experience (current + rested %s)
@@ -196,8 +196,8 @@ function updateCharacterExperience()
     -- Check the player level, if 60 
     if UnitLevel("player") == 60 then
         -- As the character is level 60, set the data fields to 0 as no more rested or exp can be gained
-        TeebsClassicDB.realms[playerRealm].characters[playerName].experienceCurrentPercentage = 0
-        TeebsClassicDB.realms[playerRealm].characters[playerName].experienceRestedPercentage = 0
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].experienceCurrentPercentage = 0
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].experienceRestedPercentage = 0
         return  -- Return as we've got our data
     end
 
@@ -215,8 +215,8 @@ function updateCharacterExperience()
     end
 
     -- Set the data fields for the character
-    TeebsClassicDB.realms[playerRealm].characters[playerName].experienceCurrentPercentage = expPercentage
-    TeebsClassicDB.realms[playerRealm].characters[playerName].experienceRestedPercentage = restedPercentage
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].experienceCurrentPercentage = expPercentage
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].experienceRestedPercentage = restedPercentage
 end
 
 -- Caching of the current characters equipped items
@@ -225,9 +225,9 @@ function updateCharacterItemSlots(slot)
     for i = 0, 19 do
         local itemID, unknown = GetInventoryItemID("player", i)
         if itemID == nil then
-            TeebsClassicDB.realms[playerRealm].characters[playerName].gear[tostring(i)] = 0
+            TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].gear[tostring(i)] = 0
         else
-            TeebsClassicDB.realms[playerRealm].characters[playerName].gear[tostring(i)] = itemID
+            TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].gear[tostring(i)] = itemID
         end
     end
 
@@ -235,9 +235,9 @@ function updateCharacterItemSlots(slot)
     for i = 1, 4 do
         local itemID, unknown = GetInventoryItemID("player", (i + 19))
         if itemID == nil then
-            TeebsClassicDB.realms[playerRealm].characters[playerName].bags[tostring(i)] = 0
+            TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].bags[tostring(i)] = 0
         else
-            TeebsClassicDB.realms[playerRealm].characters[playerName].bags[tostring(i)] = itemID
+            TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].bags[tostring(i)] = itemID
         end
     end
 end
@@ -248,9 +248,9 @@ function updateCharacterMoney()
     local copper = GetMoney()
 
     -- Map to our current table
-    TeebsClassicDB.realms[playerRealm].characters[playerName].currency["gold"] = math.floor(copper / 100 / 100)
-    TeebsClassicDB.realms[playerRealm].characters[playerName].currency["silver"] = math.floor((copper / 100) % 100)
-    TeebsClassicDB.realms[playerRealm].characters[playerName].currency["copper"] = copper % 100
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].currency["gold"] = math.floor(copper / 100 / 100)
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].currency["silver"] = math.floor((copper / 100) % 100)
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].currency["copper"] = copper % 100
 end
 
 -- Caching of the current characters stats - Currently unused
@@ -263,11 +263,11 @@ function updateCharacterStats()
     local _, spirit = UnitStat("player", 5)
 
     -- Set the character stats in the stats table
-    TeebsClassicDB.realms[playerRealm].characters[playerName].stats["stamina"] = stamina
-    TeebsClassicDB.realms[playerRealm].characters[playerName].stats["agility"] = agility
-    TeebsClassicDB.realms[playerRealm].characters[playerName].stats["strength"] = strength
-    TeebsClassicDB.realms[playerRealm].characters[playerName].stats["intellect"] = intellect
-    TeebsClassicDB.realms[playerRealm].characters[playerName].stats["spirit"] = spirit
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].stats["stamina"] = stamina
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].stats["agility"] = agility
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].stats["strength"] = strength
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].stats["intellect"] = intellect
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].stats["spirit"] = spirit
 end
 
 
@@ -277,25 +277,25 @@ end
 -- Command function for retrieving a characters equipped items from the cache
 function cmdGetCharacterItemSlot(character, slotNumber)
     -- Check the character exists
-    if TeebsClassicDB.realms[playerRealm].characters[character] == nil then
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
         return
     end
     -- Check if the slot is recognised
-    if TeebsClassicDB.realms[playerRealm].characters[character].gear[slotNumber] == nil then
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].gear[slotNumber] == nil then
         print("Unknwon Slot", slotNumber)
         return
     end
     -- Check we have anything equipped in the desired slot
-    if TeebsClassicDB.realms[playerRealm].characters[character].gear[slotNumber] == 0 then
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].gear[slotNumber] == 0 then
         print("Item Slot Empty")
     end
     -- Load the item data
-    local item = Item:CreateFromItemID(TeebsClassicDB.realms[playerRealm].characters[character].gear[slotNumber])
+    local item = Item:CreateFromItemID(TeebsClassicDB.realms[CURRENT_REALM].characters[character].gear[slotNumber])
     -- Use the Item Mixin callback to await for the item to be cached
     item:ContinueOnItemLoad(function()
         -- Now the item has been cached, format the output string to use the class colour and print the item link
-        local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[playerRealm].characters[character].class:upper())
+        local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
         print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " has ") ..  item:GetItemLink() .. colourText("ffffff00", " equipped in gear slot " .. slotNumber))
     end)
 end
@@ -303,25 +303,25 @@ end
 -- Command function for retrieving a characters equipped bags from the cache
 function cmdGetCharacterBags(character, slotNumber)
     -- Check the character exists
-    if TeebsClassicDB.realms[playerRealm].characters[character] == nil then
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
         return
     end
     -- Check if the slot is recognised
-    if TeebsClassicDB.realms[playerRealm].characters[character].bags[slotNumber] == nil then
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].bags[slotNumber] == nil then
         print("Unknwon Bag Slot", slotNumber)
         return
     end
     -- Check we have anything equipped in the desired slot
-    if TeebsClassicDB.realms[playerRealm].characters[character].bags[slotNumber] == 0 then
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].bags[slotNumber] == 0 then
         print("Bag Slot Empty")
     end
     -- Load the item data
-    local item = Item:CreateFromItemID(TeebsClassicDB.realms[playerRealm].characters[character].bags[slotNumber])
+    local item = Item:CreateFromItemID(TeebsClassicDB.realms[CURRENT_REALM].characters[character].bags[slotNumber])
     -- Use the Item Mixin callback to await for the item to be cached
     item:ContinueOnItemLoad(function()
         -- Now the item has been cached, format the output string to use the class colour and print the item link
-        local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[playerRealm].characters[character].class:upper())
+        local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
         print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " has ") ..  item:GetItemLink() .. colourText("ffffff00", " equipped in bag slot " .. slotNumber))
     end)
 end
@@ -329,21 +329,21 @@ end
 -- Command function for retrieving a characters current and rested experience %s from the cache
 function cmdupdateCharacterExperience(character)
     -- Check the character exists
-    if TeebsClassicDB.realms[playerRealm].characters[character] == nil then
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
         return
     end
     -- Check if the slot is recognised
-    if TeebsClassicDB.realms[playerRealm].characters[character].experienceCurrentPercentage == nil or TeebsClassicDB.realms[playerRealm].characters[character].experienceRestedPercentage == nil then
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].experienceCurrentPercentage == nil or TeebsClassicDB.realms[CURRENT_REALM].characters[character].experienceRestedPercentage == nil then
         print("Experience data not cached")
         return
     end
     -- Get the Character details
-    local currentLevel = TeebsClassicDB.realms[playerRealm].characters[character].level
-    local currentPercent = TeebsClassicDB.realms[playerRealm].characters[character].experienceCurrentPercentage
-    local currentRestedPercent = TeebsClassicDB.realms[playerRealm].characters[character].experienceRestedPercentage
+    local currentLevel = TeebsClassicDB.realms[CURRENT_REALM].characters[character].level
+    local currentPercent = TeebsClassicDB.realms[CURRENT_REALM].characters[character].experienceCurrentPercentage
+    local currentRestedPercent = TeebsClassicDB.realms[CURRENT_REALM].characters[character].experienceRestedPercentage
     -- Get the class colour
-    local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[playerRealm].characters[character].class:upper())
+    local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
     -- Output the results in-game
     print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " is " .. currentPercent .. "% into level " .. currentLevel .. " and has ") .. colourText(currentRestedPercent == 150 and "ffff0000" or "ffffff00", currentRestedPercent .. "%") .. colourText("ffffff00", " rested experience remaining"))
 end
@@ -351,19 +351,19 @@ end
 -- Command function for retrieving a characters level from the cache
 function cmdupdateCharacterLevel(character)
     -- Check the character exists
-    if TeebsClassicDB.realms[playerRealm].characters[character] == nil then
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
         return
     end
     -- Check if the slot is recognised
-    if TeebsClassicDB.realms[playerRealm].characters[character].level == nil then
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].level == nil then
         print("Level data not cached")
         return
     end
     -- Get the Character details
-    local currentLevel = TeebsClassicDB.realms[playerRealm].characters[character].level
+    local currentLevel = TeebsClassicDB.realms[CURRENT_REALM].characters[character].level
     -- Get the class colour
-    local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[playerRealm].characters[character].class:upper())
+    local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
     -- Output the results in-game
     print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " is currently level " .. currentLevel))
 end
