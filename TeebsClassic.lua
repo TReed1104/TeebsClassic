@@ -23,6 +23,8 @@ frame:RegisterEvent("PLAYER_XP_UPDATE")
 frame:SetScript("OnEvent", function(self, event, ...)
     -- Addon Loaded Trigger
     if event == "ADDON_LOADED" then
+        playerRealm = GetRealmName():lower()
+        playerName = UnitName("player"):lower()
         initialiseDB()
     end
 
