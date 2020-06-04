@@ -314,7 +314,7 @@ function cmdGetCharacterItemSlot(realm, character, slotNumber)
     item:ContinueOnItemLoad(function()
         -- Now the item has been cached, format the output string to use the class colour and print the item link
         local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[realm].characters[character].class:upper())
-        print(colourText(classColourHex, character) .. colourText("ffffff00", " has ") ..  item:GetItemLink() .. colourText("ffffff00", " equipped in gear slot " .. slotNumber))
+        print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " has ") ..  item:GetItemLink() .. colourText("ffffff00", " equipped in gear slot " .. slotNumber))
     end)
 end
 
@@ -340,7 +340,7 @@ function cmdGetCharacterBags(realm, character, slotNumber)
     item:ContinueOnItemLoad(function()
         -- Now the item has been cached, format the output string to use the class colour and print the item link
         local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[realm].characters[character].class:upper())
-        print(colourText(classColourHex, character) .. colourText("ffffff00", " has ") ..  item:GetItemLink() .. colourText("ffffff00", " equipped in bag slot " .. slotNumber))
+        print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " has ") ..  item:GetItemLink() .. colourText("ffffff00", " equipped in bag slot " .. slotNumber))
     end)
 end
 
@@ -363,7 +363,7 @@ function cmdupdateCharacterExperience(realm, character)
     -- Get the class colour
     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[realm].characters[character].class:upper())
     -- Output the results in-game
-    print(colourText(classColourHex, character) .. colourText("ffffff00", " is " .. currentPercent .. "% into level " .. currentLevel .. " and has ") .. colourText(currentRestedPercent == 150 and "ffff0000" or "ffffff00", currentRestedPercent .. "%") .. colourText("ffffff00", " rested experience remaining"))
+    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " is " .. currentPercent .. "% into level " .. currentLevel .. " and has ") .. colourText(currentRestedPercent == 150 and "ffff0000" or "ffffff00", currentRestedPercent .. "%") .. colourText("ffffff00", " rested experience remaining"))
 end
 
 -- Command function for retrieving a characters level from the cache
@@ -383,7 +383,7 @@ function cmdupdateCharacterLevel(realm, character)
     -- Get the class colour
     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[realm].characters[character].class:upper())
     -- Output the results in-game
-    print(colourText(classColourHex, character) .. colourText("ffffff00", " is currently level " .. currentLevel))
+    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " is currently level " .. currentLevel))
 end
 
 -- Command function for retrieving a characters currencies from the cache
