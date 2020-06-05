@@ -5,6 +5,6 @@
 ## DefaultState: Enabled
 
 ## Title: TeebsHelper
-## Data dumper for hidden stats and account statistics (gold, honor, etc.)
+## Data caching for character details and quick character data retrieval
 
 TeebsClassic.lua
