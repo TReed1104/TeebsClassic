@@ -377,4 +377,9 @@ function cmdGetCharacterGold(character)
         print("Unknown Charater", character)
         return
     end
+    -- Check if the currency data has been recorded
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].currency == nil then
+        print("Currency data not cached")
+        return
+    end
 end
