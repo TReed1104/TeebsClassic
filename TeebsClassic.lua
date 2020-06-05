@@ -389,4 +389,5 @@ function cmdGetCharacterGold(character)
     end
     -- Take a local copy of the currency
     local currencyData = TeebsClassicDB.realms[CURRENT_REALM].characters[character].currency
+    print(formatCurrencyData(currencyData))
 end
