@@ -95,6 +95,11 @@ function upperCaseFirst(inputString)
     return inputString:sub(1,1):upper()..inputString:sub(2)
 end
 
+-- Print currency data formatter
+function formatCurrencyData(currencyData)
+    return string.format("%ig %is %ic", currencyData["gold"], currencyData["silver"], currencyData["copper"])
+end
+
 
 ------------------------------------------------------------------
 -- Slash Command Registration and Functions
