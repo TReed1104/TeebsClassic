@@ -371,4 +371,10 @@ end
 -- Command function for retrieving a characters currencies from the cache
 function cmdGetCharacterGold(character)
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - getCharacterGold()"))
+
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
 end
