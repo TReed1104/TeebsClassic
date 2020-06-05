@@ -387,4 +387,7 @@ function cmdGetCharacterGold(character)
         print("Currency data not cached")
         return
     end
+    -- Take a local copy of the currency
+    local currencyData = TeebsClassicDB.realms[CURRENT_REALM].characters[character].currency
+    print(currencyData["gold"], currencyData["silver"], currencyData["copper"])
 end
