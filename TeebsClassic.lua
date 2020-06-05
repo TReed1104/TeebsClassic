@@ -389,5 +389,8 @@ function cmdGetCharacterGold(character)
     end
     -- Take a local copy of the currency
     local currencyData = TeebsClassicDB.realms[CURRENT_REALM].characters[character].currency
-    print(formatCurrencyData(currencyData))
+    -- Get the class colour
+    local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
+    -- Output the results in-game
+    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " has " .. formatCurrencyData(currencyData)))
 end
