@@ -286,6 +286,11 @@ function cmdGetCharacterItemSlot(character, slotNumber)
         print("Unknown Charater", character)
         return
     end
+    -- Check a slot number was supplied
+    if slotNumber == nil then
+        print("No Equipment Slot Supplied")
+        return
+    end
     -- Check if the slot is recognised
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character].gear[slotNumber] == nil then
         print("Unknwon Slot", slotNumber)
@@ -310,6 +315,11 @@ function cmdGetCharacterBags(character, slotNumber)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
+        return
+    end
+    -- Check a slot number was supplied
+    if slotNumber == nil then
+        print("No Bag Slot Supplied")
         return
     end
     -- Check if the slot is recognised
