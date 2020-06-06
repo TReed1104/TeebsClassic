@@ -412,3 +412,7 @@ function cmdGetCharacterGold(character)
     -- Output the results in-game
     print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " has " .. formatCurrencyData(currencyData)))
 end
+
+-- Command function for retrieval all equipment slots for a character
+function cmdGetAllCharacterItemSlots(character)
+end
