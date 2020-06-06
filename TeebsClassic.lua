@@ -137,6 +137,16 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
         cmdupdateCharacterLevel(messageSplit[2])
     elseif messageSplit[1] == "get-gold" then
         cmdGetCharacterGold(messageSplit[2])
+    elseif messageSplit[1] == "get-slot-all" then
+        -- TODO
+    elseif messageSplit[1] == "get-bags-all" then
+        -- TODO
+    elseif messageSplit[1] == "get-exp-all" then
+        -- TODO
+    elseif messageSplit[1] == "get-level-all" then
+        -- TODO
+    elseif messageSplit[1] == "get-gold-all" then
+        -- TODO
     else
         print("Unknown Command", messageSplit[1])
     end
