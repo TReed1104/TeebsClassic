@@ -415,4 +415,9 @@ end
 
 -- Command function for retrieval all equipment slots for a character
 function cmdGetAllCharacterItemSlots(character)
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
 end
