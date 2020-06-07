@@ -309,6 +309,7 @@ function cmdGetCharacterItemSlot(character, slotNumber)
     -- Check we have anything equipped in the desired slot
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character].gear[slotNumber] == 0 then
         print("Item Slot Empty")
+        return
     end
     -- Load the item data
     local item = Item:CreateFromItemID(TeebsClassicDB.realms[CURRENT_REALM].characters[character].gear[slotNumber])
