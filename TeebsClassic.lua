@@ -427,6 +427,9 @@ function cmdGetAllCharacterItemSlots(character)
     for slotNumber, itemID in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters[character].gear) do
         -- Check if the slot is recognised
         if TeebsClassicDB.realms[CURRENT_REALM].characters[character].gear[slotNumber] then
+            -- Check we have anything equipped in the desired slot
+            if TeebsClassicDB.realms[CURRENT_REALM].characters[character].gear[slotNumber] > 0 then
+            end
         end
     end
 end
