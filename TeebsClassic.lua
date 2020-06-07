@@ -423,4 +423,7 @@ function cmdGetAllCharacterItemSlots(character)
         print("Unknown Charater", character)
         return
     end
+    -- For each equipment slot in the gear table, grab the item (if its not empty and the id is not 0) and print it like we do with get-slot
+    for slotNumber, itemID in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters[character].gear) do
+    end
 end
