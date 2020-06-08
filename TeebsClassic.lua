@@ -144,7 +144,7 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
     elseif messageSplit[1] == "get-exp-all" then
         cmdGetAllCharacterExperience()
     elseif messageSplit[1] == "get-level-all" then
-        -- TODO
+        cmdGetAllCharacterLevels()
     elseif messageSplit[1] == "get-gold-all" then
         -- TODO
     else
