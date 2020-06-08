@@ -130,7 +130,7 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
     if messageSplit[1] == "get-slot" then
         cmdGetCharacterItemSlot(messageSplit[2], messageSplit[3])
     elseif messageSplit[1] == "get-bags" then
-        cmdGetCharacterBags(messageSplit[2], messageSplit[3])
+        cmdGetCharacterBag(messageSplit[2], messageSplit[3])
     elseif messageSplit[1] == "get-exp" then
         cmdupdateCharacterExperience(messageSplit[2])
     elseif messageSplit[1] == "get-level" then
@@ -322,7 +322,7 @@ function cmdGetCharacterItemSlot(character, slotNumber)
 end
 
 -- Command function for retrieving a characters equipped bags from the cache
-function cmdGetCharacterBags(character, slotNumber)
+function cmdGetCharacterBag(character, slotNumber)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
