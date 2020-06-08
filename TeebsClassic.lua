@@ -466,3 +466,7 @@ function cmdGetAllCharacterBags(character)
         end
     end
 end
+
+-- Command function for retrieving the current and rested experience %s for all tracked characters on the realm
+function cmdGetAllCharacterExperience(character)
+end
