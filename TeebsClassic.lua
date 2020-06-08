@@ -140,7 +140,7 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
     elseif messageSplit[1] == "get-slot-all" then
         cmdGetAllCharacterItemSlots(messageSplit[2])
     elseif messageSplit[1] == "get-bags-all" then
-        -- TODO
+        cmdGetAllCharacterBags(messageSplit[2])
     elseif messageSplit[1] == "get-exp-all" then
         -- TODO
     elseif messageSplit[1] == "get-level-all" then
