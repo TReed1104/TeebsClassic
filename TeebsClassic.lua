@@ -469,4 +469,5 @@ end
 
 -- Command function for retrieving the current and rested experience %s for all tracked characters on the realm
 function cmdGetAllCharacterExperience()
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetAllCharacterExperience()"))
 end
