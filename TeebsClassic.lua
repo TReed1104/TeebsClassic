@@ -117,15 +117,30 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
         -- [3] - Slot/value - Might not always been required, depending on the function
     local messageSplit = splitString(msg)
 
-    -- Check we have our three inputs
-    if messageSplit[1] == nil or messageSplit[2] == nil then
-        print("Unknown Command - Please Check Your Syntax -", msg)
+    -- check we have a usable command and that we have a command option
+    if messageSplit == nil or messageSplit[1] == nil then
+        print("Invalid Command - ", msg)
         return
     end
 
     -- If supplied, force the Character name to lower case behind the scenes
     if messageSplit[2] then
         messageSplit[2] = messageSplit[2]:lower()
+    end
+
+    -- Command parameter checks, sanity check we've got what we need for the command functions
+    if messageSplit[1] == "get-exp" or messageSplit[1] == "get-level" or messageSplit[1] == "get-gold" or messageSplit[1] == "get-slot-all" or messageSplit[1] == "get-bags-all" then
+        -- Check we have the character name
+        if messageSplit[2] == nil then
+            print("You must supply a character name for this command")
+            return
+        end
+    elseif messageSplit[1] == "get-slot" or messageSplit[1] == "get-bag" then
+        -- Check we have the character name and slot/bag index
+        if messageSplit[2] == nil or messageSplit[3] == nil then
+            print("You must supply a character name and item/bag slot index for this command")
+            return
+        end
     end
 
     -- Work out which addon function to use
