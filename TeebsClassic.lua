@@ -471,3 +471,8 @@ end
 function cmdGetAllCharacterExperience()
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetAllCharacterExperience()"))
 end
+
+-- Command function for retrieving the level of every cached character
+function cmdGetAllCharacterLevels()
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetAllCharacterLevels()"))
+end
