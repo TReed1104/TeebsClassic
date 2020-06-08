@@ -146,7 +146,7 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
     elseif messageSplit[1] == "get-level-all" then
         cmdGetAllCharacterLevels()
     elseif messageSplit[1] == "get-gold-all" then
-        -- TODO
+        cmdGetAllCharactersGold()
     else
         print("Unknown Command", messageSplit[1])
     end
