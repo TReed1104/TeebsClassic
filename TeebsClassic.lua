@@ -476,3 +476,8 @@ end
 function cmdGetAllCharacterLevels()
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetAllCharacterLevels()"))
 end
+
+-- Command function for retrieving the gold of every character on the realm
+function cmdGetAllCharactersGold()
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetAllCharactersGold()"))
+end
