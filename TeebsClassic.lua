@@ -443,4 +443,10 @@ end
 -- Command function for retrieving all the bags cached equipped by a characters
 function cmdGetAllCharacterBags(character)
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetAllCharacterBags()"))
+
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
 end
