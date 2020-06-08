@@ -439,3 +439,8 @@ function cmdGetAllCharacterItemSlots(character)
         end
     end
 end
+
+-- Command function for retrieving all the bags cached equipped by a characters
+function cmdGetAllCharacterBags(character)
+
+end
