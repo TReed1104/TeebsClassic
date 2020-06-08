@@ -138,13 +138,13 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
     elseif messageSplit[1] == "get-gold" then
         cmdGetCharacterGold(messageSplit[2])
     elseif messageSplit[1] == "get-slot-all" then
-        cmdGetAllCharacterItemSlots(messageSplit[2])
+        cmdGetAllCharactersItemSlots(messageSplit[2])
     elseif messageSplit[1] == "get-bags-all" then
-        cmdGetAllCharacterBags(messageSplit[2])
+        cmdGetAllCharactersBags(messageSplit[2])
     elseif messageSplit[1] == "get-exp-all" then
-        cmdGetAllCharacterExperience()
+        cmdGetAllCharactersExperience()
     elseif messageSplit[1] == "get-level-all" then
-        cmdGetAllCharacterLevels()
+        cmdGetAllCharactersLevels()
     elseif messageSplit[1] == "get-gold-all" then
         cmdGetAllCharactersGold()
     else
@@ -415,7 +415,7 @@ function cmdGetCharacterGold(character)
 end
 
 -- Command function for retrieval all equipment slots for a character
-function cmdGetAllCharacterItemSlots(character)
+function cmdGetAllCharactersItemSlots(character)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
@@ -441,7 +441,7 @@ function cmdGetAllCharacterItemSlots(character)
 end
 
 -- Command function for retrieving all the bags cached equipped by a characters
-function cmdGetAllCharacterBags(character)
+function cmdGetAllCharactersBags(character)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
@@ -468,13 +468,13 @@ function cmdGetAllCharacterBags(character)
 end
 
 -- Command function for retrieving the current and rested experience %s for all tracked characters on the realm
-function cmdGetAllCharacterExperience()
-    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetAllCharacterExperience()"))
+function cmdGetAllCharactersExperience()
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetAllCharactersExperience()"))
 end
 
 -- Command function for retrieving the level of every cached character
-function cmdGetAllCharacterLevels()
-    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetAllCharacterLevels()"))
+function cmdGetAllCharactersLevels()
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetAllCharactersLevels()"))
 end
 
 -- Command function for retrieving the gold of every character on the realm
