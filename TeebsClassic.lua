@@ -132,9 +132,9 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
     elseif messageSplit[1] == "get-bag" then
         cmdGetCharacterBag(messageSplit[2], messageSplit[3])
     elseif messageSplit[1] == "get-exp" then
-        cmdupdateCharacterExperience(messageSplit[2])
+        cmdGetCharacterExperience(messageSplit[2])
     elseif messageSplit[1] == "get-level" then
-        cmdupdateCharacterLevel(messageSplit[2])
+        cmdGetCharacterLevel(messageSplit[2])
     elseif messageSplit[1] == "get-gold" then
         cmdGetCharacterGold(messageSplit[2])
     elseif messageSplit[1] == "get-slot-all" then
@@ -353,7 +353,7 @@ function cmdGetCharacterBag(character, slotNumber)
 end
 
 -- Command function for retrieving a characters current and rested experience %s from the cache
-function cmdupdateCharacterExperience(character)
+function cmdGetCharacterExperience(character)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
@@ -375,7 +375,7 @@ function cmdupdateCharacterExperience(character)
 end
 
 -- Command function for retrieving a characters level from the cache
-function cmdupdateCharacterLevel(character)
+function cmdGetCharacterLevel(character)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
