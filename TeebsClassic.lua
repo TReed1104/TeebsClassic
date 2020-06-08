@@ -123,8 +123,10 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
         return
     end
 
-    -- Force the Character name to lower case behind the scenes
-    messageSplit[2] = messageSplit[2]:lower()
+    -- If supplied, force the Character name to lower case behind the scenes
+    if messageSplit[2] then
+        messageSplit[2] = messageSplit[2]:lower()
+    end
 
     -- Work out which addon function to use
     if messageSplit[1] == "get-slot" then
