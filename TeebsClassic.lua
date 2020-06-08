@@ -449,4 +449,22 @@ function cmdGetAllCharacterBags(character)
         print("Unknown Charater", character)
         return
     end
+
+    -- For each equipment bag in the bags table, grab the item (if its not empty and the id is not 0) and print it like we do with get-slot
+    for slotNumber, itemID in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters[character].bags) do
+        -- Check if the bag slot is recognised
+        if TeebsClassicDB.realms[CURRENT_REALM].characters[character].bags[slotNumber] then
+            -- Check we have anything currently in the desired bag slot
+            if TeebsClassicDB.realms[CURRENT_REALM].characters[character].bags[slotNumber] > 0 then
+                -- Load the item data
+                local item = Item:CreateFromItemID(itemID)
+                -- Use the Item Mixin callback to await for the item to be cached
+                item:ContinueOnItemLoad(function()
+                    -- Now the item has been cached, format the output string to use the class colour and print the item link
+                    local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
+                    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " has ") ..  item:GetItemLink() .. colourText("ffffff00", " equipped in bag slot " .. slotNumber))
+                end)
+            end
+        end
+    end
 end
