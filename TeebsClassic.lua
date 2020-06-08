@@ -468,5 +468,5 @@ function cmdGetAllCharacterBags(character)
 end
 
 -- Command function for retrieving the current and rested experience %s for all tracked characters on the realm
-function cmdGetAllCharacterExperience(character)
+function cmdGetAllCharacterExperience()
 end
