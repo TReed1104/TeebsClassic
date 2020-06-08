@@ -442,5 +442,5 @@ end
 
 -- Command function for retrieving all the bags cached equipped by a characters
 function cmdGetAllCharacterBags(character)
-
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetAllCharacterBags()"))
 end
