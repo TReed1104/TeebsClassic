@@ -129,7 +129,7 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
     -- Work out which addon function to use
     if messageSplit[1] == "get-slot" then
         cmdGetCharacterItemSlot(messageSplit[2], messageSplit[3])
-    elseif messageSplit[1] == "get-bags" then
+    elseif messageSplit[1] == "get-bag" then
         cmdGetCharacterBag(messageSplit[2], messageSplit[3])
     elseif messageSplit[1] == "get-exp" then
         cmdupdateCharacterExperience(messageSplit[2])
