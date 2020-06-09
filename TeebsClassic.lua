@@ -487,6 +487,10 @@ end
 -- Command function for retrieving the current and rested experience %s for all tracked characters on the realm
 function cmdGetAllCharactersExperience()
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetAllCharactersExperience()"))
+
+    -- For every character cached for the current realm, print their current and rested exp %s
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+    end
 end
 
 -- Command function for retrieving the level of every cached character
