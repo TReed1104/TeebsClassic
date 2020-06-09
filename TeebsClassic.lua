@@ -490,6 +490,10 @@ function cmdGetAllCharactersExperience()
 
     -- For every character cached for the current realm, print their current and rested exp %s
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        -- Get the class colour
+        local _, _, _, classColourHex = GetClassColor(characterData.class:upper())
+        -- Output the results in-game
+        print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText("ffffff00", " is " .. characterData.experienceCurrentPercentage .. "% into level " .. characterData.level .. " and has ") .. colourText(characterData.experienceRestedPercentage == 150 and "ffff0000" or "ffffff00", characterData.experienceRestedPercentage .. "%") .. colourText("ffffff00", " rested experience remaining"))
     end
 end
 
