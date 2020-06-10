@@ -291,6 +291,8 @@ end
 
 -- Caching the professions of the current character
 function updateCharacterProfessions()
+    for skillIndex = 1, GetNumSkillLines() do
+    end
 end
 
 -- Caching of the current characters stats - Currently unused
