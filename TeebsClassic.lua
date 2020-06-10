@@ -288,6 +288,10 @@ function updateCharacterMoney()
     TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].currency["copper"] = copper % 100
 end
 
+-- Caching the professions of the current character
+function updateCharacterProfessions()
+end
+
 -- Caching of the current characters stats - Currently unused
 function updateCharacterStats()
     -- Get the character stats
