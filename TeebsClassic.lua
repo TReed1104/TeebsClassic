@@ -303,21 +303,23 @@ function updateCharacterProfessions()
     for skillIndex = 1, GetNumSkillLines() do
         local skillName, _, _, skillRank, _, _, skillMaxRank, isAbandonable, _, _, _, _, _ = GetSkillLineInfo(skillIndex)
         if isAbandonable then
-            print(skillName, skillRank ..'/' .. skillMaxRank)
+            if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].professions.primary[skillName] == nil then
+                TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].professions.primary[skillName] = {}
+            end
+            TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].professions.primary[skillName].current = skillRank
+            TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].professions.primary[skillName].max = skillMaxRank
         end
     end
     
     -- Secondary Professions
     for skillIndex = 1, GetNumSkillLines() do
         local skillName, _, _, skillRank, _, _, skillMaxRank, isAbandonable, _, _, _, _, _ = GetSkillLineInfo(skillIndex)
-        if skillName == "Cooking" then
-            print("Cooking", skillRank .. '/' .. skillMaxRank)
-        end
-        if skillName == "First Aid" then
-            print("First Aid", skillRank .. '/' .. skillMaxRank)
-        end
-        if skillName == "Fishing" then
-            print("Fishing", skillRank .. '/' .. skillMaxRank)
+        if skillName == "Cooking" or skillName == "First Aid" or skillName == "Fishing" then
+            if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].professions.secondary[skillName] == nil then
+                TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].professions.secondary[skillName] = {}
+            end
+            TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].professions.secondary[skillName].current = skillRank
+            TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].professions.secondary[skillName].max = skillMaxRank
         end
     end
 end
