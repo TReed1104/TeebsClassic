@@ -291,10 +291,10 @@ end
 
 -- Caching the professions of the current character
 function updateCharacterProfessions()
-    -- If they dont exist, make the profession data tables
-    if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].professions.primary == nil then
-        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].professions.primary = {}
-    end
+    -- Reset the primary profession table, this is incase the player changes a profession between data caching
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].professions.primary = {}
+
+    -- Check if the secondary professions table exists, create it if not
     if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].professions.secondary == nil then
         TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].professions.secondary = {}
     end
@@ -310,7 +310,7 @@ function updateCharacterProfessions()
             TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].professions.primary[skillName].max = skillMaxRank
         end
     end
-    
+
     -- Secondary Professions
     for skillIndex = 1, GetNumSkillLines() do
         local skillName, _, _, skillRank, _, _, skillMaxRank, isAbandonable, _, _, _, _, _ = GetSkillLineInfo(skillIndex)
