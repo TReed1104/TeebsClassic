@@ -513,4 +513,8 @@ end
 -- Command function for retrieving the gold of every character on the realm
 function cmdGetAllCharactersGold()
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetAllCharactersGold()"))
+
+    -- For every character cached for the current realm, print their current gold, silver and copper
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+    end
 end
