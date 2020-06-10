@@ -520,5 +520,9 @@ function cmdGetAllCharactersGold()
 
     -- For every character cached for the current realm, print their current gold, silver and copper
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        -- Get the class colour
+        local _, _, _, classColourHex = GetClassColor(characterData.class:upper())
+        -- Output the results in-game
+        print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText("ffffff00", " has " .. formatCurrencyData(characterData.currency)))
     end
 end
