@@ -292,6 +292,8 @@ end
 -- Caching the professions of the current character
 function updateCharacterProfessions()
     for skillIndex = 1, GetNumSkillLines() do
+        local skillName, _, _, skillRank, _, _, skillMaxRank, isAbandonable, _, _, _, _, _ = GetSkillLineInfo(skillIndex)
+        print(skillName, skillRank ..'/' .. skillMaxRank)
     end
 end
 
