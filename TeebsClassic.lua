@@ -298,6 +298,20 @@ function updateCharacterProfessions()
             print(skillName, skillRank ..'/' .. skillMaxRank)
         end
     end
+    
+    -- Secondary Professions
+    for skillIndex = 1, GetNumSkillLines() do
+        local skillName, _, _, skillRank, _, _, skillMaxRank, isAbandonable, _, _, _, _, _ = GetSkillLineInfo(skillIndex)
+        if skillName == "Cooking" then
+            print("Cooking", skillRank .. '/' .. skillMaxRank)
+        end
+        if skillName == "First Aid" then
+            print("First Aid", skillRank .. '/' .. skillMaxRank)
+        end
+        if skillName == "Fishing" then
+            print("Fishing", skillRank .. '/' .. skillMaxRank)
+        end
+    end
 end
 
 -- Caching of the current characters stats - Currently unused
