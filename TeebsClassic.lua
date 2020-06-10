@@ -507,6 +507,10 @@ function cmdGetAllCharactersLevels()
 
     -- For every character cached for the current realm, print their current level
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        -- Get the class colour
+        local _, _, _, classColourHex = GetClassColor(characterData.class:upper())
+        -- Output the character levels
+        print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText("ffffff00", " is level " .. characterData.level))
     end
 end
 
