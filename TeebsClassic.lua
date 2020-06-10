@@ -504,6 +504,10 @@ end
 -- Command function for retrieving the level of every cached character
 function cmdGetAllCharactersLevels()
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetAllCharactersLevels()"))
+
+    -- For every character cached for the current realm, print their current level
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+    end
 end
 
 -- Command function for retrieving the gold of every character on the realm
