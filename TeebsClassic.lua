@@ -470,6 +470,10 @@ function cmdGetCharacterGold(character)
     print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " has " .. formatCurrencyData(currencyData)))
 end
 
+-- Command function for retrieving a characters profession skill levels
+function cmdGetCharacterProfessions(character)
+end
+
 -- Command function for retrieval all equipment slots for a character
 function cmdGetAllCharactersItemSlots(character)
     -- Check the character exists
