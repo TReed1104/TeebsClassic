@@ -472,6 +472,7 @@ end
 
 -- Command function for retrieving a characters profession skill levels
 function cmdGetCharacterProfessions(character)
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterProfessions()"))
 end
 
 -- Command function for retrieval all equipment slots for a character
