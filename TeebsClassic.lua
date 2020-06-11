@@ -155,6 +155,8 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
         cmdGetCharacterLevel(messageSplit[2])
     elseif messageSplit[1] == "get-gold" then
         cmdGetCharacterGold(messageSplit[2])
+    elseif messageSplit[1] == "get-professions" then
+        cmdGetCharacterProfessions(messageSplit[2])
     elseif messageSplit[1] == "get-slot-all" then
         cmdGetAllCharactersItemSlots(messageSplit[2])
     elseif messageSplit[1] == "get-bags-all" then
