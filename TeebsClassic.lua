@@ -49,9 +49,9 @@ frame:SetScript("OnEvent", function(self, event, ...)
         updateCharacterLevel()
     end
 
-    -- Player Skill Update Trigger Test
+    -- Player Skill Update Trigger
     if event == "TRADE_SKILL_UPDATE" then
-        print("TRADE_SKILL_UPDATE")
+        updateCharacterProfessions()
     end
 
     -- Player Current Change Trigger
