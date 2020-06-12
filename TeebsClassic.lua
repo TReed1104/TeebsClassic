@@ -18,6 +18,7 @@ frame:RegisterEvent("PLAYER_LEVEL_UP")
 frame:RegisterEvent("PLAYER_MONEY")
 frame:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
 frame:RegisterEvent("PLAYER_XP_UPDATE")
+frame:RegisterEvent("TRADE_SKILL_UPDATE")
 
 -- Handle Events Triggering
 frame:SetScript("OnEvent", function(self, event, ...)
@@ -46,6 +47,11 @@ frame:SetScript("OnEvent", function(self, event, ...)
     if event == "PLAYER_LEVEL_UP" then
         updateCharacterExperience()
         updateCharacterLevel()
+    end
+
+    -- Player Skill Update Trigger Test
+    if event == "TRADE_SKILL_UPDATE" then
+        print("TRADE_SKILL_UPDATE")
     end
 
     -- Player Current Change Trigger
