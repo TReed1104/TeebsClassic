@@ -481,6 +481,12 @@ end
 -- Command function for retrieving a characters profession skill levels
 function cmdGetCharacterProfessions(character)
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterProfessions()"))
+
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
 end
 
 -- Command function for retrieval all equipment slots for a character
