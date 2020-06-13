@@ -487,6 +487,12 @@ function cmdGetCharacterProfessions(character)
         print("Unknown Charater", character)
         return
     end
+
+    -- Check if the currency data has been recorded
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].professions == nil then
+        print("Professions data not cached")
+        return
+    end
 end
 
 -- Command function for retrieval all equipment slots for a character
