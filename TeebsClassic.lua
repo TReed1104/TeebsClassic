@@ -502,6 +502,10 @@ function cmdGetCharacterProfessions(character)
 
     -- Iterate through each profession type (primary, secondary, etc) stored in the data table
     for professionType, professionTypeTables in pairs(characterProfessionsTable) do
+        -- Iterator through each profession in each profession type - This is what actually catches the profession data
+        for profession, professionData in pairs(professionTypeTables) do
+            print(profession, professionData.current, professionData.max)
+        end
     end
 end
 
