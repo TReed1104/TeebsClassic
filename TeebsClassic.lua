@@ -495,7 +495,7 @@ function cmdGetCharacterProfessions(character)
     end
 
     -- Take a local copy of the profession data for quicker access
-    local professionData = TeebsClassicDB.realms[CURRENT_REALM].characters[character].professions
+    local characterProfessionsTable = TeebsClassicDB.realms[CURRENT_REALM].characters[character].professions
 
     -- Get the class colour
     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
