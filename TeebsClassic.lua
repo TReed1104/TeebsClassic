@@ -493,6 +493,10 @@ function cmdGetCharacterProfessions(character)
         print("Professions data not cached")
         return
     end
+
+    -- Take a local copy of the profession data for quicker access
+    local professionData = TeebsClassicDB.realms[CURRENT_REALM].characters[character].professions
+
 end
 
 -- Command function for retrieval all equipment slots for a character
