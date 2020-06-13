@@ -500,6 +500,10 @@ function cmdGetCharacterProfessions(character)
     -- Get the class colour
     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
 
+    -- Iterate through each profession stored in the data table
+    for profession, professionData in pairs(characterProfessionsTable) do
+        print(profession, professionData)
+    end
 end
 
 -- Command function for retrieval all equipment slots for a character
