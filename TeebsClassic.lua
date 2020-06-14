@@ -500,6 +500,20 @@ function cmdGetCharacterProfessions(character)
     -- Get the class colour
     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
 
+    -- Example Profession data table
+    -- ["primary"] = {
+    --     ["Alchemy"] = {
+    --         ["max"] = 75,
+    --         ["current"] = 1,
+    --     }
+    -- },
+    -- ["secondary"] = {
+    --     ["First Aid"] = {
+    --         ["max"] = 225,
+    --         ["current"] = 181,
+    --     }
+    -- },
+
     -- Iterate through each profession type (primary, secondary, etc) stored in the data table
     for professionType, professionTypeTables in pairs(characterProfessionsTable) do
         -- Iterator through each profession in each profession type - This is what actually catches the profession data
