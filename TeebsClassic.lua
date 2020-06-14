@@ -518,7 +518,8 @@ function cmdGetCharacterProfessions(character)
     for professionType, professionTypeTables in pairs(characterProfessionsTable) do
         -- Iterator through each profession in each profession type - This is what actually catches the profession data
         for profession, professionData in pairs(professionTypeTables) do
-            print(profession, professionData.current, professionData.max)
+            -- Output the results in-gam (colour the level output green if its maxed)
+            print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " has " .. profession .. " - ") .. colourText(professionData.current == 300 and "ff00ff00" or "ffffff00", professionData.current .. " / " .. professionData.max))
         end
     end
 end
