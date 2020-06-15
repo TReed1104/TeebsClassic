@@ -614,3 +614,7 @@ function cmdGetAllCharactersGold()
         print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText("ffffff00", " has " .. formatCurrencyData(characterData.currency)))
     end
 end
+
+-- Command function for retrieving the profession data of every character on the realm
+function cmdGetAllCharacterProfessions()
+end
