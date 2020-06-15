@@ -262,6 +262,7 @@ function updateCharacterExperience()
     -- If the API call doesn't return nil, calculate the percentage
     if restedExp then
         restedPercentage = math.floor((restedExp / maxExp) * 100)
+        -- On login the WoW API sometimes returns a value greater than the 150%, this just caps to the capped 150% it actually uses
         if restedPercentage > 150 then
             restedPercentage = 150
         end
