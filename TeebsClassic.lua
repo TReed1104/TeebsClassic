@@ -524,6 +524,16 @@ function cmdGetCharacterProfessions(character)
     end
 end
 
+-- Get only a characters primary professions
+function cmdGetCharacterPrimaryProfessions(character)
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterPrimaryProfessions()"))
+end
+
+-- Get only a characters secondary professions
+function cmdGetCharacterSecondaryProfessions(character)
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterSecondaryProfessions()"))
+end
+
 -- Command function for retrieval all equipment slots for a character
 function cmdGetAllCharactersItemSlots(character)
     -- Check the character exists
