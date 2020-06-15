@@ -441,7 +441,7 @@ function cmdGetCharacterExperience(character)
     -- Get the class colour
     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
     -- Output the results in-game
-    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " is " .. currentPercent .. "% into level " .. currentLevel .. " and has ") .. colourText(currentRestedPercent == 150 and "ffff0000" or "ffffff00", currentRestedPercent .. "%") .. colourText("ffffff00", " rested experience remaining"))
+    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " is " .. currentPercent .. "% into level " .. currentLevel .. " and has ") .. colourText(currentRestedPercent >= 150 and "ffff0000" or "ffffff00", currentRestedPercent .. "%") .. colourText("ffffff00", " rested experience remaining"))
 end
 
 -- Command function for retrieving a characters level from the cache
@@ -639,7 +639,7 @@ function cmdGetAllCharactersExperience()
             print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText("ffffff00", " is level " .. characterData.level))
         else
             -- Output the results in-game, current level, current exp and rested exp
-            print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText("ffffff00", " is " .. characterData.experienceCurrentPercentage .. "% into level " .. characterData.level .. " and has ") .. colourText(characterData.experienceRestedPercentage == 150 and "ffff0000" or "ffffff00", characterData.experienceRestedPercentage .. "%") .. colourText("ffffff00", " rested experience remaining"))
+            print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText("ffffff00", " is " .. characterData.experienceCurrentPercentage .. "% into level " .. characterData.level .. " and has ") .. colourText(characterData.experienceRestedPercentage >= 150 and "ffff0000" or "ffffff00", characterData.experienceRestedPercentage .. "%") .. colourText("ffffff00", " rested experience remaining"))
         end
     end
 end
