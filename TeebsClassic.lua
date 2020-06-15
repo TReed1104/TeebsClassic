@@ -551,6 +551,25 @@ end
 -- Get only a characters secondary professions
 function cmdGetCharacterSecondaryProfessions(character)
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterSecondaryProfessions()"))
+        -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
+    -- Check if the currency data has been recorded
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].professions == nil then
+        print("Professions data not cached")
+        return
+    end
+    -- Take a local copy of the profession data for quicker access
+    local characterSecondaryProfessions = TeebsClassicDB.realms[CURRENT_REALM].characters[character].professions["secondary"]
+    -- Get the class colour
+    local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
+    -- Iterator through each profession in the primary profession table
+    for profession, professionData in pairs(characterSecondaryProfessions) do
+        -- Output the results in-gam (colour the level output green if its maxed)
+        print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " has " .. profession .. " - ") .. colourText(professionData.current == 300 and "ff00ff00" or "ffffff00", professionData.current .. " / " .. professionData.max))
+    end
 end
 
 -- Command function for retrieval all equipment slots for a character
