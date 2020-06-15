@@ -530,7 +530,6 @@ end
 
 -- Get only a characters primary professions
 function cmdGetCharacterPrimaryProfessions(character)
-    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterPrimaryProfessions()"))
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
@@ -554,7 +553,6 @@ end
 
 -- Get only a characters secondary professions
 function cmdGetCharacterSecondaryProfessions(character)
-    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterSecondaryProfessions()"))
         -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
