@@ -670,3 +670,9 @@ end
 function cmdGetAllCharacterProfessions()
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetAllCharacterProfessions()"))
 end
+
+-- Command function for retrieving the primary profession data of every character on the realm
+function cmdGetAllCharacterPrimaryProfessions()
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetAllCharacterPrimaryProfessions()"))
+end
+
