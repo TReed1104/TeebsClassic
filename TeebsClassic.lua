@@ -262,6 +262,9 @@ function updateCharacterExperience()
     -- If the API call doesn't return nil, calculate the percentage
     if restedExp then
         restedPercentage = math.floor((restedExp / maxExp) * 100)
+        if restedPercentage > 150 then
+            restedPercentage = 150
+        end
     end
 
     -- Set the data fields for the character
