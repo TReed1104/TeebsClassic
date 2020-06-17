@@ -673,6 +673,10 @@ end
 -- Command function for retrieving the profession data of every character on the realm
 function cmdGetAllCharacterProfessions()
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetAllCharacterProfessions()"))
+
+    -- For every character cached for the current realm
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+    end
 end
 
 -- Command function for retrieving the primary profession data of every character on the realm
