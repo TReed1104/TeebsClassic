@@ -179,6 +179,10 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
         cmdGetAllCharactersGold()
     elseif messageSplit[1] == "get-professions-all" then
         cmdGetAllCharacterProfessions()
+    elseif messageSplit[1] == "get-primary-professions-all" then
+        cmdGetAllCharacterPrimaryProfessions()
+    elseif messageSplit[1] == "get-secondary-professions-all" then
+        cmdGetAllCharacterSecondaryProfessions()
     else
         print("Unknown Command", messageSplit[1])
     end
