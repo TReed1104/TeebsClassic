@@ -713,5 +713,12 @@ function cmdGetAllCharacterSecondaryProfessions()
 
     -- For every character cached for the current realm
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        -- Get the class colour
+        local _, _, _, classColourHex = GetClassColor(characterData.class:upper())
+        -- Iterator through each profession in each profession type - This is what actually catches the profession data
+        for profession, professionData in pairs(characterData.professions["secondary"]) do
+            -- Output the results in-gam (colour the level output green if its maxed)
+            print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText("ffffff00", " has " .. profession .. " - ") .. colourText(professionData.current == 300 and "ff00ff00" or "ffffff00", professionData.current .. " / " .. professionData.max))
+        end
     end
 end
