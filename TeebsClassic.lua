@@ -40,6 +40,7 @@ frame:SetScript("OnEvent", function(self, event, ...)
         updateCharacterMoney()
         updateCharacterExperience()
         updateCharacterLevel()
+        updateCharacterSpecialisation()
         updateCharacterProfessions()
     end
 
