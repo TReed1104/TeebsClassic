@@ -248,6 +248,10 @@ function updateCharacterLevel()
     TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].level = UnitLevel("player")
 end
 
+-- Caching of the current characters specialisation
+function updateCharacterSpecialisation()
+end
+
 -- Caching of the current characters experience (current + rested %s)
 function updateCharacterExperience()
     -- Check the player level, if 60 
