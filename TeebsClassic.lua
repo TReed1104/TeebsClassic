@@ -251,11 +251,14 @@ end
 
 -- Caching of the current characters specialisation
 function updateCharacterSpecialisation()
+    -- The characters overall talent point distribution
+    local overallTalentDistribution = ""
     -- For all the talent tree tabs
     for tabIndex = 1, GetNumTalentTabs() do
         -- Get the talent tree info
         local talentTreeName, _, talentTreeSpent = GetTalentTabInfo(tabIndex)
-        print(talentTreeName, talentTreeSpent)
+        -- Format the overall spec data
+        overallTalentDistribution = (tabIndex == GetNumTalentTabs()) and (overallTalentDistribution .. talentTreeSpent) or (overallTalentDistribution .. talentTreeSpent .. "/")
         -- Iterate through each talent in the talent tree
         for talentIndex = 1, GetNumTalents(tabIndex) do
             -- Get the talent data
