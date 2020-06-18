@@ -253,6 +253,7 @@ end
 function updateCharacterSpecialisation()
     -- For all the talent tree tabs
     for tabIndex = 1, GetNumTalentTabs() do
+        -- Get the talent tree info
         local talentTreeName, _, talentTreeSpent = GetTalentTabInfo(tabIndex)
         print(talentTreeName, talentTreeSpent)
         -- Iterate through each talent in the talent tree
