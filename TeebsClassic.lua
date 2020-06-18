@@ -269,6 +269,10 @@ function updateCharacterSpecialisation()
             if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation[talentTreeName][tostring(talentTier)] == nil then
                 TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation[talentTreeName][tostring(talentTier)] = {}
             end
+            -- Check theres a table made for this column of the talent tree E.g. Fury -> Tier 1 -> Column 2
+            if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation[talentTreeName][tostring(talentTier)][tostring(talentColumn)] == nil then
+                TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation[talentTreeName][tostring(talentTier)][tostring(talentColumn)] = {}
+            end
         end
     end
     TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation["overall"] = overallTalentDistribution
