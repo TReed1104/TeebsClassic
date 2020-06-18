@@ -265,6 +265,10 @@ function updateCharacterSpecialisation()
         for talentIndex = 1, GetNumTalents(tabIndex) do
             -- Get the talent data
             local talentName, _, talentTier, talentColumn, talentRank, talentMaxRank = GetTalentInfo(tabIndex, talentIndex)
+            -- Check theres a table made for this tier of the talent tree E.g. Fury -> Tier 1
+            if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation[talentTreeName][tostring(talentTier)] == nil then
+                TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation[talentTreeName][tostring(talentTier)] = {}
+            end
         end
     end
     TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation["overall"] = overallTalentDistribution
