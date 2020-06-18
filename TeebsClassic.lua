@@ -267,6 +267,7 @@ function updateCharacterSpecialisation()
             print(name, rank, maxRank)
         end
     end
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation["overall"] = overallTalentDistribution
 end
 
 -- Caching of the current characters experience (current + rested %s)
