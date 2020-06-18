@@ -264,7 +264,7 @@ function updateCharacterSpecialisation()
         -- Iterate through each talent in the talent tree
         for talentIndex = 1, GetNumTalents(tabIndex) do
             -- Get the talent data
-            local talentName, _, _, _, talentRank, talentMaxRank = GetTalentInfo(tabIndex, talentIndex)
+            local talentName, _, talentTier, talentColumn, talentRank, talentMaxRank = GetTalentInfo(tabIndex, talentIndex)
         end
     end
     TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation["overall"] = overallTalentDistribution
