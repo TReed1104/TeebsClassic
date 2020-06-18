@@ -273,6 +273,8 @@ function updateCharacterSpecialisation()
             if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation[talentTreeName][tostring(talentTier)][tostring(talentColumn)] == nil then
                 TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation[talentTreeName][tostring(talentTier)][tostring(talentColumn)] = {}
             end
+            -- Record the data for this talent -> name, current rank and max rank
+            TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation[talentTreeName][tostring(talentTier)][tostring(talentColumn)] = { name = talentName, currentRank = talentRank, maxRank = talentMaxRank }
         end
     end
     TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation["overall"] = overallTalentDistribution
