@@ -513,10 +513,12 @@ end
 
 -- Command function for retrieving a characters spec overview
 function cmdGetCharacterSpecialisationOverview(character)
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterSpecialisationOverview()"))
 end
 
 -- Command function for retrieving a characters spec breakdown
 function cmdGetCharacterSpecialisationBreakdown(character)
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterSpecialisationBreakdown()"))
 end
 
 -- Command function for retrieving a characters currencies from the cache
