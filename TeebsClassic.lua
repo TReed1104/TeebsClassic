@@ -479,7 +479,7 @@ function cmdGetCharacterExperience(character)
         print("Unknown Charater", character)
         return
     end
-    -- Check if the slot is recognised
+    -- Check if the character experience data has been cached
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character].experienceCurrentPercentage == nil or TeebsClassicDB.realms[CURRENT_REALM].characters[character].experienceRestedPercentage == nil then
         print("Experience data not cached")
         return
