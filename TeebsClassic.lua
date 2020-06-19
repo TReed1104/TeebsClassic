@@ -161,7 +161,9 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
     elseif messageSplit[1] == "get-level" then
         cmdGetCharacterLevel(messageSplit[2])
     elseif messageSplit[1] == "get-spec" then
+        cmdGetCharacterSpec(messageSplit[2])
     elseif messageSplit[1] == "get-talents" then
+        cmdGetCharacterTalents(messageSplit[2])
     elseif messageSplit[1] == "get-gold" then
         cmdGetCharacterGold(messageSplit[2])
     elseif messageSplit[1] == "get-professions" then
@@ -512,14 +514,10 @@ function cmdGetCharacterLevel(character)
     print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " is currently level " .. currentLevel))
 end
 
--- Command function for retrieving a characters spec overview
-function cmdGetCharacterSpecialisationOverview(character)
-    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterSpecialisationOverview()"))
+function cmdGetCharacterSpec(character)
 end
 
--- Command function for retrieving a characters spec breakdown
-function cmdGetCharacterSpecialisationBreakdown(character)
-    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterSpecialisationBreakdown()"))
+function cmdGetCharacterTalents(character)
 end
 
 -- Command function for retrieving a characters currencies from the cache
