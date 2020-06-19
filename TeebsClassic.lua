@@ -251,7 +251,7 @@ function updateCharacterLevel()
     TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].level = UnitLevel("player")
 end
 
--- Caching of the current characters specialisation
+-- Caching of the current characters talents
 function updateCharacterSpecialisation()
     -- The characters overall talent point distribution
     local overallTalentDistribution = ""
