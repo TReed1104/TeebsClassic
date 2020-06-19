@@ -161,9 +161,9 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
     elseif messageSplit[1] == "get-level" then
         cmdGetCharacterLevel(messageSplit[2])
     elseif messageSplit[1] == "get-spec" then
-        -- TODO
+        cmdGetCharacterSpecialisationOverview(messageSplit[2])
     elseif messageSplit[1] == "get-spec-breakdown" then
-        -- TODO
+        cmdGetCharacterSpecialisationBreakdown(messageSplit[2])
     elseif messageSplit[1] == "get-gold" then
         cmdGetCharacterGold(messageSplit[2])
     elseif messageSplit[1] == "get-professions" then
