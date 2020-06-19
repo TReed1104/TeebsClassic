@@ -519,6 +519,7 @@ function cmdGetCharacterSpec(character)
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterSpec()"))
 end
 
+-- Command function for retrieving a characters talent distribution
 function cmdGetCharacterTalents(character)
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterTalents()"))
 end
