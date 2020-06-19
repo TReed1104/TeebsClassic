@@ -516,8 +516,6 @@ end
 
 -- Command function for retrieving a characters talent spec
 function cmdGetCharacterSpec(character)
-    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterSpec()"))
-
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
