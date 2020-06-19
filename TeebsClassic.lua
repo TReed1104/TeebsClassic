@@ -517,6 +517,21 @@ end
 -- Command function for retrieving a characters talent spec
 function cmdGetCharacterSpec(character)
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterSpec()"))
+
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
+    -- Check if the characters talents have been cached
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents == nil then
+        print("Specialisation data not cached")
+        return
+    end
+    -- Get the class colour
+    local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
+    -- Output the results in-game
+    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " is currently specced " .. TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents.specialisation))
 end
 
 -- Command function for retrieving a characters talent distribution
