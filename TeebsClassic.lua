@@ -228,8 +228,8 @@ function initialiseDB()
     if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].level == nil then
         updateCharacterLevel()
     end
-    if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation == nil then
-        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation = {}
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].talents == nil then
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].talents = {}
     end
     if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].currency == nil then
         TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].currency = {}
@@ -260,7 +260,7 @@ function updateCharacterSpecialisation()
         -- Get the talent tree info
         local talentTreeName, _, talentTreeSpent = GetTalentTabInfo(tabIndex)
         -- Create a table for the spec
-        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation[talentTreeName] = {}
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].talents[talentTreeName] = {}
         -- Format the overall spec data
         overallTalentDistribution = (tabIndex == GetNumTalentTabs()) and (overallTalentDistribution .. talentTreeSpent) or (overallTalentDistribution .. talentTreeSpent .. "/")
         -- Iterate through each talent in the talent tree
@@ -268,15 +268,15 @@ function updateCharacterSpecialisation()
             -- Get the talent data
             local talentName, _, talentTier, talentColumn, talentRank, talentMaxRank = GetTalentInfo(tabIndex, talentIndex)
             -- Check theres a table made for this tier of the talent tree E.g. Fury -> Tier 1
-            if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation[talentTreeName][tostring(talentTier)] == nil then
-                TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation[talentTreeName][tostring(talentTier)] = {}
+            if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].talents[talentTreeName][tostring(talentTier)] == nil then
+                TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].talents[talentTreeName][tostring(talentTier)] = {}
             end
             -- Check theres a table made for this column of the talent tree E.g. Fury -> Tier 1 -> Column 2
-            if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation[talentTreeName][tostring(talentTier)][tostring(talentColumn)] == nil then
-                TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation[talentTreeName][tostring(talentTier)][tostring(talentColumn)] = {}
+            if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].talents[talentTreeName][tostring(talentTier)][tostring(talentColumn)] == nil then
+                TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].talents[talentTreeName][tostring(talentTier)][tostring(talentColumn)] = {}
             end
             -- Record the data for this talent -> name, current rank and max rank
-            TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation[talentTreeName][tostring(talentTier)][tostring(talentColumn)] = { name = talentName, currentRank = talentRank, maxRank = talentMaxRank }
+            TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].talents[talentTreeName][tostring(talentTier)][tostring(talentColumn)] = { name = talentName, currentRank = talentRank, maxRank = talentMaxRank }
         end
     end
     TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].specialisation["overall"] = overallTalentDistribution
