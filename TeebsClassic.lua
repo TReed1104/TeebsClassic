@@ -515,9 +515,11 @@ function cmdGetCharacterLevel(character)
 end
 
 function cmdGetCharacterSpec(character)
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterSpec()"))
 end
 
 function cmdGetCharacterTalents(character)
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterTalents()"))
 end
 
 -- Command function for retrieving a characters currencies from the cache
