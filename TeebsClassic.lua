@@ -499,7 +499,7 @@ function cmdGetCharacterLevel(character)
         print("Unknown Charater", character)
         return
     end
-    -- Check if the slot is recognised
+    -- Check if the character level has been cached
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character].level == nil then
         print("Level data not cached")
         return
