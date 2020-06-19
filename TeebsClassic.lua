@@ -279,6 +279,7 @@ function updateCharacterSpecialisation()
             TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].talents[talentTreeName][tostring(talentTier)][tostring(talentColumn)] = { name = talentName, currentRank = talentRank, maxRank = talentMaxRank }
         end
     end
+    -- Set the talent distribution overview e.g. 12/39/0
     TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].talents["specialisation"] = overallTalentDistribution
 end
 
