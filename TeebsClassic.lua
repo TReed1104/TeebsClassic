@@ -137,7 +137,7 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
     end
 
     -- Command parameter checks, sanity check we've got what we need for the command functions
-    if messageSplit[1] == "get-exp" or messageSplit[1] == "get-level" or messageSplit[1] == "get-spec" or messageSplit[1] == "get-spec-breakdown" or messageSplit[1] == "get-gold" or messageSplit[1] == "get-professions" or messageSplit[1] == "get-primary-professions" or messageSplit[1] == "get-secondary-professions" or messageSplit[1] == "get-slot-all" or messageSplit[1] == "get-bags-all" then
+    if messageSplit[1] == "get-exp" or messageSplit[1] == "get-level" or messageSplit[1] == "get-spec" or messageSplit[1] == "get-talents" or messageSplit[1] == "get-gold" or messageSplit[1] == "get-professions" or messageSplit[1] == "get-primary-professions" or messageSplit[1] == "get-secondary-professions" or messageSplit[1] == "get-slot-all" or messageSplit[1] == "get-bags-all" then
         -- Check we have the character name
         if messageSplit[2] == nil then
             print("You must supply a character name for this command")
@@ -161,9 +161,7 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
     elseif messageSplit[1] == "get-level" then
         cmdGetCharacterLevel(messageSplit[2])
     elseif messageSplit[1] == "get-spec" then
-        cmdGetCharacterSpecialisationOverview(messageSplit[2])
-    elseif messageSplit[1] == "get-spec-breakdown" then
-        cmdGetCharacterSpecialisationBreakdown(messageSplit[2])
+    elseif messageSplit[1] == "get-talents" then
     elseif messageSplit[1] == "get-gold" then
         cmdGetCharacterGold(messageSplit[2])
     elseif messageSplit[1] == "get-professions" then
