@@ -514,6 +514,7 @@ function cmdGetCharacterLevel(character)
     print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " is currently level " .. currentLevel))
 end
 
+-- Command function for retrieving a characters talent spec
 function cmdGetCharacterSpec(character)
     print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterSpec()"))
 end
