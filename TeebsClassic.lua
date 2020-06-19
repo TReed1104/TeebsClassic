@@ -511,6 +511,14 @@ function cmdGetCharacterLevel(character)
     print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " is currently level " .. currentLevel))
 end
 
+-- Command function for retrieving a characters spec overview
+function cmdGetCharacterSpecialisationOverview(character)
+end
+
+-- Command function for retrieving a characters spec breakdown
+function cmdGetCharacterSpecialisationBreakdown(character)
+end
+
 -- Command function for retrieving a characters currencies from the cache
 function cmdGetCharacterGold(character)
     -- Check the character exists
