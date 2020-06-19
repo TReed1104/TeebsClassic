@@ -259,6 +259,8 @@ function updateCharacterSpecialisation()
     for tabIndex = 1, GetNumTalentTabs() do
         -- Get the talent tree info
         local talentTreeName, _, talentTreeSpent = GetTalentTabInfo(tabIndex)
+        -- Lower case the talentTreeName
+        talentTreeName = talentTreeName:lower()
         -- Create a table for the spec
         TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].talents[talentTreeName] = {}
         -- Format the overall spec data
