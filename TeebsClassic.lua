@@ -19,6 +19,7 @@ frame:RegisterEvent("PLAYER_MONEY")
 frame:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
 frame:RegisterEvent("PLAYER_XP_UPDATE")
 frame:RegisterEvent("TRADE_SKILL_UPDATE")
+frame:RegisterEvent("CHARACTER_POINTS_CHANGED")
 
 -- Handle Events Triggering
 frame:SetScript("OnEvent", function(self, event, ...)
