@@ -734,6 +734,10 @@ function cmdGetAllCharactersLevels()
     end
 end
 
+-- Command function for retrieving the talent spec of all cached characters on the current server
+function cmdGetAllCharacterSpecs()
+end
+
 -- Command function for retrieving the gold of every character on the realm
 function cmdGetAllCharactersGold()
     -- For every character cached for the current realm, print their current gold, silver and copper
