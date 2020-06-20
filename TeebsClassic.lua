@@ -738,6 +738,13 @@ end
 
 -- Command function for retrieving the talent spec of all cached characters on the current server
 function cmdGetAllCharacterSpecs()
+    -- For every character cached for the current realm, print their character spec
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        -- Get the class colour
+        local _, _, _, classColourHex = GetClassColor(characterData.class:upper())
+        -- Output the character levels
+        print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText("ffffff00", " is currently specced " .. characterData.talents.specialisation))
+    end
 end
 
 -- Command function for retrieving the gold of every character on the realm
