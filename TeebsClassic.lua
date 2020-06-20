@@ -72,6 +72,11 @@ frame:SetScript("OnEvent", function(self, event, ...)
         updateCharacterLevel()
     end
 
+    -- Player Talent Changes
+    if event == "CHARACTER_POINTS_CHANGED" then
+        updateCharacterSpecialisation()
+    end
+
 end)
 
 
