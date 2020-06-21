@@ -565,6 +565,8 @@ function cmdGetCharacterTalents(character)
         if talentTreeName ~= "specialisation" then
             for talentTier, talentTierTable in pairs(talentTreeTable) do
                 for talentColumn, characterTalent in pairs(talentTierTable) do
+                    if characterTalent.currentRank > 0 then
+                    end
                 end
             end
         end
