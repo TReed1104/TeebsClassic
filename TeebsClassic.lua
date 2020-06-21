@@ -564,6 +564,8 @@ function cmdGetCharacterTalents(character)
         -- Ignore the specialisation variable from the talents table
         if talentTreeName ~= "specialisation" then
             for talentTier, talentTierTable in pairs(talentTreeTable) do
+                for talentColumn, characterTalent in pairs(talentTierTable) do
+                end
             end
         end
     end
