@@ -559,6 +559,10 @@ function cmdGetCharacterTalents(character)
         print("Talent data not cached")
         return
     end
+    -- Iterate through each talent tree in the talents table
+    for talentTreeName, talentTreeTable in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents) do
+        print(talentTreeName, talentTreeTable)
+    end
 end
 
 -- Command function for retrieving a characters currencies from the cache
