@@ -531,7 +531,7 @@ function cmdGetCharacterSpec(character)
     end
     -- Check if the characters talents have been cached
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents == nil then
-        print("Specialisation data not cached")
+        print("Talent data not cached")
         return
     end
     -- Get the class colour
@@ -551,7 +551,7 @@ function cmdGetCharacterTalents(character)
     end
     -- Check if the characters talents have been cached
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents == nil then
-        print("Specialisation data not cached")
+        print("Talent data not cached")
         return
     end
 end
