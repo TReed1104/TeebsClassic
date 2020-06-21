@@ -559,6 +559,8 @@ function cmdGetCharacterTalents(character)
         print("Talent data not cached")
         return
     end
+    -- Get the class colour
+    local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
     -- Iterate through each talent tree in the talents table
     for talentTreeName, talentTreeTable in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents) do
         -- Ignore the specialisation variable from the talents table
