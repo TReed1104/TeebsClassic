@@ -566,6 +566,7 @@ function cmdGetCharacterTalents(character)
             for talentTier, talentTierTable in pairs(talentTreeTable) do
                 for talentColumn, characterTalent in pairs(talentTierTable) do
                     if characterTalent.currentRank > 0 then
+                        print(characterTalent.name, characterTalent.currentRank .. "/" .. characterTalent.maxRank)
                     end
                 end
             end
