@@ -549,6 +549,11 @@ function cmdGetCharacterTalents(character)
         print("Unknown Charater", character)
         return
     end
+    -- Check if the characters talents have been cached
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents == nil then
+        print("Specialisation data not cached")
+        return
+    end
 end
 
 -- Command function for retrieving a characters currencies from the cache
