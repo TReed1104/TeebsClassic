@@ -561,7 +561,10 @@ function cmdGetCharacterTalents(character)
     end
     -- Iterate through each talent tree in the talents table
     for talentTreeName, talentTreeTable in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents) do
-        print(talentTreeName, talentTreeTable)
+        -- Ignore the specialisation variable from the talents table
+        if talentTreeName ~= "specialisation" then
+            print(talentTreeName, talentTreeTable)
+        end
     end
 end
 
