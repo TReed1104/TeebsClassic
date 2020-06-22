@@ -265,6 +265,8 @@ end
 function updateCharacterSpecialisation()
     -- The characters overall talent point distribution
     local overallTalentDistribution = ""
+    -- Reset the spec table
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].talents.specialisation = {}
     -- For all the talent tree tabs
     for tabIndex = 1, GetNumTalentTabs() do
         -- Get the talent tree info
@@ -292,7 +294,7 @@ function updateCharacterSpecialisation()
         end
     end
     -- Set the talent distribution overview e.g. 12/39/0
-    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].talents["specialisation"] = overallTalentDistribution
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].talents.specialisation.distribution = overallTalentDistribution
 end
 
 -- Caching of the current characters experience (current + rested %s)
