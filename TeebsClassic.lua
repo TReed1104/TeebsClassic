@@ -568,7 +568,7 @@ function cmdGetCharacterTalents(character)
             for talentTier, talentTierTable in pairs(talentTreeTable) do
                 for talentColumn, characterTalent in pairs(talentTierTable) do
                     if characterTalent.currentRank > 0 then
-                        print(characterTalent.name, characterTalent.currentRank .. "/" .. characterTalent.maxRank)
+                        print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " has talent ") .. colourText("ffffa500", characterTalent.name) .. colourText("ffffff00", " at rank " .. characterTalent.currentRank .. "/" .. characterTalent.maxRank))
                     end
                 end
             end
