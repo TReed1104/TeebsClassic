@@ -275,6 +275,8 @@ function updateCharacterSpecialisation()
         talentTreeName = talentTreeName:lower()
         -- Create a table for the spec
         TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].talents[talentTreeName] = {}
+        -- Record the number of talents in that tree
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].talents.specialisation[talentTreeName] = talentTreeSpent
         -- Format the overall spec data
         overallTalentDistribution = (tabIndex == GetNumTalentTabs()) and (overallTalentDistribution .. talentTreeSpent) or (overallTalentDistribution .. talentTreeSpent .. "/")
         -- Iterate through each talent in the talent tree
