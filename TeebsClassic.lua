@@ -567,10 +567,16 @@ function cmdGetCharacterTalents(character)
     for talentTreeName, talentTreeTable in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents) do
         -- Ignore the specialisation variable from the talents table
         if talentTreeName ~= "specialisation" then
-            for talentTier, talentTierTable in pairs(talentTreeTable) do
-                for talentColumn, characterTalent in pairs(talentTierTable) do
-                    if characterTalent.currentRank > 0 then
-                        print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " has talent ") .. colourText("ffffa500", characterTalent.name) .. colourText("ffffff00", " at rank " .. characterTalent.currentRank .. "/" .. characterTalent.maxRank))
+            -- Check any points are in that talent tree
+            if TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents.specialisation[talentTreeName] > 0 then
+                for talentTier = 1, 7 do
+                    for talentColumn = 1, 4 do
+                        if talentTreeTable[tostring(talentTier)][tostring(talentColumn)] ~= nil then
+                            talent = talentTreeTable[tostring(talentTier)][tostring(talentColumn)]
+                            if talent.currentRank > 0 then
+                                print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " has talent ") .. colourText("ffffa500", talent.name) .. colourText("ffffff00", " at rank " .. talent.currentRank .. "/" .. talent.maxRank))
+                            end
+                        end
                     end
                 end
             end
