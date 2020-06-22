@@ -547,8 +547,6 @@ end
 
 -- Command function for retrieving a characters talent distribution
 function cmdGetCharacterTalents(character)
-    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterTalents()"))
-
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
