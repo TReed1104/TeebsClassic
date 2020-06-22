@@ -546,7 +546,7 @@ function cmdGetCharacterSpec(character)
     -- Get the class colour
     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
     -- Output the results in-game
-    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " is currently specced " .. TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents.specialisation))
+    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " is currently specced " .. TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents.specialisation.distribution))
 end
 
 -- Command function for retrieving a characters talent distribution
