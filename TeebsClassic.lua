@@ -569,6 +569,7 @@ function cmdGetCharacterTalents(character)
         if talentTreeName ~= "specialisation" then
             -- Check any points are in that talent tree
             if TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents.specialisation[talentTreeName] > 0 then
+                print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " talent tree - ").. colourText("ffffa500", upperCaseFirst(talentTreeName)))
                 for talentTier = 1, 7 do
                     for talentColumn = 1, 4 do
                         if talentTreeTable[tostring(talentTier)][tostring(talentColumn)] ~= nil then
