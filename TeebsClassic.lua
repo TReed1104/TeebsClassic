@@ -423,6 +423,16 @@ function updateCharacterReputation()
     -- Therefore we have to check if the current faction is a header and if it is, expand the header and get a new faction count value
     -- Base premise taken from the wow gamepedia page about GetFactionInfo
 
+    -- Set our bases for the iteration
+    local factionCount = GetNumFactions()
+    local factionIndex = 1
+    
+    -- Keep iterating until we hit the expanding faction counter
+    while factionIndex <= factionCount do
+
+        -- Increment the factionIndex manually
+        factionIndex = factionIndex + 1     -- I miss '++' operators, damn it Lua
+    end
 end
 
 
