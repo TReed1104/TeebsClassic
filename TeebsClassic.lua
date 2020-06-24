@@ -431,6 +431,7 @@ function updateCharacterReputation()
     while factionIndex <= factionCount do
         -- Example GetFactionInfo() use from the wiki
         -- local name, description, standingId, bottomValue, topValue, earnedValue, atWarWith, canToggleAtWar, isHeader, isCollapsed, hasRep, isWatched, isChild = GetFactionInfo(factionIndex)
+        local factionName, _, factionStandingID, repValueBottom, repValueTop, repValueEarned, _, _, isHeader, isHeaderCollapsed, hasRepValue, _, _ = GetFactionInfo(factionIndex)
 
         -- Increment the factionIndex manually
         factionIndex = factionIndex + 1     -- I miss '++' operators, damn it Lua
