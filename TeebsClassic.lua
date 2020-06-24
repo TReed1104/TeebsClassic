@@ -43,6 +43,7 @@ frame:SetScript("OnEvent", function(self, event, ...)
         updateCharacterLevel()
         updateCharacterSpecialisation()
         updateCharacterProfessions()
+        updateCharacterReputation()
     end
 
     -- Player Level Up Trigger
