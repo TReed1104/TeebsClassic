@@ -446,7 +446,7 @@ function updateCharacterReputation()
             end
         else
             -- As the faction has rep attached to it, record the data
-            TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].reputations[factionName] = { standingID = factionStandingID, repBottom = repValueBottom, repTop = repValueTop }
+            TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].reputations[factionName:lower()] = { factionStanding = _G["FACTION_STANDING_LABEL" .. factionStandingID], factionStandingID = factionStandingID, repValueBottom = repValueBottom, repValueTop = repValueTop, repValueEarned = repValueEarned }
         end
 
         -- Increment the factionIndex manually
