@@ -419,6 +419,10 @@ end
 
 -- Cache the characters faction reputation data
 function updateCharacterReputation()
+    -- GetNumFactions() returns the number of factions visible on the reputation panel, it will not count those in collapsed headers etc.
+    -- Therefore we have to check if the current faction is a header and if it is, expand the header and get a new faction count value
+    -- Base premise taken from the wow gamepedia page about GetFactionInfo
+
 end
 
 
