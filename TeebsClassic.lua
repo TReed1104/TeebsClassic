@@ -417,6 +417,10 @@ function updateCharacterStats()
     TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].stats["spirit"] = spirit
 end
 
+-- Cache the characters faction reputation data
+function updateCharacterReputation()
+end
+
 
 ------------------------------------------------------------------
 -- Addon Command Functions
