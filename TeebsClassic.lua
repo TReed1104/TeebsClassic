@@ -710,7 +710,7 @@ function cmdGetAllCharactersItemSlots(character)
             if TeebsClassicDB.realms[CURRENT_REALM].characters[character].gear[slotNumber] > 0 then
                 -- Load the item data
                 local item = Item:CreateFromItemID(itemID)
-                -- Use the Item Mixin callback to await fo;`r the item to be cached
+                -- Use the Item Mixin callback to await for the item to be cached
                 item:ContinueOnItemLoad(function()
                     -- Now the item has been cached, format the output string to use the class colour and print the item link
                     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
