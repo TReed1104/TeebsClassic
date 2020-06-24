@@ -253,6 +253,9 @@ function initialiseDB()
     if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].professions == nil then
         TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].professions = {}
     end
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].reputations == nil then
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].reputations = {}
+    end
 end
 
 -- Caching of the current characters level
