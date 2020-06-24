@@ -433,6 +433,12 @@ function updateCharacterReputation()
         -- local name, description, standingId, bottomValue, topValue, earnedValue, atWarWith, canToggleAtWar, isHeader, isCollapsed, hasRep, isWatched, isChild = GetFactionInfo(factionIndex)
         local factionName, _, factionStandingID, repValueBottom, repValueTop, repValueEarned, _, _, isHeader, isHeaderCollapsed, hasRepValue, _, _ = GetFactionInfo(factionIndex)
 
+        -- If the faction is actually a header and its been collapsed, expand it and increment the faction counter
+        if isHeader and isHeaderCollapsed then
+            ExpandFactionHeader(factionIndex)   -- Expand the faction header to get the real number of factions
+            factionCount = GetNumFactions()     -- Get our new Faction count
+        end
+
         -- Increment the factionIndex manually
         factionIndex = factionIndex + 1     -- I miss '++' operators, damn it Lua
     end
