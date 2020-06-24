@@ -429,6 +429,8 @@ function updateCharacterReputation()
     
     -- Keep iterating until we hit the expanding faction counter
     while factionIndex <= factionCount do
+        -- Example GetFactionInfo() use from the wiki
+        -- local name, description, standingId, bottomValue, topValue, earnedValue, atWarWith, canToggleAtWar, isHeader, isCollapsed, hasRep, isWatched, isChild = GetFactionInfo(factionIndex)
 
         -- Increment the factionIndex manually
         factionIndex = factionIndex + 1     -- I miss '++' operators, damn it Lua
