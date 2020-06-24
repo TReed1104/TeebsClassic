@@ -431,7 +431,7 @@ function updateCharacterReputation()
     while factionIndex <= factionCount do
         -- Example GetFactionInfo() use from the wiki
         -- local name, description, standingId, bottomValue, topValue, earnedValue, atWarWith, canToggleAtWar, isHeader, isCollapsed, hasRep, isWatched, isChild = GetFactionInfo(factionIndex)
-        local factionName, _, factionStandingID, repValueBottom, repValueTop, repValueEarned, _, _, isHeader, isHeaderCollapsed, hasRepValue, _, _ = GetFactionInfo(factionIndex)
+        local factionName, _, factionStandingID, repValueBottom, repValueTop, repValueEarned, _, _, isHeader, isHeaderCollapsed = GetFactionInfo(factionIndex)
 
         -- Check if we are current dealing with a header panel in the rep panel
         if isHeader then
@@ -441,11 +441,8 @@ function updateCharacterReputation()
                 factionCount = GetNumFactions()     -- Get our new Faction count
             end
         else
-            -- As its not a header, check if the faction has rep values attached to it
-            if hasRepValue then
-                -- As the faction has rep attached to it, record the data
-                print(factionName .. " - " .. repValueEarned)
-            end
+            -- As the faction has rep attached to it, record the data
+            TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].reputations[factionName] = { standingID = factionStandingID, repBottom = repValueBottom, repTop = repValueTop }
         end
 
         -- Increment the factionIndex manually
