@@ -433,8 +433,7 @@ function updateCharacterReputation()
     
     -- Keep iterating until we hit the expanding faction counter
     while factionIndex <= factionCount do
-        -- Example GetFactionInfo() use from the wiki
-        -- local name, description, standingId, bottomValue, topValue, earnedValue, atWarWith, canToggleAtWar, isHeader, isCollapsed, hasRep, isWatched, isChild = GetFactionInfo(factionIndex)
+        -- Use GetFactionInfo() to retrieve the information on the faction at index x in the reputation tab
         local factionName, _, factionStandingID, repValueBottom, repValueTop, repValueEarned, _, _, isHeader, isHeaderCollapsed = GetFactionInfo(factionIndex)
 
         -- Check if we are current dealing with a header panel in the rep panel
@@ -448,7 +447,6 @@ function updateCharacterReputation()
             -- As the faction has rep attached to it, record the data
             TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].reputations[factionName:lower()] = { factionStanding = _G["FACTION_STANDING_LABEL" .. factionStandingID], factionStandingID = factionStandingID, repValueBottom = repValueBottom, repValueTop = repValueTop, repValueEarned = repValueEarned }
         end
-
         -- Increment the factionIndex manually
         factionIndex = factionIndex + 1     -- I miss '++' operators, damn it Lua
     end
