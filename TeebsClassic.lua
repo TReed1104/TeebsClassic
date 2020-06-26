@@ -444,7 +444,8 @@ function updateCharacterReputation()
                 factionCount = GetNumFactions()     -- Get our new Faction count
             end
         else
-            -- As the faction has rep attached to it, record the data
+            -- TODO: Calculate our actual rep standing, e.g. Honored 4123/12000
+            -- Record the data on the faction
             TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].reputations[factionName:lower()] = { factionStanding = _G["FACTION_STANDING_LABEL" .. factionStandingID], factionStandingID = factionStandingID, repValueBottom = repValueBottom, repValueTop = repValueTop, repValueEarned = repValueEarned }
         end
         -- Increment the factionIndex manually
