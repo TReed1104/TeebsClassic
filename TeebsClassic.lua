@@ -150,10 +150,10 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
             print("You must supply a character name for this command")
             return
         end
-    elseif messageSplit[1] == "get-slot" or messageSplit[1] == "get-bag" then
+    elseif messageSplit[1] == "get-slot" or messageSplit[1] == "get-bag" or messageSplit[1] == "get-rep" then
         -- Check we have the character name and slot/bag index
         if messageSplit[2] == nil or messageSplit[3] == nil then
-            print("You must supply a character name and item/bag slot index for this command")
+            print("You must supply a character name and item/bag slot index or faction name for this command")
             return
         end
     end
