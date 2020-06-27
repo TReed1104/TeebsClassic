@@ -737,10 +737,12 @@ end
 
 -- Get the data on a characters standing with a selected reputation
 function cmdGetCharacterReputation(character, faction)
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterReputation()"))
 end
 
 -- Get the data on all the factions the character has cached
 function cmdGetAllCharacterReputations(character)
+    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetAllCharacterReputations()"))
 end
 
 -- Command function for retrieval all equipment slots for a character
