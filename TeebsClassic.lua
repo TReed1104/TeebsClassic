@@ -731,6 +731,10 @@ function cmdGetCharacterSecondaryProfessions(character)
     end
 end
 
+-- Get the data on a characters standing with a selected reputation
+function cmdGetCharacterReputation(character, faction)
+end
+
 -- Command function for retrieval all equipment slots for a character
 function cmdGetAllCharactersItemSlots(character)
     -- Check the character exists
