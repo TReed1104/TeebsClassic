@@ -179,6 +179,8 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
         cmdGetCharacterPrimaryProfessions(messageSplit[2])
     elseif messageSplit[1] == "get-secondary-professions" then
         cmdGetCharacterSecondaryProfessions(messageSplit[2])
+    elseif messageSplit[1] == "get-rep" then
+        cmdGetCharacterReputation(messageSplit[2], messageSplit[3])
     elseif messageSplit[1] == "get-slot-all" then
         cmdGetAllCharactersItemSlots(messageSplit[2])
     elseif messageSplit[1] == "get-bags-all" then
