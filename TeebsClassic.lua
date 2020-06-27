@@ -770,6 +770,10 @@ function cmdGetAllCharacterReputations(character)
         print("Reputation data not cached")
         return
     end
+    -- Iterate through each faction stored in the reputation data table
+    for reputation, reputationData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters[character].reputations) do
+        print(reputation)
+    end
 end
 
 -- Command function for retrieval all equipment slots for a character
