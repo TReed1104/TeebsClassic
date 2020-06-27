@@ -744,7 +744,11 @@ function cmdGetCharacterReputation(character, faction)
         print("Unknown Charater", character)
         return
     end
-
+    -- Check if the reputation data has been recorded
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].reputations == nil then
+        print("Reputation data not cached")
+        return
+    end
 end
 
 -- Get the data on all the factions the character has cached
