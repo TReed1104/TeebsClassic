@@ -735,6 +735,10 @@ end
 function cmdGetCharacterReputation(character, faction)
 end
 
+-- Get the data on all the factions the character has cached
+function cmdGetAllCharacterReputations(character)
+end
+
 -- Command function for retrieval all equipment slots for a character
 function cmdGetAllCharactersItemSlots(character)
     -- Check the character exists
