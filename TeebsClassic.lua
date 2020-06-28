@@ -739,8 +739,6 @@ end
 
 -- Get the data on a characters standing with a selected reputation
 function cmdGetCharacterReputation(character, faction)
-    print(string.format("%s%s", "|cffff0000", "To Be Implemented - cmdGetCharacterReputation()"))
-
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
