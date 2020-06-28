@@ -180,7 +180,7 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
     elseif messageSplit[1] == "get-secondary-professions" then
         cmdGetCharacterSecondaryProfessions(messageSplit[2])
     elseif messageSplit[1] == "get-rep" then
-        cmdGetCharacterReputation(messageSplit[2], messageSplit[3])
+        cmdGetCharacterReputation(messageSplit[2], messageSplit[3]:lower())
     elseif messageSplit[1] == "get-reps-all" then
         cmdGetAllCharacterReputations(messageSplit[2])
     elseif messageSplit[1] == "get-slot-all" then
