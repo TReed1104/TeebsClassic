@@ -449,8 +449,10 @@ function updateCharacterReputation()
             end
         else
             -- TODO: Calculate our actual rep standing, e.g. Honored 4123/12000
+            -- Format the faction names to not use spaces for the table key -> "argent-dawn" not "argent dawn"
+            formattedFactionName = factionName:lower():gsub(" ", "-")
             -- Record the data on the faction
-            TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].reputations[factionName:lower()] = { factionStanding = _G["FACTION_STANDING_LABEL" .. factionStandingID], factionStandingID = factionStandingID, repValueBottom = repValueBottom, repValueTop = repValueTop, repValueEarned = repValueEarned }
+            TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].reputations[formattedFactionName] = { factionName = factionName, factionStanding = _G["FACTION_STANDING_LABEL" .. factionStandingID], factionStandingID = factionStandingID, repValueBottom = repValueBottom, repValueTop = repValueTop, repValueEarned = repValueEarned }
         end
         -- Increment the factionIndex manually
         factionIndex = factionIndex + 1     -- I miss '++' operators, damn it Lua
