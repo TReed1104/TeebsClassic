@@ -756,6 +756,12 @@ function cmdGetCharacterReputation(character, faction)
         print("Reputation data on the desired faction not found")
         return
     end
+    -- Retrieve the factions data table
+    local faction = TeebsClassicDB.realms[CURRENT_REALM].characters[character].reputations[faction]
+    -- Get the class colour
+    local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
+    -- Generate the function's in-game response
+    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText("ffffff00", " - ") .. colourText("ff00ff00", faction.factionName) .. colourText("ffffff00", " is currently ") .. colourText("ff00ff00", faction.factionStanding))
 end
 
 -- Get the data on all the factions the character has cached
