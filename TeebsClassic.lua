@@ -115,6 +115,9 @@ function formatCurrencyData(currencyData)
     return string.format("%ig %is %ic", currencyData["gold"], currencyData["silver"], currencyData["copper"])
 end
 
+-- Generate Reputation standing text colour
+function factionStandingTextColour(standing)
+end
 
 ------------------------------------------------------------------
 -- Slash Command Registration and Functions
