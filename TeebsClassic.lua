@@ -118,7 +118,7 @@ end
 -- Generate Reputation standing text colour
 function factionStandingTextColour(standing)
     -- Change faction standing text colour depending on standing
-    local standingColour = "ffffff00"
+    local standingColour = "ffff00"
 end
 
 ------------------------------------------------------------------
