@@ -119,6 +119,24 @@ end
 function factionStandingTextColour(standing)
     -- Change faction standing text colour depending on standing
     local standingColour = "ffff00"
+    -- Using the faction standing, set the colour to the WoW colours used
+    if standing == "Hated" then
+        standingColour = "cc0000"
+    elseif standing == "Hostil" then
+        standingColour = "ff0000"
+    elseif standing == "Unfriendly" then
+        standingColour = "f26000"
+    elseif standing == "Neutral" then
+        standingColour = "e4e400"
+    elseif standing == "Friendly" then
+        standingColour = "33ff33"
+    elseif standing == "Honoured" then
+        standingColour = "5fe65d"
+    elseif standing == "Revered" then
+        standingColour = "53e9bc"
+    elseif standing == "Exalted" then
+        standingColour = "2ee6e6"
+    end
     return "ff" .. standingColour
 end
 
