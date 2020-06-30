@@ -119,6 +119,7 @@ end
 function factionStandingTextColour(standing)
     -- Change faction standing text colour depending on standing
     local standingColour = "ffff00"
+    return "ff" .. standingColour
 end
 
 ------------------------------------------------------------------
