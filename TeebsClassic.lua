@@ -3,6 +3,7 @@
 ------------------------------------------------------------------
 CURRENT_REALM = ""
 CURRENT_CHARACTER_NAME = ""
+TEEBS_DEFAULT_TEXT_COLOUR = "ffffff00"
 
 ------------------------------------------------------------------
 -- Addon Core Creation, Event Registration And Handling
