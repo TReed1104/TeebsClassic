@@ -714,7 +714,7 @@ function cmdGetCharacterProfessions(character)
         -- Iterator through each profession in each profession type - This is what actually catches the profession data
         for profession, professionData in pairs(professionTypeTables) do
             -- Output the results in-gam (colour the level output green if its maxed)
-            print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. colourText(professionData.current == 300 and "ff00ff00" or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
+            print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. colourText(professionData.current == 300 and TEEBS_TEXT_COLOUR_CAPPED or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
         end
     end
 end
@@ -738,7 +738,7 @@ function cmdGetCharacterPrimaryProfessions(character)
     -- Iterator through each profession in the primary profession table
     for profession, professionData in pairs(characterPrimaryProfessions) do
         -- Output the results in-gam (colour the level output green if its maxed)
-        print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. colourText(professionData.current == 300 and "ff00ff00" or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
+        print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. colourText(professionData.current == 300 and TEEBS_TEXT_COLOUR_CAPPED or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
     end
 end
 
@@ -761,7 +761,7 @@ function cmdGetCharacterSecondaryProfessions(character)
     -- Iterator through each profession in the primary profession table
     for profession, professionData in pairs(characterSecondaryProfessions) do
         -- Output the results in-gam (colour the level output green if its maxed)
-        print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. colourText(professionData.current == 300 and "ff00ff00" or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
+        print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. colourText(professionData.current == 300 and TEEBS_TEXT_COLOUR_CAPPED or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
     end
 end
 
@@ -787,7 +787,7 @@ function cmdGetCharacterReputation(character, faction)
     -- Get the class colour
     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
     -- Generate the function's in-game response
-    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. colourText("ff00ff00", faction.factionName) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently ") .. colourText(factionStandingTextColour(faction.factionStanding), faction.factionStanding))
+    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. colourText(TEEBS_TEXT_COLOUR_CAPPED, faction.factionName) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently ") .. colourText(factionStandingTextColour(faction.factionStanding), faction.factionStanding))
 end
 
 -- Get the data on all the factions the character has cached
@@ -807,7 +807,7 @@ function cmdGetAllCharacterReputations(character)
         -- Get the class colour
         local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
         -- Generate the function's in-game response
-        print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. colourText("ff00ff00", reputationData.factionName) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently ") .. colourText(factionStandingTextColour(reputationData.factionStanding), reputationData.factionStanding))
+        print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. colourText(TEEBS_TEXT_COLOUR_CAPPED, reputationData.factionName) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently ") .. colourText(factionStandingTextColour(reputationData.factionStanding), reputationData.factionStanding))
     end
 end
 
@@ -925,7 +925,7 @@ function cmdGetAllCharacterProfessions()
             -- Iterator through each profession in each profession type - This is what actually catches the profession data
             for profession, professionData in pairs(professionTypeTables) do
                 -- Output the results in-gam (colour the level output green if its maxed)
-                print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. colourText(professionData.current == 300 and "ff00ff00" or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
+                print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. colourText(professionData.current == 300 and TEEBS_TEXT_COLOUR_CAPPED or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
             end
         end
     end
@@ -940,7 +940,7 @@ function cmdGetAllCharacterPrimaryProfessions()
         -- Iterator through each profession in each profession type - This is what actually catches the profession data
         for profession, professionData in pairs(characterData.professions["primary"]) do
             -- Output the results in-gam (colour the level output green if its maxed)
-            print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. colourText(professionData.current == 300 and "ff00ff00" or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
+            print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. colourText(professionData.current == 300 and TEEBS_TEXT_COLOUR_CAPPED or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
         end
     end
 end
@@ -954,7 +954,7 @@ function cmdGetAllCharacterSecondaryProfessions()
         -- Iterator through each profession in each profession type - This is what actually catches the profession data
         for profession, professionData in pairs(characterData.professions["secondary"]) do
             -- Output the results in-gam (colour the level output green if its maxed)
-            print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. colourText(professionData.current == 300 and "ff00ff00" or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
+            print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. colourText(professionData.current == 300 and TEEBS_TEXT_COLOUR_CAPPED or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
         end
     end
 end
