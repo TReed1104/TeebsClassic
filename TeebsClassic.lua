@@ -3,7 +3,10 @@
 ------------------------------------------------------------------
 CURRENT_REALM = ""
 CURRENT_CHARACTER_NAME = ""
-TEEBS_DEFAULT_TEXT_COLOUR = "ffffff00"
+TEEBS_TEXT_COLOUR_DEFAULT = "ffffff00"
+TEEBS_TEXT_COLOUR_ALERT = "ffffff00"
+TEEBS_TEXT_COLOUR_CAPPED = "ff00ff00"
+TEEBS_TEXT_COLOUR_TALENTS = "ffffa500"
 
 ------------------------------------------------------------------
 -- Addon Core Creation, Event Registration And Handling
