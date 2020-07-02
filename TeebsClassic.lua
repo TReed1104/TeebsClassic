@@ -83,6 +83,10 @@ frame:SetScript("OnEvent", function(self, event, ...)
         setCharacterDataSpecialisation()
     end
 
+    -- Faction reputation change event
+    if event == "UPDATE_FACTION" then
+        setCharacterDataReputation()
+    end
 end)
 
 
