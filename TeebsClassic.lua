@@ -120,7 +120,7 @@ function formatCurrencyData(currencyData)
 end
 
 -- Generate Reputation standing text colour
-function factionStandingTextColour(standing)
+function getFactionStandingTextColour(standing)
     -- Change faction standing text colour depending on standing
     local standingColour = "ffff00"
     -- Using the faction standing, set the colour to the WoW colours used
@@ -791,7 +791,7 @@ function cmdGetCharacterReputation(character, faction)
     -- Get the class colour
     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
     -- Generate the function's in-game response
-    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. colourText(TEEBS_TEXT_COLOUR_CAPPED, faction.factionName) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently ") .. colourText(factionStandingTextColour(faction.factionStanding), faction.factionStanding))
+    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. colourText(TEEBS_TEXT_COLOUR_CAPPED, faction.factionName) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently ") .. colourText(getFactionStandingTextColour(faction.factionStanding), faction.factionStanding))
 end
 
 -- Get the data on all the factions the character has cached
@@ -811,7 +811,7 @@ function cmdGetAllCharacterReputations(character)
         -- Get the class colour
         local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
         -- Generate the function's in-game response
-        print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. colourText(TEEBS_TEXT_COLOUR_CAPPED, reputationData.factionName) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently ") .. colourText(factionStandingTextColour(reputationData.factionStanding), reputationData.factionStanding))
+        print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. colourText(TEEBS_TEXT_COLOUR_CAPPED, reputationData.factionName) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently ") .. colourText(getFactionStandingTextColour(reputationData.factionStanding), reputationData.factionStanding))
     end
 end
 
