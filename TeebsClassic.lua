@@ -41,45 +41,45 @@ frame:SetScript("OnEvent", function(self, event, ...)
 
     -- Player Enter World Trigger
     if event == "PLAYER_ENTERING_WORLD" then
-        updateCharacterItemSlots()
-        updateCharacterMoney()
-        updateCharacterExperience()
-        updateCharacterLevel()
-        updateCharacterSpecialisation()
-        updateCharacterProfessions()
-        updateCharacterReputation()
+        setCharacterDataItemSlots()
+        setCharacterDataCurrency()
+        setCharacterDataCharacterExperience()
+        setCharacterDataLevel()
+        setCharacterDataSpecialisation()
+        setCharacterDataProfessions()
+        setCharacterDataReputation()
     end
 
     -- Player Level Up Trigger
     if event == "PLAYER_LEVEL_UP" then
-        updateCharacterExperience()
-        updateCharacterLevel()
+        setCharacterDataCharacterExperience()
+        setCharacterDataLevel()
     end
 
     -- Player Skill Update Trigger
     if event == "TRADE_SKILL_UPDATE" then
-        updateCharacterProfessions()
+        setCharacterDataProfessions()
     end
 
     -- Player Current Change Trigger
     if event == "PLAYER_MONEY" then
-        updateCharacterMoney()
+        setCharacterDataCurrency()
     end
 
     -- Player Gear Change Trigger
     if event == "PLAYER_EQUIPMENT_CHANGED" then
-        updateCharacterItemSlots()
+        setCharacterDataItemSlots()
     end
 
     -- Player XP value update - Quest/NPC Kill
     if event == "PLAYER_XP_UPDATE" then
-        updateCharacterExperience()
-        updateCharacterLevel()
+        setCharacterDataCharacterExperience()
+        setCharacterDataLevel()
     end
 
     -- Player Talent Changes
     if event == "CHARACTER_POINTS_CHANGED" then
-        updateCharacterSpecialisation()
+        setCharacterDataSpecialisation()
     end
 
 end)
@@ -275,7 +275,7 @@ function initialiseDB()
         TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].class = UnitClass("player")
     end
     if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].level == nil then
-        updateCharacterLevel()
+        setCharacterDataLevel()
     end
     if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].talents == nil then
         TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].talents = {}
@@ -298,13 +298,13 @@ function initialiseDB()
 end
 
 -- Caching of the current characters level
-function updateCharacterLevel()
+function setCharacterDataLevel()
     -- Set the character level in the DB
     TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].level = UnitLevel("player")
 end
 
 -- Caching of the current characters talents
-function updateCharacterSpecialisation()
+function setCharacterDataSpecialisation()
     -- The characters overall talent point distribution
     local overallTalentDistribution = ""
     -- Reset the spec table
@@ -342,7 +342,7 @@ function updateCharacterSpecialisation()
 end
 
 -- Caching of the current characters experience (current + rested %s)
-function updateCharacterExperience()
+function setCharacterDataCharacterExperience()
     -- Check the player level, if 60 
     if UnitLevel("player") == 60 then
         -- As the character is level 60, set the data fields to 0 as no more rested or exp can be gained
@@ -374,7 +374,7 @@ function updateCharacterExperience()
 end
 
 -- Caching of the current characters equipped items
-function updateCharacterItemSlots(slot)
+function setCharacterDataItemSlots(slot)
     -- Set each character slot
     for i = 0, 19 do
         local itemID, unknown = GetInventoryItemID("player", i)
@@ -397,7 +397,7 @@ function updateCharacterItemSlots(slot)
 end
 
 -- Caching of the current characters currencies
-function updateCharacterMoney()
+function setCharacterDataCurrency()
     -- Get the characters money value, returns in copper
     local copper = GetMoney()
 
@@ -408,7 +408,7 @@ function updateCharacterMoney()
 end
 
 -- Caching the professions of the current character
-function updateCharacterProfessions()
+function setCharacterDataProfessions()
     -- Reset the primary profession table, this is incase the player changes a profession between data caching
     TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].professions.primary = {}
 
@@ -443,7 +443,7 @@ function updateCharacterProfessions()
 end
 
 -- Caching of the current characters stats - Currently unused
-function updateCharacterStats()
+function setCharacterDataStats()
     -- Get the character stats
     local _, stamina = UnitStat("player", 3)
     local _, strength = UnitStat("player", 1)
@@ -460,7 +460,7 @@ function updateCharacterStats()
 end
 
 -- Cache the characters faction reputation data
-function updateCharacterReputation()
+function setCharacterDataReputation()
     -- GetNumFactions() returns the number of factions visible on the reputation panel, it will not count those in collapsed headers etc.
     -- Therefore we have to check if the current faction is a header and if it is, expand the header and get a new faction count value
     -- Base premise taken from the wow gamepedia page about GetFactionInfo
