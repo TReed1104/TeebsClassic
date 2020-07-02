@@ -308,6 +308,10 @@ function setCharacterDataLevel()
     TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].level = UnitLevel("player")
 end
 
+-- Caching of the characters time played
+function setCharacterDataPlayTime()
+end
+
 -- Caching of the current characters talents
 function setCharacterDataSpecialisation()
     -- The characters overall talent point distribution
