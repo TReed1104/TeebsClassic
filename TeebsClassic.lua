@@ -146,6 +146,8 @@ end
 
 -- Calculate the rep standing in numerical values - E.g. 4123/6000 or 12135/21000 etc.
 function getFactionStandingValues(reputationData)
+    -- repValueBottom acts as the offset for our values, neutral -> exalted is 42000 rep, so an offset of 21000 puts us in the revered-to-exalted range and our repValueEarned value is the amount through that band
+    return (reputationData.repValueEarned - reputationData.repValueBottom) .. "/" .. (reputationData.repValueTop - reputationData.repValueBottom)
 end
 
 ------------------------------------------------------------------
