@@ -126,7 +126,7 @@ function getFactionStandingTextColour(standing)
     -- Using the faction standing, set the colour to the WoW colours used
     if standing == "Hated" then
         standingColour = "cc0000"
-    elseif standing == "Hostil" then
+    elseif standing == "Hostile" then
         standingColour = "ff0000"
     elseif standing == "Unfriendly" then
         standingColour = "f26000"
