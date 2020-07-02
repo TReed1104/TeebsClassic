@@ -105,7 +105,7 @@ function splitString(stringToSplit, seperatorToken)
 end
 
 -- custom colour text wrapper
-function colourText(colour, text)
+function recolourOutputText(colour, text)
     return string.format("%s%s", "|c" .. colour, text)
 end
 
@@ -523,7 +523,7 @@ function cmdGetCharacterItemSlot(character, slotNumber)
     item:ContinueOnItemLoad(function()
         -- Now the item has been cached, format the output string to use the class colour and print the item link
         local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
-        print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has ") ..  item:GetItemLink() .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " equipped in gear slot " .. slotNumber))
+        print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " has ") ..  item:GetItemLink() .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " equipped in gear slot " .. slotNumber))
     end)
 end
 
@@ -554,7 +554,7 @@ function cmdGetCharacterBag(character, slotNumber)
     item:ContinueOnItemLoad(function()
         -- Now the item has been cached, format the output string to use the class colour and print the item link
         local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
-        print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has ") ..  item:GetItemLink() .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " equipped in bag slot " .. slotNumber))
+        print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " has ") ..  item:GetItemLink() .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " equipped in bag slot " .. slotNumber))
     end)
 end
 
@@ -577,7 +577,7 @@ function cmdGetCharacterExperience(character)
     -- Get the class colour
     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
     -- Output the results in-game
-    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " is " .. currentPercent .. "% into level " .. currentLevel .. " and has ") .. colourText(currentRestedPercent >= 150 and TEEBS_TEXT_COLOUR_ALERT or TEEBS_TEXT_COLOUR_DEFAULT, currentRestedPercent .. "%") .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " rested experience remaining"))
+    print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is " .. currentPercent .. "% into level " .. currentLevel .. " and has ") .. recolourOutputText(currentRestedPercent >= 150 and TEEBS_TEXT_COLOUR_ALERT or TEEBS_TEXT_COLOUR_DEFAULT, currentRestedPercent .. "%") .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " rested experience remaining"))
 end
 
 -- Command function for retrieving a characters level from the cache
@@ -597,7 +597,7 @@ function cmdGetCharacterLevel(character)
     -- Get the class colour
     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
     -- Output the results in-game
-    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently level " .. currentLevel))
+    print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently level " .. currentLevel))
 end
 
 -- Command function for retrieving a characters talent spec
@@ -620,7 +620,7 @@ function cmdGetCharacterSpec(character)
     -- Get the class colour
     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
     -- Output the results in-game
-    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently specced " .. TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents.specialisation.distribution))
+    print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently specced " .. TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents.specialisation.distribution))
 end
 
 -- Command function for retrieving a characters talent distribution
@@ -643,13 +643,13 @@ function cmdGetCharacterTalents(character)
         if talentTreeName ~= "specialisation" then
             -- Check any points are in that talent tree
             if TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents.specialisation[talentTreeName] > 0 then
-                print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " Talent Tree - ").. colourText(TEEBS_TEXT_COLOUR_TALENTS, upperCaseFirst(talentTreeName)))
+                print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " Talent Tree - ").. recolourOutputText(TEEBS_TEXT_COLOUR_TALENTS, upperCaseFirst(talentTreeName)))
                 for talentTier = 1, 7 do
                     for talentColumn = 1, 4 do
                         if talentTreeTable[tostring(talentTier)][tostring(talentColumn)] ~= nil then
                             talent = talentTreeTable[tostring(talentTier)][tostring(talentColumn)]
                             if talent.currentRank > 0 then
-                                print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has talent ") .. colourText(TEEBS_TEXT_COLOUR_TALENTS, talent.name) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " at Rank " .. talent.currentRank .. "/" .. talent.maxRank))
+                                print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " has talent ") .. recolourOutputText(TEEBS_TEXT_COLOUR_TALENTS, talent.name) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " at Rank " .. talent.currentRank .. "/" .. talent.maxRank))
                             end
                         end
                     end
@@ -676,7 +676,7 @@ function cmdGetCharacterGold(character)
     -- Get the class colour
     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
     -- Output the results in-game
-    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. formatCurrencyData(currencyData)))
+    print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. formatCurrencyData(currencyData)))
 end
 
 -- Command function for retrieving a characters profession skill levels
@@ -718,7 +718,7 @@ function cmdGetCharacterProfessions(character)
         -- Iterator through each profession in each profession type - This is what actually catches the profession data
         for profession, professionData in pairs(professionTypeTables) do
             -- Output the results in-gam (colour the level output green if its maxed)
-            print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. colourText(professionData.current == 300 and TEEBS_TEXT_COLOUR_CAPPED or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
+            print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. recolourOutputText(professionData.current == 300 and TEEBS_TEXT_COLOUR_CAPPED or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
         end
     end
 end
@@ -742,7 +742,7 @@ function cmdGetCharacterPrimaryProfessions(character)
     -- Iterator through each profession in the primary profession table
     for profession, professionData in pairs(characterPrimaryProfessions) do
         -- Output the results in-gam (colour the level output green if its maxed)
-        print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. colourText(professionData.current == 300 and TEEBS_TEXT_COLOUR_CAPPED or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
+        print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. recolourOutputText(professionData.current == 300 and TEEBS_TEXT_COLOUR_CAPPED or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
     end
 end
 
@@ -765,7 +765,7 @@ function cmdGetCharacterSecondaryProfessions(character)
     -- Iterator through each profession in the primary profession table
     for profession, professionData in pairs(characterSecondaryProfessions) do
         -- Output the results in-gam (colour the level output green if its maxed)
-        print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. colourText(professionData.current == 300 and TEEBS_TEXT_COLOUR_CAPPED or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
+        print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. recolourOutputText(professionData.current == 300 and TEEBS_TEXT_COLOUR_CAPPED or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
     end
 end
 
@@ -791,7 +791,7 @@ function cmdGetCharacterReputation(character, faction)
     -- Get the class colour
     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
     -- Generate the function's in-game response
-    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. colourText(TEEBS_TEXT_COLOUR_CAPPED, faction.factionName) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently ") .. colourText(getFactionStandingTextColour(faction.factionStanding), faction.factionStanding))
+    print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. recolourOutputText(TEEBS_TEXT_COLOUR_CAPPED, faction.factionName) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently ") .. recolourOutputText(getFactionStandingTextColour(faction.factionStanding), faction.factionStanding))
 end
 
 -- Get the data on all the factions the character has cached
@@ -811,7 +811,7 @@ function cmdGetAllCharacterReputations(character)
         -- Get the class colour
         local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
         -- Generate the function's in-game response
-        print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. colourText(TEEBS_TEXT_COLOUR_CAPPED, reputationData.factionName) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently ") .. colourText(getFactionStandingTextColour(reputationData.factionStanding), reputationData.factionStanding))
+        print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. recolourOutputText(TEEBS_TEXT_COLOUR_CAPPED, reputationData.factionName) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently ") .. recolourOutputText(getFactionStandingTextColour(reputationData.factionStanding), reputationData.factionStanding))
     end
 end
 
@@ -834,7 +834,7 @@ function cmdGetAllCharactersItemSlots(character)
                 item:ContinueOnItemLoad(function()
                     -- Now the item has been cached, format the output string to use the class colour and print the item link
                     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
-                    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has ") ..  item:GetItemLink() .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " equipped in gear slot " .. slotNumber))
+                    print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " has ") ..  item:GetItemLink() .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " equipped in gear slot " .. slotNumber))
                 end)
             end
         end
@@ -861,7 +861,7 @@ function cmdGetAllCharactersBags(character)
                 item:ContinueOnItemLoad(function()
                     -- Now the item has been cached, format the output string to use the class colour and print the item link
                     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
-                    print(colourText(classColourHex, upperCaseFirst(character)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has ") ..  item:GetItemLink() .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " equipped in bag slot " .. slotNumber))
+                    print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " has ") ..  item:GetItemLink() .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " equipped in bag slot " .. slotNumber))
                 end)
             end
         end
@@ -877,10 +877,10 @@ function cmdGetAllCharactersExperience()
         -- Check if the character is level 60
         if characterData.level == 60 then
             -- Print the character is level 60, theres no point in printing the exp stats as they're always 0!
-            print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " is level " .. characterData.level))
+            print(recolourOutputText(classColourHex, upperCaseFirst(characterName)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is level " .. characterData.level))
         else
             -- Output the results in-game, current level, current exp and rested exp
-            print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " is " .. characterData.experienceCurrentPercentage .. "% into level " .. characterData.level .. " and has ") .. colourText(characterData.experienceRestedPercentage >= 150 and TEEBS_TEXT_COLOUR_ALERT or TEEBS_TEXT_COLOUR_DEFAULT, characterData.experienceRestedPercentage .. "%") .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " rested experience remaining"))
+            print(recolourOutputText(classColourHex, upperCaseFirst(characterName)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is " .. characterData.experienceCurrentPercentage .. "% into level " .. characterData.level .. " and has ") .. recolourOutputText(characterData.experienceRestedPercentage >= 150 and TEEBS_TEXT_COLOUR_ALERT or TEEBS_TEXT_COLOUR_DEFAULT, characterData.experienceRestedPercentage .. "%") .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " rested experience remaining"))
         end
     end
 end
@@ -892,7 +892,7 @@ function cmdGetAllCharactersLevels()
         -- Get the class colour
         local _, _, _, classColourHex = GetClassColor(characterData.class:upper())
         -- Output the character levels
-        print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " is level " .. characterData.level))
+        print(recolourOutputText(classColourHex, upperCaseFirst(characterName)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is level " .. characterData.level))
     end
 end
 
@@ -903,7 +903,7 @@ function cmdGetAllCharacterSpecs()
         -- Get the class colour
         local _, _, _, classColourHex = GetClassColor(characterData.class:upper())
         -- Output the character levels
-        print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently specced " .. characterData.talents.specialisation))
+        print(recolourOutputText(classColourHex, upperCaseFirst(characterName)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently specced " .. characterData.talents.specialisation))
     end
 end
 
@@ -914,7 +914,7 @@ function cmdGetAllCharactersGold()
         -- Get the class colour
         local _, _, _, classColourHex = GetClassColor(characterData.class:upper())
         -- Output the results in-game
-        print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. formatCurrencyData(characterData.currency)))
+        print(recolourOutputText(classColourHex, upperCaseFirst(characterName)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. formatCurrencyData(characterData.currency)))
     end
 end
 
@@ -929,7 +929,7 @@ function cmdGetAllCharacterProfessions()
             -- Iterator through each profession in each profession type - This is what actually catches the profession data
             for profession, professionData in pairs(professionTypeTables) do
                 -- Output the results in-gam (colour the level output green if its maxed)
-                print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. colourText(professionData.current == 300 and TEEBS_TEXT_COLOUR_CAPPED or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
+                print(recolourOutputText(classColourHex, upperCaseFirst(characterName)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. recolourOutputText(professionData.current == 300 and TEEBS_TEXT_COLOUR_CAPPED or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
             end
         end
     end
@@ -944,7 +944,7 @@ function cmdGetAllCharacterPrimaryProfessions()
         -- Iterator through each profession in each profession type - This is what actually catches the profession data
         for profession, professionData in pairs(characterData.professions["primary"]) do
             -- Output the results in-gam (colour the level output green if its maxed)
-            print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. colourText(professionData.current == 300 and TEEBS_TEXT_COLOUR_CAPPED or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
+            print(recolourOutputText(classColourHex, upperCaseFirst(characterName)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. recolourOutputText(professionData.current == 300 and TEEBS_TEXT_COLOUR_CAPPED or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
         end
     end
 end
@@ -958,7 +958,7 @@ function cmdGetAllCharacterSecondaryProfessions()
         -- Iterator through each profession in each profession type - This is what actually catches the profession data
         for profession, professionData in pairs(characterData.professions["secondary"]) do
             -- Output the results in-gam (colour the level output green if its maxed)
-            print(colourText(classColourHex, upperCaseFirst(characterName)) .. colourText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. colourText(professionData.current == 300 and TEEBS_TEXT_COLOUR_CAPPED or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
+            print(recolourOutputText(classColourHex, upperCaseFirst(characterName)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. profession .. " - ") .. recolourOutputText(professionData.current == 300 and TEEBS_TEXT_COLOUR_CAPPED or TEEBS_TEXT_COLOUR_DEFAULT, professionData.current .. " / " .. professionData.max))
         end
     end
 end
