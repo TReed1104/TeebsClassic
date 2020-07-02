@@ -791,7 +791,7 @@ function cmdGetCharacterReputation(character, faction)
     -- Get the class colour
     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
     -- Generate the function's in-game response
-    print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. recolourOutputText(TEEBS_TEXT_COLOUR_CAPPED, faction.factionName) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently ") .. recolourOutputText(getFactionStandingTextColour(faction.factionStanding), faction.factionStanding))
+    print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. recolourOutputText(TEEBS_TEXT_COLOUR_CAPPED, faction.factionName) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently ") .. recolourOutputText(getFactionStandingTextColour(faction.factionStanding), faction.factionStanding .. " - " .. getFactionStandingValues(faction)))
 end
 
 -- Get the data on all the factions the character has cached
