@@ -145,7 +145,7 @@ function factionStandingTextColour(standing)
 end
 
 -- Calculate the rep standing in numerical values - E.g. 4123/6000 or 12135/21000 etc.
-function calculateNumericalRepStanding(reputationData)
+function getFactionStandingValues(reputationData)
 end
 
 ------------------------------------------------------------------
