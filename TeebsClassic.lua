@@ -50,12 +50,14 @@ frame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, ...)
         setCharacterDataSpecialisation()
         setCharacterDataProfessions()
         setCharacterDataReputation()
+        setCharacterDataPlayTime()
     end
 
     -- Player Level Up Trigger
     if event == "PLAYER_LEVEL_UP" then
         setCharacterDataCharacterExperience()
         setCharacterDataLevel()
+        setCharacterDataPlayTime()
     end
 
     -- Player Skill Update Trigger
