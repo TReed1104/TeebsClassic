@@ -314,6 +314,8 @@ end
 
 -- Caching of the characters time played
 function setCharacterDataPlayTime()
+    -- Send the request to the server for the playtime of the character
+    RequestTimePlayed();    -- The return value doesn't happen here, but instead in the TIME_PLAYED_MSG event
 end
 
 -- Caching of the current characters talents
