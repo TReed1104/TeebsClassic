@@ -27,7 +27,7 @@ frame:RegisterEvent("CHARACTER_POINTS_CHANGED")
 frame:RegisterEvent("UPDATE_FACTION")
 
 -- Handle Events Triggering
-frame:SetScript("OnEvent", function(self, event, ...)
+frame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, ...)
     -- Addon Loaded Trigger
     if event == "ADDON_LOADED" then
         CURRENT_REALM = GetRealmName():lower()
