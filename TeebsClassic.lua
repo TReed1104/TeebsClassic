@@ -50,14 +50,14 @@ frame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, ...)
         setCharacterDataSpecialisation()
         setCharacterDataProfessions()
         setCharacterDataReputation()
-        setCharacterDataPlayTime()
+        RequestTimePlayed();    -- Send the request to the server to query the character play time, the return data happens in the TIME_PLAYED_MSG event
     end
 
     -- Player Level Up Trigger
     if event == "PLAYER_LEVEL_UP" then
         setCharacterDataCharacterExperience()
         setCharacterDataLevel()
-        setCharacterDataPlayTime()
+        RequestTimePlayed();    -- Send the request to the server to query the character play time, the return data happens in the TIME_PLAYED_MSG event
     end
 
     -- Player Skill Update Trigger
@@ -93,12 +93,7 @@ frame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, ...)
 
     -- Play Time callback catch
     if event == "TIME_PLAYED_MSG" then
-        -- If the time-played table exists for the character
-        if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME]["time-played"] ~= nil then
-            -- Set the time-played values
-            TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME]["time-played"]["total"] = arg1
-            TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME]["time-played"]["current"] = arg2
-        end
+        setCharacterDataPlayTime(arg1, arg2)
     end
 end)
 
@@ -325,9 +320,13 @@ function setCharacterDataLevel()
 end
 
 -- Caching of the characters time played
-function setCharacterDataPlayTime()
-    -- Send the request to the server for the playtime of the character
-    RequestTimePlayed();    -- The return value doesn't happen here, but instead in the TIME_PLAYED_MSG event
+function setCharacterDataPlayTime(total, current)
+    -- If the time-played table exists for the character
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME]["time-played"] ~= nil then
+        -- Set the time-played values
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME]["time-played"]["total"] = total
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME]["time-played"]["current"] = current
+    end
 end
 
 -- Caching of the current characters talents
