@@ -90,6 +90,10 @@ frame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, ...)
     if event == "UPDATE_FACTION" then
         setCharacterDataReputation()
     end
+
+    -- Play Time callback catch
+    if event == "TIME_PLAYED_MSG" then
+    end
 end)
 
 
