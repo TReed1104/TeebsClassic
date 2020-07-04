@@ -93,6 +93,9 @@ frame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, ...)
 
     -- Play Time callback catch
     if event == "TIME_PLAYED_MSG" then
+        -- If the time-played table exists for the character
+        if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME]["time-played"] ~= nil then
+        end
     end
 end)
 
