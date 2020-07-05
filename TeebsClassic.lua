@@ -163,6 +163,10 @@ function getFactionStandingValues(reputationData)
     return (reputationData.repValueEarned - reputationData.repValueBottom) .. "/" .. (reputationData.repValueTop - reputationData.repValueBottom)
 end
 
+-- Play time data is returned by the server in seconds, this converts it to a X days Y Hours Z Seconds format
+function formatPlayTimeData(seconds)
+end
+
 ------------------------------------------------------------------
 -- Slash Command Registration and Functions
 ------------------------------------------------------------------
