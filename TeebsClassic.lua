@@ -165,6 +165,8 @@ end
 
 -- Play time data is returned by the server in seconds, this converts it to a X days Y Hours Z Seconds format
 function formatPlayTimeData(seconds)
+    -- Temporary return to ensure the function links together correctly
+    return seconds
 end
 
 ------------------------------------------------------------------
