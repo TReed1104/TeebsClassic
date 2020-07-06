@@ -164,9 +164,13 @@ function getFactionStandingValues(reputationData)
 end
 
 -- Play time data is returned by the server in seconds, this converts it to a X days Y Hours Z Seconds format
-function formatPlayTimeData(seconds)
-    -- Temporary return to ensure the function links together correctly
-    return seconds
+function formatPlayTimeData(totalPlayTimeInSeconds)
+    local seconds = (totalPlayTimeInSeconds % 60)
+    local minutes = (totalPlayTimeInSeconds % 3600) / 60
+    local hours = (totalPlayTimeInSeconds % 86400) / 3600
+    local days = totalPlayTimeInSeconds / 86400
+    -- Pack the calculate values into a return string
+    return string.format("%i Days, %i Hours, %i Minutes and %i Seconds", days, hours, minutes, seconds)
 end
 
 ------------------------------------------------------------------
