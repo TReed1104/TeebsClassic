@@ -638,6 +638,10 @@ function cmdGetCharacterLevel(character)
     print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently level " .. currentLevel))
 end
 
+-- Command function for retrieving a characters play time
+function cmdGetCharacterPlayTime(character)
+end
+
 -- Command function for retrieving a characters talent spec
 function cmdGetCharacterSpec(character)
     -- Check the character exists
