@@ -640,6 +640,11 @@ end
 
 -- Command function for retrieving a characters play time
 function cmdGetCharacterPlayTime(character)
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
 end
 
 -- Command function for retrieving a characters talent spec
