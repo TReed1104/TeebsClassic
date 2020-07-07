@@ -645,6 +645,11 @@ function cmdGetCharacterPlayTime(character)
         print("Unknown Charater", character)
         return
     end
+    -- Check if the character level has been cached
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character]["time-played"] == nil then
+        print("Playtime data not cached")
+        return
+    end
 end
 
 -- Command function for retrieving a characters talent spec
