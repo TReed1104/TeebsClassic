@@ -650,6 +650,13 @@ function cmdGetCharacterPlayTime(character)
         print("Playtime data not cached")
         return
     end
+    -- Local copy the play-time table for faster access
+    local currentPlaytime = TeebsClassicDB.realms[CURRENT_REALM].characters[character]["time-played"]
+    -- Get the class colour
+    local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
+    -- Output the results in-game
+    print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " Total Playtime Is: " .. currentPlaytime.total))
+    print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " Current Level Playtime Is: " .. currentPlaytime.current))
 end
 
 -- Command function for retrieving a characters talent spec
