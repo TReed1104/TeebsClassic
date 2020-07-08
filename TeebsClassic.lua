@@ -238,8 +238,6 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
         cmdGetCharacterSecondaryProfessions(messageSplit[2])
     elseif messageSplit[1] == "get-rep" then
         cmdGetCharacterReputation(messageSplit[2], messageSplit[3]:lower())
-    elseif messageSplit[1] == "get-reps-all" then
-        cmdGetAllCharacterReputations(messageSplit[2])
     elseif messageSplit[1] == "get-slot-all" then
         cmdGetAllCharactersItemSlots(messageSplit[2])
     elseif messageSplit[1] == "get-bags-all" then
@@ -258,6 +256,8 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
         cmdGetAllCharacterPrimaryProfessions()
     elseif messageSplit[1] == "get-secondary-professions-all" then
         cmdGetAllCharacterSecondaryProfessions()
+    elseif messageSplit[1] == "get-reps-all" then
+        cmdGetAllCharacterReputations(messageSplit[2])
     else
         print("Unknown Command", messageSplit[1])
     end
