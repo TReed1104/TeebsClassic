@@ -657,8 +657,8 @@ function cmdGetCharacterPlayTime(character)
     -- Get the class colour
     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
     -- Output the results in-game
-    print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " Total time played: " .. currentPlaytime.total))
-    print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " Time played this level: " .. currentPlaytime.current))
+    print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " Total time played: " .. formatPlayTimeData(currentPlaytime.total)))
+    print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " Time played this level: " .. formatPlayTimeData(currentPlaytime.current)))
 end
 
 -- Command function for retrieving a characters talent spec
