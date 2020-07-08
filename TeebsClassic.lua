@@ -336,8 +336,8 @@ function setCharacterDataPlayTime(total, current)
     -- If the time-played table exists for the character
     if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME]["time-played"] ~= nil then
         -- Set the time-played values
-        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME]["time-played"]["total"] = formatPlayTimeData(total)
-        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME]["time-played"]["current"] = formatPlayTimeData(current)
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME]["time-played"]["total"] = total
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME]["time-played"]["current"] = current
     end
 end
 
