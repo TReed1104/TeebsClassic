@@ -170,7 +170,7 @@ function formatPlayTimeData(totalPlayTimeInSeconds)
     local hours = (totalPlayTimeInSeconds % 86400) / 3600
     local days = totalPlayTimeInSeconds / 86400
     -- Pack the calculate values into a return string
-    return string.format("%i Days, %i Hours, %i Minutes and %i Seconds", days, hours, minutes, seconds)
+    return string.format("%i days, %i hours, %i minutes, %i seconds", days, hours, minutes, seconds)
 end
 
 ------------------------------------------------------------------
