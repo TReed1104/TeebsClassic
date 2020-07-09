@@ -959,6 +959,9 @@ end
 
 -- Command function for retrieving all characters play time
 function cmdGetAllCharacterPlayTime()
+    -- For every character cached for the current realm, print their playtime values last cached
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+    end
 end
 
 -- Command function for retrieving the talent spec of all cached characters on the current server
