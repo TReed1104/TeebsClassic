@@ -262,6 +262,8 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
         cmdGetAllCharacterReputations(messageSplit[2])
     elseif messageSplit[1] == "get-playtime-all" then
         cmdGetAllCharacterPlayTime()
+    elseif messageSplit[1] == "get-total-playtime" then
+        cmdGetTotalPlayTime()
     else
         print("Unknown Command", messageSplit[1])
     end
