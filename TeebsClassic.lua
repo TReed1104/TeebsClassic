@@ -1027,3 +1027,7 @@ function cmdGetAllCharacterSecondaryProfessions()
         end
     end
 end
+
+-- Get the total playtime across all cached characters on the realm
+function cmdGetTotalPlayTime()
+end
