@@ -957,6 +957,10 @@ function cmdGetAllCharactersLevels()
     end
 end
 
+-- Command function for retrieving all characters play time
+function cmdGetAllCharacterPlayTime()
+end
+
 -- Command function for retrieving the talent spec of all cached characters on the current server
 function cmdGetAllCharacterSpecs()
     -- For every character cached for the current realm, print their character spec
