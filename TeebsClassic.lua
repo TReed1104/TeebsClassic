@@ -963,6 +963,11 @@ end
 function cmdGetAllCharacterPlayTime()
     -- For every character cached for the current realm, print their playtime values last cached
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        -- Get the class colour
+        local _, _, _, classColourHex = GetClassColor(characterData.class:upper())
+        -- Output the results in-game
+        print(recolourOutputText(classColourHex, upperCaseFirst(characterName)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " Total time played: " .. formatPlayTimeData(characterData["time-played"].total)))
+        print(recolourOutputText(classColourHex, upperCaseFirst(characterName)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " Time played this level: " .. formatPlayTimeData(characterData["time-played"].current)))
     end
 end
 
