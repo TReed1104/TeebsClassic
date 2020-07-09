@@ -1040,4 +1040,11 @@ end
 
 -- Get the total playtime across all cached characters on the realm
 function cmdGetTotalPlayTime()
+    local totalPlayTimeInSeconds = 0
+    -- For every character cached for the current realm, total up their total playtime
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        totalPlayTimeInSeconds = totalPlayTimeInSeconds + characterData["time-played"].total
+    end
+    -- Print the result
+    print(recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, "Total time tlayed across this server is " .. formatPlayTimeData(totalPlayTimeInSeconds)))
 end
