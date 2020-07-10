@@ -1053,4 +1053,7 @@ end
 
 -- Get the total gold across all cached characters on the realm
 function cmdGetTotalGold()
+    -- For every character cached for the current realm, total up their total gold
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+    end
 end
