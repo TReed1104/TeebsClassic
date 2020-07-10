@@ -129,7 +129,10 @@ end
 
 -- Print currency data formatter
 function formatCurrencyData(currencyData)
-    return string.format("%ig %is %ic", currencyData["gold"], currencyData["silver"], currencyData["copper"])
+    local gold = math.floor(currencyData.copper / 100 / 100)
+    local silver = math.floor((currencyData.copper / 100) % 100)
+    local copper = currencyData.copper % 100
+    return string.format("%ig %is %ic", gold, silver, copper)
 end
 
 -- Generate Reputation standing text colour
