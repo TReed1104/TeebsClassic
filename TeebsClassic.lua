@@ -1054,7 +1054,11 @@ end
 
 -- Get the total gold across all cached characters on the realm
 function cmdGetTotalGold()
+    local totalCurrency = 0
     -- For every character cached for the current realm, total up their total gold
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        totalCurrency = totalCurrency + characterData["currency"].copper
     end
+    -- Print the result
+    print(recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, "Total Currency across this server is " .. formatCurrencyData(totalCurrency)))
 end
