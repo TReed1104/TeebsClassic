@@ -1050,3 +1050,7 @@ function cmdGetTotalPlayTime()
     -- Print the result
     print(recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, "Total time tlayed across this server is " .. formatPlayTimeData(totalPlayTimeInSeconds)))
 end
+
+-- Get the total gold across all cached characters on the realm
+function cmdGetTotalGold()
+end
