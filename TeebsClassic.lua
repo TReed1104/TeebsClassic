@@ -440,13 +440,9 @@ end
 
 -- Caching of the current characters currencies
 function setCharacterDataCurrency()
-    -- Get the characters money value, returns in copper
-    local copper = GetMoney()
-
-    -- Map to our current table
-    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].currency["gold"] = math.floor(copper / 100 / 100)
-    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].currency["silver"] = math.floor((copper / 100) % 100)
-    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].currency["copper"] = copper % 100
+    -- Fill out the currency table
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].currency["copper"] = GetMoney()
+    -- Uses a data table for future proofing other currencies i think about tracking
 end
 
 -- Caching the professions of the current character
