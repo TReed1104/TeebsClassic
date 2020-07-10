@@ -128,10 +128,12 @@ function upperCaseFirst(inputString)
 end
 
 -- Print currency data formatter
-function formatCurrencyData(currencyData)
-    local gold = math.floor(currencyData.copper / 100 / 100)
-    local silver = math.floor((currencyData.copper / 100) % 100)
-    local copper = currencyData.copper % 100
+function formatCurrencyData(rawCopper)
+    -- Format the copper into its G, S, C values
+    local gold = math.floor(rawCopper / 100 / 100)
+    local silver = math.floor((rawCopper / 100) % 100)
+    local copper = rawCopper % 100
+    -- Return the formatted data string
     return string.format("%ig %is %ic", gold, silver, copper)
 end
 
