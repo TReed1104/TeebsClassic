@@ -1049,7 +1049,7 @@ function cmdGetTotalPlayTime()
         totalPlayTimeInSeconds = totalPlayTimeInSeconds + characterData["time-played"].total
     end
     -- Print the result
-    print(recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, "Total time tlayed across this server is " .. formatPlayTimeData(totalPlayTimeInSeconds)))
+    print(recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, "Total Time Played across this server is " .. formatPlayTimeData(totalPlayTimeInSeconds)))
 end
 
 -- Get the total gold across all cached characters on the realm
