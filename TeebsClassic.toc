@@ -5,6 +5,6 @@
 ## DefaultState: Enabled
 
 ## Title: TeebsHelper
-## Data caching for character details and quick character data retrieval
+## Notes: Data caching for character details and quick character data retrieval
 
 TeebsClassic.lua
