@@ -685,10 +685,12 @@ function cmdGetCharacterSpec(character)
         print("Specialisation data not cached")
         return
     end
+    -- Local copy the point distribution for returning
+    local talentPointDistribution = TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents.specialisation.distribution
     -- Get the class colour
     local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
     -- Output the results in-game
-    print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently specced " .. TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents.specialisation.distribution))
+    print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently specced " .. talentPointDistribution))
 end
 
 -- Command function for retrieving a characters talent distribution
