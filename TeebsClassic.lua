@@ -1119,3 +1119,42 @@ function interfaceGetReputation(character)
     return nil
 end
 
+function interfaceGetAllExperience()
+    return nil
+end
+
+function interfaceGetAllLevels()
+    return nil
+end
+
+function interfaceGetAllPlayTime()
+    return nil
+end
+
+function interfaceGetAllSpecs()
+    return nil
+end
+
+function interfaceGetAllTalents()
+    return nil
+end
+
+function interfaceGetAllGold()
+    return nil
+end
+
+function interfaceGetAllProfessions()
+    return nil
+end
+
+function interfaceGetAllPrimaryProfessions()
+    return nil
+end
+
+function interfaceGetAllSecondaryProfessions()
+    return nil
+end
+
+function interfaceGetAllReputation()
+    return nil
+end
