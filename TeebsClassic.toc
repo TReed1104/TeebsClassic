@@ -9,5 +9,11 @@
 
 # Globals
 Globals.lua
+# Function source includes
+Functions_helper.lua
+Functions_caching.lua
+Functions_cmd.lua
+Functions_ui.lua
+Functions_slash.lua
 # Main Source
 TeebsClassic.lua
