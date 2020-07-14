@@ -7,4 +7,7 @@
 ## Title: TeebsHelper
 ## Notes: Data caching for character details and quick character data retrieval
 
+# Globals
+Globals.lua
+# Main Source
 TeebsClassic.lua
