@@ -22,8 +22,8 @@ function interfaceGetExperience(character)
     end
     -- Create our return data table
     local levelData = {
-        currentLevel = TeebsClassicDB.realms[CURRENT_REALM].characters[character].level
-        currentPercent = TeebsClassicDB.realms[CURRENT_REALM].characters[character].experienceCurrentPercentage
+        currentLevel = TeebsClassicDB.realms[CURRENT_REALM].characters[character].level,
+        currentPercent = TeebsClassicDB.realms[CURRENT_REALM].characters[character].experienceCurrentPercentage,
         currentRestedPercent = TeebsClassicDB.realms[CURRENT_REALM].characters[character].experienceRestedPercentage
     }
     return levelData
