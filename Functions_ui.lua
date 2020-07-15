@@ -10,7 +10,23 @@ function interfaceGetAllBagSlots()
 end
 
 function interfaceGetExperience(character)
-    return nil
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return nil
+    end
+    -- Check if the character experience data has been cached
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].experienceCurrentPercentage == nil or TeebsClassicDB.realms[CURRENT_REALM].characters[character].experienceRestedPercentage == nil then
+        print("Experience data not cached")
+        return nil
+    end
+    -- Create our return data table
+    local levelData = {
+        currentLevel = TeebsClassicDB.realms[CURRENT_REALM].characters[character].level
+        currentPercent = TeebsClassicDB.realms[CURRENT_REALM].characters[character].experienceCurrentPercentage
+        currentRestedPercent = TeebsClassicDB.realms[CURRENT_REALM].characters[character].experienceRestedPercentage
+    }
+    return levelData
 end
 
 function interfaceGetLevel(character)
