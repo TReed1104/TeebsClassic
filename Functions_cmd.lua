@@ -100,10 +100,8 @@ function cmdGetCharacterLevel(character)
     end
     -- Get the Character details
     local currentLevel = TeebsClassicDB.realms[CURRENT_REALM].characters[character].level
-    -- Get the class colour
-    local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[character].class:upper())
     -- Output the results in-game
-    print(recolourOutputText(classColourHex, upperCaseFirst(character)) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently level " .. currentLevel))
+    print(recolourNameByClass(character) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently level " .. currentLevel))
 end
 
 -- Command function for retrieving a characters play time
