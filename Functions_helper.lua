@@ -24,6 +24,8 @@ end
 
 -- Colour a character name by its class colour used in the WoW API
 function recolourNameByClass(characterName, text)
+    local _, _, _, classColourHex = GetClassColor(TeebsClassicDB.realms[CURRENT_REALM].characters[characterName].class:upper())
+    return recolourOutputText(classColourHex, upperCaseFirst(characterName))
 end
 
 -- Capitalise first letter of string
