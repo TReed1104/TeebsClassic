@@ -22,6 +22,10 @@ function recolourOutputText(colour, text)
     return string.format("%s%s", "|c" .. colour, text)
 end
 
+-- Colour a character name by its class colour used in the WoW API
+function recolourNameByClass(characterName, text)
+end
+
 -- Capitalise first letter of string
 function upperCaseFirst(inputString)
     return inputString:sub(1,1):upper()..inputString:sub(2)
