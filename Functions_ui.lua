@@ -62,7 +62,24 @@ function interfaceGetPlayTime(character)
 end
 
 function interfaceGetSpec(character)
-    return nil
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
+    -- Check if the characters talents have been cached
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents == nil then
+        print("Talent data not cached")
+        return
+    end
+    -- Check if the characters specialisation have been cached
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents.specialisation == nil then
+        print("Specialisation data not cached")
+        return
+    end
+    -- Copy the character data to return, Lua passes data tables by reference
+    local talentPointDistribution = TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents.specialisation.distribution
+    return talentPointDistribution
 end
 
 function interfaceGetTalents(character)
