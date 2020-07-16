@@ -103,7 +103,19 @@ function interfaceGetGold(character)
 end
 
 function interfaceGetProfessions(character)
-    return nil
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
+    -- Check if the currency data has been recorded
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].professions == nil then
+        print("Professions data not cached")
+        return
+    end
+    -- Copy the character data to return, Lua passes data tables by reference
+    local characterProfessionsTable = TeebsClassicDB.realms[CURRENT_REALM].characters[character].professions
+    return characterProfessionsTable
 end
 
 function interfaceGetPrimaryProfessions(character)
