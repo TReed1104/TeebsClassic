@@ -30,7 +30,17 @@ function interfaceGetExperience(character)
 end
 
 function interfaceGetLevel(character)
-    return nil
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
+    -- Check if the character level has been cached
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].level == nil then
+        print("Level data not cached")
+        return
+    end
+    return TeebsClassicDB.realms[CURRENT_REALM].characters[character].level
 end
 
 function interfaceGetPlayTime(character)
