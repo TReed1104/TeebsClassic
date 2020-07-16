@@ -40,7 +40,9 @@ function interfaceGetLevel(character)
         print("Level data not cached")
         return
     end
-    return TeebsClassicDB.realms[CURRENT_REALM].characters[character].level
+    -- Copy the character data to return, Lua passes data tables by reference
+    local characterLevel = TeebsClassicDB.realms[CURRENT_REALM].characters[character].level
+    return characterLevel
 end
 
 function interfaceGetPlayTime(character)
@@ -54,7 +56,9 @@ function interfaceGetPlayTime(character)
         print("Playtime data not cached")
         return
     end
-    return TeebsClassicDB.realms[CURRENT_REALM].characters[character]["time-played"]
+    -- Copy the character data to return, Lua passes data tables by reference
+    local characterTimePlayed = TeebsClassicDB.realms[CURRENT_REALM].characters[character]["time-played"]
+    return characterTimePlayed
 end
 
 function interfaceGetSpec(character)
