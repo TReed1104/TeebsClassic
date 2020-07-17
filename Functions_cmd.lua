@@ -255,7 +255,7 @@ end
 
 -- Get only a characters secondary professions
 function cmdGetCharacterSecondaryProfessions(character)
-        -- Check the character exists
+    -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
         return
