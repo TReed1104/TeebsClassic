@@ -151,7 +151,24 @@ function interfaceGetSecondaryProfessions(character)
 end
 
 function interfaceGetReputation(character)
-    return nil
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
+    -- Check if the reputation data has been recorded
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].reputations == nil then
+        print("Reputation data not cached")
+        return
+    end
+    -- Check the desired faction exists in the characters reputation data
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].reputations[faction] == nil then
+        print("Reputation data on the desired faction not found")
+        return
+    end
+    -- Copy the character data to return, Lua passes data tables by reference
+    local chosenFactionData = TeebsClassicDB.realms[CURRENT_REALM].characters[character].reputations[faction]
+    return chosenFactionData
 end
 
 function interfaceGetAllExperience()
