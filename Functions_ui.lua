@@ -187,7 +187,16 @@ function interfaceGetAllExperience()
 end
 
 function interfaceGetAllLevels()
-    return nil
+    -- Create our data table for copying the character levels into
+    local allCharacterLevelData = {}
+    -- For every character cached for the current realm, collect their level values
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allCharacterLevelData[characterName] = {
+            currentLevel = characterData.level
+        }
+    end
+    -- Return our collated character levels
+    return allCharacterLevelData
 end
 
 function interfaceGetAllPlayTime()
