@@ -219,7 +219,7 @@ function interfaceGetAllSpecs()
     -- For every character cached for the current realm, collect their specs
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
         allCharactersSpecs[characterName] = {
-            characterData.talents.specialisation
+            spec = characterData.talents.specialisation
         }
     end
     -- Return our collated character specs
