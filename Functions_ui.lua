@@ -231,7 +231,16 @@ function interfaceGetAllTalents()
 end
 
 function interfaceGetAllGold()
-    return nil
+    -- Create our data table for copying the character currency data into
+    local allCharactersCurrency= {}
+    -- For every character cached for the current realm
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allCharactersCurrency[characterName] = {
+            copper = characterData.currency.copper
+        }
+    end
+    -- Return our collated character copper
+    return allCharactersCurrency
 end
 
 function interfaceGetAllProfessions()
