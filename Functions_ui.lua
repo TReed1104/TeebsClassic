@@ -232,7 +232,7 @@ end
 
 function interfaceGetAllGold()
     -- Create our data table for copying the character currency data into
-    local allCharactersCurrency= {}
+    local allCharactersCurrency = {}
     -- For every character cached for the current realm
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
         allCharactersCurrency[characterName] = {
