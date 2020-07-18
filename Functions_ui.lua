@@ -200,7 +200,17 @@ function interfaceGetAllLevels()
 end
 
 function interfaceGetAllPlayTime()
-    return nil
+    -- Create our data table for copying the character play-time into
+    local allCharactersPlayTime = {}
+    -- For every character cached for the current realm, collect their play-time data
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allCharactersPlayTime[characterName] = {
+            total = characterData["time-played"].total,
+            current = characterData["time-played"].current
+        }
+    end
+    -- Return our collated character play-times
+    return allCharactersPlayTime
 end
 
 function interfaceGetAllSpecs()
