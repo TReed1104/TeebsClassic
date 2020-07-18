@@ -214,7 +214,16 @@ function interfaceGetAllPlayTime()
 end
 
 function interfaceGetAllSpecs()
-    return nil
+    -- Create our data table for copying the character specs into
+    local allCharactersSpecs = {}
+    -- For every character cached for the current realm, collect their specs
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allCharactersSpecs[characterName] = {
+            characterData.talents.specialisation
+        }
+    end
+    -- Return our collated character specs
+    return allCharactersSpecs
 end
 
 function interfaceGetAllTalents()
