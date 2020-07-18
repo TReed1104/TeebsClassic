@@ -172,7 +172,18 @@ function interfaceGetReputation(character)
 end
 
 function interfaceGetAllExperience()
-    return nil
+    -- Create our data table for copying the character experience data into
+    local allCharacterLevelData = {}
+    -- For every character cached for the current realm, collect their experience data
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allCharacterLevelData[characterName] = {
+            currentLevel = characterData.level,
+            currentPercent = characterData.experienceCurrentPercentage,
+            currentRestedPercent = characterData.experienceRestedPercentage
+        }
+    end
+    -- Return our collated character experience data
+    return allCharacterLevelData
 end
 
 function interfaceGetAllLevels()
