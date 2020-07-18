@@ -150,7 +150,7 @@ function interfaceGetSecondaryProfessions(character)
     return characterSecondaryProfessions
 end
 
-function interfaceGetReputation(character)
+function interfaceGetReputation(character, faction)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
