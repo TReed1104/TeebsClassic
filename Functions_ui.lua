@@ -150,7 +150,7 @@ function interfaceGetSecondaryProfessions(character)
     return characterSecondaryProfessions
 end
 
-function interfaceGetReputation(character)
+function interfaceGetReputation(character, faction)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
@@ -169,6 +169,10 @@ function interfaceGetReputation(character)
     -- Copy the character data to return, Lua passes data tables by reference
     local chosenFactionData = TeebsClassicDB.realms[CURRENT_REALM].characters[character].reputations[faction]
     return chosenFactionData
+end
+
+function interfaceGetAllReputations(character)
+    return nil
 end
 
 function interfaceGetAllExperience()
@@ -200,11 +204,30 @@ function interfaceGetAllLevels()
 end
 
 function interfaceGetAllPlayTime()
-    return nil
+    -- Create our data table for copying the character play-time into
+    local allCharactersPlayTime = {}
+    -- For every character cached for the current realm, collect their play-time data
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allCharactersPlayTime[characterName] = {
+            total = characterData["time-played"].total,
+            current = characterData["time-played"].current
+        }
+    end
+    -- Return our collated character play-times
+    return allCharactersPlayTime
 end
 
 function interfaceGetAllSpecs()
-    return nil
+    -- Create our data table for copying the character specs into
+    local allCharactersSpecs = {}
+    -- For every character cached for the current realm, collect their specs
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allCharactersSpecs[characterName] = {
+            spec = characterData.talents.specialisation
+        }
+    end
+    -- Return our collated character specs
+    return allCharactersSpecs
 end
 
 function interfaceGetAllTalents()
@@ -212,7 +235,16 @@ function interfaceGetAllTalents()
 end
 
 function interfaceGetAllGold()
-    return nil
+    -- Create our data table for copying the character currency data into
+    local allCharactersCurrency = {}
+    -- For every character cached for the current realm
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allCharactersCurrency[characterName] = {
+            copper = characterData.currency.copper
+        }
+    end
+    -- Return our collated character copper
+    return allCharactersCurrency
 end
 
 function interfaceGetAllProfessions()
@@ -224,9 +256,5 @@ function interfaceGetAllPrimaryProfessions()
 end
 
 function interfaceGetAllSecondaryProfessions()
-    return nil
-end
-
-function interfaceGetAllReputation()
     return nil
 end
