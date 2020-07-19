@@ -171,6 +171,10 @@ function interfaceGetReputation(character, faction)
     return chosenFactionData
 end
 
+function interfaceGetAllReputations(character)
+    return nil
+end
+
 function interfaceGetAllExperience()
     -- Create our data table for copying the character experience data into
     local allCharacterExperienceData = {}
@@ -252,9 +256,5 @@ function interfaceGetAllPrimaryProfessions()
 end
 
 function interfaceGetAllSecondaryProfessions()
-    return nil
-end
-
-function interfaceGetAllReputations(character)
     return nil
 end
