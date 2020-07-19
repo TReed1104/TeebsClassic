@@ -255,6 +255,6 @@ function interfaceGetAllSecondaryProfessions()
     return nil
 end
 
-function interfaceGetAllReputation()
+function interfaceGetAllReputations(character)
     return nil
 end
