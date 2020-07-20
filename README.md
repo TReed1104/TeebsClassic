@@ -22,3 +22,7 @@ For each character TeebsClassic tracks the following data:
 - Equipped Gear
 - Equipped Bags
 - Play time
+
+
+## Command Documentation
+UNDER CONSTRUCTION
