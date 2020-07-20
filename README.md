@@ -4,7 +4,7 @@ TeebsClassic is World of Warcraft Classic Addon written to provide players who h
 
 Currently TeebsClassic works as a command line tool in the Wow Classic chatbox, with a UI version coming soon.
 
-## What is Tracked?
+## What Character Data Is Tracked?
 For each character TeebsClassic tracks the following data:
 - Realm
 - Faction
