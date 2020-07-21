@@ -2,6 +2,23 @@
 -- Addon UI Functions - Return data for binding to UI panels
 ------------------------------------------------------------------
 function interfaceGetAllItemSlots(character)
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
+    local characterEquippedGear = {}
+    for slotNumber, itemID in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters[character].gear) do
+        -- Check we have anything equipped in the desired slot
+        if TeebsClassicDB.realms[CURRENT_REALM].characters[character].gear[slotNumber] > 0 then
+            -- Load the item data
+            local item = Item:CreateFromItemID(itemID)
+            item:ContinueOnItemLoad(function()
+                characterEquippedGear[slotNumber] = { item = item:GetItemLink()}
+            end)
+        end
+    end
+    return characterEquippedGear
 end
 
 function interfaceGetAllBagSlots(character)
