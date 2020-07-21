@@ -1,8 +1,7 @@
 ------------------------------------------------------------------
 -- Addon UI Functions - Return data for binding to UI panels
 ------------------------------------------------------------------
-function interfaceGetAllItemSlots()
-    return nil
+function interfaceGetAllItemSlots(character)
 end
 
 function interfaceGetAllBagSlots()
