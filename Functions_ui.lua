@@ -1,11 +1,27 @@
 ------------------------------------------------------------------
 -- Addon UI Functions - Return data for binding to UI panels
 ------------------------------------------------------------------
-function interfaceGetAllItemSlots()
-    return nil
+function interfaceGetAllItemSlots(character)
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
+    local characterEquippedGear = {}
+    for slotNumber, itemID in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters[character].gear) do
+        -- Check we have anything equipped in the desired slot
+        if TeebsClassicDB.realms[CURRENT_REALM].characters[character].gear[slotNumber] > 0 then
+            -- Load the item data
+            local item = Item:CreateFromItemID(itemID)
+            item:ContinueOnItemLoad(function()
+                characterEquippedGear[slotNumber] = { item = item:GetItemLink()}
+            end)
+        end
+    end
+    return characterEquippedGear
 end
 
-function interfaceGetAllBagSlots()
+function interfaceGetAllBagSlots(character)
     return nil
 end
 
@@ -83,7 +99,19 @@ function interfaceGetSpec(character)
 end
 
 function interfaceGetTalents(character)
-    return nil
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
+    -- Check if the characters talents have been cached
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents == nil then
+        print("Talent data not cached")
+        return
+    end
+    -- Copy the character data to return, Lua passes data tables by reference
+    local characterTalents = TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents
+    return characterTalents
 end
 
 function interfaceGetGold(character)
