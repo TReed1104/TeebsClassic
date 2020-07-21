@@ -83,7 +83,19 @@ function interfaceGetSpec(character)
 end
 
 function interfaceGetTalents(character)
-    return nil
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
+    -- Check if the characters talents have been cached
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents == nil then
+        print("Talent data not cached")
+        return
+    end
+    -- Copy the character data to return, Lua passes data tables by reference
+    local characterTalents = TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents
+    return characterTalents
 end
 
 function interfaceGetGold(character)
