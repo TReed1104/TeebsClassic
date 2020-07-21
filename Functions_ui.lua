@@ -4,7 +4,7 @@
 function interfaceGetAllItemSlots(character)
 end
 
-function interfaceGetAllBagSlots()
+function interfaceGetAllBagSlots(character)
     return nil
 end
 
