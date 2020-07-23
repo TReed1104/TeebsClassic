@@ -300,6 +300,8 @@ function interfaceGetAllProfessions()
             professions = characterData.professions
         }
     end
+    -- Return our collated character professions
+    return allCharactersProfessions
 end
 
 function interfaceGetAllPrimaryProfessions()
