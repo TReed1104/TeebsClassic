@@ -305,7 +305,16 @@ function interfaceGetAllProfessions()
 end
 
 function interfaceGetAllPrimaryProfessions()
-    return nil
+    -- Create our data table for copying the character primary professions data into
+    local allCharactersPrimaryProfessions = {}
+    -- For every character cached for the current realm
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allCharactersPrimaryProfessions[characterName] = {
+            professions = characterData.professions["primary"]
+        }
+    end
+    -- Return our collated character professions
+    return allCharactersPrimaryProfessions
 end
 
 function interfaceGetAllSecondaryProfessions()
