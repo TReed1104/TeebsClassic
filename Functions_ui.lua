@@ -22,7 +22,23 @@ function interfaceGetAllItemSlots(character)
 end
 
 function interfaceGetAllBagSlots(character)
-    return nil
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
+    local characterEquippedBags = {}
+    for slotNumber, itemID in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters[character].bags) do
+        -- Check we have anything currently in the desired bag slot
+        if TeebsClassicDB.realms[CURRENT_REALM].characters[character].bags[slotNumber] > 0 then
+            -- Load the item data
+            local item = Item:CreateFromItemID(itemID)
+            item:ContinueOnItemLoad(function()
+                characterEquippedBags[slotNumber] = { bag = bag:item:GetItemLink() }
+            end)
+        end
+    end
+    return characterEquippedBags
 end
 
 function interfaceGetExperience(character)
