@@ -14,7 +14,7 @@ function interfaceGetAllItemSlots(character)
             -- Load the item data
             local item = Item:CreateFromItemID(itemID)
             item:ContinueOnItemLoad(function()
-                characterEquippedGear[slotNumber] = { item = item:GetItemLink()}
+                characterEquippedGear[slotNumber] = { item = item:GetItemLink() }
             end)
         end
     end
