@@ -34,7 +34,7 @@ function interfaceGetAllBagSlots(character)
             -- Load the item data
             local item = Item:CreateFromItemID(itemID)
             item:ContinueOnItemLoad(function()
-                characterEquippedBags[slotNumber] = { bag = bag:item:GetItemLink() }
+                characterEquippedBags[slotNumber] = { bag = item:GetItemLink() }
             end)
         end
     end
