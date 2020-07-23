@@ -14,7 +14,7 @@ function interfaceGetAllItemSlots(character)
             -- Load the item data
             local item = Item:CreateFromItemID(itemID)
             item:ContinueOnItemLoad(function()
-                characterEquippedGear[slotNumber] = { item = item:GetItemLink()}
+                characterEquippedGear[slotNumber] = { item = item:GetItemLink() }
             end)
         end
     end
@@ -22,7 +22,23 @@ function interfaceGetAllItemSlots(character)
 end
 
 function interfaceGetAllBagSlots(character)
-    return nil
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
+    local characterEquippedBags = {}
+    for slotNumber, itemID in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters[character].bags) do
+        -- Check we have anything currently in the desired bag slot
+        if TeebsClassicDB.realms[CURRENT_REALM].characters[character].bags[slotNumber] > 0 then
+            -- Load the item data
+            local item = Item:CreateFromItemID(itemID)
+            item:ContinueOnItemLoad(function()
+                characterEquippedBags[slotNumber] = { bag = bag:item:GetItemLink() }
+            end)
+        end
+    end
+    return characterEquippedBags
 end
 
 function interfaceGetExperience(character)
@@ -276,13 +292,40 @@ function interfaceGetAllGold()
 end
 
 function interfaceGetAllProfessions()
-    return nil
+    -- Create our data table for copying the character professions data into
+    local allCharactersProfessions = {}
+    -- For every character cached for the current realm
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allCharactersProfessions[characterName] = {
+            professions = characterData.professions
+        }
+    end
+    -- Return our collated character professions
+    return allCharactersProfessions
 end
 
 function interfaceGetAllPrimaryProfessions()
-    return nil
+    -- Create our data table for copying the character primary professions data into
+    local allCharactersPrimaryProfessions = {}
+    -- For every character cached for the current realm
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allCharactersPrimaryProfessions[characterName] = {
+            professions = characterData.professions["primary"]
+        }
+    end
+    -- Return our collated character professions
+    return allCharactersPrimaryProfessions
 end
 
 function interfaceGetAllSecondaryProfessions()
-    return nil
+    -- Create our data table for copying the character primary professions data into
+    local allCharactersSecondaryProfessions = {}
+    -- For every character cached for the current realm
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allCharactersSecondaryProfessions[characterName] = {
+            professions = characterData.professions["secondary"]
+        }
+    end
+    -- Return our collated character professions
+    return allCharactersSecondaryProfessions
 end
