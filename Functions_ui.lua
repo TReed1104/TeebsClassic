@@ -216,7 +216,16 @@ function interfaceGetReputation(character, faction)
 end
 
 function interfaceGetAllReputations(character)
-    return nil
+    -- Create our data table for copying the character experience data into
+    local allCharacterReputationData = {}
+    -- For every character cached for the current realm, collect their reputation data
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allCharacterReputationData[characterName] = {
+            reputations = characterData.reputations
+        }
+    end
+    -- Return our collated character reputation data
+    return allCharacterReputationData
 end
 
 function interfaceGetAllExperience()
