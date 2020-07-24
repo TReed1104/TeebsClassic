@@ -275,7 +275,16 @@ function interfaceGetAllSpecs()
 end
 
 function interfaceGetAllTalents()
-    return nil
+    -- Create our data table for copying the character talent tree data
+    local allCharactersTalents = {}
+    -- For every character cached for the current realm, collect their talent trees
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allCharactersTalents[characterName] = {
+            spec = characterData.talents
+        }
+    end
+    -- Return our collated character talent trees
+    return allCharactersTalents
 end
 
 function interfaceGetAllGold()
