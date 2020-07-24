@@ -5,7 +5,7 @@ function interfaceGetAllItemSlots(character)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
-        return
+        return nil
     end
     local characterEquippedGear = {}
     for slotNumber, itemID in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters[character].gear) do
@@ -25,7 +25,7 @@ function interfaceGetAllBagSlots(character)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
-        return
+        return nil
     end
     local characterEquippedBags = {}
     for slotNumber, itemID in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters[character].bags) do
@@ -65,12 +65,12 @@ function interfaceGetLevel(character)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
-        return
+        return nil
     end
     -- Check if the character level has been cached
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character].level == nil then
         print("Level data not cached")
-        return
+        return nil
     end
     -- Copy the character data to return, Lua passes data tables by reference
     local characterLevel = TeebsClassicDB.realms[CURRENT_REALM].characters[character].level
@@ -81,12 +81,12 @@ function interfaceGetPlayTime(character)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
-        return
+        return nil
     end
     -- Check if the character level has been cached
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character]["time-played"] == nil then
         print("Playtime data not cached")
-        return
+        return nil
     end
     -- Copy the character data to return, Lua passes data tables by reference
     local characterTimePlayed = TeebsClassicDB.realms[CURRENT_REALM].characters[character]["time-played"]
@@ -97,17 +97,17 @@ function interfaceGetSpec(character)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
-        return
+        return nil
     end
     -- Check if the characters talents have been cached
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents == nil then
         print("Talent data not cached")
-        return
+        return nil
     end
     -- Check if the characters specialisation have been cached
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents.specialisation == nil then
         print("Specialisation data not cached")
-        return
+        return nil
     end
     -- Copy the character data to return, Lua passes data tables by reference
     local talentPointDistribution = TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents.specialisation.distribution
@@ -118,12 +118,12 @@ function interfaceGetTalents(character)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
-        return
+        return nil
     end
     -- Check if the characters talents have been cached
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents == nil then
         print("Talent data not cached")
-        return
+        return nil
     end
     -- Copy the character data to return, Lua passes data tables by reference
     local characterTalents = TeebsClassicDB.realms[CURRENT_REALM].characters[character].talents
@@ -134,12 +134,12 @@ function interfaceGetGold(character)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
-        return
+        return nil
     end
     -- Check if the currency data has been recorded
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character].currency == nil then
         print("Currency data not cached")
-        return
+        return nil
     end
     -- Copy the character data to return, Lua passes data tables by reference
     local currencyData = TeebsClassicDB.realms[CURRENT_REALM].characters[character].currency
@@ -150,12 +150,12 @@ function interfaceGetProfessions(character)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
-        return
+        return nil
     end
     -- Check if the currency data has been recorded
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character].professions == nil then
         print("Professions data not cached")
-        return
+        return nil
     end
     -- Copy the character data to return, Lua passes data tables by reference
     local characterProfessionsTable = TeebsClassicDB.realms[CURRENT_REALM].characters[character].professions
@@ -166,12 +166,12 @@ function interfaceGetPrimaryProfessions(character)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
-        return
+        return nil
     end
     -- Check if the currency data has been recorded
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character].professions == nil then
         print("Professions data not cached")
-        return
+        return nil
     end
     -- Copy the character data to return, Lua passes data tables by reference
     local characterPrimaryProfessions = TeebsClassicDB.realms[CURRENT_REALM].characters[character].professions["primary"]
@@ -182,12 +182,12 @@ function interfaceGetSecondaryProfessions(character)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
-        return
+        return nil
     end
     -- Check if the currency data has been recorded
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character].professions == nil then
         print("Professions data not cached")
-        return
+        return nil
     end
     -- Copy the character data to return, Lua passes data tables by reference
     local characterSecondaryProfessions = TeebsClassicDB.realms[CURRENT_REALM].characters[character].professions["secondary"]
@@ -198,17 +198,17 @@ function interfaceGetReputation(character, faction)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
         print("Unknown Charater", character)
-        return
+        return nil
     end
     -- Check if the reputation data has been recorded
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character].reputations == nil then
         print("Reputation data not cached")
-        return
+        return nil
     end
     -- Check the desired faction exists in the characters reputation data
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character].reputations[faction] == nil then
         print("Reputation data on the desired faction not found")
-        return
+        return nil
     end
     -- Copy the character data to return, Lua passes data tables by reference
     local chosenFactionData = TeebsClassicDB.realms[CURRENT_REALM].characters[character].reputations[faction]
@@ -216,7 +216,16 @@ function interfaceGetReputation(character, faction)
 end
 
 function interfaceGetAllReputations(character)
-    return nil
+    -- Create our data table for copying the character experience data into
+    local allCharacterReputationData = {}
+    -- For every character cached for the current realm, collect their reputation data
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allCharacterReputationData[characterName] = {
+            reputations = characterData.reputations
+        }
+    end
+    -- Return our collated character reputation data
+    return allCharacterReputationData
 end
 
 function interfaceGetAllExperience()
@@ -275,7 +284,16 @@ function interfaceGetAllSpecs()
 end
 
 function interfaceGetAllTalents()
-    return nil
+    -- Create our data table for copying the character talent tree data
+    local allCharactersTalents = {}
+    -- For every character cached for the current realm, collect their talent trees
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allCharactersTalents[characterName] = {
+            spec = characterData.talents
+        }
+    end
+    -- Return our collated character talent trees
+    return allCharactersTalents
 end
 
 function interfaceGetAllGold()
