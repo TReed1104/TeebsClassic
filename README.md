@@ -289,8 +289,27 @@ For each character TeebsClassic tracks the following data:
 
 <br/>
 
-
 ### Realm total Command - "get-total-playtime"
-- get-total-playtime
+#### Usage
+```
+/tbs get-total-playtime
+```
+#### Example
+```
+
+```
+
+<br/>
+
 ### Realm total Command - "get-total-gold"
-- get-total-gold
+#### Usage
+```
+/tbs get-total-gold
+```
+#### Example
+```
+
+```
+
+<br/>
+
