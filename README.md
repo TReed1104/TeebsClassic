@@ -25,58 +25,204 @@ For each character TeebsClassic tracks the following data:
 
 
 ## Command Documentation
-UNDER CONSTRUCTION
-### Character commands
-#### Command - "get-slot"
-- get-slot
-#### Command - "get-bag"
-- get-bag
-#### Command - "get-exp"
-- get-exp
-#### Command - "get-level"
-- get-level
-#### Command - "get-spec"
-- get-spec
-#### Command - "get-talents"
-- get-talents
-#### Command - "get-gold"
-- get-gold
-#### Command - "get-professions"
-- get-professions
-#### Command - "get-primary-professions"
-- get-primary-professions
-#### Command - "get-secondary-professions"
-- get-secondary-professions
-#### Command - "get-rep"
-- get-rep
-#### Command - "get-playtime"
-- get-playtime
-#### Command - "get-slot-all"
-- get-slot-all
-#### Command - "get-bags-all"
-- get-bags-all
-#### Command - "get-reps-all"
-- get-reps-all
+### Character Command - "get-slot"
+#### Usage
+```
+/tbs get-slot $character_name$ $equipment_index$
+```
+#### Example
+```
 
+```
+
+<br/>
+
+### Character Command - "get-bag"
+#### Usage
+```
+/tbs get-bag $character_name$ $bag_index$
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### Character Command - "get-exp"
+#### Usage
+```
+/tbs get-exp $character_name$
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### Character Command - "get-level"
+#### Usage
+```
+/tbs get-level $character_name$
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### Character Command - "get-spec"
+#### Usage
+```
+/tbs get-spec $character_name$
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### Character Command - "get-talents"
+#### Usage
+```
+/tbs get-talents $character_name$
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### Character Command - "get-gold"
+#### Usage
+```
+/tbs get-gold $character_name$
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### Character Command - "get-professions"
+#### Usage
+```
+/tbs get-professions $character_name$
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### Character Command - "get-primary-professions"
+#### Usage
+```
+/tbs get-primary-professions $character_name$
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### Character Command - "get-secondary-professions"
+#### Usage
+```
+/tbs get-secondary-professions $character_name$
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### Character Command - "get-rep"
+#### Usage
+```
+/tbs get-rep $character_name$
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### Character Command - "get-playtime"
+#### Usage
+```
+/tbs get-playtime $character_name$
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### Character Command - "get-slot-all"
+#### Usage
+```
+/tbs get-slot-all $character_name$
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### Character Command - "get-bags-all"
+#### Usage
+```
+/tbs get-exp $character_name$
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### Character Command - "get-reps-all"
+#### Usage
+```
+/tbs get-reps-all $character_name$
+```
+#### Example
+```
+
+```
+
+<br/>
 
 ### All Character commands
-#### Command - "get-exp-all"
+### Character Command - "get-exp-all"
 - get-exp-all
-#### Command - "get-level-all"
+### Character Command - "get-level-all"
 - get-level-all
-#### Command - "get-gold-all"
+### Character Command - "get-gold-all"
 - get-gold-all
-#### Command - "get-professions-all"
+### Character Command - "get-professions-all"
 - get-professions-all
-#### Command - "get-primary-professions-all"
+### Character Command - "get-primary-professions-all"
 - get-primary-professions-all
-#### Command - "get-secondary-professions-all"
+### Character Command - "get-secondary-professions-all"
 - get-secondary-professions-all
-#### Command - "get-playtime-all"
+### Character Command - "get-playtime-all"
 - get-playtime-all
 
 ### Realm total commands
-#### Command - "get-total-playtime"
+### Character Command - "get-total-playtime"
 - get-total-playtime
-#### Command - "get-total-gold"
+### Character Command - "get-total-gold"
 - get-total-gold
