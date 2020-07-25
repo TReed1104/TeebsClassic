@@ -26,7 +26,7 @@ For each character TeebsClassic tracks the following data:
 
 ## Command Documentation
 UNDER CONSTRUCTION
-
+### Character commands
 - get-slot
 - get-bag
 - get-exp
@@ -41,13 +41,17 @@ UNDER CONSTRUCTION
 - get-playtime
 - get-slot-all
 - get-bags-all
+- get-reps-all
+
+### All Character commands
 - get-exp-all
 - get-level-all
 - get-gold-all
 - get-professions-all
 - get-primary-professions-all
 - get-secondary-professions-all
-- get-reps-all
 - get-playtime-all
+
+### Realm total commands
 - get-total-playtime
 - get-total-gold
