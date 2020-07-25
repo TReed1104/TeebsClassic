@@ -205,20 +205,90 @@ For each character TeebsClassic tracks the following data:
 
 <br/>
 
-### All Characters Command - "get-exp-all"
-- get-exp-all
-### All Characters Command - "get-level-all"
-- get-level-all
-### All Characters Command - "get-gold-all"
-- get-gold-all
-### All Characters Command - "get-professions-all"
-- get-professions-all
-### All Characters Command - "get-primary-professions-all"
-- get-primary-professions-all
-### All Characters Command - "get-secondary-professions-all"
-- get-secondary-professions-all
-### All Characters Command - "get-playtime-all"
-- get-playtime-all
+### All Character Command - "get-exp-all"
+#### Usage
+```
+/tbs get-exp-all
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### All Character Command - "get-level-all"
+#### Usage
+```
+/tbs get-level-all
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### All Character Command - "get-gold-all"
+#### Usage
+```
+/tbs get-gold-all
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### All Character Command - "get-professions-all"
+#### Usage
+```
+/tbs get-professions-all
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### All Character Command - "get-primary-professions-all"
+#### Usage
+```
+/tbs get-primary-professions-all
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### All Character Command - "get-secondary-professions-all"
+#### Usage
+```
+/tbs get-secondary-professions-all
+```
+#### Example
+```
+
+```
+
+<br/>
+
+### All Character Command - "get-playtime-all"
+#### Usage
+```
+/tbs get-playtime-all
+```
+#### Example
+```
+
+```
+
+<br/>
+
 
 ### Realm total Command - "get-total-playtime"
 - get-total-playtime
