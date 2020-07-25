@@ -205,24 +205,22 @@ For each character TeebsClassic tracks the following data:
 
 <br/>
 
-### All Character commands
-### Character Command - "get-exp-all"
+### All Characters Command - "get-exp-all"
 - get-exp-all
-### Character Command - "get-level-all"
+### All Characters Command - "get-level-all"
 - get-level-all
-### Character Command - "get-gold-all"
+### All Characters Command - "get-gold-all"
 - get-gold-all
-### Character Command - "get-professions-all"
+### All Characters Command - "get-professions-all"
 - get-professions-all
-### Character Command - "get-primary-professions-all"
+### All Characters Command - "get-primary-professions-all"
 - get-primary-professions-all
-### Character Command - "get-secondary-professions-all"
+### All Characters Command - "get-secondary-professions-all"
 - get-secondary-professions-all
-### Character Command - "get-playtime-all"
+### All Characters Command - "get-playtime-all"
 - get-playtime-all
 
-### Realm total commands
-### Character Command - "get-total-playtime"
+### Realm total Command - "get-total-playtime"
 - get-total-playtime
-### Character Command - "get-total-gold"
+### Realm total Command - "get-total-gold"
 - get-total-gold
