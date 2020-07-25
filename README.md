@@ -26,3 +26,28 @@ For each character TeebsClassic tracks the following data:
 
 ## Command Documentation
 UNDER CONSTRUCTION
+
+- get-slot
+- get-bag
+- get-exp
+- get-level
+- get-spec
+- get-talents
+- get-gold
+- get-professions
+- get-primary-professions
+- get-secondary-professions
+- get-rep
+- get-playtime
+- get-slot-all
+- get-bags-all
+- get-exp-all
+- get-level-all
+- get-gold-all
+- get-professions-all
+- get-primary-professions-all
+- get-secondary-professions-all
+- get-reps-all
+- get-playtime-all
+- get-total-playtime
+- get-total-gold
