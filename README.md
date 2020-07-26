@@ -34,7 +34,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-slot teebs 12
+/tbs get-slot teebs 12
+/th get-slot teebs 12
 ```
 
 <br/>
@@ -48,7 +50,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-bag teebs 2
+/tbs get-bag teebs 2
+/th get-bag teebs 2
 ```
 
 <br/>
@@ -62,7 +66,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-exp teebs
+/tbs get-exp teebs
+/th get-exp teebs
 ```
 
 <br/>
@@ -76,7 +82,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-level teebs
+/tbs get-level teebs
+/th get-level teebs
 ```
 
 <br/>
@@ -90,7 +98,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-spec $character_name$
+/tbs get-spec $character_name$
+/th get-spec $character_name$
 ```
 
 <br/>
@@ -104,7 +114,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-talents $character_name$
+/tbs get-talents $character_name$
+/th get-talents $character_name$
 ```
 
 <br/>
@@ -118,7 +130,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-gold teebs
+/tbs get-gold teebs
+/th get-gold teebs
 ```
 
 <br/>
@@ -132,7 +146,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-professions teebs
+/tbs get-professions teebs
+/th get-professions teebs
 ```
 
 <br/>
@@ -146,7 +162,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-primary-professions /teebs get-total-gold
+/tbs get-primary-professions /tbs get-total-gold
+/th get-primary-professions /th get-total-gold
 ```
 
 <br/>
@@ -160,7 +178,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-secondary-professions teebs
+/tbs get-secondary-professions teebs
+/th get-secondary-professions teebs
 ```
 
 <br/>
@@ -174,7 +194,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-rep teebs
+/tbs get-rep teebs
+/th get-rep teebs
 ```
 
 <br/>
@@ -188,7 +210,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-playtime teebs
+/tbs get-playtime teebs
+/th get-playtime teebs
 ```
 
 <br/>
@@ -202,7 +226,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-slot-all teebs
+/tbs get-slot-all teebs
+/th get-slot-all teebs
 ```
 
 <br/>
@@ -216,7 +242,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-exp teebs
+/tbs get-exp teebs
+/th get-exp teebs
 ```
 
 <br/>
@@ -230,7 +258,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-reps-all teebs
+/tbs get-reps-all teebs
+/th get-reps-all teebs
 ```
 
 <br/>
@@ -244,7 +274,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-exp-all
+/tbs get-exp-all
+/th get-exp-all
 ```
 
 <br/>
@@ -258,7 +290,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-level-all
+/tbs get-level-all
+/th get-level-all
 ```
 
 <br/>
@@ -272,7 +306,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-gold-all
+/tbs get-gold-all
+/th get-gold-all
 ```
 
 <br/>
@@ -286,7 +322,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-professions-all
+/tbs get-professions-all
+/th get-professions-all
 ```
 
 <br/>
@@ -300,7 +338,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-primary-professions-all
+/tbs get-primary-professions-all
+/th get-primary-professions-all
 ```
 
 <br/>
@@ -314,7 +354,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-secondary-professions-all
+/tbs get-secondary-professions-all
+/th get-secondary-professions-all
 ```
 
 <br/>
@@ -328,7 +370,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-playtime-all
+/tbs get-playtime-all
+/th get-playtime-all
 ```
 
 <br/>
@@ -342,7 +386,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-total-playtime
+/tbs get-total-playtime
+/th get-total-playtime
 ```
 
 <br/>
@@ -356,7 +402,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example
 ```
-
+/teebs get-total-gold
+/tbs get-total-gold
+/th get-total-gold
 ```
 
 <br/>
