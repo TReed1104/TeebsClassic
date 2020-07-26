@@ -26,11 +26,19 @@ For each character TeebsClassic tracks the following data:
 
 ## Command Documentation
 ### Character Command - "get-slot"
-#### Usage
+#### Command Usage
 ```
+/teebs get-slot $character_name$ $equipment_index$
 /tbs get-slot $character_name$ $equipment_index$
+/th get-slot $character_name$ $equipment_index$
 ```
-#### Example
+#### How To Use
+```
+/teebs get-slot teebs 12
+/tbs get-slot teebs 12
+/th get-slot teebs 12
+```
+#### Example Response
 ```
 
 ```
@@ -38,11 +46,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### Character Command - "get-bag"
-#### Usage
+#### Command Usage
 ```
+/teebs get-bag $character_name$ $bag_index$
 /tbs get-bag $character_name$ $bag_index$
+/th get-bag $character_name$ $bag_index$
 ```
-#### Example
+#### How To Use
+```
+/teebs get-bag teebs 2
+/tbs get-bag teebs 2
+/th get-bag teebs 2
+```
+#### Example Response
 ```
 
 ```
@@ -50,11 +66,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### Character Command - "get-exp"
-#### Usage
+#### Command Usage
 ```
+/teebs get-exp $character_name$
 /tbs get-exp $character_name$
+/th get-exp $character_name$
 ```
-#### Example
+#### How To Use
+```
+/teebs get-exp teebs
+/tbs get-exp teebs
+/th get-exp teebs
+```
+#### Example Response
 ```
 
 ```
@@ -62,11 +86,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### Character Command - "get-level"
-#### Usage
+#### Command Usage
 ```
+/teebs get-level $character_name$
 /tbs get-level $character_name$
+/th get-level $character_name$
 ```
-#### Example
+#### How To Use
+```
+/teebs get-level teebs
+/tbs get-level teebs
+/th get-level teebs
+```
+#### Example Response
 ```
 
 ```
@@ -74,11 +106,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### Character Command - "get-spec"
-#### Usage
+#### Command Usage
 ```
+/teebs get-spec $character_name$
 /tbs get-spec $character_name$
+/th get-spec $character_name$
 ```
-#### Example
+#### How To Use
+```
+/teebs get-spec $character_name$
+/tbs get-spec $character_name$
+/th get-spec $character_name$
+```
+#### Example Response
 ```
 
 ```
@@ -86,11 +126,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### Character Command - "get-talents"
-#### Usage
+#### Command Usage
 ```
+/teebs get-talents $character_name$
 /tbs get-talents $character_name$
+/th get-talents $character_name$
 ```
-#### Example
+#### How To Use
+```
+/teebs get-talents $character_name$
+/tbs get-talents $character_name$
+/th get-talents $character_name$
+```
+#### Example Response
 ```
 
 ```
@@ -98,11 +146,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### Character Command - "get-gold"
-#### Usage
+#### Command Usage
 ```
+/teebs get-gold $character_name$
 /tbs get-gold $character_name$
+/th get-gold $character_name$
 ```
-#### Example
+#### How To Use
+```
+/teebs get-gold teebs
+/tbs get-gold teebs
+/th get-gold teebs
+```
+#### Example Response
 ```
 
 ```
@@ -110,11 +166,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### Character Command - "get-professions"
-#### Usage
+#### Command Usage
 ```
+/teebs get-professions $character_name$
 /tbs get-professions $character_name$
+/th get-professions $character_name$
 ```
-#### Example
+#### How To Use
+```
+/teebs get-professions teebs
+/tbs get-professions teebs
+/th get-professions teebs
+```
+#### Example Response
 ```
 
 ```
@@ -122,11 +186,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### Character Command - "get-primary-professions"
-#### Usage
+#### Command Usage
 ```
+/teebs get-primary-professions $character_name$
 /tbs get-primary-professions $character_name$
+/th get-primary-professions $character_name$
 ```
-#### Example
+#### How To Use
+```
+/teebs get-primary-professions /teebs get-total-gold
+/tbs get-primary-professions /tbs get-total-gold
+/th get-primary-professions /th get-total-gold
+```
+#### Example Response
 ```
 
 ```
@@ -134,11 +206,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### Character Command - "get-secondary-professions"
-#### Usage
+#### Command Usage
 ```
+/teebs get-secondary-professions $character_name$
 /tbs get-secondary-professions $character_name$
+/th get-secondary-professions $character_name$
 ```
-#### Example
+#### How To Use
+```
+/teebs get-secondary-professions teebs
+/tbs get-secondary-professions teebs
+/th get-secondary-professions teebs
+```
+#### Example Response
 ```
 
 ```
@@ -146,11 +226,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### Character Command - "get-rep"
-#### Usage
+#### Command Usage
 ```
-/tbs get-rep $character_name$
+/teebs get-rep $character_name$ $faction_name$
+/tbs get-rep $character_name$ $faction_name$
+/th get-rep $character_name$ $faction_name$
 ```
-#### Example
+#### How To Use
+```
+/teebs get-rep teebs argent-dawn
+/tbs get-rep teebs argent-dawn
+/th get-rep teebs argent-dawn
+```
+#### Example Response
 ```
 
 ```
@@ -158,11 +246,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### Character Command - "get-playtime"
-#### Usage
+#### Command Usage
 ```
+/teebs get-playtime $character_name$
 /tbs get-playtime $character_name$
+/th get-playtime $character_name$
 ```
-#### Example
+#### How To Use
+```
+/teebs get-playtime teebs
+/tbs get-playtime teebs
+/th get-playtime teebs
+```
+#### Example Response
 ```
 
 ```
@@ -170,11 +266,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### Character Command - "get-slot-all"
-#### Usage
+#### Command Usage
 ```
+/teebs get-slot-all $character_name$
 /tbs get-slot-all $character_name$
+/th get-slot-all $character_name$
 ```
-#### Example
+#### How To Use
+```
+/teebs get-slot-all teebs
+/tbs get-slot-all teebs
+/th get-slot-all teebs
+```
+#### Example Response
 ```
 
 ```
@@ -182,11 +286,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### Character Command - "get-bags-all"
-#### Usage
+#### Command Usage
 ```
+/teebs get-exp $character_name$
 /tbs get-exp $character_name$
+/th get-exp $character_name$
 ```
-#### Example
+#### How To Use
+```
+/teebs get-exp teebs
+/tbs get-exp teebs
+/th get-exp teebs
+```
+#### Example Response
 ```
 
 ```
@@ -194,11 +306,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### Character Command - "get-reps-all"
-#### Usage
+#### Command Usage
 ```
+/teebs get-reps-all $character_name$
 /tbs get-reps-all $character_name$
+/th get-reps-all $character_name$
 ```
-#### Example
+#### How To Use
+```
+/teebs get-reps-all teebs
+/tbs get-reps-all teebs
+/th get-reps-all teebs
+```
+#### Example Response
 ```
 
 ```
@@ -206,11 +326,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### All Character Command - "get-exp-all"
-#### Usage
+#### Command Usage
 ```
+/teebs get-exp-all
 /tbs get-exp-all
+/th get-exp-all
 ```
-#### Example
+#### How To Use
+```
+/teebs get-exp-all
+/tbs get-exp-all
+/th get-exp-all
+```
+#### Example Response
 ```
 
 ```
@@ -218,11 +346,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### All Character Command - "get-level-all"
-#### Usage
+#### Command Usage
 ```
+/teebs get-level-all
 /tbs get-level-all
+/th get-level-all
 ```
-#### Example
+#### How To Use
+```
+/teebs get-level-all
+/tbs get-level-all
+/th get-level-all
+```
+#### Example Response
 ```
 
 ```
@@ -230,11 +366,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### All Character Command - "get-gold-all"
-#### Usage
+#### Command Usage
 ```
+/teebs get-gold-all
 /tbs get-gold-all
+/th get-gold-all
 ```
-#### Example
+#### How To Use
+```
+/teebs get-gold-all
+/tbs get-gold-all
+/th get-gold-all
+```
+#### Example Response
 ```
 
 ```
@@ -242,11 +386,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### All Character Command - "get-professions-all"
-#### Usage
+#### Command Usage
 ```
+/teebs get-professions-all
 /tbs get-professions-all
+/th get-professions-all
 ```
-#### Example
+#### How To Use
+```
+/teebs get-professions-all
+/tbs get-professions-all
+/th get-professions-all
+```
+#### Example Response
 ```
 
 ```
@@ -254,11 +406,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### All Character Command - "get-primary-professions-all"
-#### Usage
+#### Command Usage
 ```
+/teebs get-primary-professions-all
 /tbs get-primary-professions-all
+/th get-primary-professions-all
 ```
-#### Example
+#### How To Use
+```
+/teebs get-primary-professions-all
+/tbs get-primary-professions-all
+/th get-primary-professions-all
+```
+#### Example Response
 ```
 
 ```
@@ -266,11 +426,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### All Character Command - "get-secondary-professions-all"
-#### Usage
+#### Command Usage
 ```
+/teebs get-secondary-professions-all
 /tbs get-secondary-professions-all
+/th get-secondary-professions-all
 ```
-#### Example
+#### How To Use
+```
+/teebs get-secondary-professions-all
+/tbs get-secondary-professions-all
+/th get-secondary-professions-all
+```
+#### Example Response
 ```
 
 ```
@@ -278,11 +446,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### All Character Command - "get-playtime-all"
-#### Usage
+#### Command Usage
 ```
+/teebs get-playtime-all
 /tbs get-playtime-all
+/th get-playtime-all
 ```
-#### Example
+#### How To Use
+```
+/teebs get-playtime-all
+/tbs get-playtime-all
+/th get-playtime-all
+```
+#### Example Response
 ```
 
 ```
@@ -290,11 +466,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### Realm total Command - "get-total-playtime"
-#### Usage
+#### Command Usage
 ```
+/teebs get-total-playtime
 /tbs get-total-playtime
+/th get-total-playtime
 ```
-#### Example
+#### How To Use
+```
+/teebs get-total-playtime
+/tbs get-total-playtime
+/th get-total-playtime
+```
+#### Example Response
 ```
 
 ```
@@ -302,11 +486,19 @@ For each character TeebsClassic tracks the following data:
 <br/>
 
 ### Realm total Command - "get-total-gold"
-#### Usage
+#### Command Usage
 ```
+/teebs get-total-gold
 /tbs get-total-gold
+/th get-total-gold
 ```
-#### Example
+#### How To Use
+```
+/teebs get-total-gold
+/tbs get-total-gold
+/th get-total-gold
+```
+#### Example Response
 ```
 
 ```
