@@ -188,15 +188,15 @@ For each character TeebsClassic tracks the following data:
 ### Character Command - "get-rep"
 #### Usage
 ```
-/teebs get-rep $character_name$
-/tbs get-rep $character_name$
-/th get-rep $character_name$
+/teebs get-rep $character_name$ $faction_name$
+/tbs get-rep $character_name$ $faction_name$
+/th get-rep $character_name$ $faction_name$
 ```
 #### Example
 ```
-/teebs get-rep teebs
-/tbs get-rep teebs
-/th get-rep teebs
+/teebs get-rep teebs argent-dawn
+/tbs get-rep teebs argent-dawn
+/th get-rep teebs argent-dawn
 ```
 
 <br/>
