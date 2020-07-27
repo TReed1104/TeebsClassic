@@ -134,9 +134,9 @@ Teebs is currently specced 19/32/0
 ```
 #### How To Use
 ```
-/teebs get-talents $character_name$
-/tbs get-talents $character_name$
-/th get-talents $character_name$
+/teebs get-talents teebs
+/tbs get-talents teebs
+/th get-talents teebs
 ```
 #### Example Response
 ```
