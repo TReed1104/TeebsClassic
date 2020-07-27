@@ -60,7 +60,7 @@ Teebs has [Quick Strike Ring] equipped in gear slot 12
 ```
 #### Example Response
 ```
-
+Teebs has [Traveler's Backpack] equipped in bag slot 2
 ```
 
 <br/>
