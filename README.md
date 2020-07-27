@@ -222,7 +222,8 @@ Teebs has Enchanting - 300 / 300
 ```
 #### Example Response
 ```
-
+Teebs has Herbalism - 300 / 300
+Teebs has Enchanting - 300 / 300
 ```
 
 <br/>
