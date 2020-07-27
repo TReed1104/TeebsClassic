@@ -366,7 +366,29 @@ Teebs has [Traveler's Backpack] equipped in bag slot 2
 ```
 #### Example Response
 ```
-
+Teebs - Cenarion Circle is currently Friendly - 411/6000 
+Teebs - Bloodsail Buccaneers is currently Hated - 12575/36000 
+Teebs - Ratchet is currently Friendly - 4325/6000 
+Teebs - Gnomeregan Exiles is currently Honored - 7097/12000 
+Teebs - Timbermaw Hold is currently Neutral - 1654/3000 
+Teebs - Ironforge is currently Revered - 1065/21000 
+Teebs - Argent Dawn is currently Revered - 2941/21000 
+Teebs - Shen'dralar is currently Neutral - 220/3000 
+Teebs - Magram Clan Centaur is currently Hostile - 1700/3000 
+Teebs - Gadgetzan is currently Friendly - 5623/6000 
+Teebs - Thorium Brotherhood is currently Neutral - 770/3000 
+Teebs - Booty Bay is currently Honored - 663/12000 
+Teebs - Hydraxian Waterlords is currently Revered - 14079/21000 
+Teebs - Wildhammer Clan is currently Neutral - 1508/3000 
+Teebs - Stormpike Guard is currently Neutral - 0/3000 
+Teebs - The League of Arathor is currently Neutral - 0/3000 
+Teebs - Stormwind is currently Revered - 9663/21000 
+Teebs - Gelkis Clan Centaur is currently Friendly - 364/6000 
+Teebs - Everlook is currently Friendly - 4696/6000 
+Teebs - Ravenholdt is currently Neutral - 407/3000 
+Teebs - Darkmoon Faire is currently Neutral - 0/3000 
+Teebs - Zandalar Tribe is currently Exalted - 999/1000 
+Teebs - Darnassus is currently Exalted - 986/1000
 ```
 
 <br/>
