@@ -198,7 +198,11 @@ Teebs has talent Adrenaline Rush at Rank 1/1
 ```
 #### Example Response
 ```
-
+Teebs has Cooking - 140 / 150
+Teebs has First Aid - 300 / 300
+Teebs has Fishing - 1 / 75
+Teebs has Herbalism - 300 / 300
+Teebs has Enchanting - 300 / 300
 ```
 
 <br/>
