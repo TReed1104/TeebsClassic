@@ -120,7 +120,7 @@ Teebs is currently level 60
 ```
 #### Example Response
 ```
-
+Teebs is currently specced 19/32/0
 ```
 
 <br/>
