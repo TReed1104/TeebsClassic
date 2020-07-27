@@ -212,9 +212,9 @@ Teebs has talent Adrenaline Rush at Rank 1/1
 ```
 #### How To Use
 ```
-/teebs get-primary-professions /teebs get-total-gold
-/tbs get-primary-professions /tbs get-total-gold
-/th get-primary-professions /th get-total-gold
+/teebs get-primary-professions teebs
+/tbs get-primary-professions teebs
+/th get-primary-professions teebs
 ```
 #### Example Response
 ```
