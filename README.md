@@ -313,15 +313,15 @@ Teebs has Fishing - 1 / 75
 ### Character Command - "get-bags-all"
 #### Command Usage
 ```
-/teebs get-exp $character_name$
-/tbs get-exp $character_name$
-/th get-exp $character_name$
+/teebs get-bags-all $character_name$
+/tbs get-bags-all $character_name$
+/th get-bags-all $character_name$
 ```
 #### How To Use
 ```
-/teebs get-exp teebs
-/tbs get-exp teebs
-/th get-exp teebs
+/teebs get-bags-all teebs
+/tbs get-bags-all teebs
+/th get-bags-all teebs
 ```
 #### Example Response
 ```
