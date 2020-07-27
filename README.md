@@ -265,7 +265,7 @@ Teebs has Fishing - 1 / 75
 ```
 #### Example Response
 ```
-
+Teebs - Argent Dawn is currently Revered - 2941/21000
 ```
 
 <br/>
