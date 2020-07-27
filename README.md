@@ -343,7 +343,10 @@ Teebs has [Bloodfang Gloves] equipped in gear slot 10
 ```
 #### Example Response
 ```
-
+Teebs has [Onyxia Hide Backpack] equipped in bag slot 1 
+Teebs has [Mooncloth Bag] equipped in bag slot 4 
+Teebs has [Mooncloth Bag] equipped in bag slot 3 
+Teebs has [Traveler's Backpack] equipped in bag slot 2
 ```
 
 <br/>
