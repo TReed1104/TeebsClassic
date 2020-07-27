@@ -80,7 +80,7 @@ Teebs has [Traveler's Backpack] equipped in bag slot 2
 ```
 #### Example Response
 ```
-
+Teebs is 0% into level 60 and has 0% rested experience remaining
 ```
 
 <br/>
