@@ -178,7 +178,7 @@ Teebs has talent Adrenaline Rush at Rank 1/1
 ```
 #### Example Response
 ```
-
+Teebs has 163g 33s 3c
 ```
 
 <br/>
