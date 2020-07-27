@@ -140,7 +140,25 @@ Teebs is currently specced 19/32/0
 ```
 #### Example Response
 ```
-
+Teebs Talent Tree - Assassination 
+Teebs has talent Malice at Rank 5/5 
+Teebs has talent Ruthlessness at Rank 3/3 
+Teebs has talent Murder at Rank 2/2 
+Teebs has talent Improved Slice and Dice at Rank 3/3 
+Teebs has talent Relentless Strikes at Rank 1/1 
+Teebs has talent Lethality at Rank 5/5 
+Teebs Talent Tree - Combat 
+Teebs has talent Improved Gouge at Rank 3/3 
+Teebs has talent Improved Sinister Strike at Rank 2/2 
+Teebs has talent Improved Backstab at Rank 3/3 
+Teebs has talent Precision at Rank 5/5 
+Teebs has talent Endurance at Rank 2/2 
+Teebs has talent Dual Wield Specialization at Rank 5/5 
+Teebs has talent Blade Flurry at Rank 1/1 
+Teebs has talent Sword Specialization at Rank 5/5 
+Teebs has talent Weapon Expertise at Rank 2/2 
+Teebs has talent Aggression at Rank 3/3 
+Teebs has talent Adrenaline Rush at Rank 1/1
 ```
 
 <br/>
