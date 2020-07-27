@@ -100,7 +100,7 @@ Teebs is 0% into level 60 and has 0% rested experience remaining
 ```
 #### Example Response
 ```
-
+Teebs is currently level 60
 ```
 
 <br/>
