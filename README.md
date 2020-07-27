@@ -243,7 +243,9 @@ Teebs has Enchanting - 300 / 300
 ```
 #### Example Response
 ```
-
+Teebs has Cooking - 140 / 150
+Teebs has First Aid - 300 / 300
+Teebs has Fishing - 1 / 75
 ```
 
 <br/>
