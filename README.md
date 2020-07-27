@@ -285,7 +285,8 @@ Teebs - Argent Dawn is currently Revered - 2941/21000
 ```
 #### Example Response
 ```
-
+Teebs Total time played: 31 days, 16 hours, 14 minutes, 42 seconds 
+Teebs Time played this level: 22 days, 16 hours, 51 minutes, 37 seconds
 ```
 
 <br/>
