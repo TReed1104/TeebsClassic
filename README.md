@@ -40,7 +40,7 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example Response
 ```
-
+Teebs has [Quick Strike Ring] equipped in gear slot 12
 ```
 
 <br/>
