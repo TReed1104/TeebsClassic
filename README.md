@@ -40,7 +40,7 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example Response
 ```
-
+Teebs has [Quick Strike Ring] equipped in gear slot 12
 ```
 
 <br/>
@@ -60,7 +60,7 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example Response
 ```
-
+Teebs has [Traveler's Backpack] equipped in bag slot 2
 ```
 
 <br/>
@@ -80,7 +80,7 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example Response
 ```
-
+Teebs is 0% into level 60 and has 0% rested experience remaining
 ```
 
 <br/>
@@ -100,7 +100,7 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example Response
 ```
-
+Teebs is currently level 60
 ```
 
 <br/>
@@ -120,7 +120,7 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example Response
 ```
-
+Teebs is currently specced 19/32/0
 ```
 
 <br/>
@@ -134,13 +134,31 @@ For each character TeebsClassic tracks the following data:
 ```
 #### How To Use
 ```
-/teebs get-talents $character_name$
-/tbs get-talents $character_name$
-/th get-talents $character_name$
+/teebs get-talents teebs
+/tbs get-talents teebs
+/th get-talents teebs
 ```
 #### Example Response
 ```
-
+Teebs Talent Tree - Assassination 
+Teebs has talent Malice at Rank 5/5 
+Teebs has talent Ruthlessness at Rank 3/3 
+Teebs has talent Murder at Rank 2/2 
+Teebs has talent Improved Slice and Dice at Rank 3/3 
+Teebs has talent Relentless Strikes at Rank 1/1 
+Teebs has talent Lethality at Rank 5/5 
+Teebs Talent Tree - Combat 
+Teebs has talent Improved Gouge at Rank 3/3 
+Teebs has talent Improved Sinister Strike at Rank 2/2 
+Teebs has talent Improved Backstab at Rank 3/3 
+Teebs has talent Precision at Rank 5/5 
+Teebs has talent Endurance at Rank 2/2 
+Teebs has talent Dual Wield Specialization at Rank 5/5 
+Teebs has talent Blade Flurry at Rank 1/1 
+Teebs has talent Sword Specialization at Rank 5/5 
+Teebs has talent Weapon Expertise at Rank 2/2 
+Teebs has talent Aggression at Rank 3/3 
+Teebs has talent Adrenaline Rush at Rank 1/1
 ```
 
 <br/>
@@ -160,7 +178,7 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example Response
 ```
-
+Teebs has 163g 33s 3c
 ```
 
 <br/>
@@ -180,7 +198,11 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example Response
 ```
-
+Teebs has Cooking - 140 / 150
+Teebs has First Aid - 300 / 300
+Teebs has Fishing - 1 / 75
+Teebs has Herbalism - 300 / 300
+Teebs has Enchanting - 300 / 300
 ```
 
 <br/>
@@ -194,13 +216,14 @@ For each character TeebsClassic tracks the following data:
 ```
 #### How To Use
 ```
-/teebs get-primary-professions /teebs get-total-gold
-/tbs get-primary-professions /tbs get-total-gold
-/th get-primary-professions /th get-total-gold
+/teebs get-primary-professions teebs
+/tbs get-primary-professions teebs
+/th get-primary-professions teebs
 ```
 #### Example Response
 ```
-
+Teebs has Herbalism - 300 / 300
+Teebs has Enchanting - 300 / 300
 ```
 
 <br/>
@@ -220,7 +243,9 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example Response
 ```
-
+Teebs has Cooking - 140 / 150
+Teebs has First Aid - 300 / 300
+Teebs has Fishing - 1 / 75
 ```
 
 <br/>
@@ -240,7 +265,7 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example Response
 ```
-
+Teebs - Argent Dawn is currently Revered - 2941/21000
 ```
 
 <br/>
@@ -260,7 +285,8 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example Response
 ```
-
+Teebs Total time played: 31 days, 16 hours, 14 minutes, 42 seconds 
+Teebs Time played this level: 22 days, 16 hours, 51 minutes, 37 seconds
 ```
 
 <br/>
@@ -280,7 +306,24 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example Response
 ```
-
+Teebs has [Striker's Mark] equipped in gear slot 18 
+Teebs has [Bloodfang Bracers] equipped in gear slot 9 
+Teebs has [Bloodfang Boots] equipped in gear slot 8 
+Teebs has [Bloodfang Hood] equipped in gear slot 1 
+Teebs has [Thorium Headed Arrow] equipped in gear slot 0 
+Teebs has [Bloodfang Spaulders] equipped in gear slot 3 
+Teebs has [Prestor's Talisman of Connivery] equipped in gear slot 2 
+Teebs has [Bloodfang Chestpiece] equipped in gear slot 5 
+Teebs has [Bloodfang Pants] equipped in gear slot 7 
+Teebs has [Bloodfang Belt] equipped in gear slot 6 
+Teebs has [Blackhand's Breadth] equipped in gear slot 14 
+Teebs has [Cape of the Black Baron] equipped in gear slot 15 
+Teebs has [Chromatically Tempered Sword] equipped in gear slot 16 
+Teebs has [Warblade of the Hakkari] equipped in gear slot 17 
+Teebs has [Renataki's Charm of Trickery] equipped in gear slot 13 
+Teebs has [Quick Strike Ring] equipped in gear slot 12 
+Teebs has [Master Dragonslayer's Ring] equipped in gear slot 11 
+Teebs has [Bloodfang Gloves] equipped in gear slot 10
 ```
 
 <br/>
@@ -288,19 +331,22 @@ For each character TeebsClassic tracks the following data:
 ### Character Command - "get-bags-all"
 #### Command Usage
 ```
-/teebs get-exp $character_name$
-/tbs get-exp $character_name$
-/th get-exp $character_name$
+/teebs get-bags-all $character_name$
+/tbs get-bags-all $character_name$
+/th get-bags-all $character_name$
 ```
 #### How To Use
 ```
-/teebs get-exp teebs
-/tbs get-exp teebs
-/th get-exp teebs
+/teebs get-bags-all teebs
+/tbs get-bags-all teebs
+/th get-bags-all teebs
 ```
 #### Example Response
 ```
-
+Teebs has [Onyxia Hide Backpack] equipped in bag slot 1 
+Teebs has [Mooncloth Bag] equipped in bag slot 4 
+Teebs has [Mooncloth Bag] equipped in bag slot 3 
+Teebs has [Traveler's Backpack] equipped in bag slot 2
 ```
 
 <br/>
@@ -320,7 +366,29 @@ For each character TeebsClassic tracks the following data:
 ```
 #### Example Response
 ```
-
+Teebs - Cenarion Circle is currently Friendly - 411/6000 
+Teebs - Bloodsail Buccaneers is currently Hated - 12575/36000 
+Teebs - Ratchet is currently Friendly - 4325/6000 
+Teebs - Gnomeregan Exiles is currently Honored - 7097/12000 
+Teebs - Timbermaw Hold is currently Neutral - 1654/3000 
+Teebs - Ironforge is currently Revered - 1065/21000 
+Teebs - Argent Dawn is currently Revered - 2941/21000 
+Teebs - Shen'dralar is currently Neutral - 220/3000 
+Teebs - Magram Clan Centaur is currently Hostile - 1700/3000 
+Teebs - Gadgetzan is currently Friendly - 5623/6000 
+Teebs - Thorium Brotherhood is currently Neutral - 770/3000 
+Teebs - Booty Bay is currently Honored - 663/12000 
+Teebs - Hydraxian Waterlords is currently Revered - 14079/21000 
+Teebs - Wildhammer Clan is currently Neutral - 1508/3000 
+Teebs - Stormpike Guard is currently Neutral - 0/3000 
+Teebs - The League of Arathor is currently Neutral - 0/3000 
+Teebs - Stormwind is currently Revered - 9663/21000 
+Teebs - Gelkis Clan Centaur is currently Friendly - 364/6000 
+Teebs - Everlook is currently Friendly - 4696/6000 
+Teebs - Ravenholdt is currently Neutral - 407/3000 
+Teebs - Darkmoon Faire is currently Neutral - 0/3000 
+Teebs - Zandalar Tribe is currently Exalted - 999/1000 
+Teebs - Darnassus is currently Exalted - 986/1000
 ```
 
 <br/>
