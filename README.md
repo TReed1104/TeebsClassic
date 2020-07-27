@@ -306,7 +306,24 @@ Teebs Time played this level: 22 days, 16 hours, 51 minutes, 37 seconds
 ```
 #### Example Response
 ```
-
+Teebs has [Striker's Mark] equipped in gear slot 18 
+Teebs has [Bloodfang Bracers] equipped in gear slot 9 
+Teebs has [Bloodfang Boots] equipped in gear slot 8 
+Teebs has [Bloodfang Hood] equipped in gear slot 1 
+Teebs has [Thorium Headed Arrow] equipped in gear slot 0 
+Teebs has [Bloodfang Spaulders] equipped in gear slot 3 
+Teebs has [Prestor's Talisman of Connivery] equipped in gear slot 2 
+Teebs has [Bloodfang Chestpiece] equipped in gear slot 5 
+Teebs has [Bloodfang Pants] equipped in gear slot 7 
+Teebs has [Bloodfang Belt] equipped in gear slot 6 
+Teebs has [Blackhand's Breadth] equipped in gear slot 14 
+Teebs has [Cape of the Black Baron] equipped in gear slot 15 
+Teebs has [Chromatically Tempered Sword] equipped in gear slot 16 
+Teebs has [Warblade of the Hakkari] equipped in gear slot 17 
+Teebs has [Renataki's Charm of Trickery] equipped in gear slot 13 
+Teebs has [Quick Strike Ring] equipped in gear slot 12 
+Teebs has [Master Dragonslayer's Ring] equipped in gear slot 11 
+Teebs has [Bloodfang Gloves] equipped in gear slot 10
 ```
 
 <br/>
