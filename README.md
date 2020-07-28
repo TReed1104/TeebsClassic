@@ -492,7 +492,34 @@ Felthus has 1g 29s 1c
 ```
 #### Example Response
 ```
-
+Teebs has Herbalism - 300 / 300 
+Teebs has Enchanting - 300 / 300 
+Teebs has Cooking - 140 / 150 
+Teebs has First Aid - 300 / 300 
+Teebs has Fishing - 1 / 75 
+Tweebs has First Aid - 300 / 300 
+Tweebs has Alchemy - 300 / 300 
+Tweebs has Mining - 109 / 150 
+Tinge has Cooking - 1 / 75 
+Tinge has First Aid - 225 / 225 
+Tinge has Herbalism - 2 / 75 
+Khare has First Aid - 225 / 225 
+Khare has Tailoring - 225 / 225 
+Khare has Mining - 76 / 150 
+Twibbler has Cooking - 1 / 75 
+Twibbler has First Aid - 225 / 225 
+Twibbler has Blacksmithing - 59 / 150 
+Twibbler has Mining - 98 / 150 
+Krae has Alchemy - 274 / 300 
+Krae has Herbalism - 154 / 225 
+Krae has Cooking - 1 / 75 
+Krae has First Aid - 290 / 300 
+Remmus has Herbalism - 7 / 75 
+Remmus has Cooking - 1 / 75 
+Remmus has First Aid - 225 / 225 
+Felthus has Alchemy - 1 / 75 
+Felthus has Herbalism - 16 / 75 
+Felthus has First Aid - 225 / 225
 ```
 
 <br/>
