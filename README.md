@@ -436,7 +436,15 @@ Felthus is 4% into level 30 and has 150% rested experience remaining
 ```
 #### Example Response
 ```
-
+Teebs is level 60 
+Tweebs is level 60 
+Tinge is level 30 
+Khare is level 30 
+Twibbler is level 31 
+Krae is level 49 
+Remmus is level 30 
+Teebsbank is level 1 
+Felthus is level 30
 ```
 
 <br/>
