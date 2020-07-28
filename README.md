@@ -464,7 +464,15 @@ Felthus is level 30
 ```
 #### Example Response
 ```
-
+Teebs has 163g 33s 3c 
+Tweebs has 53g 16s 22c 
+Tinge has 9g 91s 51c 
+Khare has 5g 30s 52c 
+Twibbler has 15g 22s 45c 
+Krae has 59g 38s 69c 
+Remmus has 6g 68s 26c 
+Teebsbank has 5g 81s 86c 
+Felthus has 1g 29s 1c
 ```
 
 <br/>
