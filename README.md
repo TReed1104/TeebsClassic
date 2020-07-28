@@ -606,7 +606,24 @@ Felthus has First Aid - 225 / 225
 ```
 #### Example Response
 ```
-
+Teebs Total time played: 31 days, 16 hours, 15 minutes, 39 seconds 
+Teebs Time played this level: 22 days, 16 hours, 52 minutes, 34 seconds 
+Tweebs Total time played: 9 days, 14 hours, 38 minutes, 51 seconds 
+Tweebs Time played this level: 0 days, 9 hours, 10 minutes, 0 seconds 
+Tinge Total time played: 1 days, 16 hours, 27 minutes, 15 seconds 
+Tinge Time played this level: 0 days, 1 hours, 11 minutes, 0 seconds 
+Khare Total time played: 1 days, 20 hours, 35 minutes, 39 seconds 
+Khare Time played this level: 0 days, 4 hours, 18 minutes, 21 seconds 
+Twibbler Total time played: 2 days, 3 hours, 40 minutes, 50 seconds 
+Twibbler Time played this level: 0 days, 2 hours, 21 minutes, 42 seconds 
+Krae Total time played: 5 days, 20 hours, 10 minutes, 15 seconds 
+Krae Time played this level: 0 days, 0 hours, 42 minutes, 22 seconds 
+Remmus Total time played: 1 days, 15 hours, 7 minutes, 25 seconds 
+Remmus Time played this level: 0 days, 1 hours, 42 minutes, 39 seconds 
+Teebsbank Total time played: 0 days, 7 hours, 45 minutes, 27 seconds 
+Teebsbank Time played this level: 0 days, 7 hours, 45 minutes, 27 seconds 
+Felthus Total time played: 1 days, 15 hours, 44 minutes, 16 seconds 
+Felthus Time played this level: 0 days, 0 hours, 31 minutes, 23 seconds
 ```
 
 <br/>
