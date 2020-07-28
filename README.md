@@ -408,7 +408,15 @@ Teebs - Darnassus is currently Exalted - 986/1000
 ```
 #### Example Response
 ```
-
+Teebs is level 60 
+Tweebs is level 60 
+Tinge is 19% into level 30 and has 150% rested experience remaining 
+Khare is 13% into level 30 and has 150% rested experience remaining 
+Twibbler is 44% into level 31 and has 150% rested experience remaining 
+Krae is 10% into level 49 and has 7% rested experience remaining 
+Remmus is 33% into level 30 and has 150% rested experience remaining 
+Teebsbank is 13% into level 1 and has 150% rested experience remaining 
+Felthus is 4% into level 30 and has 150% rested experience remaining
 ```
 
 <br/>
