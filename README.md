@@ -38,7 +38,7 @@ For each character TeebsClassic tracks the following data:
 /tbs get-slot teebs 12
 /th get-slot teebs 12
 ```
-#### Example Response
+#### Example Output
 ```
 Teebs has [Quick Strike Ring] equipped in gear slot 12
 ```
@@ -58,7 +58,7 @@ Teebs has [Quick Strike Ring] equipped in gear slot 12
 /tbs get-bag teebs 2
 /th get-bag teebs 2
 ```
-#### Example Response
+#### Example Output
 ```
 Teebs has [Traveler's Backpack] equipped in bag slot 2
 ```
@@ -78,7 +78,7 @@ Teebs has [Traveler's Backpack] equipped in bag slot 2
 /tbs get-exp teebs
 /th get-exp teebs
 ```
-#### Example Response
+#### Example Output
 ```
 Teebs is 0% into level 60 and has 0% rested experience remaining
 ```
@@ -98,7 +98,7 @@ Teebs is 0% into level 60 and has 0% rested experience remaining
 /tbs get-level teebs
 /th get-level teebs
 ```
-#### Example Response
+#### Example Output
 ```
 Teebs is currently level 60
 ```
@@ -118,7 +118,7 @@ Teebs is currently level 60
 /tbs get-spec $character_name$
 /th get-spec $character_name$
 ```
-#### Example Response
+#### Example Output
 ```
 Teebs is currently specced 19/32/0
 ```
@@ -138,7 +138,7 @@ Teebs is currently specced 19/32/0
 /tbs get-talents teebs
 /th get-talents teebs
 ```
-#### Example Response
+#### Example Output
 ```
 Teebs Talent Tree - Assassination 
 Teebs has talent Malice at Rank 5/5 
@@ -176,7 +176,7 @@ Teebs has talent Adrenaline Rush at Rank 1/1
 /tbs get-gold teebs
 /th get-gold teebs
 ```
-#### Example Response
+#### Example Output
 ```
 Teebs has 163g 33s 3c
 ```
@@ -196,7 +196,7 @@ Teebs has 163g 33s 3c
 /tbs get-professions teebs
 /th get-professions teebs
 ```
-#### Example Response
+#### Example Output
 ```
 Teebs has Cooking - 140 / 150
 Teebs has First Aid - 300 / 300
@@ -220,7 +220,7 @@ Teebs has Enchanting - 300 / 300
 /tbs get-primary-professions teebs
 /th get-primary-professions teebs
 ```
-#### Example Response
+#### Example Output
 ```
 Teebs has Herbalism - 300 / 300
 Teebs has Enchanting - 300 / 300
@@ -241,7 +241,7 @@ Teebs has Enchanting - 300 / 300
 /tbs get-secondary-professions teebs
 /th get-secondary-professions teebs
 ```
-#### Example Response
+#### Example Output
 ```
 Teebs has Cooking - 140 / 150
 Teebs has First Aid - 300 / 300
@@ -263,7 +263,7 @@ Teebs has Fishing - 1 / 75
 /tbs get-rep teebs argent-dawn
 /th get-rep teebs argent-dawn
 ```
-#### Example Response
+#### Example Output
 ```
 Teebs - Argent Dawn is currently Revered - 2941/21000
 ```
@@ -283,7 +283,7 @@ Teebs - Argent Dawn is currently Revered - 2941/21000
 /tbs get-playtime teebs
 /th get-playtime teebs
 ```
-#### Example Response
+#### Example Output
 ```
 Teebs Total time played: 31 days, 16 hours, 14 minutes, 42 seconds 
 Teebs Time played this level: 22 days, 16 hours, 51 minutes, 37 seconds
@@ -304,7 +304,7 @@ Teebs Time played this level: 22 days, 16 hours, 51 minutes, 37 seconds
 /tbs get-slot-all teebs
 /th get-slot-all teebs
 ```
-#### Example Response
+#### Example Output
 ```
 Teebs has [Striker's Mark] equipped in gear slot 18 
 Teebs has [Bloodfang Bracers] equipped in gear slot 9 
@@ -341,7 +341,7 @@ Teebs has [Bloodfang Gloves] equipped in gear slot 10
 /tbs get-bags-all teebs
 /th get-bags-all teebs
 ```
-#### Example Response
+#### Example Output
 ```
 Teebs has [Onyxia Hide Backpack] equipped in bag slot 1 
 Teebs has [Mooncloth Bag] equipped in bag slot 4 
@@ -364,7 +364,7 @@ Teebs has [Traveler's Backpack] equipped in bag slot 2
 /tbs get-reps-all teebs
 /th get-reps-all teebs
 ```
-#### Example Response
+#### Example Output
 ```
 Teebs - Cenarion Circle is currently Friendly - 411/6000 
 Teebs - Bloodsail Buccaneers is currently Hated - 12575/36000 
@@ -406,9 +406,17 @@ Teebs - Darnassus is currently Exalted - 986/1000
 /tbs get-exp-all
 /th get-exp-all
 ```
-#### Example Response
+#### Example Output
 ```
-
+Teebs is level 60 
+Tweebs is level 60 
+Tinge is 19% into level 30 and has 150% rested experience remaining 
+Khare is 13% into level 30 and has 150% rested experience remaining 
+Twibbler is 44% into level 31 and has 150% rested experience remaining 
+Krae is 10% into level 49 and has 7% rested experience remaining 
+Remmus is 33% into level 30 and has 150% rested experience remaining 
+Teebsbank is 13% into level 1 and has 150% rested experience remaining 
+Felthus is 4% into level 30 and has 150% rested experience remaining
 ```
 
 <br/>
@@ -426,9 +434,17 @@ Teebs - Darnassus is currently Exalted - 986/1000
 /tbs get-level-all
 /th get-level-all
 ```
-#### Example Response
+#### Example Output
 ```
-
+Teebs is level 60 
+Tweebs is level 60 
+Tinge is level 30 
+Khare is level 30 
+Twibbler is level 31 
+Krae is level 49 
+Remmus is level 30 
+Teebsbank is level 1 
+Felthus is level 30
 ```
 
 <br/>
@@ -446,9 +462,17 @@ Teebs - Darnassus is currently Exalted - 986/1000
 /tbs get-gold-all
 /th get-gold-all
 ```
-#### Example Response
+#### Example Output
 ```
-
+Teebs has 163g 33s 3c 
+Tweebs has 53g 16s 22c 
+Tinge has 9g 91s 51c 
+Khare has 5g 30s 52c 
+Twibbler has 15g 22s 45c 
+Krae has 59g 38s 69c 
+Remmus has 6g 68s 26c 
+Teebsbank has 5g 81s 86c 
+Felthus has 1g 29s 1c
 ```
 
 <br/>
@@ -466,9 +490,36 @@ Teebs - Darnassus is currently Exalted - 986/1000
 /tbs get-professions-all
 /th get-professions-all
 ```
-#### Example Response
+#### Example Output
 ```
-
+Teebs has Herbalism - 300 / 300 
+Teebs has Enchanting - 300 / 300 
+Teebs has Cooking - 140 / 150 
+Teebs has First Aid - 300 / 300 
+Teebs has Fishing - 1 / 75 
+Tweebs has First Aid - 300 / 300 
+Tweebs has Alchemy - 300 / 300 
+Tweebs has Mining - 109 / 150 
+Tinge has Cooking - 1 / 75 
+Tinge has First Aid - 225 / 225 
+Tinge has Herbalism - 2 / 75 
+Khare has First Aid - 225 / 225 
+Khare has Tailoring - 225 / 225 
+Khare has Mining - 76 / 150 
+Twibbler has Cooking - 1 / 75 
+Twibbler has First Aid - 225 / 225 
+Twibbler has Blacksmithing - 59 / 150 
+Twibbler has Mining - 98 / 150 
+Krae has Alchemy - 274 / 300 
+Krae has Herbalism - 154 / 225 
+Krae has Cooking - 1 / 75 
+Krae has First Aid - 290 / 300 
+Remmus has Herbalism - 7 / 75 
+Remmus has Cooking - 1 / 75 
+Remmus has First Aid - 225 / 225 
+Felthus has Alchemy - 1 / 75 
+Felthus has Herbalism - 16 / 75 
+Felthus has First Aid - 225 / 225
 ```
 
 <br/>
@@ -486,9 +537,23 @@ Teebs - Darnassus is currently Exalted - 986/1000
 /tbs get-primary-professions-all
 /th get-primary-professions-all
 ```
-#### Example Response
+#### Example Output
 ```
-
+irst Aid - 225 / 225 
+Teebs has Herbalism - 300 / 300 
+Teebs has Enchanting - 300 / 300 
+Tweebs has Alchemy - 300 / 300 
+Tweebs has Mining - 109 / 150 
+Tinge has Herbalism - 2 / 75 
+Khare has Tailoring - 225 / 225 
+Khare has Mining - 76 / 150 
+Twibbler has Blacksmithing - 59 / 150 
+Twibbler has Mining - 98 / 150 
+Krae has Alchemy - 274 / 300 
+Krae has Herbalism - 154 / 225 
+Remmus has Herbalism - 7 / 75 
+Felthus has Alchemy - 1 / 75 
+Felthus has Herbalism - 16 / 75
 ```
 
 <br/>
@@ -506,9 +571,22 @@ Teebs - Darnassus is currently Exalted - 986/1000
 /tbs get-secondary-professions-all
 /th get-secondary-professions-all
 ```
-#### Example Response
+#### Example Output
 ```
-
+Teebs has Cooking - 140 / 150 
+Teebs has First Aid - 300 / 300 
+Teebs has Fishing - 1 / 75 
+Tweebs has First Aid - 300 / 300 
+Tinge has Cooking - 1 / 75 
+Tinge has First Aid - 225 / 225 
+Khare has First Aid - 225 / 225 
+Twibbler has Cooking - 1 / 75 
+Twibbler has First Aid - 225 / 225 
+Krae has Cooking - 1 / 75 
+Krae has First Aid - 290 / 300 
+Remmus has Cooking - 1 / 75 
+Remmus has First Aid - 225 / 225 
+Felthus has First Aid - 225 / 225
 ```
 
 <br/>
@@ -526,9 +604,26 @@ Teebs - Darnassus is currently Exalted - 986/1000
 /tbs get-playtime-all
 /th get-playtime-all
 ```
-#### Example Response
+#### Example Output
 ```
-
+Teebs Total time played: 31 days, 16 hours, 15 minutes, 39 seconds 
+Teebs Time played this level: 22 days, 16 hours, 52 minutes, 34 seconds 
+Tweebs Total time played: 9 days, 14 hours, 38 minutes, 51 seconds 
+Tweebs Time played this level: 0 days, 9 hours, 10 minutes, 0 seconds 
+Tinge Total time played: 1 days, 16 hours, 27 minutes, 15 seconds 
+Tinge Time played this level: 0 days, 1 hours, 11 minutes, 0 seconds 
+Khare Total time played: 1 days, 20 hours, 35 minutes, 39 seconds 
+Khare Time played this level: 0 days, 4 hours, 18 minutes, 21 seconds 
+Twibbler Total time played: 2 days, 3 hours, 40 minutes, 50 seconds 
+Twibbler Time played this level: 0 days, 2 hours, 21 minutes, 42 seconds 
+Krae Total time played: 5 days, 20 hours, 10 minutes, 15 seconds 
+Krae Time played this level: 0 days, 0 hours, 42 minutes, 22 seconds 
+Remmus Total time played: 1 days, 15 hours, 7 minutes, 25 seconds 
+Remmus Time played this level: 0 days, 1 hours, 42 minutes, 39 seconds 
+Teebsbank Total time played: 0 days, 7 hours, 45 minutes, 27 seconds 
+Teebsbank Time played this level: 0 days, 7 hours, 45 minutes, 27 seconds 
+Felthus Total time played: 1 days, 15 hours, 44 minutes, 16 seconds 
+Felthus Time played this level: 0 days, 0 hours, 31 minutes, 23 seconds
 ```
 
 <br/>
@@ -546,9 +641,9 @@ Teebs - Darnassus is currently Exalted - 986/1000
 /tbs get-total-playtime
 /th get-total-playtime
 ```
-#### Example Response
+#### Example Output
 ```
-
+Total Time Played across this server is 56 days, 10 hours, 25 minutes, 37 seconds
 ```
 
 <br/>
@@ -566,9 +661,9 @@ Teebs - Darnassus is currently Exalted - 986/1000
 /tbs get-total-gold
 /th get-total-gold
 ```
-#### Example Response
+#### Example Output
 ```
-
+Total Currency across this server is 320g 11s 55c
 ```
 
 <br/>
