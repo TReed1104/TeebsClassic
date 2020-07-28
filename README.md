@@ -643,7 +643,7 @@ Felthus Time played this level: 0 days, 0 hours, 31 minutes, 23 seconds
 ```
 #### Example Response
 ```
-
+Total Time Played across this server is 56 days, 10 hours, 25 minutes, 37 seconds
 ```
 
 <br/>
