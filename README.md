@@ -573,7 +573,20 @@ Felthus has Herbalism - 16 / 75
 ```
 #### Example Response
 ```
-
+Teebs has Cooking - 140 / 150 
+Teebs has First Aid - 300 / 300 
+Teebs has Fishing - 1 / 75 
+Tweebs has First Aid - 300 / 300 
+Tinge has Cooking - 1 / 75 
+Tinge has First Aid - 225 / 225 
+Khare has First Aid - 225 / 225 
+Twibbler has Cooking - 1 / 75 
+Twibbler has First Aid - 225 / 225 
+Krae has Cooking - 1 / 75 
+Krae has First Aid - 290 / 300 
+Remmus has Cooking - 1 / 75 
+Remmus has First Aid - 225 / 225 
+Felthus has First Aid - 225 / 225
 ```
 
 <br/>
