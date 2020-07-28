@@ -539,7 +539,21 @@ Felthus has First Aid - 225 / 225
 ```
 #### Example Response
 ```
-
+irst Aid - 225 / 225 
+Teebs has Herbalism - 300 / 300 
+Teebs has Enchanting - 300 / 300 
+Tweebs has Alchemy - 300 / 300 
+Tweebs has Mining - 109 / 150 
+Tinge has Herbalism - 2 / 75 
+Khare has Tailoring - 225 / 225 
+Khare has Mining - 76 / 150 
+Twibbler has Blacksmithing - 59 / 150 
+Twibbler has Mining - 98 / 150 
+Krae has Alchemy - 274 / 300 
+Krae has Herbalism - 154 / 225 
+Remmus has Herbalism - 7 / 75 
+Felthus has Alchemy - 1 / 75 
+Felthus has Herbalism - 16 / 75
 ```
 
 <br/>
