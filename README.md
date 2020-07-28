@@ -663,7 +663,7 @@ Total Time Played across this server is 56 days, 10 hours, 25 minutes, 37 second
 ```
 #### Example Response
 ```
-
+Total Currency across this server is 320g 11s 55c
 ```
 
 <br/>
