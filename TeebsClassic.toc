@@ -17,3 +17,5 @@ Functions_ui.lua
 Functions_slash.lua
 # Main Source
 TeebsClassic.lua
+# UI source
+TeebsClassic.xml
