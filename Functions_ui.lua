@@ -1,4 +1,13 @@
 ------------------------------------------------------------------
+-- Addon UI Events
+------------------------------------------------------------------
+function TeebsClassic_OnLoad(self)
+    self:Hide()
+    SetPortraitToTexture(self.portrait, "Interface\\Icons\\trade_engineering")
+end
+
+
+------------------------------------------------------------------
 -- Addon UI Functions - Return data for binding to UI panels
 ------------------------------------------------------------------
 function interfaceGetAllItemSlots(character)
