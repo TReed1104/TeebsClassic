@@ -15,7 +15,7 @@ Functions_caching.lua
 Functions_cmd.lua
 Functions_ui.lua
 Functions_slash.lua
-# Main Source
-TeebsClassic.lua
 # UI source
 TeebsClassic.xml
+# Main Source
+TeebsClassic.lua
