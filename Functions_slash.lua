@@ -91,6 +91,10 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
         cmdGetTotalPlayTime()
     elseif messageSplit[1] == "get-total-gold" then
         cmdGetTotalGold()
+    elseif messageSplit[1] == "show" then
+        TeebsClassic_MainFrame:Show()
+    elseif messageSplit[1] == "hide" then
+        TeebsClassic_MainFrame:Hide()
     else
         print("Unknown Command", messageSplit[1])
     end
