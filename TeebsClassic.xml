@@ -20,7 +20,7 @@
 			</EdgeSize>
 		</Backdrop>
         <Layers>
-            <Layer level="BORDER">
+            <Layer level="ARTWORK">
                 <Texture name="$parent_Portrait" parentKey="portrait" file="Interface\Icons\trade_engineering">
                     <Size x="60" y="60"/>
                     <Anchors>
