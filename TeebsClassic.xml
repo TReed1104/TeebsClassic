@@ -8,18 +8,15 @@
         <Anchors>
             <Anchor point="CENTER" relativePoint="CENTER" relativeTo="UIParent"/>
         </Anchors>
-        <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
-			<BackgroundInsets>
-				<AbsInset left="11" right="12" top="12" bottom="11"/>
-			</BackgroundInsets>
-			<TileSize>
-				<AbsValue val="32"/>
-			</TileSize>
-			<EdgeSize>
-				<AbsValue val="32"/>
-			</EdgeSize>
-		</Backdrop>
         <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parent_background" parentKey="background" file="Interface\DialogFrame\UI-DialogBox-Background">
+                    <Size x="500" y="500"/>
+                    <Anchors>
+                         <Anchor point="TOPLEFT"/>
+                    </Anchors>
+                </Texture>
+            </Layer>
             <Layer level="ARTWORK">
                 <Texture name="$parent_Portrait" parentKey="portrait" file="Interface\Icons\trade_engineering">
                     <Size x="60" y="60"/>
