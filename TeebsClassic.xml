@@ -30,6 +30,15 @@
                     </Anchors>
                 </Texture>
             </Layer>
+            <Layer level="OVERLAY">
+                <FontString name="$parent_Title" parentKey="title" inherits="GameFontNormal" text="TeebsClassic">
+                    <Anchors>
+                        <Anchor point="TOP">
+                            <Offset x="0" y="-18"/>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
         </Layers>
         <Scripts>
             <OnLoad function="TeebsClassic_OnLoad"/>
