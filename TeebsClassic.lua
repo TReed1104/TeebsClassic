@@ -7,6 +7,10 @@ TeebsClassicFrame:SetFrameStrata("BACKGROUND")
 TeebsClassicFrame:SetWidth(500)
 TeebsClassicFrame:SetHeight(500)
 TeebsClassicFrame:SetPoint("CENTER", 0, 0)
+
+-- Debugging show to automatically show the frame on reload
+--TeebsClassicFrame:Show()
+
 _G["TeebsClassicFrame"] = TeebsClassicFrame
 
 -- Register Event Listeners
