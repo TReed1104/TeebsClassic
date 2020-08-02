@@ -2,23 +2,23 @@
 -- Addon Core Creation, Event Registration And Handling
 ------------------------------------------------------------------
 -- Frame Creation
-local frame = CreateFrame("Frame")
+local TeebsClassicFrame = CreateFrame("Frame", "TeebsClassic", UIParent)
 
 -- Register Event Listeners
-frame:RegisterEvent("ADDON_LOADED")
-frame:RegisterEvent("PLAYER_LOGIN")
-frame:RegisterEvent("PLAYER_ENTERING_WORLD")
-frame:RegisterEvent("PLAYER_LEVEL_UP")
-frame:RegisterEvent("PLAYER_MONEY")
-frame:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
-frame:RegisterEvent("PLAYER_XP_UPDATE")
-frame:RegisterEvent("TRADE_SKILL_UPDATE")
-frame:RegisterEvent("CHARACTER_POINTS_CHANGED")
-frame:RegisterEvent("UPDATE_FACTION")
-frame:RegisterEvent("TIME_PLAYED_MSG")
+TeebsClassicFrame:RegisterEvent("ADDON_LOADED")
+TeebsClassicFrame:RegisterEvent("PLAYER_LOGIN")
+TeebsClassicFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
+TeebsClassicFrame:RegisterEvent("PLAYER_LEVEL_UP")
+TeebsClassicFrame:RegisterEvent("PLAYER_MONEY")
+TeebsClassicFrame:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
+TeebsClassicFrame:RegisterEvent("PLAYER_XP_UPDATE")
+TeebsClassicFrame:RegisterEvent("TRADE_SKILL_UPDATE")
+TeebsClassicFrame:RegisterEvent("CHARACTER_POINTS_CHANGED")
+TeebsClassicFrame:RegisterEvent("UPDATE_FACTION")
+TeebsClassicFrame:RegisterEvent("TIME_PLAYED_MSG")
 
 -- Handle Events Triggering
-frame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, ...)
+TeebsClassicFrame:SetScript("OnEvent", function(self, event, arg1, arg2, arg3, ...)
     -- Addon Loaded Trigger
     if event == "ADDON_LOADED" then
         CURRENT_REALM = GetRealmName():lower()
