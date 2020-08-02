@@ -9,6 +9,9 @@ end
 function TeebsClassic_CreateButton(name, parentFrame, text, width, height, anchor, anchorOffsetX, anchorOffsetY, onClickFunction)
 end
 
+-- UI Create Object - Text Object
+function TeebsClassic_CreateTextObject(name, parentFrame, text, colourR, colourG, colourB, colourA, anchor, anchorOffsetX, anchorOffsetY, fontObject)
+end
 
 ------------------------------------------------------------------
 -- Addon UI Events
