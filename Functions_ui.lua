@@ -3,6 +3,18 @@
 ------------------------------------------------------------------
 -- UI Create Object - Frame
 function TeebsClassic_CreateFrame(name, parentFrame, width, height, anchor, anchorOffsetX, anchorOffsetY, backdropObject)
+    -- Create the frame
+    local newFrame = CreateFrame("Frame", name, parentFrame)
+    -- Initialise the frames positioning and sizing
+    newFrame:SetFrameStrata("BACKGROUND")
+    newFrame:SetWidth(width)
+    newFrame:SetHeight(height)
+    -- Positioning
+    newFrame:SetPoint(anchor, parentFrame, anchor, anchorOffsetX, anchorOffsetY)
+    -- Setup the frames backdrop
+    newFrame:SetBackdrop(backdropObject)
+    -- Return the new frame object
+    return newFrame
 end
 
 -- UI Create Object - Button
