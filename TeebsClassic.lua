@@ -1,65 +1,13 @@
 ------------------------------------------------------------------
 -- Addon Core Creation, Event Registration And Handling
 ------------------------------------------------------------------
--- Frame Creation
-local TeebsClassicFrame = CreateFrame("Frame", "TeebsClassic", UIParent)
-TeebsClassicFrame:SetFrameStrata("BACKGROUND")
-TeebsClassicFrame:SetWidth(500)
-TeebsClassicFrame:SetHeight(500)
-TeebsClassicFrame:SetPoint("CENTER", 0, 0)
+-- Addon Initialisation and UI setup
+local TeebsClassicFrame = TeebsClassic_CreateFrame("TeebsClassic", UIParent, 500, 500, "CENTER", 0, 0, { bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background", edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border", edgeSize = 12, tile = true, tileSize = 12, insets = { left = 0, right = 0, top = 0, bottom = 0, }, })
+TeebsClassicFrame.titleText = TeebsClassic_CreateTextObject("TitleText", TeebsClassicFrame, "TeebsClassic", 1, 1, 1, 1, "TOP", 0, -10, "GameFontNormal")    -- Title Text
+TeebsClassicFrame.exitButton = TeebsClassic_CreateButton("CloseButton", TeebsClassicFrame, "x", 30, 25, "TOPRIGHT", -6, -2, TeebsClassic_ExitButton)    -- Create the Exit button
+TeebsClassicFrame:Hide()    -- Hide the addon frame by default, Comment this out to show the addon frame on reload
 
--- Backdrop and border setup
-local backdrop = {
-    bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background",
-    edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
-    edgeSize = 12,
-    tile = true,
-    tileSize = 12,
-    insets = {
-        left = 0,
-        right = 0,
-        top = 0,
-        bottom = 0,
-    },
-}
-TeebsClassicFrame:SetBackdrop(backdrop)
-
--- Title Text
-local titleTextString = TeebsClassicFrame:CreateFontString(TeebsClassicFrame, "OVERLAY", "GameFontNormal")
-titleTextString:SetTextColor(255, 255, 255)
-titleTextString:SetText("TeebsClassic")
-titleTextString:SetPoint("Top", 0, -10)
-
--- Exit Button Setup
-TeebsClassicFrame.button = CreateFrame("Button", "Close_Button", TeebsClassicFrame)
-TeebsClassicFrame.button:SetWidth(25)
-TeebsClassicFrame.button:SetHeight(25)
-TeebsClassicFrame.button:SetPoint("TOPRIGHT", TeebsClassicFrame, "TOPRIGHT", -6, -2)
-TeebsClassicFrame.button:SetText("x")
-TeebsClassicFrame.button:SetNormalFontObject("GameFontNormal")
-TeebsClassicFrame.button:SetScript("OnClick", TeebsClassic_ExitButton)
--- Exit Button Texture - Normal
-TeebsClassicFrame.button.ntex = TeebsClassicFrame.button:CreateTexture()
-TeebsClassicFrame.button.ntex:SetTexture("Interface/Buttons/UI-Panel-Button-Up")
-TeebsClassicFrame.button.ntex:SetTexCoord(0, 0.625, 0, 0.6875)
-TeebsClassicFrame.button.ntex:SetAllPoints()	
-TeebsClassicFrame.button:SetNormalTexture(TeebsClassicFrame.button.ntex)
--- Exit Button Texture - Highlighted
-TeebsClassicFrame.button.htex = TeebsClassicFrame.button:CreateTexture()
-TeebsClassicFrame.button.htex:SetTexture("Interface/Buttons/UI-Panel-Button-Highlight")
-TeebsClassicFrame.button.htex:SetTexCoord(0, 0.625, 0, 0.6875)
-TeebsClassicFrame.button.htex:SetAllPoints()
-TeebsClassicFrame.button:SetHighlightTexture(TeebsClassicFrame.button.htex)
--- Exit Button Texture - Pushed
-TeebsClassicFrame.button.ptex = TeebsClassicFrame.button:CreateTexture()
-TeebsClassicFrame.button.ptex:SetTexture("Interface/Buttons/UI-Panel-Button-Down")
-TeebsClassicFrame.button.ptex:SetTexCoord(0, 0.625, 0, 0.6875)
-TeebsClassicFrame.button.ptex:SetAllPoints()
-TeebsClassicFrame.button:SetPushedTexture(TeebsClassicFrame.button.ptex)
-
--- Hide the addon frame by default, Comment this out to show the addon frame on reload
-TeebsClassicFrame:Hide()
-
+-- Register the Main Addon frame with the Global variable array provided by the Wow API
 _G["TeebsClassicFrame"] = TeebsClassicFrame
 
 -- Register Event Listeners
