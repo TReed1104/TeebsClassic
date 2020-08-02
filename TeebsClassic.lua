@@ -24,6 +24,12 @@ local backdrop = {
 }
 TeebsClassicFrame:SetBackdrop(backdrop)
 
+-- Title Text
+local titleTextString = TeebsClassicFrame:CreateFontString(TeebsClassicFrame, "OVERLAY", "GameFontNormal")
+titleTextString:SetTextColor(255, 255, 255)
+titleTextString:SetText("TeebsClassic")
+titleTextString:SetPoint("Top", 0, -10)
+
 -- Debugging show to automatically show the frame on reload
 --TeebsClassicFrame:Show()
 
