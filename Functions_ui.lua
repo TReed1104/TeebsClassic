@@ -1,9 +1,8 @@
 ------------------------------------------------------------------
 -- Addon UI Events
 ------------------------------------------------------------------
-function TeebsClassic_OnLoad(self)
-    self:Hide()
-    SetPortraitToTexture(self.portrait, "Interface\\Icons\\trade_engineering")
+function TeebsClassic_OnLoad()
+    
 end
 
 function TeebsClassic_ExitButton()
