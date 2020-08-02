@@ -10,9 +10,20 @@ TeebsClassicFrame:SetPoint("CENTER", 0, 0)
 
 -- Backdrop and border setup
 local backdrop = {
-    bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background"
+    bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background",
+    edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
+    edgeSize = 12,
+    tile = true,
+    tileSize = 12,
+    insets = {
+        left = 0,
+        right = 0,
+        top = 0,
+        bottom = 0,
+    },
 }
 TeebsClassicFrame:SetBackdrop(backdrop)
+
 -- Debugging show to automatically show the frame on reload
 --TeebsClassicFrame:Show()
 
