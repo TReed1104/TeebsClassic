@@ -55,6 +55,15 @@ end
 
 -- UI Create Object - Text Object
 function TeebsClassic_CreateTextObject(name, parentFrame, text, colourR, colourG, colourB, colourA, anchor, anchorOffsetX, anchorOffsetY, fontObject)
+    -- Create the text object, we use the parent frame to create it
+    local newTextObject = parentFrame:CreateFontString(name, "OVERLAY", fontObject)
+    -- Positioning
+    newTextObject:SetPoint(anchor, parentFrame, anchor, anchorOffsetX, anchorOffsetY)
+    -- Setup the Text and text colour
+    newTextObject:SetText(text)
+    newTextObject:SetTextColor(colourR, colourG, colourB, colourA)
+    -- Return the newly created text object
+    return newTextObject
 end
 
 ------------------------------------------------------------------
