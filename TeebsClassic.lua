@@ -3,6 +3,10 @@
 ------------------------------------------------------------------
 -- Frame Creation
 local TeebsClassicFrame = CreateFrame("Frame", "TeebsClassic", UIParent)
+TeebsClassicFrame:SetFrameStrata("BACKGROUND")
+TeebsClassicFrame:SetWidth(500)
+TeebsClassicFrame:SetHeight(500)
+TeebsClassicFrame:SetPoint("CENTER", 0, 0)
 _G["TeebsClassicFrame"] = TeebsClassicFrame
 
 -- Register Event Listeners
