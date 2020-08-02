@@ -1,6 +1,10 @@
 ------------------------------------------------------------------
 -- Addon UI Element Creation
 ------------------------------------------------------------------
+-- UI Create Object - Frame
+function TeebsClassic_CreateFrame(name, parentFrame, width, height, anchor, anchorOffsetX, anchorOffsetY, backdropObject)
+end
+
 
 ------------------------------------------------------------------
 -- Addon UI Events
