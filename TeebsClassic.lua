@@ -30,6 +30,13 @@ titleTextString:SetTextColor(255, 255, 255)
 titleTextString:SetText("TeebsClassic")
 titleTextString:SetPoint("Top", 0, -10)
 
+-- Exit Button Setup
+TeebsClassicFrame.button = CreateFrame("Button", "Close_Button", TeebsClassicFrame)
+TeebsClassicFrame.button:SetWidth(25)
+TeebsClassicFrame.button:SetHeight(25)
+TeebsClassicFrame.button:SetPoint("TOPRIGHT", TeebsClassicFrame, "TOPRIGHT", -6, -2)
+TeebsClassicFrame.button:SetText("x")
+TeebsClassicFrame.button:SetNormalFontObject("GameFontNormal")
 -- Debugging show to automatically show the frame on reload
 --TeebsClassicFrame:Show()
 
