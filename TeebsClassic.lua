@@ -38,6 +38,25 @@ TeebsClassicFrame.button:SetPoint("TOPRIGHT", TeebsClassicFrame, "TOPRIGHT", -6,
 TeebsClassicFrame.button:SetText("x")
 TeebsClassicFrame.button:SetNormalFontObject("GameFontNormal")
 TeebsClassicFrame.button:SetScript("OnClick", TeebsClassic_ExitButton)
+-- Exit Button Texture - Normal
+TeebsClassicFrame.button.ntex = TeebsClassicFrame.button:CreateTexture()
+TeebsClassicFrame.button.ntex:SetTexture("Interface/Buttons/UI-Panel-Button-Up")
+TeebsClassicFrame.button.ntex:SetTexCoord(0, 0.625, 0, 0.6875)
+TeebsClassicFrame.button.ntex:SetAllPoints()	
+TeebsClassicFrame.button:SetNormalTexture(TeebsClassicFrame.button.ntex)
+-- Exit Button Texture - Highlighted
+TeebsClassicFrame.button.htex = TeebsClassicFrame.button:CreateTexture()
+TeebsClassicFrame.button.htex:SetTexture("Interface/Buttons/UI-Panel-Button-Highlight")
+TeebsClassicFrame.button.htex:SetTexCoord(0, 0.625, 0, 0.6875)
+TeebsClassicFrame.button.htex:SetAllPoints()
+TeebsClassicFrame.button:SetHighlightTexture(TeebsClassicFrame.button.htex)
+-- Exit Button Texture - Pushed
+TeebsClassicFrame.button.ptex = TeebsClassicFrame.button:CreateTexture()
+TeebsClassicFrame.button.ptex:SetTexture("Interface/Buttons/UI-Panel-Button-Down")
+TeebsClassicFrame.button.ptex:SetTexCoord(0, 0.625, 0, 0.6875)
+TeebsClassicFrame.button.ptex:SetAllPoints()
+TeebsClassicFrame.button:SetPushedTexture(TeebsClassicFrame.button.ptex)
+
 -- Debugging show to automatically show the frame on reload
 --TeebsClassicFrame:Show()
 
