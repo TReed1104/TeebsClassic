@@ -57,8 +57,8 @@ TeebsClassicFrame.button.ptex:SetTexCoord(0, 0.625, 0, 0.6875)
 TeebsClassicFrame.button.ptex:SetAllPoints()
 TeebsClassicFrame.button:SetPushedTexture(TeebsClassicFrame.button.ptex)
 
--- Debugging show to automatically show the frame on reload
---TeebsClassicFrame:Show()
+-- Hide the addon frame by default, Comment this out to show the addon frame on reload
+TeebsClassicFrame:Hide()
 
 _G["TeebsClassicFrame"] = TeebsClassicFrame
 
