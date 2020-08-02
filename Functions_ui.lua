@@ -6,6 +6,9 @@ function TeebsClassic_OnLoad(self)
     SetPortraitToTexture(self.portrait, "Interface\\Icons\\trade_engineering")
 end
 
+function TeebsClassic_ExitButton()
+    TeebsClassicFrame:Hide()
+end
 
 ------------------------------------------------------------------
 -- Addon UI Functions - Return data for binding to UI panels
