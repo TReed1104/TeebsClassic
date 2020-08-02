@@ -3,6 +3,7 @@
 ------------------------------------------------------------------
 -- Frame Creation
 local TeebsClassicFrame = CreateFrame("Frame", "TeebsClassic", UIParent)
+_G["TeebsClassicFrame"] = TeebsClassicFrame
 
 -- Register Event Listeners
 TeebsClassicFrame:RegisterEvent("ADDON_LOADED")
