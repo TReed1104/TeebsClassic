@@ -19,6 +19,38 @@ end
 
 -- UI Create Object - Button
 function TeebsClassic_CreateButton(name, parentFrame, text, width, height, anchor, anchorOffsetX, anchorOffsetY, onClickFunction)
+    -- Button Setup
+    local newButton = CreateFrame("Button", name, parentFrame)
+    -- Sizing
+    newButton:SetWidth(width)
+    newButton:SetHeight(height)
+    -- Positioning
+    newButton:SetPoint(anchor, parentFrame, anchor, anchorOffsetX, anchorOffsetY)
+    -- Text & Font
+    newButton:SetText(text)
+    newButton:SetNormalFontObject("GameFontNormal")
+    -- Button Event Setup
+    newButton:SetScript("OnClick", onClickFunction)
+    -- Texture setup Normal Texture
+    newButton.ntex = newButton:CreateTexture()
+    newButton.ntex:SetTexture("Interface/Buttons/UI-Panel-Button-Up")
+    newButton.ntex:SetTexCoord(0, 0.625, 0, 0.6875)
+    newButton.ntex:SetAllPoints()	
+    newButton:SetNormalTexture(newButton.ntex)
+    -- Texture setup Highlighted Texture
+    newButton.htex = newButton:CreateTexture()
+    newButton.htex:SetTexture("Interface/Buttons/UI-Panel-Button-Highlight")
+    newButton.htex:SetTexCoord(0, 0.625, 0, 0.6875)
+    newButton.htex:SetAllPoints()
+    newButton:SetHighlightTexture(newButton.htex)
+    -- Texture setup Clicked Texture
+    newButton.ptex = newButton:CreateTexture()
+    newButton.ptex:SetTexture("Interface/Buttons/UI-Panel-Button-Down")
+    newButton.ptex:SetTexCoord(0, 0.625, 0, 0.6875)
+    newButton.ptex:SetAllPoints()
+    newButton:SetPushedTexture(newButton.ptex)
+    -- Return the newly created button
+    return newButton
 end
 
 -- UI Create Object - Text Object
