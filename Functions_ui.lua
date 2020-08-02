@@ -5,6 +5,10 @@
 function TeebsClassic_CreateFrame(name, parentFrame, width, height, anchor, anchorOffsetX, anchorOffsetY, backdropObject)
 end
 
+-- UI Create Object - Button
+function TeebsClassic_CreateButton(name, parentFrame, text, width, height, anchor, anchorOffsetX, anchorOffsetY, onClickFunction)
+end
+
 
 ------------------------------------------------------------------
 -- Addon UI Events
