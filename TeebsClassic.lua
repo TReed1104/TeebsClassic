@@ -37,6 +37,7 @@ TeebsClassicFrame.button:SetHeight(25)
 TeebsClassicFrame.button:SetPoint("TOPRIGHT", TeebsClassicFrame, "TOPRIGHT", -6, -2)
 TeebsClassicFrame.button:SetText("x")
 TeebsClassicFrame.button:SetNormalFontObject("GameFontNormal")
+TeebsClassicFrame.button:SetScript("OnClick", TeebsClassic_ExitButton)
 -- Debugging show to automatically show the frame on reload
 --TeebsClassicFrame:Show()
 
