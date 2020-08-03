@@ -7,13 +7,13 @@
 ## Title: TeebsHelper
 ## Notes: Data caching for character details and quick character data retrieval
 
-# Globals
-src/Globals.lua
-# Function source includes
-src/HelperFunctions.lua
-src/CharacterData.lua
-src/CommandLine.lua
-src/InterfaceData.lua
-src/SlashCommands.lua
-# Main Source
-TeebsClassic.lua
+# Include our source files
+src/global.lua                          # Globals
+src/helper_functions.lua                # Function source includes
+src/character_data.lua                  # Data caching commands
+src/cmd/chatbox_data_commands.lua       # Chatbox Commands
+src/ui_data_functions.lua               # UI data functions - getters
+src/ui_elements.lua                     # UI elements setup
+src/ui_events.lua                       # UI element events (onClick, etc.)
+src/slash_commands.lua                  # Addon Slash Commands
+teebs_classic.lua                       # Addon Core Source
