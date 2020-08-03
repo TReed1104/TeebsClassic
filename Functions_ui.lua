@@ -66,6 +66,7 @@ function TeebsClassic_CreateTextObject(name, parentFrame, text, colourR, colourG
     return newTextObject
 end
 
+
 ------------------------------------------------------------------
 -- Addon UI Events
 ------------------------------------------------------------------
@@ -76,6 +77,7 @@ end
 function TeebsClassic_ExitButton()
     TeebsClassicFrame:Hide()
 end
+
 
 ------------------------------------------------------------------
 -- Addon UI Functions - Return data for binding to UI panels
