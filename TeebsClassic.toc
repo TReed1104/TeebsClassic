@@ -8,12 +8,12 @@
 ## Notes: Data caching for character details and quick character data retrieval
 
 # Globals
-Globals.lua
+src/Globals.lua
 # Function source includes
-Functions_helper.lua
-Functions_caching.lua
-Functions_cmd.lua
-Functions_ui.lua
-Functions_slash.lua
+src/HelperFunctions.lua
+src/CharacterData.lua
+src/CommandLine.lua
+src/InterfaceData.lua
+src/SlashCommands.lua
 # Main Source
 TeebsClassic.lua
