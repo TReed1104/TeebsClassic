@@ -8,7 +8,7 @@
 ## Notes: Data caching for character details and quick character data retrieval
 
 # Globals
-src/global.lua
+src/globals.lua
 # Function source includes
 src/helper_functions.lua
 # Data caching commands
