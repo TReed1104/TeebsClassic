@@ -76,3 +76,5 @@ function ActivateLayout_Core(addonMainFrame)
     addonMainFrame.homeButton = TeebsClassic_CreateButton("HomeButton", addonMainFrame, "Home", 50, 30, "TOPLEFT", 6, -2, nil)                              -- Home Button
 end
 
+function Layout_MainMenu(addonMainFrame)
+end
