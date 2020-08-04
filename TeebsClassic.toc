@@ -10,7 +10,7 @@
 # Globals
 src/globals.lua
 # Function source includes
-src/helper_functions.lua
+src/general_functions.lua
 # Data caching commands
 src/character_data.lua
 # Command-Line
