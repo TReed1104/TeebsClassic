@@ -17,6 +17,13 @@ function TeebsClassic_OnLoad(frame, eventHandlerFunc)
 
     -- Handle Events Triggering
     frame:SetScript("OnEvent", eventHandlerFunc)
+
+    -- Setup the frame for being movable
+    frame:SetMovable(true)
+    frame:EnableMouse(true)
+    frame:RegisterForDrag("LeftButton")
+    frame:SetScript("OnDragStart", frame.StartMoving)
+    frame:SetScript("OnDragStop", frame.StopMovingOrSizing)
 end
 
 function TeebsClassic_ExitButton()
