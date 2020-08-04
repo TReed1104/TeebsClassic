@@ -15,6 +15,8 @@ function TeebsClassic_OnLoad(frame)
     frame:RegisterEvent("UPDATE_FACTION")
     frame:RegisterEvent("TIME_PLAYED_MSG")
 
+    -- Handle Events Triggering
+    frame:SetScript("OnEvent", TeebsClassic_EventHandler)
 end
 
 function TeebsClassic_ExitButton()
