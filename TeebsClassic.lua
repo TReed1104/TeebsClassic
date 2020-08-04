@@ -3,8 +3,7 @@
 ------------------------------------------------------------------
 -- Addon Initialisation and UI setup
 local TeebsClassicFrame = TeebsClassic_CreateFrame("TeebsClassic", UIParent, 500, 500, "CENTER", 0, 0, { bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background", edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border", edgeSize = 12, tile = true, tileSize = 12, insets = { left = 0, right = 0, top = 0, bottom = 0, }, })
-TeebsClassicFrame.titleText = TeebsClassic_CreateTextObject("TitleText", TeebsClassicFrame, "TeebsClassic", 1, 1, 1, 1, "TOP", 0, -10, "GameFontNormal")    -- Title Text
-TeebsClassicFrame.exitButton = TeebsClassic_CreateButton("CloseButton", TeebsClassicFrame, "x", 30, 25, "TOPRIGHT", -6, -2, TeebsClassic_ExitButton)    -- Create the Exit button
+ActivateLayout_Core(TeebsClassicFrame)
 TeebsClassicFrame:Hide()    -- Hide the addon frame by default, Comment this out to show the addon frame on reload
 
 -- Register the Main Addon frame with the Global variable array provided by the Wow API
