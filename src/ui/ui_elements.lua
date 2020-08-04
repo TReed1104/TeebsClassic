@@ -2,7 +2,7 @@
 -- Addon UI Element Creation
 ------------------------------------------------------------------
 -- UI Create Object - Frame
-function TeebsClassic_CreateFrame(name, parentFrame, width, height, anchor, anchorOffsetX, anchorOffsetY, backdropObject)
+function TeebsClassic_CreateFrame(name, parentFrame, width, height, anchor, anchorOffsetX, anchorOffsetY, backdropObject, onLoadFunc, eventHandlerFunc)
     -- Create the frame
     local newFrame = CreateFrame("Frame", name, parentFrame)
     -- Initialise the frames positioning and sizing
