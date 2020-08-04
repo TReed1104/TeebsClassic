@@ -13,6 +13,8 @@ function TeebsClassic_CreateFrame(name, parentFrame, width, height, anchor, anch
     newFrame:SetPoint(anchor, parentFrame, anchor, anchorOffsetX, anchorOffsetY)
     -- Setup the frames backdrop
     newFrame:SetBackdrop(backdropObject)
+    -- Call the onLoad function, you can't register the onLoad function via SetScript outside of XML
+    onLoadFunc(newFrame, eventHandlerFunc)  -- (Yay function references)
     -- Return the new frame object
     return newFrame
 end
