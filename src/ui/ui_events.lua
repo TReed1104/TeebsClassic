@@ -1,7 +1,7 @@
 ------------------------------------------------------------------
 -- Addon UI Events
 ------------------------------------------------------------------
-function TeebsClassic_OnLoad(frame)
+function TeebsClassic_OnLoad(frame, eventHandlerFunc)
     -- Register Event Listeners
     frame:RegisterEvent("ADDON_LOADED")
     frame:RegisterEvent("PLAYER_LOGIN")
@@ -16,7 +16,7 @@ function TeebsClassic_OnLoad(frame)
     frame:RegisterEvent("TIME_PLAYED_MSG")
 
     -- Handle Events Triggering
-    frame:SetScript("OnEvent", TeebsClassic_EventHandler)
+    frame:SetScript("OnEvent", eventHandlerFunc)
 end
 
 function TeebsClassic_ExitButton()
