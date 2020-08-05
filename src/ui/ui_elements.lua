@@ -104,4 +104,9 @@ function Layout_MainMenu(addonMainFrame)
         btn_GetAllPrimaryProfessions = "Server Primary Professions",
         btn_GetAllSecondaryProfessions = "Server Secondary Professions"
     }
+    local yOffset = 20
+    for buttonName, buttonText in pairs(menuItems) do
+        addonMainFrame[buttonName] = TeebsClassic_CreateButton(buttonName, addonMainFrame, buttonText, 150, 30, "TOPLEFT", 6, -yOffset, nil)
+        yOffset = yOffset + 30
+    end
 end
