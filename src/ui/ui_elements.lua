@@ -144,8 +144,8 @@ function GenerateMenuData_CharacterList(uiFunction)
         local characterMenuItem = {
             text = characterName,
             func = TeebsClassic_ClickFunctionMenuItem,
-            arg1 = nil, 
-            arg2 = nil,
+            arg1 = uiFunction, 
+            arg2 = characterName,
             notCheckable = 1,
             keepShownOnClick = 0,
         }
