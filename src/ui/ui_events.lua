@@ -28,6 +28,7 @@ end
 
 function TeebsClassic_ExitButton()
     TeebsClassicFrame:Hide()
+    CloseDropDownMenus()
 end
 
 function TeebsClassic_OpenMainMenu(self)
