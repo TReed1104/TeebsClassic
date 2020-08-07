@@ -77,7 +77,7 @@ end
 ------------------------------------------------------------------
 -- Addon UI Layouts
 ------------------------------------------------------------------
-function ActivateLayout_Core(addonMainFrame)
+function GenerateCoreUIElements(addonMainFrame)
     addonMainFrame.titleText = TeebsClassic_CreateTextObject("TitleText", addonMainFrame, "TeebsClassic", 1, 1, 1, 1, "TOP", 0, -10, "GameFontNormal")      -- Title Text
     addonMainFrame.exitButton = TeebsClassic_CreateButton("CloseButton", addonMainFrame, "x", 30, 30, "TOPRIGHT", -6, -2, TeebsClassic_ExitButton)          -- Create the Exit button
     addonMainFrame.homeButton = TeebsClassic_CreateButton("HomeButton", addonMainFrame, "Home", 50, 30, "TOPLEFT", 6, -2, nil)                              -- Home Button
