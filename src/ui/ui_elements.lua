@@ -134,7 +134,7 @@ function GenerateMenuData_Main()
     return mainMenuLayout
 end
 
-function GenerateMenuData_CharacterList()
+function GenerateMenuData_CharacterList(uiFunction)
     local characterListMenu = {}
     return characterListMenu
 end
