@@ -83,3 +83,10 @@ function GenerateCoreUIElements(addonMainFrame)
     addonMainFrame.menuButton = TeebsClassic_CreateButton("MenuButton", addonMainFrame, "Menu", 50, 30, "TOPLEFT", 6, -2, TeebsClassic_OpenMainMenu)        -- Menu Button
     addonMainFrame.mainMenu = TeebsClassic_CreateDropDown("MenuDropDown")
 end
+
+
+------------------------------------------------------------------
+-- Addon Menu Layouts
+------------------------------------------------------------------
+function GenerateMainMenu()
+end
