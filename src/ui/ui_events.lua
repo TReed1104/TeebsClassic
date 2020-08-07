@@ -33,3 +33,6 @@ end
 function TeebsClassic_OpenMainMenu(self)
     EasyMenu(GenerateMenuData_Main(), TeebsClassicFrame.mainMenu, self:GetName(), 0, 0, nil)
 end
+
+function TeebsClassic_ClickFunctionMenuItem(self, arg1, arg2)
+end
