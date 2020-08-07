@@ -136,5 +136,8 @@ end
 
 function GenerateMenuData_CharacterList(uiFunction)
     local characterListMenu = {}
+    -- Create a list of the characters for the dropdown
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+    end
     return characterListMenu
 end
