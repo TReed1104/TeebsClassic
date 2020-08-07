@@ -89,6 +89,49 @@ end
 -- Addon Menu Layouts
 ------------------------------------------------------------------
 function GenerateMainMenu()
+    local mainMenuLayout = {
+        { text = "Character Functions", isTitle = 1, notCheckable = 1, },
+        { text = "Equipped Gear", func = function() print(text) end, notCheckable = 1, },
+        { text = "Equipped Bags", func = function() print(text) end, notCheckable = 1, },
+        { text = "Experience", func = function() print(text) end, notCheckable = 1, },
+        { text = "Level", func = function() print(text) end, notCheckable = 1, },
+        { text = "PlayTime", func = function() print(text) end, notCheckable = 1, },
+        { text = "Talents", notCheckable = 1, hasArrow = true,
+            menuList = {
+                { text = "Specialisation", func = function() print(text) end, notCheckable = 1, },
+                { text = "Talent Breakdown", func = function() print(text) end, notCheckable = 1, },
+            }
+        },
+        { text = "Gold", func = function() print(text) end, notCheckable = 1, },
+        { text = "Professions", notCheckable = 1, hasArrow = true,
+            menuList = {
+                { text = "All", func = function() print(text) end, notCheckable = 1, },
+                { text = "Primary", func = function() print(text) end, notCheckable = 1, },
+                { text = "Secondary", func = function() print(text) end, notCheckable = 1, },
+            }
+        },
+        { text = "Reputations", func = function() print(text) end, notCheckable = 1, },
+        { text = "Server Functions", isTitle = 1, notCheckable = 1, },
+        { text = "Experience", func = function() print(text) end, notCheckable = 1, },
+        { text = "Levels", func = function() print(text) end, notCheckable = 1, },
+        { text = "PlayTime", func = function() print(text) end, notCheckable = 1, },
+        { text = "Talents", notCheckable = 1, hasArrow = true,
+            menuList = {
+                { text = "Spec", func = function() print(text) end, notCheckable = 1, },
+                { text = "Talent Breakdown", func = function() print(text) end, notCheckable = 1, },
+            }
+        },
+        { text = "Currencies", func = function() print(text) end, notCheckable = 1, },
+        { text = "Professions", notCheckable = 1, hasArrow = true,
+            menuList = {
+                { text = "All", func = function() print(text) end, notCheckable = 1, },
+                { text = "Primary", func = function() print(text) end, notCheckable = 1, },
+                { text = "Secondary", func = function() print(text) end, notCheckable = 1, },
+            }
+        },
+        { text = "Close", func = function() CloseDropDownMenus() end, notCheckable = 1, }
+    }
+    return mainMenuLayout
 end
 
 function GenerataCharacterListMenu()
