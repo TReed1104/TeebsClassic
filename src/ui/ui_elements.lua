@@ -90,3 +90,6 @@ end
 ------------------------------------------------------------------
 function GenerateMainMenu()
 end
+
+function GenerataCharacterListMenu()
+end
