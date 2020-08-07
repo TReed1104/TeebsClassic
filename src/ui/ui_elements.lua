@@ -83,35 +83,3 @@ function ActivateLayout_Core(addonMainFrame)
     addonMainFrame.homeButton = TeebsClassic_CreateButton("HomeButton", addonMainFrame, "Home", 50, 30, "TOPLEFT", 6, -2, nil)                              -- Home Button
 end
 
-function Layout_MainMenu(addonMainFrame)
-    -- Datatable of all the menu items that will have buttons -> directly link to the ui_functions
-    local menuItems = {
-        btn_GetAllItemSlots = "Character Equipped",
-        btn_GetAllBagSlots = "Character Bags",
-        btn_GetExperience = "Character Experience",
-        btn_GetLevel = "GCharacteret Level",
-        btn_GetPlayTime = "Character PlayTime",
-        btn_GetSpec = "Character Spec",
-        btn_GetTalents = "Character Talents",
-        btn_GetGold = "GeCharactert Gold",
-        btn_GetProfessions = "Character Professions",
-        btn_GetPrimaryProfessions = "Character Primary Professions",
-        btn_GetSecondaryProfessions = "Character Secondary Professions",
-        btn_GetReputation = "Character Factions",
-        btn_GetAllReputations = "Character Reputations",
-        btn_GetAllExperience = "Server Character Exp",
-        btn_GetAllLevels = "Server Character Levels",
-        btn_GetAllPlayTime = "Server Character PlayTime",
-        btn_GetAllSpecs = "Server Character Specs",
-        btn_GetAllTalents = "Server Character Talents",
-        btn_GetAllGold = "Server Gold",
-        btn_GetAllProfessions = "Server Professions",
-        btn_GetAllPrimaryProfessions = "Server Primary Professions",
-        btn_GetAllSecondaryProfessions = "Server Secondary Professions"
-    }
-    local yOffset = 20
-    for buttonName, buttonText in pairs(menuItems) do
-        addonMainFrame[buttonName] = TeebsClassic_CreateButton(buttonName, addonMainFrame, buttonText, 150, 30, "TOPLEFT", 6, -yOffset, nil)
-        yOffset = yOffset + 30
-    end
-end
