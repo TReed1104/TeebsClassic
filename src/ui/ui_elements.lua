@@ -135,4 +135,6 @@ function GenerateMainMenu()
 end
 
 function GenerataCharacterListMenu()
+    local characterListMenu = {}
+    return characterListMenu
 end
