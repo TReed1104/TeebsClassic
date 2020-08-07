@@ -68,6 +68,11 @@ function TeebsClassic_CreateTextObject(name, parentFrame, text, colourR, colourG
     return newTextObject
 end
 
+function TeebsClassic_CreateDropDown(name)
+    local newDropDownMenu = CreateFrame("Frame", name, nil, "UIDropDownMenuTemplate")
+    return newDropDownMenu
+end
+
 
 ------------------------------------------------------------------
 -- Addon UI Layouts
