@@ -88,7 +88,7 @@ end
 ------------------------------------------------------------------
 -- Addon Menu Layouts
 ------------------------------------------------------------------
-function GenerateMainMenu()
+function GenerateMenuData_Main()
     local mainMenuLayout = {
         { text = "Character Functions", isTitle = 1, notCheckable = 1, },
         { text = "Equipped Gear", func = function() print(text) end, notCheckable = 1, },
@@ -134,7 +134,7 @@ function GenerateMainMenu()
     return mainMenuLayout
 end
 
-function GenerataCharacterListMenu()
+function GenerateMenuData_CharacterList()
     local characterListMenu = {}
     return characterListMenu
 end
