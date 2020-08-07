@@ -91,19 +91,19 @@ end
 function GenerateMenuData_Main()
     local mainMenuLayout = {
         { text = "Character Functions", isTitle = 1, notCheckable = 1, },
-        { text = "Equipped Gear", func = function() print(text) end, notCheckable = 1, },
+        { text = "Equipped Gear", notCheckable = 1, hasArrow = true, keepShownOnClick = 0,
         { text = "Equipped Bags", func = function() print(text) end, notCheckable = 1, },
         { text = "Experience", func = function() print(text) end, notCheckable = 1, },
         { text = "Level", func = function() print(text) end, notCheckable = 1, },
         { text = "PlayTime", func = function() print(text) end, notCheckable = 1, },
-        { text = "Talents", notCheckable = 1, hasArrow = true,
+        { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0,
             menuList = {
                 { text = "Specialisation", func = function() print(text) end, notCheckable = 1, },
                 { text = "Talent Breakdown", func = function() print(text) end, notCheckable = 1, },
             }
         },
         { text = "Gold", func = function() print(text) end, notCheckable = 1, },
-        { text = "Professions", notCheckable = 1, hasArrow = true,
+        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0,
             menuList = {
                 { text = "All", func = function() print(text) end, notCheckable = 1, },
                 { text = "Primary", func = function() print(text) end, notCheckable = 1, },
@@ -115,14 +115,14 @@ function GenerateMenuData_Main()
         { text = "Experience", func = function() print(text) end, notCheckable = 1, },
         { text = "Levels", func = function() print(text) end, notCheckable = 1, },
         { text = "PlayTime", func = function() print(text) end, notCheckable = 1, },
-        { text = "Talents", notCheckable = 1, hasArrow = true,
+        { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0,
             menuList = {
                 { text = "Spec", func = function() print(text) end, notCheckable = 1, },
                 { text = "Talent Breakdown", func = function() print(text) end, notCheckable = 1, },
             }
         },
         { text = "Currencies", func = function() print(text) end, notCheckable = 1, },
-        { text = "Professions", notCheckable = 1, hasArrow = true,
+        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0,
             menuList = {
                 { text = "All", func = function() print(text) end, notCheckable = 1, },
                 { text = "Primary", func = function() print(text) end, notCheckable = 1, },
