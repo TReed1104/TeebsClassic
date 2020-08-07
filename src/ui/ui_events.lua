@@ -29,3 +29,7 @@ end
 function TeebsClassic_ExitButton()
     TeebsClassicFrame:Hide()
 end
+
+function TeebsClassic_OpenMainMenu(self)
+    EasyMenu(GenerateMainMenu(), TeebsClassicFrame.mainMenu, self:GetName(), 0, 0, nil)
+end
