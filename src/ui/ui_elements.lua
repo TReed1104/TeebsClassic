@@ -92,6 +92,8 @@ function GenerateMenuData_Main()
     local mainMenuLayout = {
         { text = "Character Functions", isTitle = 1, notCheckable = 1, },
         { text = "Equipped Gear", notCheckable = 1, hasArrow = true, keepShownOnClick = 0,
+            menuList = GenerateMenuData_CharacterList()
+        },
         { text = "Equipped Bags", func = function() print(text) end, notCheckable = 1, },
         { text = "Experience", func = function() print(text) end, notCheckable = 1, },
         { text = "Level", func = function() print(text) end, notCheckable = 1, },
