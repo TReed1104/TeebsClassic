@@ -90,28 +90,15 @@ end
 ------------------------------------------------------------------
 function GenerateMenuData_Main()
     local mainMenuLayout = {
-        { text = "Character Functions", isTitle = 1, notCheckable = 1, },
+        { text = "Character Specific", isTitle = 1, notCheckable = 1, },
+        { text = "Experience", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(nil, true, true) },
+        { text = "Gold", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(nil, true, false, true) },
+        { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetTalents, true, false, false, true) },
         { text = "Equipped Gear", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetAllItemSlots) },
-        { text = "Equipped Bags", func = function() print(text) end, notCheckable = 1, },
-        { text = "Experience", func = function() print(text) end, notCheckable = 1, },
-        { text = "Level", func = function() print(text) end, notCheckable = 1, },
-        { text = "PlayTime", func = function() print(text) end, notCheckable = 1, },
-        { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0,
-            menuList = {
-                { text = "Specialisation", func = function() print(text) end, notCheckable = 1, },
-                { text = "Talent Breakdown", func = function() print(text) end, notCheckable = 1, },
-            }
-        },
-        { text = "Gold", func = function() print(text) end, notCheckable = 1, },
-        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0,
-            menuList = {
-                { text = "All", func = function() print(text) end, notCheckable = 1, },
-                { text = "Primary", func = function() print(text) end, notCheckable = 1, },
-                { text = "Secondary", func = function() print(text) end, notCheckable = 1, },
-            }
-        },
-        { text = "Reputations", func = function() print(text) end, notCheckable = 1, },
-        { text = "Server Functions", isTitle = 1, notCheckable = 1, },
+        { text = "Equipped Bags", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetAllBagSlots) },
+        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetProfessions) },
+        { text = "Reputations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetAllReputations) },
+        { text = "All Characters", isTitle = 1, notCheckable = 1, },
         { text = "Experience", func = function() print(text) end, notCheckable = 1, },
         { text = "Levels", func = function() print(text) end, notCheckable = 1, },
         { text = "PlayTime", func = function() print(text) end, notCheckable = 1, },
