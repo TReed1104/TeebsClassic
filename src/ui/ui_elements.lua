@@ -147,7 +147,6 @@ function GenerateMenuData_CharacterList(uiFunction, isDisabled, showExperience, 
             arg1 = uiFunction, 
             arg2 = characterName,
             notCheckable = 1,
-            keepShownOnClick = 0,
         }
         -- Insert the menu item into the character list menu
         table.insert(characterListMenu, characterMenuItem)

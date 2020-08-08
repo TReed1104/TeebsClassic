@@ -37,4 +37,5 @@ end
 
 function TeebsClassic_ClickFunctionMenuItem(self, arg1, arg2)
     print(self, arg1, arg2)
+    CloseDropDownMenus()
 end
