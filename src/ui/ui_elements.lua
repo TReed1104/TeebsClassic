@@ -139,7 +139,10 @@ function GenerateMenuData_CharacterList(uiFunction, isDisabled, showExperience, 
         if showSpec then
             menuItemText = menuItemText .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, " - " .. characterData.talents.specialisation.distribution)
         end
-
+        -- Toggle the playtime text
+        if showPlaytime then
+            menuItemText = menuItemText .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, " - " .. formatPlayTimeData(characterData["time-played"].total))
+        end
         -- Generate the menu item details
         local characterMenuItem = {
             disabled = isDisabled,
