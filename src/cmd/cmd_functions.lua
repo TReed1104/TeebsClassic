@@ -406,7 +406,7 @@ function cmdGetAllCharacterSpecs()
     -- For every character cached for the current realm, print their character spec
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
         -- Output the character levels
-        print(recolourNameByClass(characterName) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently specced " .. characterData.talents.specialisation))
+        print(recolourNameByClass(characterName) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently specced " .. characterData.talents.specialisation.distribution))
     end
 end
 
