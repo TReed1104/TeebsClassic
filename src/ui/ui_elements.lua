@@ -165,5 +165,15 @@ function GenerateMenuData_CharacterList(uiFunction, isDisabled, showExperience, 
         -- Insert the menu item into the character list menu
         table.insert(characterListMenu, { disabled = true, notCheckable = 1, text = recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, "Total - " .. formatCurrencyData(totalCurrency)) })
     end
+    -- Insert total playtime
+    if showPlaytime then
+        local totalPlayTimeInSeconds = 0
+        -- For every character cached for the current realm, total up their total playtime
+        for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+            totalPlayTimeInSeconds = totalPlayTimeInSeconds + characterData["time-played"].total
+        end
+        -- Insert the menu item into the character list menu
+        table.insert(characterListMenu, { disabled = true, notCheckable = 1, text = recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, "Total - " .. formatPlayTimeData(totalPlayTimeInSeconds)) })
+    end
     return characterListMenu
 end
