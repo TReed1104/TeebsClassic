@@ -134,13 +134,27 @@ function GenerateMenuData_Main()
     return mainMenuLayout
 end
 
-function GenerateMenuData_CharacterList(uiFunction)
+function GenerateMenuData_CharacterList(uiFunction, isDisabled, showExperience, showGold, showSpec)
     local characterListMenu = {}
     -- Create a list of the characters for the dropdown
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
-        local menuItemText = upperCaseFirst(recolourNameByClass(characterName))
+        local menuItemText = upperCaseFirst(recolourNameByClass(characterName)) .. " (" .. characterData.level .. ")"
+        -- Toggle the experience text TODO - Add rested %
+        if showExperience then
+            menuItemText = menuItemText .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, " - " .. characterData.experienceCurrentPercentage .. "%")
+        end
+        -- Toggle the gold text
+        if showGold then
+            menuItemText = menuItemText .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, " - " .. formatCurrencyData(characterData.currency.copper))
+        end
+        -- Toggle the spec text
+        if showSpec then
+            menuItemText = menuItemText .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, " - " .. characterData.talents.specialisation.distribution)
+        end
+
         -- Generate the menu item details
         local characterMenuItem = {
+            disabled = isDisabled,
             text = menuItemText,
             func = TeebsClassic_ClickFunctionMenuItem,
             arg1 = uiFunction, 
