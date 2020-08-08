@@ -121,7 +121,7 @@ function GenerateMenuData_Main()
     return mainMenuLayout
 end
 
-function GenerateMenuData_CharacterList(uiFunction, isDisabled, showExperience, showGold, showSpec)
+function GenerateMenuData_CharacterList(uiFunction, isDisabled, showExperience, showGold, showSpec, showPlaytime)
     local characterListMenu = {}
     -- Create a list of the characters for the dropdown
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
