@@ -129,6 +129,7 @@ function GenerateMenuData_CharacterList(uiFunction, isDisabled, showExperience, 
         -- Toggle the experience text TODO - Add rested %
         if showExperience then
             menuItemText = menuItemText .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, " - " .. characterData.experienceCurrentPercentage .. "%")
+            menuItemText = menuItemText .. recolourOutputText(characterData.experienceRestedPercentage >= 150 and TEEBS_TEXT_COLOUR_ALERT or TEEBS_TEXT_COLOUR_WHITE, " - " .. characterData.experienceRestedPercentage .. "%")
         end
         -- Toggle the gold text
         if showGold then
