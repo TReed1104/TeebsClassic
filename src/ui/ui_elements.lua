@@ -155,5 +155,15 @@ function GenerateMenuData_CharacterList(uiFunction, isDisabled, showExperience, 
         -- Insert the menu item into the character list menu
         table.insert(characterListMenu, characterMenuItem)
     end
+    -- Insert total gold
+    if showGold then
+        local totalCurrency = 0
+        -- For every character cached for the current realm, total up their total gold
+        for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+            totalCurrency = totalCurrency + characterData["currency"].copper
+        end
+        -- Insert the menu item into the character list menu
+        table.insert(characterListMenu, { disabled = true, notCheckable = 1, text = recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, "Total - " .. formatCurrencyData(totalCurrency)) })
+    end
     return characterListMenu
 end
