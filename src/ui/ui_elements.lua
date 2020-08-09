@@ -89,6 +89,12 @@ end
 -- Addon Menu Layouts
 ------------------------------------------------------------------
 function GenerateMenuData_Main()
+    -- Submenu for the profession functions
+    local professionsSubmenus = {
+        { text = "All", notCheckable = 1, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllProfessions},
+        { text = "Primary", notCheckable = 1, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllPrimaryProfessions},
+        { text = "Secondary", notCheckable = 1, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllSecondaryProfessions},
+    }
     local mainMenuLayout = {
         { text = "Character Specific", isTitle = 1, notCheckable = 1, },
         { text = "Equipped Gear", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetAllItemSlots) },
@@ -102,11 +108,7 @@ function GenerateMenuData_Main()
         { text = "Gold", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(nil, true, false, true) },
         { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetTalents, false, false, false, true) },
         { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0,
-            menuList = {
-                { text = "All", notCheckable = 1, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllProfessions},
-                { text = "Primary", notCheckable = 1, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllPrimaryProfessions},
-                { text = "Secondary", notCheckable = 1, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllSecondaryProfessions},
-            }
+            menuList = professionsSubmenus
         },
         { text = "Close", func = function() CloseDropDownMenus() end, notCheckable = 1, }
     }
