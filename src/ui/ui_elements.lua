@@ -103,13 +103,7 @@ function GenerateMenuData_Main()
         { text = "Reputations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetAllReputations) },
 
         { text = "All Characters", isTitle = 1, notCheckable = 1, },
-        { text = "Experience", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(nil, true, true) },
-        { text = "Play Time", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(nil, true, false, false, false, true) },
-        { text = "Gold", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(nil, true, false, true) },
-        { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetTalents, false, false, false, true) },
-        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0,
-            menuList = professionsSubmenus
-        },
+        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = professionsSubmenus },
         { text = "Close", func = function() CloseDropDownMenus() end, notCheckable = 1, }
     }
     return mainMenuLayout
