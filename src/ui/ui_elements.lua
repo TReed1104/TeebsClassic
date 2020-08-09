@@ -95,12 +95,12 @@ function GenerateMenuData_Main()
         { text = "Equipped Bags", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetAllBagSlots) },
         { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetProfessions) },
         { text = "Reputations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetAllReputations) },
+
         { text = "All Characters", isTitle = 1, notCheckable = 1, },
         { text = "Experience", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(nil, true, true) },
         { text = "Play Time", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(nil, true, false, false, false, true) },
         { text = "Gold", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(nil, true, false, true) },
         { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetTalents, false, false, false, true) },
-
         { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0,
             menuList = {
                 { text = "All", func = function() print(text) end, notCheckable = 1, },
