@@ -103,9 +103,9 @@ function GenerateMenuData_Main()
         { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetTalents, false, false, false, true) },
         { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0,
             menuList = {
-                { text = "All", func = function() print(text) end, notCheckable = 1, },
-                { text = "Primary", func = function() print(text) end, notCheckable = 1, },
-                { text = "Secondary", func = function() print(text) end, notCheckable = 1, },
+                { text = "All", notCheckable = 1, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllProfessions},
+                { text = "Primary", notCheckable = 1, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllPrimaryProfessions},
+                { text = "Secondary", notCheckable = 1, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllSecondaryProfessions},
             }
         },
         { text = "Close", func = function() CloseDropDownMenus() end, notCheckable = 1, }
