@@ -95,13 +95,13 @@ function GenerateMenuData_Main()
         { text = "Primary", notCheckable = 1, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllPrimaryProfessions},
         { text = "Secondary", notCheckable = 1, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllSecondaryProfessions},
     }
+    -- The main menu of the different addon functions
     local mainMenuLayout = {
         { text = "Character Specific", isTitle = 1, notCheckable = 1, },
         { text = "Equipped Gear", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetAllItemSlots) },
         { text = "Equipped Bags", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetAllBagSlots) },
         { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetProfessions) },
         { text = "Reputations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetAllReputations) },
-
         { text = "All Characters", isTitle = 1, notCheckable = 1, },
         { text = "Experience", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllExperience, menuList = GenerateMenuData_CharacterList(nil, true, true) },
         { text = "Play Time", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllPlayTime, menuList = GenerateMenuData_CharacterList(nil, true, false, false, false, true) },
