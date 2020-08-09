@@ -91,25 +91,16 @@ end
 function GenerateMenuData_Main()
     local mainMenuLayout = {
         { text = "Character Specific", isTitle = 1, notCheckable = 1, },
-        { text = "Experience", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(nil, true, true) },
-        { text = "Play Time", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(nil, true, false, false, false, true) },
-        { text = "Gold", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(nil, true, false, true) },
-        { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetTalents, false, false, false, true) },
         { text = "Equipped Gear", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetAllItemSlots) },
         { text = "Equipped Bags", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetAllBagSlots) },
         { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetProfessions) },
         { text = "Reputations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetAllReputations) },
         { text = "All Characters", isTitle = 1, notCheckable = 1, },
-        { text = "Experience", func = function() print(text) end, notCheckable = 1, },
-        { text = "Levels", func = function() print(text) end, notCheckable = 1, },
-        { text = "PlayTime", func = function() print(text) end, notCheckable = 1, },
-        { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0,
-            menuList = {
-                { text = "Spec", func = function() print(text) end, notCheckable = 1, },
-                { text = "Talent Breakdown", func = function() print(text) end, notCheckable = 1, },
-            }
-        },
-        { text = "Currencies", func = function() print(text) end, notCheckable = 1, },
+        { text = "Experience", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(nil, true, true) },
+        { text = "Play Time", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(nil, true, false, false, false, true) },
+        { text = "Gold", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(nil, true, false, true) },
+        { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetTalents, false, false, false, true) },
+
         { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0,
             menuList = {
                 { text = "All", func = function() print(text) end, notCheckable = 1, },
