@@ -27,12 +27,12 @@ function onLoad(frame, eventHandlerFunc)
 end
 
 function exitButton()
-    TeebsClassicFrame:Hide()
+    TEEBS_CLASSIC_FRAME:Hide()
     CloseDropDownMenus()
 end
 
 function openMainMenu(self)
-    EasyMenu(generateMenuData_Main(), TeebsClassicFrame.mainMenu, self:GetName(), 0, 0, nil)
+    EasyMenu(generateMenuData_Main(), TEEBS_CLASSIC_FRAME.mainMenu, self:GetName(), 0, 0, nil)
 end
 
 function clickFunctionMenuItem(self, arg1, arg2)

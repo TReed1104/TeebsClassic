@@ -16,7 +16,7 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
 
     -- check we have a usable command and that we have a command option
     if messageSplit == nil or messageSplit[1] == nil then
-        TeebsClassicFrame:Show()
+        TEEBS_CLASSIC_FRAME:Show()
         return
     end
 
