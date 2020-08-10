@@ -39,3 +39,37 @@ function TeebsClassic_ClickFunctionMenuItem(self, arg1, arg2)
     print(self, arg1, arg2)
     CloseDropDownMenus()
 end
+
+
+------------------------------------------------------------------
+-- Addon Layout Changes
+------------------------------------------------------------------
+function ActivateLayout_Home()
+end
+
+function ActivateLayout_Equipment(character)
+end
+
+function ActivateLayout_Bags(character)
+end
+
+function ActivateLayout_Professions(character)
+end
+
+function ActivateLayout_Reputations(character)
+end
+
+function ActivateLayout_AllExperience()
+end
+
+function ActivateLayout_AllPlayTime()
+end
+
+function ActivateLayout_AllGold()
+end
+
+function ActivateLayout_AllTalents()
+end
+
+function ActivateLayout_AllProfessions()
+end
