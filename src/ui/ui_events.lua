@@ -48,34 +48,45 @@ function ActivateLayout_Home()
 end
 
 function ActivateLayout_Equipment(character)
+    local equipmentData = interfaceGetAllItemSlots(character)
 end
 
 function ActivateLayout_Bags(character)
+    local bagData = interfaceGetAllBagSlots(character)
 end
 
 function ActivateLayout_Professions(character)
+    local professionData = interfaceGetProfessions(character)
 end
 
 function ActivateLayout_Reputations(character)
+    local reputationData = interfaceGetAllReputations(character)
 end
 
 function ActivateLayout_AllExperience()
+    local experienceData = interfaceGetAllExperience()
 end
 
 function ActivateLayout_AllPlayTime()
+    local playtimeData = interfaceGetAllPlayTime()
 end
 
 function ActivateLayout_AllGold()
+    local goldData = interfaceGetAllGold()
 end
 
 function ActivateLayout_AllTalents()
+    local talentsData = interfaceGetAllTalents()
 end
 
 function ActivateLayout_AllProfessions()
+    local professionsData = interfaceGetAllProfessions()
 end
 
 function ActivateLayout_PrimaryProfessions()
+    local professionsData = interfaceGetAllPrimaryProfessions()
 end
 
 function ActivateLayout_SecondaryProfessions()
+    local professionsData = interfaceGetAllSecondaryProfessions()
 end
