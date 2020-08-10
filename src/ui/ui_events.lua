@@ -73,3 +73,9 @@ end
 
 function ActivateLayout_AllProfessions()
 end
+
+function ActivateLayout_PrimaryProfessions()
+end
+
+function ActivateLayout_SecondaryProfessions()
+end
