@@ -1,7 +1,7 @@
 ------------------------------------------------------------------
 -- Addon UI Events
 ------------------------------------------------------------------
-function TeebsClassic_OnLoad(frame, eventHandlerFunc)
+function onLoad(frame, eventHandlerFunc)
     -- Register Event Listeners
     frame:RegisterEvent("ADDON_LOADED")
     frame:RegisterEvent("PLAYER_LOGIN")
@@ -26,16 +26,16 @@ function TeebsClassic_OnLoad(frame, eventHandlerFunc)
     frame:SetScript("OnDragStop", frame.StopMovingOrSizing)
 end
 
-function TeebsClassic_ExitButton()
+function exitButton()
     TeebsClassicFrame:Hide()
     CloseDropDownMenus()
 end
 
-function TeebsClassic_OpenMainMenu(self)
-    EasyMenu(GenerateMenuData_Main(), TeebsClassicFrame.mainMenu, self:GetName(), 0, 0, nil)
+function openMainMenu(self)
+    EasyMenu(generateMenuData_Main(), TeebsClassicFrame.mainMenu, self:GetName(), 0, 0, nil)
 end
 
-function TeebsClassic_ClickFunctionMenuItem(self, arg1, arg2)
+function clickFunctionMenuItem(self, arg1, arg2)
     print(self, arg1, arg2)
     CloseDropDownMenus()
 end
@@ -44,49 +44,49 @@ end
 ------------------------------------------------------------------
 -- Addon Layout Changes
 ------------------------------------------------------------------
-function ActivateLayout_Home()
+function activateLayout_Home()
 end
 
-function ActivateLayout_Equipment(character)
+function activateLayout_Equipment(character)
     local equipmentData = interfaceGetAllItemSlots(character)
 end
 
-function ActivateLayout_Bags(character)
+function activateLayout_Bags(character)
     local bagData = interfaceGetAllBagSlots(character)
 end
 
-function ActivateLayout_Professions(character)
+function activateLayout_Professions(character)
     local professionData = interfaceGetProfessions(character)
 end
 
-function ActivateLayout_Reputations(character)
+function activateLayout_Reputations(character)
     local reputationData = interfaceGetAllReputations(character)
 end
 
-function ActivateLayout_AllExperience()
+function activateLayout_AllExperience()
     local experienceData = interfaceGetAllExperience()
 end
 
-function ActivateLayout_AllPlayTime()
+function activateLayout_AllPlayTime()
     local playtimeData = interfaceGetAllPlayTime()
 end
 
-function ActivateLayout_AllGold()
+function activateLayout_AllGold()
     local goldData = interfaceGetAllGold()
 end
 
-function ActivateLayout_AllTalents()
+function activateLayout_AllTalents()
     local talentsData = interfaceGetAllTalents()
 end
 
-function ActivateLayout_AllProfessions()
+function activateLayout_AllProfessions()
     local professionsData = interfaceGetAllProfessions()
 end
 
-function ActivateLayout_PrimaryProfessions()
+function activateLayout_PrimaryProfessions()
     local professionsData = interfaceGetAllPrimaryProfessions()
 end
 
-function ActivateLayout_SecondaryProfessions()
+function activateLayout_SecondaryProfessions()
     local professionsData = interfaceGetAllSecondaryProfessions()
 end

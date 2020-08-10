@@ -85,7 +85,7 @@ function formatPlayTimeData(totalPlayTimeInSeconds)
 end
 
 -- The master event handler
-function TeebsClassic_EventHandler(self, event, arg1, arg2, arg3, ...)
+function eventHandler(self, event, arg1, arg2, arg3, ...)
     -- Addon Loaded Trigger
     if event == "ADDON_LOADED" then
         CURRENT_REALM = GetRealmName():lower()

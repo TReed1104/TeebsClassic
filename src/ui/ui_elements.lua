@@ -2,7 +2,7 @@
 -- Addon UI Element Creation
 ------------------------------------------------------------------
 -- UI Create Object - Frame
-function TeebsClassic_CreateFrame(name, parentFrame, width, height, anchor, anchorOffsetX, anchorOffsetY, backdropObject, onLoadFunc, eventHandlerFunc)
+function createFrame(name, parentFrame, width, height, anchor, anchorOffsetX, anchorOffsetY, backdropObject, onLoadFunc, eventHandlerFunc)
     -- Create the frame
     local newFrame = CreateFrame("Frame", name, parentFrame)
     -- Initialise the frames positioning and sizing
@@ -20,7 +20,7 @@ function TeebsClassic_CreateFrame(name, parentFrame, width, height, anchor, anch
 end
 
 -- UI Create Object - Button
-function TeebsClassic_CreateButton(name, parentFrame, text, width, height, anchor, anchorOffsetX, anchorOffsetY, onClickFunction)
+function createButton(name, parentFrame, text, width, height, anchor, anchorOffsetX, anchorOffsetY, onClickFunction)
     -- Button Setup
     local newButton = CreateFrame("Button", name, parentFrame)
     -- Sizing
@@ -56,7 +56,7 @@ function TeebsClassic_CreateButton(name, parentFrame, text, width, height, ancho
 end
 
 -- UI Create Object - Text Object
-function TeebsClassic_CreateTextObject(name, parentFrame, text, colourR, colourG, colourB, colourA, anchor, anchorOffsetX, anchorOffsetY, fontObject)
+function createTextObject(name, parentFrame, text, colourR, colourG, colourB, colourA, anchor, anchorOffsetX, anchorOffsetY, fontObject)
     -- Create the text object, we use the parent frame to create it
     local newTextObject = parentFrame:CreateFontString(name, "OVERLAY", fontObject)
     -- Positioning
@@ -68,7 +68,7 @@ function TeebsClassic_CreateTextObject(name, parentFrame, text, colourR, colourG
     return newTextObject
 end
 
-function TeebsClassic_CreateDropDown(name)
+function createDropDown(name)
     local newDropDownMenu = CreateFrame("Frame", name, nil, "UIDropDownMenuTemplate")
     return newDropDownMenu
 end
@@ -77,43 +77,43 @@ end
 ------------------------------------------------------------------
 -- Addon UI Layouts
 ------------------------------------------------------------------
-function GenerateCoreUIElements(addonMainFrame)
-    addonMainFrame.titleText = TeebsClassic_CreateTextObject("TitleText", addonMainFrame, "TeebsClassic", 1, 1, 1, 1, "TOP", 0, -10, "GameFontNormal")      -- Title Text
-    addonMainFrame.exitButton = TeebsClassic_CreateButton("CloseButton", addonMainFrame, "x", 30, 30, "TOPRIGHT", -6, -2, TeebsClassic_ExitButton)          -- Create the Exit button
-    addonMainFrame.menuButton = TeebsClassic_CreateButton("MenuButton", addonMainFrame, "Menu", 50, 30, "TOPLEFT", 6, -2, TeebsClassic_OpenMainMenu)        -- Menu Button
-    addonMainFrame.mainMenu = TeebsClassic_CreateDropDown("MenuDropDown")
+function generateCoreUIElements(addonMainFrame)
+    addonMainFrame.titleText = createTextObject("TitleText", addonMainFrame, "TeebsClassic", 1, 1, 1, 1, "TOP", 0, -10, "GameFontNormal")      -- Title Text
+    addonMainFrame.exitButton = createButton("CloseButton", addonMainFrame, "x", 30, 30, "TOPRIGHT", -6, -2, exitButton)          -- Create the Exit button
+    addonMainFrame.menuButton = createButton("MenuButton", addonMainFrame, "Menu", 50, 30, "TOPLEFT", 6, -2, openMainMenu)        -- Menu Button
+    addonMainFrame.mainMenu = createDropDown("MenuDropDown")
 end
 
 
 ------------------------------------------------------------------
 -- Addon Menu Layouts
 ------------------------------------------------------------------
-function GenerateMenuData_Main()
+function generateMenuData_Main()
     -- Submenu for the profession functions
     local professionsSubmenus = {
-        { text = "All", notCheckable = 1, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllProfessions},
-        { text = "Primary", notCheckable = 1, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllPrimaryProfessions},
-        { text = "Secondary", notCheckable = 1, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllSecondaryProfessions},
+        { text = "All", notCheckable = 1, func = clickFunctionMenuItem, arg1 = interfaceGetAllProfessions},
+        { text = "Primary", notCheckable = 1, func = clickFunctionMenuItem, arg1 = interfaceGetAllPrimaryProfessions},
+        { text = "Secondary", notCheckable = 1, func = clickFunctionMenuItem, arg1 = interfaceGetAllSecondaryProfessions},
     }
     -- The main menu of the different addon functions
     local mainMenuLayout = {
         { text = "Character Specific", isTitle = 1, notCheckable = 1, },
-        { text = "Equipped Gear", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetAllItemSlots) },
-        { text = "Equipped Bags", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetAllBagSlots) },
-        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetProfessions) },
-        { text = "Reputations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = GenerateMenuData_CharacterList(interfaceGetAllReputations) },
+        { text = "Equipped Gear", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(interfaceGetAllItemSlots) },
+        { text = "Equipped Bags", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(interfaceGetAllBagSlots) },
+        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(interfaceGetProfessions) },
+        { text = "Reputations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(interfaceGetAllReputations) },
         { text = "All Characters", isTitle = 1, notCheckable = 1, },
-        { text = "Experience", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllExperience, menuList = GenerateMenuData_CharacterList(nil, true, true) },
-        { text = "Play Time", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllPlayTime, menuList = GenerateMenuData_CharacterList(nil, true, false, false, false, true) },
-        { text = "Gold", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllGold, menuList = GenerateMenuData_CharacterList(nil, true, false, true) },
-        { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllTalents, menuList = GenerateMenuData_CharacterList(interfaceGetTalents, false, false, false, true) },
-        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = TeebsClassic_ClickFunctionMenuItem, arg1 = interfaceGetAllProfessions, menuList = professionsSubmenus },
+        { text = "Experience", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = interfaceGetAllExperience, menuList = generateMenuData_CharacterList(nil, true, true) },
+        { text = "Play Time", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = interfaceGetAllPlayTime, menuList = generateMenuData_CharacterList(nil, true, false, false, false, true) },
+        { text = "Gold", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = interfaceGetAllGold, menuList = generateMenuData_CharacterList(nil, true, false, true) },
+        { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = interfaceGetAllTalents, menuList = generateMenuData_CharacterList(interfaceGetTalents, false, false, false, true) },
+        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = interfaceGetAllProfessions, menuList = professionsSubmenus },
         { text = "Close", func = function() CloseDropDownMenus() end, notCheckable = 1, }
     }
     return mainMenuLayout
 end
 
-function GenerateMenuData_CharacterList(uiFunction, isDisabled, showExperience, showGold, showSpec, showPlaytime)
+function generateMenuData_CharacterList(uiFunction, isDisabled, showExperience, showGold, showSpec, showPlaytime)
     local characterListMenu = {}
     -- Create a list of the characters for the dropdown
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
@@ -139,7 +139,7 @@ function GenerateMenuData_CharacterList(uiFunction, isDisabled, showExperience, 
         local characterMenuItem = {
             disabled = isDisabled,
             text = menuItemText,
-            func = TeebsClassic_ClickFunctionMenuItem,
+            func = clickFunctionMenuItem,
             arg1 = uiFunction, 
             arg2 = characterName,
             notCheckable = 1,
