@@ -91,23 +91,23 @@ end
 function generateMenuData_Main()
     -- Submenu for the profession functions
     local professionsSubmenus = {
-        { text = "All", notCheckable = 1, func = clickFunctionMenuItem, arg1 = interfaceGetAllProfessions},
-        { text = "Primary", notCheckable = 1, func = clickFunctionMenuItem, arg1 = interfaceGetAllPrimaryProfessions},
-        { text = "Secondary", notCheckable = 1, func = clickFunctionMenuItem, arg1 = interfaceGetAllSecondaryProfessions},
+        { text = "All", notCheckable = 1, func = clickFunctionMenuItem, arg1 = activateLayout_AllProfessions},
+        { text = "Primary", notCheckable = 1, func = clickFunctionMenuItem, arg1 = activateLayout_PrimaryProfessions},
+        { text = "Secondary", notCheckable = 1, func = clickFunctionMenuItem, arg1 = activateLayout_SecondaryProfessions},
     }
     -- The main menu of the different addon functions
     local mainMenuLayout = {
         { text = "Character Specific", isTitle = 1, notCheckable = 1, },
-        { text = "Equipped Gear", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(interfaceGetAllItemSlots) },
-        { text = "Equipped Bags", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(interfaceGetAllBagSlots) },
-        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(interfaceGetProfessions) },
-        { text = "Reputations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(interfaceGetAllReputations) },
+        { text = "Equipped Gear", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(activateLayout_Equipment) },
+        { text = "Equipped Bags", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(activateLayout_Bags) },
+        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(activateLayout_Professions) },
+        { text = "Reputations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(activateLayout_Reputations) },
         { text = "All Characters", isTitle = 1, notCheckable = 1, },
-        { text = "Experience", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = interfaceGetAllExperience, menuList = generateMenuData_CharacterList(nil, true, true) },
-        { text = "Play Time", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = interfaceGetAllPlayTime, menuList = generateMenuData_CharacterList(nil, true, false, false, false, true) },
-        { text = "Gold", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = interfaceGetAllGold, menuList = generateMenuData_CharacterList(nil, true, false, true) },
-        { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = interfaceGetAllTalents, menuList = generateMenuData_CharacterList(interfaceGetTalents, false, false, false, true) },
-        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = interfaceGetAllProfessions, menuList = professionsSubmenus },
+        { text = "Experience", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = activateLayout_AllExperience, menuList = generateMenuData_CharacterList(nil, true, true) },
+        { text = "Play Time", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = activateLayout_AllPlayTime, menuList = generateMenuData_CharacterList(nil, true, false, false, false, true) },
+        { text = "Gold", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = activateLayout_AllGold, menuList = generateMenuData_CharacterList(nil, true, false, true) },
+        { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = activateLayout_AllTalents, menuList = generateMenuData_CharacterList(activateLayout_AllTalents, false, false, false, true) },
+        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = activateLayout_AllProfessions, menuList = professionsSubmenus },
         { text = "Close", func = function() CloseDropDownMenus() end, notCheckable = 1, }
     }
     return mainMenuLayout
