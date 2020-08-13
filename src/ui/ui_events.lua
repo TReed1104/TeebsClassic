@@ -36,7 +36,7 @@ function openMainMenu(self)
 end
 
 function clickFunctionMenuItem(self, uiLayoutFunction, character)
-    print(self, arg1, arg2)
+    print(self, uiLayoutFunction, character)
     CloseDropDownMenus()
 end
 
