@@ -35,7 +35,7 @@ function openMainMenu(self)
     EasyMenu(generateMenuData_Main(), TEEBS_CLASSIC_FRAME.mainMenu, self:GetName(), 0, 0, nil)
 end
 
-function clickFunctionMenuItem(self, arg1, arg2)
+function clickFunctionMenuItem(self, uiLayoutFunction, character)
     print(self, arg1, arg2)
     CloseDropDownMenus()
 end
