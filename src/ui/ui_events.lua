@@ -46,48 +46,60 @@ end
 -- Addon Layout Changes
 ------------------------------------------------------------------
 function activateLayout_Home()
+    print("Layout Activated - Home")
 end
 
 function activateLayout_Equipment(character)
+    print("Layout Activated - Equipment -", character)
     local equipmentData = interfaceGetAllItemSlots(character)
 end
 
 function activateLayout_Bags(character)
+    print("Layout Activated - Bags -", character)
     local bagData = interfaceGetAllBagSlots(character)
 end
 
 function activateLayout_Professions(character)
+    print("Layout Activated - Professions -", character)
     local professionData = interfaceGetProfessions(character)
 end
 
 function activateLayout_Reputations(character)
+    print("Layout Activated - Reputations -", character)
     local reputationData = interfaceGetAllReputations(character)
 end
 
 function activateLayout_AllExperience()
+    print("Layout Activated - All Experience")
     local experienceData = interfaceGetAllExperience()
 end
 
 function activateLayout_AllPlayTime()
+    print("Layout Activated - All Playtimes")
     local playtimeData = interfaceGetAllPlayTime()
 end
 
 function activateLayout_AllGold()
+    print("Layout Activated - All Gold")
     local goldData = interfaceGetAllGold()
 end
 
 function activateLayout_AllTalents()
+    print("Layout Activated - All Talents")
     local talentsData = interfaceGetAllTalents()
 end
 
 function activateLayout_AllProfessions()
+    print("Layout Activated - All Professions")
     local professionsData = interfaceGetAllProfessions()
 end
 
 function activateLayout_PrimaryProfessions()
+    print("Layout Activated - All Primary Professions")
     local professionsData = interfaceGetAllPrimaryProfessions()
 end
 
 function activateLayout_SecondaryProfessions()
+    print("Layout Activated - All Secondary Professions")
     local professionsData = interfaceGetAllSecondaryProfessions()
 end
