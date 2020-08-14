@@ -28,7 +28,7 @@ function onLoadCoreFrame(frame, eventHandlerFunc)
 end
 
 -- The master event handler
-function eventHandler(self, event, arg1, arg2, arg3, ...)
+function eventHandlerCoreFrame(self, event, arg1, arg2, arg3, ...)
     -- Addon Loaded Trigger
     if event == "ADDON_LOADED" then
         CURRENT_REALM = GetRealmName():lower()
