@@ -2,7 +2,7 @@
 -- Addon UI Events
 ------------------------------------------------------------------
 -- Addons core onLoad function - has to be manually called because we aren't using XML
-function onLoad(frame, eventHandlerFunc)
+function onLoadCoreFrame(frame, eventHandlerFunc)
     -- Register Event Listeners
     frame:RegisterEvent("ADDON_LOADED")
     frame:RegisterEvent("PLAYER_LOGIN")
