@@ -1,6 +1,7 @@
 ------------------------------------------------------------------
 -- Addon UI Events
 ------------------------------------------------------------------
+-- Addons core onLoad function - has to be manually called because we aren't using XML
 function onLoad(frame, eventHandlerFunc)
     -- Register Event Listeners
     frame:RegisterEvent("ADDON_LOADED")
@@ -26,15 +27,18 @@ function onLoad(frame, eventHandlerFunc)
     frame:SetScript("OnDragStop", frame.StopMovingOrSizing)
 end
 
+-- Click event for the exit button
 function exitButton()
     TEEBS_CLASSIC_FRAME:Hide()
     CloseDropDownMenus()
 end
 
+-- Click event for the main menu button
 function openMainMenu(self)
     EasyMenu(generateMenuData_Main(), TEEBS_CLASSIC_FRAME.mainMenu, self:GetName(), 0, 0, nil)
 end
 
+-- Click event for each of the main menu's items
 function clickFunctionMenuItem(self, uiLayoutFunction, character)
     uiLayoutFunction(character)
     CloseDropDownMenus()
