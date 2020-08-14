@@ -40,8 +40,8 @@ end
 
 -- Click event for each of the main menu's items
 function clickFunctionMenuItem(self, uiLayoutFunction, character)
-    uiLayoutFunction(character)
-    CloseDropDownMenus()
+    uiLayoutFunction(character)     -- Call the passing ui-layout function, this will generate the layout of the addon page
+    CloseDropDownMenus()            -- Close all dropdown menus because we've changed layout
 end
 
 
