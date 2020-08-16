@@ -9,3 +9,9 @@ _G["TEEBS_TEXT_COLOUR_ALERT"] = "ffff0000"
 _G["TEEBS_TEXT_COLOUR_CAPPED"] = "ff00ff00"
 _G["TEEBS_TEXT_COLOUR_TALENTS"] = "ffffa500"
 _G["TEEBS_CLASSIC_FRAME"] = nil
+_G["TEEBS_CLASSIC_BACKDROP"] = {
+	bgFile = "Interface/Tooltips/UI-Tooltip-Background",
+	edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
+	edgeSize = 16,
+	insets = { left = 4, right = 4, top = 4, bottom = 4 },
+}
