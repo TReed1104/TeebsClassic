@@ -75,17 +75,6 @@ end
 
 
 ------------------------------------------------------------------
--- Addon UI Layouts
-------------------------------------------------------------------
-function generateCoreUIElements(addonMainFrame)
-    addonMainFrame.titleText = createTextObject("TitleText", addonMainFrame, "TeebsClassic", 1, 1, 1, 1, "TOP", 0, -10, "GameFontNormal")      -- Title Text
-    addonMainFrame.exitButton = createButton("CloseButton", addonMainFrame, "x", 30, 30, "TOPRIGHT", -6, -2, exitButton)          -- Create the Exit button
-    addonMainFrame.menuButton = createButton("MenuButton", addonMainFrame, "Menu", 50, 30, "TOPLEFT", 6, -2, openMainMenu)        -- Menu Button
-    addonMainFrame.mainMenu = createDropDown("MenuDropDown")
-end
-
-
-------------------------------------------------------------------
 -- Addon Menu Layouts
 ------------------------------------------------------------------
 function generateMenuData_Main()
