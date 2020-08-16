@@ -25,6 +25,17 @@ function onLoadCoreFrame(frame, eventHandlerFunc)
     frame:RegisterForDrag("LeftButton")
     frame:SetScript("OnDragStart", frame.StartMoving)
     frame:SetScript("OnDragStop", frame.StopMovingOrSizing)
+
+    -- Generate the core UI elements
+    frame.titleRegion = CreateFrame("Frame", "TitleRegion", frame)
+    frame.titleRegion:SetSize(100, 24) -- 600 wide x 24 tall
+    frame.titleRegion:SetPoint("TOP", frame, "TOP", 0, 21)
+    frame.titleRegion:SetBackdrop(TEEBS_CLASSIC_BACKDROP)
+    frame.titleRegion:SetBackdropColor(0, 0, 0, 1)
+    frame.titleRegion.titleText = createTextObject("TitleText", frame.titleRegion, "TeebsClassic", 1, 1, 1, 1, "CENTER", 0, 0, "GameFontNormal")      -- Title Text
+    frame.exitButton = createButton("CloseButton", frame, "x", 30, 30, "TOPRIGHT", -6, -2, exitButton)          -- Create the Exit button
+    frame.menuButton = createButton("MenuButton", frame, "Menu", 50, 30, "TOPLEFT", 6, -2, openMainMenu)        -- Menu Button
+    frame.mainMenu = createDropDown("MenuDropDown")
 end
 
 -- The master event handler
