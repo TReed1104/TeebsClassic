@@ -30,7 +30,7 @@ function onLoadCoreFrame(frame, eventHandlerFunc)
     frame.titleRegion = CreateFrame("Frame", "TitleRegion", frame)
     frame.titleRegion:SetSize(100, 24) -- 600 wide x 24 tall
     frame.titleRegion:SetPoint("TOP", frame, "TOP", 0, 21)
-    frame.titleRegion:SetBackdrop(TEEBS_CLASSIC_BACKDROP)
+    frame.titleRegion:SetBackdrop(TEEBS_CLASSIC_BACKDROP_OBJECT)
     frame.titleRegion:SetBackdropColor(0, 0, 0, 1)
     frame.titleRegion.titleText = createTextObject("TitleText", frame.titleRegion, "TeebsClassic", 1, 1, 1, 1, "CENTER", 0, 0, "GameFontNormal")      -- Title Text
     frame.exitButton = createButton("CloseButton", frame, "x", 30, 30, "TOPRIGHT", -6, -2, exitButton)          -- Create the Exit button
