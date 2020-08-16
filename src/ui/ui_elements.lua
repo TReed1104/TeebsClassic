@@ -13,6 +13,7 @@ function createFrame(name, parentFrame, width, height, anchor, anchorOffsetX, an
     newFrame:SetPoint(anchor, parentFrame, anchor, anchorOffsetX, anchorOffsetY)
     -- Setup the frames backdrop
     newFrame:SetBackdrop(backdropObject)
+    newFrame:SetBackdropColor(0, 0, 0, 1)
     -- Call the onLoad function, you can't register the onLoad function via SetScript outside of XML
     onLoadFunc(newFrame, eventHandlerFunc)  -- (Yay function references)
     -- Return the new frame object
