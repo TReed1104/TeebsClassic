@@ -12,8 +12,15 @@ function createFrame(name, parentFrame, width, height, anchor, anchorOffsetX, an
     -- Positioning
     newFrame:SetPoint(anchor, parentFrame, anchor, anchorOffsetX, anchorOffsetY)
     -- Setup the frames backdrop
-    newFrame:SetBackdrop(backdropObject)
-    newFrame:SetBackdropColor(0, 0, 0, 1)
+    if backdropObject ~= nil then
+        newFrame:SetBackdrop(backdropObject)
+        -- Set the background colour
+        if backdropColour ~= nil then
+            newFrame:SetBackdropColor(backdropColour.r, backdropColour.b, backdropColour.g, backdropColour.a)
+        else  
+            newFrame:SetBackdropColor(0, 0, 0, 1)
+        end
+    end
     -- Call the onLoad function, you can't register the onLoad function via SetScript outside of XML
     if onLoadFunc ~= nil then
         onLoadFunc(newFrame, eventHandlerFunc)  -- (Yay function references)
