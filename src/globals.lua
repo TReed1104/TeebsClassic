@@ -21,3 +21,27 @@ _G["TEEBS_OBJECT_COLOUR_BLACK"] = {
 	b = 0,
 	a = 1
 }
+_G["TEEBS_OBJECT_COLOUR_WHITE"] = {
+	r = 1,
+	g = 1,
+	b = 1,
+	a = 1
+}
+_G["TEEBS_OBJECT_COLOUR_RED"] = {
+	r = 1,
+	g = 0,
+	b = 0,
+	a = 1
+}
+_G["TEEBS_OBJECT_COLOUR_GREEN"] = {
+	r = 0,
+	g = 1,
+	b = 0,
+	a = 1
+}
+_G["TEEBS_OBJECT_COLOUR_BLUE"] = {
+	r = 0,
+	g = 0,
+	b = 1,
+	a = 1
+}
