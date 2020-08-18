@@ -15,3 +15,9 @@ _G["TEEBS_CLASSIC_BACKDROP_OBJECT"] = {
 	edgeSize = 16,
 	insets = { left = 4, right = 4, top = 4, bottom = 4 },
 }
+_G["TEEBS_OBJECT_COLOUR_BLACK"] = {
+	r = 0,
+	g = 0,
+	b = 0,
+	a = 1
+}
