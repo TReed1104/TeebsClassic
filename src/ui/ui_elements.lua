@@ -173,7 +173,7 @@ end
 ------------------------------------------------------------------
 -- Addon Layouts
 ------------------------------------------------------------------
-function activateLayout_Home()
+function activateLayout_Home(frame)
     print("Layout Activated - Home")
 end
 
