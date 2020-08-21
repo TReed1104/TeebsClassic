@@ -121,9 +121,9 @@ function cmdGetCharacterZone(character)
     local currentSubzone = TeebsClassicDB.realms[CURRENT_REALM].characters[character].subzone
     -- Output the results in-game
     if currentSubzone ~= "" then
-        print(recolourNameByClass(character) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " - Location: ") .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, currentZone .. " - " .. currentSubzone))
+        print(recolourNameByClass(character) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, currentSubzone .. ", " .. currentZone))
     else
-        print(recolourNameByClass(character) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " - Location: ") .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, currentZone))
+        print(recolourNameByClass(character) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, currentZone))
     end
 end
 
