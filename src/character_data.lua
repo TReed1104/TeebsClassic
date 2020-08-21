@@ -69,6 +69,14 @@ function setCharacterDataLevel()
     TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].level = UnitLevel("player")
 end
 
+-- Caching of the current characters location
+function setCharacterDataZone()
+end
+
+-- Caching of the current characters location
+function setCharacterDataSubZone()
+end
+
 -- Caching of the characters time played
 function setCharacterDataPlayTime(total, current)
     -- If the time-played table exists for the character
