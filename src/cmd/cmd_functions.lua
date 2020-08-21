@@ -116,7 +116,15 @@ function cmdGetCharacterZone(character)
         print("Subzone data not cached")
         return
     end
-
+    -- Get the Character details
+    local currentZone = TeebsClassicDB.realms[CURRENT_REALM].characters[character].zone
+    local currentSubzone = TeebsClassicDB.realms[CURRENT_REALM].characters[character].subzone
+    -- Output the results in-game
+    if currentSubzone ~= "" then
+        print(recolourNameByClass(character) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " - Location: ") .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, currentZone .. " - " .. currentSubzone))
+    else
+        print(recolourNameByClass(character) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " - Location: ") .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, currentZone))
+    end
 end
 
 -- Command function for retrieving a characters play time
