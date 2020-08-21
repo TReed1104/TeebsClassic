@@ -281,6 +281,17 @@ function interfaceGetAllLevels()
 end
 
 function interfaceGetAllZones()
+    -- Create our data table for copying the character zones into
+    local allCharacterZoneData = {}
+    -- For every character cached for the current realm, collect their zone data
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allCharacterZoneData[characterName] = {
+            zone = characterData.zone,
+            subzone = characterData.subzone
+        }
+    end
+    -- Return our collated character zones
+    return allCharacterZoneData
 end
 
 function interfaceGetAllPlayTime()
