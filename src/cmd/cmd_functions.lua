@@ -101,6 +101,22 @@ end
 
 -- Command function for retrieving a characters zones from the cache
 function cmdGetCharacterZone(character)
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
+    -- Check if the character Zone has been cached
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].zone == nil then
+        print("Zone data not cached")
+        return
+    end
+    -- Check if the character Subzone has been cached
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].subzone == nil then
+        print("Subzone data not cached")
+        return
+    end
+
 end
 
 -- Command function for retrieving a characters play time
