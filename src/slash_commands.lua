@@ -50,7 +50,7 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
     elseif messageSplit[1] == "get-level" then
         cmdGetCharacterLevel(messageSplit[2])
     elseif messageSplit[1] == "get-zone" then
-        -- TODO
+        cmdGetCharacterZone(messageSplit[2])
     elseif messageSplit[1] == "get-spec" then
         cmdGetCharacterSpec(messageSplit[2])
     elseif messageSplit[1] == "get-talents" then
@@ -76,7 +76,7 @@ SlashCmdList["TEEBSCLASSIC"] = function(msg)
     elseif messageSplit[1] == "get-level-all" then
         cmdGetAllCharactersLevels()
     elseif messageSplit[1] == "get-zone-all" then
-        -- TODO
+        cmdGetAllCharacterZones()
     elseif messageSplit[1] == "get-spec-all" then
         cmdGetAllCharacterSpecs()
     elseif messageSplit[1] == "get-gold-all" then
