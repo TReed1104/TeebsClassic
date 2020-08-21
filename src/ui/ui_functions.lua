@@ -280,6 +280,9 @@ function interfaceGetAllLevels()
     return allCharacterLevelData
 end
 
+function interfaceGetAllZones()
+end
+
 function interfaceGetAllPlayTime()
     -- Create our data table for copying the character play-time into
     local allCharactersPlayTime = {}
