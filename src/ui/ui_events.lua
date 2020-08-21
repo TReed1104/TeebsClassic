@@ -8,6 +8,7 @@ function onLoadCoreFrame(frame, eventHandlerFunc)
     frame:RegisterEvent("PLAYER_LOGIN")
     frame:RegisterEvent("PLAYER_ENTERING_WORLD")
     frame:RegisterEvent("PLAYER_LEVEL_UP")
+    frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
     frame:RegisterEvent("PLAYER_MONEY")
     frame:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
     frame:RegisterEvent("PLAYER_XP_UPDATE")
@@ -55,6 +56,8 @@ function eventHandlerCoreFrame(self, event, arg1, arg2, arg3, ...)
         setCharacterDataCurrency()
         setCharacterDataCharacterExperience()
         setCharacterDataLevel()
+        setCharacterDataZone()
+        setCharacterDataSubzone()
         setCharacterDataSpecialisation()
         setCharacterDataProfessions()
         setCharacterDataReputation()
@@ -66,6 +69,12 @@ function eventHandlerCoreFrame(self, event, arg1, arg2, arg3, ...)
         setCharacterDataCharacterExperience()
         setCharacterDataLevel()
         RequestTimePlayed();    -- Send the request to the server to query the character play time, the return data happens in the TIME_PLAYED_MSG event
+    end
+
+    -- Location change trigger
+    if event == "ZONE_CHANGED_NEW_AREA" then
+        setCharacterDataZone()
+        setCharacterDataSubzone()
     end
 
     -- Player Skill Update Trigger

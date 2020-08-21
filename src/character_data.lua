@@ -34,6 +34,12 @@ function initialiseDB()
     if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].level == nil then
         setCharacterDataLevel()
     end
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].zone == nil then
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].zone = {}
+    end
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].subzone == nil then
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].subzone = {}
+    end
     if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME]["time-played"] == nil then
         TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME]["time-played"] = { total = 0, current = 0}
     end
@@ -61,6 +67,18 @@ end
 function setCharacterDataLevel()
     -- Set the character level in the DB
     TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].level = UnitLevel("player")
+end
+
+-- Caching of the current characters location
+function setCharacterDataZone()
+    -- Set the character zone in the DB
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].zone = GetZoneText()
+end
+
+-- Caching of the current characters location
+function setCharacterDataSubzone()
+    -- Set the character zone in the DB
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].subzone = GetSubZoneText()
 end
 
 -- Caching of the characters time played
