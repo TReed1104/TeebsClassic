@@ -37,8 +37,8 @@ function initialiseDB()
     if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].zone == nil then
         TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].zone = {}
     end
-    if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME]["sub-zone"] == nil then
-        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME]["sub-zone"] = {}
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].subzone == nil then
+        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].subzone = {}
     end
     if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME]["time-played"] == nil then
         TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME]["time-played"] = { total = 0, current = 0}
