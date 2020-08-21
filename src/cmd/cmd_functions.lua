@@ -98,6 +98,7 @@ function cmdGetCharacterLevel(character)
     -- Output the results in-game
     print(recolourNameByClass(character) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently level " .. currentLevel))
 end
+
 -- Command function for retrieving a characters zones from the cache
 function cmdGetCharacterZone(character)
 end
