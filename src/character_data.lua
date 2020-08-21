@@ -77,6 +77,8 @@ end
 
 -- Caching of the current characters location
 function setCharacterDataSubZone()
+    -- Set the character zone in the DB
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].subzone = GetSubZoneText()
 end
 
 -- Caching of the characters time played
