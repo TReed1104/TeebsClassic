@@ -73,6 +73,8 @@ function eventHandlerCoreFrame(self, event, arg1, arg2, arg3, ...)
 
     -- Location change trigger
     if event == "ZONE_CHANGED_NEW_AREA" then
+        setCharacterDataZone()
+        setCharacterDataSubzone()
     end
 
     -- Player Skill Update Trigger
