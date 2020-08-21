@@ -69,6 +69,10 @@ function eventHandlerCoreFrame(self, event, arg1, arg2, arg3, ...)
         RequestTimePlayed();    -- Send the request to the server to query the character play time, the return data happens in the TIME_PLAYED_MSG event
     end
 
+    -- Location change trigger
+    if event == "ZONE_CHANGED_NEW_AREA" then
+    end
+
     -- Player Skill Update Trigger
     if event == "TRADE_SKILL_UPDATE" then
         setCharacterDataProfessions()
