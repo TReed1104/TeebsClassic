@@ -419,6 +419,10 @@ function cmdGetAllCharactersLevels()
     end
 end
 
+-- Command function for retrieving a characters zones from the cache
+function cmdGetAllCharacterZones()
+end
+
 -- Command function for retrieving all characters play time
 function cmdGetAllCharacterPlayTime()
     -- For every character cached for the current realm, print their playtime values last cached
