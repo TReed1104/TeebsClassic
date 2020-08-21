@@ -71,6 +71,8 @@ end
 
 -- Caching of the current characters location
 function setCharacterDataZone()
+    -- Set the character zone in the DB
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].zone = GetZoneText()
 end
 
 -- Caching of the current characters location
