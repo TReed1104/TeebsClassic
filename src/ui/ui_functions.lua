@@ -77,6 +77,9 @@ function interfaceGetLevel(character)
     return characterLevel
 end
 
+function interfaceGetZone(character)
+end
+
 function interfaceGetPlayTime(character)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
