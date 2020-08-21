@@ -99,6 +99,34 @@ function cmdGetCharacterLevel(character)
     print(recolourNameByClass(character) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is currently level " .. currentLevel))
 end
 
+-- Command function for retrieving a characters zones from the cache
+function cmdGetCharacterZone(character)
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
+    -- Check if the character Zone has been cached
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].zone == nil then
+        print("Zone data not cached")
+        return
+    end
+    -- Check if the character Subzone has been cached
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].subzone == nil then
+        print("Subzone data not cached")
+        return
+    end
+    -- Get the Character details
+    local currentZone = TeebsClassicDB.realms[CURRENT_REALM].characters[character].zone
+    local currentSubzone = TeebsClassicDB.realms[CURRENT_REALM].characters[character].subzone
+    -- Output the results in-game
+    if currentSubzone ~= "" then
+        print(recolourNameByClass(character) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, currentSubzone .. ", " .. currentZone))
+    else
+        print(recolourNameByClass(character) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, currentZone))
+    end
+end
+
 -- Command function for retrieving a characters play time
 function cmdGetCharacterPlayTime(character)
     -- Check the character exists
@@ -388,6 +416,21 @@ function cmdGetAllCharactersLevels()
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
         -- Output the character levels
         print(recolourNameByClass(characterName) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " is level " .. characterData.level))
+    end
+end
+
+-- Command function for retrieving a characters zones from the cache
+function cmdGetAllCharacterZones()
+    -- For every character cached for the current realm, print their current level
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        local currentZone = characterData.zone
+        local currentSubzone = characterData.subzone
+        -- Output the results in-game
+        if currentSubzone ~= "" then
+            print(recolourNameByClass(characterName) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, currentSubzone .. ", " .. currentZone))
+        else
+            print(recolourNameByClass(characterName) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " - ") .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, currentZone))
+        end
     end
 end
 

@@ -77,6 +77,30 @@ function interfaceGetLevel(character)
     return characterLevel
 end
 
+function interfaceGetZone(character)
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
+    -- Check if the character Zone has been cached
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].zone == nil then
+        print("Zone data not cached")
+        return
+    end
+    -- Check if the character Subzone has been cached
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].subzone == nil then
+        print("Subzone data not cached")
+        return
+    end
+    -- Create our return data table
+    local zoneData = {
+        zone = TeebsClassicDB.realms[CURRENT_REALM].characters[character].zone,
+        subzone = TeebsClassicDB.realms[CURRENT_REALM].characters[character].subzone
+    }
+    return zoneData
+end
+
 function interfaceGetPlayTime(character)
     -- Check the character exists
     if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
@@ -254,6 +278,20 @@ function interfaceGetAllLevels()
     end
     -- Return our collated character levels
     return allCharacterLevelData
+end
+
+function interfaceGetAllZones()
+    -- Create our data table for copying the character zones into
+    local allCharacterZoneData = {}
+    -- For every character cached for the current realm, collect their zone data
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allCharacterZoneData[characterName] = {
+            zone = characterData.zone,
+            subzone = characterData.subzone
+        }
+    end
+    -- Return our collated character zones
+    return allCharacterZoneData
 end
 
 function interfaceGetAllPlayTime()
