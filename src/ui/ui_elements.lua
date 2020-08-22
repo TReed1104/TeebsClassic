@@ -137,9 +137,9 @@ function generateMenuData_CharacterList(uiFunction, isDisabled, showExperience, 
         -- Toggle the Zone text
         if showZone then
             if characterData.subzone ~= "" then
-                menuItemText = menuItemText .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, " - " .. characterData.subzone .. ", " .. characterData.zone))
+                menuItemText = menuItemText .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, " - " .. characterData.subzone .. ", " .. characterData.zone)
             else
-                menuItemText = menuItemText .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, " - " .. characterData.zone))
+                menuItemText = menuItemText .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, " - " .. characterData.zone)
             end
         end
         -- Generate the menu item details
