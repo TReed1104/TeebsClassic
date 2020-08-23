@@ -104,6 +104,7 @@ function generateMenuData_Main()
         { text = "Reputations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(activateLayout_Reputations) },
         { text = "All Characters", isTitle = 1, notCheckable = 1, },
         { text = "Experience", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = activateLayout_AllExperience, menuList = generateMenuData_CharacterList(nil, true, true) },
+        { text = "Locations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = activateLayout_AllLocations, menuList = generateMenuData_CharacterList(nil, true, false, false, false, false, true) },
         { text = "Play Time", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = activateLayout_AllPlayTime, menuList = generateMenuData_CharacterList(nil, true, false, false, false, true) },
         { text = "Gold", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = activateLayout_AllGold, menuList = generateMenuData_CharacterList(nil, true, false, true) },
         { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = activateLayout_AllProfessions, menuList = professionsSubmenus },
