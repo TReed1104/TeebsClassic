@@ -212,6 +212,9 @@ function activateLayout_AllExperience()
     local experienceData = interfaceGetAllExperience()
 end
 
+function activateLayout_AllLocations()
+end
+
 function activateLayout_AllPlayTime()
     print("Layout Activated - All Playtimes")
     local playtimeData = interfaceGetAllPlayTime()
