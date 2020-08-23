@@ -214,6 +214,8 @@ function activateLayout_AllExperience()
 end
 
 function activateLayout_AllLocations()
+    print("Layout Activated - All Locations")
+    local locationData = interfaceGetAllZones()
 end
 
 function activateLayout_AllPlayTime()
