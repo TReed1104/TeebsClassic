@@ -45,3 +45,18 @@ _G["TEEBS_OBJECT_COLOUR_BLUE"] = {
 	b = 1,
 	a = 1
 }
+_G["TEEBS_CLASSIC_CONTENT_FRAMES"] = {
+	home = "homeFrame",
+	equipment = "equipmentFrame",
+	bags = "bagsFrame",
+	talents = "talentsFrame",
+	professions = "professionsFrame",
+	reputations = "reputationsFrame",
+	experience = "experienceFrame",
+	locations = "locationsFrame",
+	playtime = "playtimeFrame",
+	gold = "goldFrame",
+	professionsAll = "professionsAllFrame",
+	professionsPrimary = "professionsPrimaryFrame",
+	professionsSecondary = "professionsSecondaryFrame",
+}
