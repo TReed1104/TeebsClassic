@@ -33,7 +33,7 @@ function onLoadCoreFrame(frame, eventHandlerFunc)
     frame.exitButton = createButton("CloseButton", frame, "x", 30, 30, "TOPRIGHT", -10, -5, exitButton)          -- Create the Exit button
     frame.menuButton = createButton("MenuButton", frame, "Menu", 50, 30, "TOPLEFT", 10, -5, openMainMenu)        -- Menu Button
     frame.mainMenu = createDropDown("MenuDropDown")
-    activateLayout_Home(frame)
+
 end
 
 -- The master event handler
