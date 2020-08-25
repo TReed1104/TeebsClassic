@@ -99,7 +99,7 @@ function generateMenuData_Main()
         { text = "Character Specific", isTitle = 1, notCheckable = 1, },
         { text = "Equipped Gear", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFrameChangeEquipment) },
         { text = "Equipped Bags", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFrameChangeBags) },
-        { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFrameChangeAllTalents, false, false, false, true) },
+        { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFrameChangeTalents, false, false, false, true) },
         { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFrameChangeProfessions) },
         { text = "Reputations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFrameChangeReputations) },
         { text = "All Characters", isTitle = 1, notCheckable = 1, },
@@ -197,6 +197,11 @@ function contentFrameChangeBags(character)
     local bagData = interfaceGetAllBagSlots(character)
 end
 
+function contentFrameChangeTalents(character)
+    print("Layout Activated - Talents -", character)
+    local talentsData = interfaceGetTalents(character)
+end
+
 function contentFrameChangeProfessions(character)
     print("Layout Activated - Professions -", character)
     local professionData = interfaceGetProfessions(character)
@@ -225,11 +230,6 @@ end
 function contentFrameChangeAllGold()
     print("Layout Activated - All Gold")
     local goldData = interfaceGetAllGold()
-end
-
-function contentFrameChangeAllTalents()
-    print("Layout Activated - All Talents")
-    local talentsData = interfaceGetAllTalents()
 end
 
 function contentFrameChangeAllProfessions()
