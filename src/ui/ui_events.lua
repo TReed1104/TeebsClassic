@@ -36,6 +36,8 @@ function onLoadCoreFrame(frame, eventHandlerFunc)
 
     -- Populate the content frame objects
     for contentFrameIndex, contentFrameDetails in pairs(TEEBS_CLASSIC_CONTENT_FRAMES) do
+        frame[contentFrameDetails.frameID] = createFrame(contentFrameDetails.frameID, frame, frame:GetWidth() - 20, frame:GetHeight() - 50, "TOPLEFT", 10, -40, TEEBS_CLASSIC_BACKDROP_OBJECT, TEEBS_OBJECT_COLOUR_RED)
+        frame[contentFrameDetails.frameID][contentFrameDetails.titleID] = createTextObject(contentFrameDetails.titleID, frame[ contentFrameDetails.frameID], contentFrameDetails.titleText, 1, 1, 1, 1, "TOPLEFT", 10, -10, "GameFontNormal")
     end
 end
 
