@@ -34,6 +34,9 @@ function onLoadCoreFrame(frame, eventHandlerFunc)
     frame.menuButton = createButton("MenuButton", frame, "Menu", 50, 30, "TOPLEFT", 10, -5, openMainMenu)        -- Menu Button
     frame.mainMenu = createDropDown("MenuDropDown")
 
+    -- Populate the content frame objects
+    for contentFrameIndex, contentFrameDetails in pairs(TEEBS_CLASSIC_CONTENT_FRAMES) do
+    end
 end
 
 -- The master event handler
