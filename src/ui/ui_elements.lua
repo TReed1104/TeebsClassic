@@ -90,24 +90,24 @@ end
 function generateMenuData_Main()
     -- Submenu for the profession functions
     local professionsSubmenus = {
-        { text = "All", notCheckable = 1, func = clickFunctionMenuItem, arg1 = activateLayout_AllProfessions},
-        { text = "Primary", notCheckable = 1, func = clickFunctionMenuItem, arg1 = activateLayout_PrimaryProfessions},
-        { text = "Secondary", notCheckable = 1, func = clickFunctionMenuItem, arg1 = activateLayout_SecondaryProfessions},
+        { text = "All", notCheckable = 1, func = clickFunctionMenuItem, arg1 = contentFrameChangeAllProfessions},
+        { text = "Primary", notCheckable = 1, func = clickFunctionMenuItem, arg1 = contentFrameChangePrimaryProfessions},
+        { text = "Secondary", notCheckable = 1, func = clickFunctionMenuItem, arg1 = contentFrameChangeSecondaryProfessions},
     }
     -- The main menu of the different addon functions
     local mainMenuLayout = {
         { text = "Character Specific", isTitle = 1, notCheckable = 1, },
-        { text = "Equipped Gear", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(activateLayout_Equipment) },
-        { text = "Equipped Bags", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(activateLayout_Bags) },
-        { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(activateLayout_AllTalents, false, false, false, true) },
-        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(activateLayout_Professions) },
-        { text = "Reputations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(activateLayout_Reputations) },
+        { text = "Equipped Gear", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFrameChangeEquipment) },
+        { text = "Equipped Bags", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFrameChangeBags) },
+        { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFrameChangeAllTalents, false, false, false, true) },
+        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFrameChangeProfessions) },
+        { text = "Reputations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFrameChangeReputations) },
         { text = "All Characters", isTitle = 1, notCheckable = 1, },
-        { text = "Experience", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = activateLayout_AllExperience, menuList = generateMenuData_CharacterList(nil, true, true) },
-        { text = "Locations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = activateLayout_AllLocations, menuList = generateMenuData_CharacterList(nil, true, false, false, false, false, true) },
-        { text = "Play Time", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = activateLayout_AllPlayTime, menuList = generateMenuData_CharacterList(nil, true, false, false, false, true) },
-        { text = "Gold", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = activateLayout_AllGold, menuList = generateMenuData_CharacterList(nil, true, false, true) },
-        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = activateLayout_AllProfessions, menuList = professionsSubmenus },
+        { text = "Experience", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFrameChangeAllExperience, menuList = generateMenuData_CharacterList(nil, true, true) },
+        { text = "Locations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFrameChangeAllLocations, menuList = generateMenuData_CharacterList(nil, true, false, false, false, false, true) },
+        { text = "Play Time", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFrameChangeAllPlayTime, menuList = generateMenuData_CharacterList(nil, true, false, false, false, true) },
+        { text = "Gold", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFrameChangeAllGold, menuList = generateMenuData_CharacterList(nil, true, false, true) },
+        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFrameChangeAllProfessions, menuList = professionsSubmenus },
         { text = "Close", func = function() CloseDropDownMenus() end, notCheckable = 1, }
     }
     return mainMenuLayout
@@ -182,67 +182,67 @@ end
 ------------------------------------------------------------------
 -- Addon Layouts
 ------------------------------------------------------------------
-function activateLayout_Home()
+function contentFrameChangeHome()
     print("Layout Activated - Home")
     TEEBS_CLASSIC_FRAME[TEEBS_CLASSIC_CONTENT_FRAMES.home.frameID]:Show()
 end
 
-function activateLayout_Equipment(character)
+function contentFrameChangeEquipment(character)
     print("Layout Activated - Equipment -", character)
     local equipmentData = interfaceGetAllItemSlots(character)
 end
 
-function activateLayout_Bags(character)
+function contentFrameChangeBags(character)
     print("Layout Activated - Bags -", character)
     local bagData = interfaceGetAllBagSlots(character)
 end
 
-function activateLayout_Professions(character)
+function contentFrameChangeProfessions(character)
     print("Layout Activated - Professions -", character)
     local professionData = interfaceGetProfessions(character)
 end
 
-function activateLayout_Reputations(character)
+function contentFrameChangeReputations(character)
     print("Layout Activated - Reputations -", character)
     local reputationData = interfaceGetAllReputations(character)
 end
 
-function activateLayout_AllExperience()
+function contentFrameChangeAllExperience()
     print("Layout Activated - All Experience")
     local experienceData = interfaceGetAllExperience()
 end
 
-function activateLayout_AllLocations()
+function contentFrameChangeAllLocations()
     print("Layout Activated - All Locations")
     local locationData = interfaceGetAllZones()
 end
 
-function activateLayout_AllPlayTime()
+function contentFrameChangeAllPlayTime()
     print("Layout Activated - All Playtimes")
     local playtimeData = interfaceGetAllPlayTime()
 end
 
-function activateLayout_AllGold()
+function contentFrameChangeAllGold()
     print("Layout Activated - All Gold")
     local goldData = interfaceGetAllGold()
 end
 
-function activateLayout_AllTalents()
+function contentFrameChangeAllTalents()
     print("Layout Activated - All Talents")
     local talentsData = interfaceGetAllTalents()
 end
 
-function activateLayout_AllProfessions()
+function contentFrameChangeAllProfessions()
     print("Layout Activated - All Professions")
     local professionsData = interfaceGetAllProfessions()
 end
 
-function activateLayout_PrimaryProfessions()
+function contentFrameChangePrimaryProfessions()
     print("Layout Activated - All Primary Professions")
     local professionsData = interfaceGetAllPrimaryProfessions()
 end
 
-function activateLayout_SecondaryProfessions()
+function contentFrameChangeSecondaryProfessions()
     print("Layout Activated - All Secondary Professions")
     local professionsData = interfaceGetAllSecondaryProfessions()
 end
