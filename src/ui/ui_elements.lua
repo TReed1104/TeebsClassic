@@ -183,7 +183,10 @@ end
 -- Addon Layouts
 ------------------------------------------------------------------
 function hideAllContentFrames()
-end
+    -- Hide all the content frames created via the register
+    for contentFrameIndex, contentFrameDetails in pairs(TEEBS_CLASSIC_CONTENT_FRAMES) do
+        TEEBS_CLASSIC_FRAME[contentFrameDetails.frameID]:Hide()
+    end
 end
 
 function contentFrameChangeHome()
