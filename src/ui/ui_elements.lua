@@ -184,8 +184,7 @@ end
 ------------------------------------------------------------------
 function activateLayout_Home()
     print("Layout Activated - Home")
-    frame.homeLayoutFrame = createFrame("HomeLayout", frame, frame:GetWidth() - 20, frame:GetHeight() - 50, "TOPLEFT", 10, -40, TEEBS_CLASSIC_BACKDROP_OBJECT, TEEBS_OBJECT_COLOUR_RED)
-    frame.homeLayoutFrame.titleText = createTextObject("HomeLayoutTitle", frame.homeLayoutFrame, "Home", 1, 1, 1, 1, "TOPLEFT", 10, -10, "GameFontNormal")
+    TEEBS_CLASSIC_FRAME[TEEBS_CLASSIC_CONTENT_FRAMES.home.frameID]:Show()
 end
 
 function activateLayout_Equipment(character)
