@@ -182,6 +182,10 @@ end
 ------------------------------------------------------------------
 -- Addon Layouts
 ------------------------------------------------------------------
+function hideAllContentFrames()
+end
+end
+
 function contentFrameChangeHome()
     print("Layout Activated - Home")
     TEEBS_CLASSIC_FRAME[TEEBS_CLASSIC_CONTENT_FRAMES.home.frameID]:Show()
