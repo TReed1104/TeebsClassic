@@ -189,6 +189,9 @@ function hideAllContentFrames()
     end
 end
 
+function toggleContentFrame(showFrame)
+end
+
 function contentFrameChangeHome()
     print("Layout Activated - Home")
     TEEBS_CLASSIC_FRAME[TEEBS_CLASSIC_CONTENT_FRAMES.home.frameID]:Show()
