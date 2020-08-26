@@ -183,6 +183,10 @@ end
 -- Addon Layouts
 ------------------------------------------------------------------
 function showAllContentFrames()
+    -- Hide all the content frames created via the register
+    for contentFrameIndex, contentFrameDetails in pairs(TEEBS_CLASSIC_CONTENT_FRAMES) do
+        TEEBS_CLASSIC_FRAME[contentFrameDetails.frameID]:Show()
+    end
 end
 
 function hideAllContentFrames()
