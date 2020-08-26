@@ -190,6 +190,11 @@ function hideAllContentFrames()
 end
 
 function toggleContentFrame(showFrame)
+    -- Hide all the content frames created via the register
+    for contentFrameIndex, contentFrameDetails in pairs(TEEBS_CLASSIC_CONTENT_FRAMES) do
+        TEEBS_CLASSIC_FRAME[contentFrameDetails.frameID]:Hide()
+    end
+    TEEBS_CLASSIC_FRAME[showFrame.frameID]:Show()
 end
 
 function contentFrameChangeHome()
