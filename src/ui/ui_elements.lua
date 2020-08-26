@@ -182,6 +182,9 @@ end
 ------------------------------------------------------------------
 -- Addon Layouts
 ------------------------------------------------------------------
+function showAllContentFrames()
+end
+
 function hideAllContentFrames()
     -- Hide all the content frames created via the register
     for contentFrameIndex, contentFrameDetails in pairs(TEEBS_CLASSIC_CONTENT_FRAMES) do
