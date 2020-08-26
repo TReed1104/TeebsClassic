@@ -27,6 +27,12 @@ _G["TEEBS_OBJECT_COLOUR_WHITE"] = {
 	b = 1,
 	a = 1
 }
+_G["TEEBS_OBJECT_COLOUR_GREY"] = {
+	r = 0.3,
+	g = 0.3,
+	b = 0.3,
+	a = 1
+}
 _G["TEEBS_OBJECT_COLOUR_RED"] = {
 	r = 1,
 	g = 0,
