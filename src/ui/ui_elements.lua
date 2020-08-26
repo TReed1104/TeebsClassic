@@ -204,10 +204,6 @@ function toggleContentFrame(showFrame)
     TEEBS_CLASSIC_FRAME[showFrame.frameID]:Show()
 end
 
-function contentFrameChangeHome()
-    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.home)
-end
-
 function contentFrameChangeEquipment(character)
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.equipment)
 
