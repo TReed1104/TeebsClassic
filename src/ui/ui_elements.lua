@@ -198,66 +198,77 @@ function toggleContentFrame(showFrame)
 end
 
 function contentFrameChangeHome()
-    print("Layout Activated - Home")
-    TEEBS_CLASSIC_FRAME[TEEBS_CLASSIC_CONTENT_FRAMES.home.frameID]:Show()
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.home)
 end
 
 function contentFrameChangeEquipment(character)
-    print("Layout Activated - Equipment -", character)
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.equipment)
+
     local equipmentData = interfaceGetAllItemSlots(character)
 end
 
 function contentFrameChangeBags(character)
-    print("Layout Activated - Bags -", character)
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.bags)
+
     local bagData = interfaceGetAllBagSlots(character)
 end
 
 function contentFrameChangeTalents(character)
-    print("Layout Activated - Talents -", character)
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.talents)
+
     local talentsData = interfaceGetTalents(character)
 end
 
 function contentFrameChangeProfessions(character)
-    print("Layout Activated - Professions -", character)
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.professions)
+
     local professionData = interfaceGetProfessions(character)
 end
 
 function contentFrameChangeReputations(character)
-    print("Layout Activated - Reputations -", character)
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.reputations)
+
     local reputationData = interfaceGetAllReputations(character)
 end
 
 function contentFrameChangeAllExperience()
-    print("Layout Activated - All Experience")
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.experience)
+
     local experienceData = interfaceGetAllExperience()
 end
 
 function contentFrameChangeAllLocations()
-    print("Layout Activated - All Locations")
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.locations)
+
     local locationData = interfaceGetAllZones()
 end
 
 function contentFrameChangeAllPlayTime()
-    print("Layout Activated - All Playtimes")
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.playtime)
+
     local playtimeData = interfaceGetAllPlayTime()
 end
 
 function contentFrameChangeAllGold()
-    print("Layout Activated - All Gold")
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.gold)
+
     local goldData = interfaceGetAllGold()
 end
 
 function contentFrameChangeAllProfessions()
-    print("Layout Activated - All Professions")
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.professionsAll)
+
     local professionsData = interfaceGetAllProfessions()
 end
 
 function contentFrameChangePrimaryProfessions()
-    print("Layout Activated - All Primary Professions")
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.professionsPrimary)
+
     local professionsData = interfaceGetAllPrimaryProfessions()
 end
 
 function contentFrameChangeSecondaryProfessions()
-    print("Layout Activated - All Secondary Professions")
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.professionsSecondary)
+
     local professionsData = interfaceGetAllSecondaryProfessions()
 end
