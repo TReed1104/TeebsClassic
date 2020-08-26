@@ -85,7 +85,7 @@ end
 
 
 ------------------------------------------------------------------
--- Addon Menu Layouts
+-- Dropdown Menu Configurations
 ------------------------------------------------------------------
 function generateMenuData_Main()
     -- Submenu for the profession functions
@@ -180,7 +180,7 @@ end
 
 
 ------------------------------------------------------------------
--- Addon Layouts
+-- Content Frame Functions
 ------------------------------------------------------------------
 function showAllContentFrames()
     -- Hide all the content frames created via the register
