@@ -205,73 +205,73 @@ function toggleContentFrame(showFrame)
 end
 
 function contentFramePopulateEquipment(character)
-    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.equipment)
-
     local equipmentData = interfaceGetAllItemSlots(character)
+    
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.equipment)
 end
 
 function contentFramePopulateBags(character)
-    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.bags)
-
     local bagData = interfaceGetAllBagSlots(character)
+    
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.bags)
 end
 
 function contentFramePopulateTalents(character)
-    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.talents)
-
     local talentsData = interfaceGetTalents(character)
+    
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.talents)
 end
 
 function contentFramePopulateProfessions(character)
-    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.professions)
-
     local professionData = interfaceGetProfessions(character)
+    
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.professions)
 end
 
 function contentFramePopulateReputations(character)
-    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.reputations)
-
     local reputationData = interfaceGetAllReputations(character)
+    
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.reputations)
 end
 
 function contentFramePopulateAllExperience()
-    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.experience)
-
     local experienceData = interfaceGetAllExperience()
+    
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.experience)
 end
 
 function contentFramePopulateAllLocations()
-    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.locations)
-
     local locationData = interfaceGetAllZones()
+    
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.locations)
 end
 
 function contentFramePopulateAllPlayTime()
-    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.playtime)
-
     local playtimeData = interfaceGetAllPlayTime()
+    
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.playtime)
 end
 
 function contentFramePopulateAllGold()
-    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.gold)
-
     local goldData = interfaceGetAllGold()
+    
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.gold)
 end
 
 function contentFramePopulateAllProfessions()
-    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.professionsAll)
-
     local professionsData = interfaceGetAllProfessions()
+    
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.professionsAll)
 end
 
 function contentFramePopulatePrimaryProfessions()
-    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.professionsPrimary)
-
     local professionsData = interfaceGetAllPrimaryProfessions()
+    
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.professionsPrimary)
 end
 
 function contentFramePopulateSecondaryProfessions()
-    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.professionsSecondary)
-
     local professionsData = interfaceGetAllSecondaryProfessions()
+    
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.professionsSecondary)
 end
