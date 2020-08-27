@@ -204,6 +204,10 @@ function toggleContentFrame(showFrame)
     TEEBS_CLASSIC_FRAME[showFrame.frameID]:Show()
 end
 
+
+------------------------------------------------------------------
+-- Content Frame Data Population functions
+------------------------------------------------------------------
 function contentFramePopulateEquipment(character)
     local equipmentData = interfaceGetAllItemSlots(character)
     
