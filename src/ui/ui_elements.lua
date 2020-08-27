@@ -90,24 +90,24 @@ end
 function generateMenuData_Main()
     -- Submenu for the profession functions
     local professionsSubmenus = {
-        { text = "All", notCheckable = 1, func = clickFunctionMenuItem, arg1 = contentFrameChangeAllProfessions},
-        { text = "Primary", notCheckable = 1, func = clickFunctionMenuItem, arg1 = contentFrameChangePrimaryProfessions},
-        { text = "Secondary", notCheckable = 1, func = clickFunctionMenuItem, arg1 = contentFrameChangeSecondaryProfessions},
+        { text = "All", notCheckable = 1, func = clickFunctionMenuItem, arg1 = contentFramePopulateAllProfessions},
+        { text = "Primary", notCheckable = 1, func = clickFunctionMenuItem, arg1 = contentFramePopulatePrimaryProfessions},
+        { text = "Secondary", notCheckable = 1, func = clickFunctionMenuItem, arg1 = contentFramePopulateSecondaryProfessions},
     }
     -- The main menu of the different addon functions
     local mainMenuLayout = {
         { text = "Character Specific", isTitle = 1, notCheckable = 1, },
-        { text = "Equipped Gear", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFrameChangeEquipment) },
-        { text = "Equipped Bags", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFrameChangeBags) },
-        { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFrameChangeTalents, false, false, false, true) },
-        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFrameChangeProfessions) },
-        { text = "Reputations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFrameChangeReputations) },
+        { text = "Equipped Gear", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFramePopulateEquipment) },
+        { text = "Equipped Bags", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFramePopulateBags) },
+        { text = "Talents", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFramePopulateTalents, false, false, false, true) },
+        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFramePopulateProfessions) },
+        { text = "Reputations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, menuList = generateMenuData_CharacterList(contentFramePopulateReputations) },
         { text = "All Characters", isTitle = 1, notCheckable = 1, },
-        { text = "Experience", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFrameChangeAllExperience, menuList = generateMenuData_CharacterList(nil, true, true) },
-        { text = "Locations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFrameChangeAllLocations, menuList = generateMenuData_CharacterList(nil, true, false, false, false, false, true) },
-        { text = "Play Time", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFrameChangeAllPlayTime, menuList = generateMenuData_CharacterList(nil, true, false, false, false, true) },
-        { text = "Gold", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFrameChangeAllGold, menuList = generateMenuData_CharacterList(nil, true, false, true) },
-        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFrameChangeAllProfessions, menuList = professionsSubmenus },
+        { text = "Experience", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFramePopulateAllExperience, menuList = generateMenuData_CharacterList(nil, true, true) },
+        { text = "Locations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFramePopulateAllLocations, menuList = generateMenuData_CharacterList(nil, true, false, false, false, false, true) },
+        { text = "Play Time", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFramePopulateAllPlayTime, menuList = generateMenuData_CharacterList(nil, true, false, false, false, true) },
+        { text = "Gold", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFramePopulateAllGold, menuList = generateMenuData_CharacterList(nil, true, false, true) },
+        { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFramePopulateAllProfessions, menuList = professionsSubmenus },
         { text = "Close", func = function() CloseDropDownMenus() end, notCheckable = 1, }
     }
     return mainMenuLayout
@@ -204,73 +204,73 @@ function toggleContentFrame(showFrame)
     TEEBS_CLASSIC_FRAME[showFrame.frameID]:Show()
 end
 
-function contentFrameChangeEquipment(character)
+function contentFramePopulateEquipment(character)
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.equipment)
 
     local equipmentData = interfaceGetAllItemSlots(character)
 end
 
-function contentFrameChangeBags(character)
+function contentFramePopulateBags(character)
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.bags)
 
     local bagData = interfaceGetAllBagSlots(character)
 end
 
-function contentFrameChangeTalents(character)
+function contentFramePopulateTalents(character)
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.talents)
 
     local talentsData = interfaceGetTalents(character)
 end
 
-function contentFrameChangeProfessions(character)
+function contentFramePopulateProfessions(character)
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.professions)
 
     local professionData = interfaceGetProfessions(character)
 end
 
-function contentFrameChangeReputations(character)
+function contentFramePopulateReputations(character)
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.reputations)
 
     local reputationData = interfaceGetAllReputations(character)
 end
 
-function contentFrameChangeAllExperience()
+function contentFramePopulateAllExperience()
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.experience)
 
     local experienceData = interfaceGetAllExperience()
 end
 
-function contentFrameChangeAllLocations()
+function contentFramePopulateAllLocations()
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.locations)
 
     local locationData = interfaceGetAllZones()
 end
 
-function contentFrameChangeAllPlayTime()
+function contentFramePopulateAllPlayTime()
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.playtime)
 
     local playtimeData = interfaceGetAllPlayTime()
 end
 
-function contentFrameChangeAllGold()
+function contentFramePopulateAllGold()
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.gold)
 
     local goldData = interfaceGetAllGold()
 end
 
-function contentFrameChangeAllProfessions()
+function contentFramePopulateAllProfessions()
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.professionsAll)
 
     local professionsData = interfaceGetAllProfessions()
 end
 
-function contentFrameChangePrimaryProfessions()
+function contentFramePopulatePrimaryProfessions()
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.professionsPrimary)
 
     local professionsData = interfaceGetAllPrimaryProfessions()
 end
 
-function contentFrameChangeSecondaryProfessions()
+function contentFramePopulateSecondaryProfessions()
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.professionsSecondary)
 
     local professionsData = interfaceGetAllSecondaryProfessions()
