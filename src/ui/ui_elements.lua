@@ -218,8 +218,11 @@ function contentFramePopulateEquipment(character)
 end
 
 function contentFramePopulateBags(character)
+    -- Get the character data
     local bagData = interfaceGetAllBagSlots(character)
-    
+    -- TODO: Link the data to the UI frame
+    print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "To Be Implemented - contentFramePopulateBags()"))
+    -- Toggle the content frame to be visible
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.bags)
 end
 
