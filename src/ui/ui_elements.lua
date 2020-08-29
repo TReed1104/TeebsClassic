@@ -209,8 +209,11 @@ end
 -- Content Frame Data Population functions
 ------------------------------------------------------------------
 function contentFramePopulateEquipment(character)
+    -- Get the character data
     local equipmentData = interfaceGetAllItemSlots(character)
-    
+    -- TODO: Link the data to the UI frame
+
+    -- Toggle the content frame to be visible
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.equipment)
 end
 
