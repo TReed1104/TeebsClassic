@@ -227,8 +227,11 @@ function contentFramePopulateBags(character)
 end
 
 function contentFramePopulateTalents(character)
+    -- Get the character data
     local talentsData = interfaceGetTalents(character)
-    
+    -- TODO: Link the data to the UI frame
+    print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "To Be Implemented - contentFramePopulateTalents()"))
+    -- Toggle the content frame to be visible
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.talents)
 end
 
