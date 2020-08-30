@@ -245,8 +245,11 @@ function contentFramePopulateProfessions(character)
 end
 
 function contentFramePopulateReputations(character)
+    -- Get the character data
     local reputationData = interfaceGetAllReputations(character)
-    
+    -- TODO: Link the data to the UI frame
+    print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "To Be Implemented - contentFramePopulateReputations()"))
+    -- Toggle the content frame to be visible
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.reputations)
 end
 
