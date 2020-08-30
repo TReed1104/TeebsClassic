@@ -254,8 +254,11 @@ function contentFramePopulateReputations(character)
 end
 
 function contentFramePopulateAllExperience()
+    -- Get the character data
     local experienceData = interfaceGetAllExperience()
-    
+    -- TODO: Link the data to the UI frame
+    print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "To Be Implemented - contentFramePopulateAllExperience()"))
+    -- Toggle the content frame to be visible
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.experience)
 end
 
