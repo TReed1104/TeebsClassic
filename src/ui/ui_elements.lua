@@ -281,8 +281,11 @@ function contentFramePopulateAllPlayTime()
 end
 
 function contentFramePopulateAllGold()
+    -- Get the character data
     local goldData = interfaceGetAllGold()
-    
+    -- TODO: Link the data to the UI frame
+    print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "To Be Implemented - contentFramePopulateAllGold()"))
+    -- Toggle the content frame to be visible
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.gold)
 end
 
