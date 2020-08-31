@@ -272,8 +272,11 @@ function contentFramePopulateAllLocations()
 end
 
 function contentFramePopulateAllPlayTime()
+    -- Get the character data
     local playtimeData = interfaceGetAllPlayTime()
-    
+    -- TODO: Link the data to the UI frame
+    print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "To Be Implemented - contentFramePopulateAllPlayTime()"))
+    -- Toggle the content frame to be visible
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.playtime)
 end
 
