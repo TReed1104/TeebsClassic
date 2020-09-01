@@ -308,7 +308,10 @@ function contentFramePopulatePrimaryProfessions()
 end
 
 function contentFramePopulateSecondaryProfessions()
+    -- Get the character data
     local professionsData = interfaceGetAllSecondaryProfessions()
-    
+    -- TODO: Link the data to the UI frame
+    print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "To Be Implemented - contentFramePopulateSecondaryProfessions()"))
+    -- Toggle the content frame to be visible
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.professionsSecondary)
 end
