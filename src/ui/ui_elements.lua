@@ -290,8 +290,11 @@ function contentFramePopulateAllGold()
 end
 
 function contentFramePopulateAllProfessions()
+    -- Get the character data
     local professionsData = interfaceGetAllProfessions()
-    
+    -- TODO: Link the data to the UI frame
+    print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "To Be Implemented - contentFramePopulateAllProfessions()"))
+    -- Toggle the content frame to be visible
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.professionsAll)
 end
 
