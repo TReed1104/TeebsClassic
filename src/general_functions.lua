@@ -89,6 +89,9 @@ function getCharacterData(server, characterName)
     local characterData = nil
     -- Check the server exists
     if TeebsClassicDB.realms[server] ~= nil then
+        -- Check the character exists
+        if TeebsClassicDB.realms[server].characters[characterName] ~= nil then
+        end
     end
     return characterData
 end
