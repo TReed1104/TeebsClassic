@@ -83,3 +83,6 @@ function formatPlayTimeData(totalPlayTimeInSeconds)
     -- Pack the calculate values into a return string
     return string.format("%i days, %i hours, %i minutes, %i seconds", days, hours, minutes, seconds)
 end
+
+function getCharacterData(characterName)
+end
