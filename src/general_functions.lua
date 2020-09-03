@@ -85,5 +85,5 @@ function formatPlayTimeData(totalPlayTimeInSeconds)
 end
 
 -- Get the character data table for the specified character
-function getCharacterData(characterName)
+function getCharacterData(server, characterName)
 end
