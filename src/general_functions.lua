@@ -86,4 +86,6 @@ end
 
 -- Get the character data table for the specified character
 function getCharacterData(server, characterName)
+    local characterData = nil
+    return characterData
 end
