@@ -84,5 +84,6 @@ function formatPlayTimeData(totalPlayTimeInSeconds)
     return string.format("%i days, %i hours, %i minutes, %i seconds", days, hours, minutes, seconds)
 end
 
+-- Get the character data table for the specified character
 function getCharacterData(characterName)
 end
