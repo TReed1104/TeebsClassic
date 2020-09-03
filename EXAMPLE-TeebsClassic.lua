@@ -1,7 +1,7 @@
 
 TeebsClassicDB = {
 	["realms"] = {
-		["nethergarde keep"] = {
+		["nethergarde-keep"] = {
 			["characters"] = {
 				["teebs"] = {
 					["experienceRestedPercentage"] = 0,
@@ -316,16 +316,18 @@ TeebsClassicDB = {
 							["assassination"] = 19,
 						},
 					},
+					["zone"] = "City of Ironforge",
+					["subzone"] = "Ironforge",
 					["class"] = "Rogue",
 					["experienceCurrentPercentage"] = 0,
 					["reputations"] = {
 						["cenarion-circle"] = {
-							["repValueEarned"] = 3136,
-							["repValueBottom"] = 3000,
+							["repValueEarned"] = 9557,
+							["repValueBottom"] = 9000,
 							["factionName"] = "Cenarion Circle",
-							["factionStanding"] = "Friendly",
-							["factionStandingID"] = 5,
-							["repValueTop"] = 9000,
+							["factionStanding"] = "Honored",
+							["factionStandingID"] = 6,
+							["repValueTop"] = 21000,
 						},
 						["bloodsail-buccaneers"] = {
 							["repValueEarned"] = -29425,
@@ -336,7 +338,7 @@ TeebsClassicDB = {
 							["repValueTop"] = -6000,
 						},
 						["ratchet"] = {
-							["repValueEarned"] = 7160,
+							["repValueEarned"] = 8098,
 							["repValueBottom"] = 3000,
 							["factionName"] = "Ratchet",
 							["factionStanding"] = "Friendly",
@@ -352,23 +354,23 @@ TeebsClassicDB = {
 							["repValueTop"] = 21000,
 						},
 						["timbermaw-hold"] = {
-							["repValueEarned"] = 1654,
+							["repValueEarned"] = 2528,
 							["repValueBottom"] = 0,
 							["factionName"] = "Timbermaw Hold",
 							["factionStanding"] = "Neutral",
 							["factionStandingID"] = 4,
 							["repValueTop"] = 3000,
 						},
-						["ironforge"] = {
-							["repValueEarned"] = 22065,
-							["repValueBottom"] = 21000,
-							["factionName"] = "Ironforge",
-							["factionStanding"] = "Revered",
-							["factionStandingID"] = 7,
-							["repValueTop"] = 42000,
+						["everlook"] = {
+							["repValueEarned"] = 8469,
+							["repValueBottom"] = 3000,
+							["factionName"] = "Everlook",
+							["factionStanding"] = "Friendly",
+							["factionStandingID"] = 5,
+							["repValueTop"] = 9000,
 						},
 						["argent-dawn"] = {
-							["repValueEarned"] = 23529,
+							["repValueEarned"] = 25619,
 							["repValueBottom"] = 21000,
 							["factionName"] = "Argent Dawn",
 							["factionStanding"] = "Revered",
@@ -383,34 +385,26 @@ TeebsClassicDB = {
 							["factionStandingID"] = 4,
 							["repValueTop"] = 3000,
 						},
-						["magram-clan-centaur"] = {
-							["repValueEarned"] = -4300,
-							["repValueBottom"] = -6000,
-							["factionName"] = "Magram Clan Centaur",
-							["factionStanding"] = "Hostile",
-							["factionStandingID"] = 2,
-							["repValueTop"] = -3000,
-						},
-						["gadgetzan"] = {
-							["repValueEarned"] = 8458,
-							["repValueBottom"] = 3000,
-							["factionName"] = "Gadgetzan",
-							["factionStanding"] = "Friendly",
-							["factionStandingID"] = 5,
-							["repValueTop"] = 9000,
-						},
 						["thorium-brotherhood"] = {
-							["repValueEarned"] = 770,
+							["repValueEarned"] = 1650,
 							["repValueBottom"] = 0,
 							["factionName"] = "Thorium Brotherhood",
 							["factionStanding"] = "Neutral",
 							["factionStandingID"] = 4,
 							["repValueTop"] = 3000,
 						},
-						["booty-bay"] = {
-							["repValueEarned"] = 9498,
+						["brood-of-nozdormu"] = {
+							["repValueEarned"] = 14769,
 							["repValueBottom"] = 9000,
-							["factionName"] = "Booty Bay",
+							["factionName"] = "Brood of Nozdormu",
+							["factionStanding"] = "Honored",
+							["factionStandingID"] = 6,
+							["repValueTop"] = 21000,
+						},
+						["gadgetzan"] = {
+							["repValueEarned"] = 9399,
+							["repValueBottom"] = 9000,
+							["factionName"] = "Gadgetzan",
 							["factionStanding"] = "Honored",
 							["factionStandingID"] = 6,
 							["repValueTop"] = 21000,
@@ -423,13 +417,29 @@ TeebsClassicDB = {
 							["factionStandingID"] = 4,
 							["repValueTop"] = 3000,
 						},
+						["booty-bay"] = {
+							["repValueEarned"] = 10875,
+							["repValueBottom"] = 9000,
+							["factionName"] = "Booty Bay",
+							["factionStanding"] = "Honored",
+							["factionStandingID"] = 6,
+							["repValueTop"] = 21000,
+						},
 						["hydraxian-waterlords"] = {
-							["repValueEarned"] = 32769,
+							["repValueEarned"] = 39699,
 							["repValueBottom"] = 21000,
 							["factionName"] = "Hydraxian Waterlords",
 							["factionStanding"] = "Revered",
 							["factionStandingID"] = 7,
 							["repValueTop"] = 42000,
+						},
+						["magram-clan-centaur"] = {
+							["repValueEarned"] = -4300,
+							["repValueBottom"] = -6000,
+							["factionName"] = "Magram Clan Centaur",
+							["factionStanding"] = "Hostile",
+							["factionStandingID"] = 2,
+							["repValueTop"] = -3000,
 						},
 						["stormpike-guard"] = {
 							["repValueEarned"] = 0,
@@ -463,13 +473,13 @@ TeebsClassicDB = {
 							["factionStandingID"] = 5,
 							["repValueTop"] = 9000,
 						},
-						["everlook"] = {
-							["repValueEarned"] = 7531,
-							["repValueBottom"] = 3000,
-							["factionName"] = "Everlook",
-							["factionStanding"] = "Friendly",
-							["factionStandingID"] = 5,
-							["repValueTop"] = 9000,
+						["ironforge"] = {
+							["repValueEarned"] = 22285,
+							["repValueBottom"] = 21000,
+							["factionName"] = "Ironforge",
+							["factionStanding"] = "Revered",
+							["factionStandingID"] = 7,
+							["repValueTop"] = 42000,
 						},
 						["ravenholdt"] = {
 							["repValueEarned"] = 407,
@@ -505,9 +515,7 @@ TeebsClassicDB = {
 						},
 					},
 					["currency"] = {
-						["copper"] = 45,
-						["silver"] = 52,
-						["gold"] = 196,
+						["copper"] = 6439196,
 					},
 					["professions"] = {
 						["secondary"] = {
@@ -539,11 +547,11 @@ TeebsClassicDB = {
 					["gear"] = {
 						["19"] = 0,
 						["18"] = 17069,
-						["8"] = 16906,
+						["8"] = 19381,
 						["9"] = 16911,
 						["1"] = 16908,
 						["0"] = 18042,
-						["3"] = 16832,
+						["3"] = 19835,
 						["2"] = 19377,
 						["5"] = 16905,
 						["4"] = 0,
@@ -556,12 +564,12 @@ TeebsClassicDB = {
 						["13"] = 19954,
 						["12"] = 18821,
 						["11"] = 19384,
-						["10"] = 16907,
+						["10"] = 21672,
 					},
 					["level"] = 60,
 					["time-played"] = {
-						["current"] = 1844560,
-						["total"] = 2619945,
+						["current"] = 2269094,
+						["total"] = 3044479,
 					},
 					["bags"] = {
 						["1"] = 17966,
