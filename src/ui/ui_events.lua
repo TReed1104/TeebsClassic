@@ -46,7 +46,7 @@ end
 function eventHandlerCoreFrame(self, event, arg1, arg2, arg3, ...)
     -- Addon Loaded Trigger
     if event == "ADDON_LOADED" then
-        CURRENT_REALM = GetRealmName():lower()
+        CURRENT_REALM = GetRealmName():lower():gsub(" ", "-")
         CURRENT_CHARACTER_NAME = UnitName("player"):lower()
         initialiseDB()
     end
