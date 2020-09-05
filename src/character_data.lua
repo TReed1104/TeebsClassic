@@ -71,6 +71,8 @@ end
 
 -- Caching of the current characters faction
 function setCharacterDataFaction()
+    -- Set the character faction in the DB
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].faction = UnitFactionGroup("player")
 end
 
 -- Caching of the current characters location
