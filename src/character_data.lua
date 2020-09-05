@@ -26,7 +26,7 @@ function initialiseDB()
 
     -- Create each of the variables and tables to store on the character
     if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].faction == nil then
-        TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].faction = UnitFactionGroup("player")
+        setCharacterDataFaction()
     end
     if TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].class == nil then
         TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].class = UnitClass("player")
