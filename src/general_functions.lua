@@ -106,3 +106,8 @@ function getServerList()
     end
     return serverList
 end
+
+-- Get a list of the characters we've cached on a specified server
+function getCharacterList(server)
+end
+
