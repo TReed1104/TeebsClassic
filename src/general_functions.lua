@@ -97,3 +97,7 @@ function getCharacterData(server, characterName)
     end
     return characterData
 end
+
+-- Get a list of the servers with cached data
+function getServerList()
+end
