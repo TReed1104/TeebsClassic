@@ -116,3 +116,6 @@ function getCharacterList(server)
     return characterList
 end
 
+-- Get the name of every character we've cached
+function getFullCharacterList()
+end
