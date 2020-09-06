@@ -100,4 +100,9 @@ end
 
 -- Get a list of the servers with cached data
 function getServerList()
+    local serverList = {}
+    for serverName, serverTable in pairs(TeebsClassicDB.realms) do
+        table.insert(serverList, serverName)
+    end
+    return serverList
 end
