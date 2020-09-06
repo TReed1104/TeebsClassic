@@ -109,6 +109,10 @@ end
 
 -- Get a list of the characters we've cached on a specified server
 function getCharacterList(server)
-end
+    local characterList = {}
+    for characterName, characterData in pairs(TeebsClassicDB.realms[server].characters) do
+        table.insert(characterList, characterName)
+    end
+    return characterList
 end
 
