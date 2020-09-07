@@ -120,7 +120,7 @@ end
 function getFullCharacterList()
     local serverList = {}
     for serverName, serverTable in pairs(TeebsClassicDB.realms) do
-        serverList[serverName] = getCharacterList(serverName)
+        serverList[serverName] = getListCharacterNames(serverName)
     end
     return serverList
 end
