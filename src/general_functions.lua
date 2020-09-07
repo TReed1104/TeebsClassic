@@ -99,7 +99,7 @@ function getCharacterData(server, characterName)
 end
 
 -- Get a list of the servers with cached data
-function getServerList()
+function getListServerNames()
     local serverList = {}
     for serverName, serverTable in pairs(TeebsClassicDB.realms) do
         table.insert(serverList, serverName)
