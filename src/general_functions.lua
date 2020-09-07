@@ -117,7 +117,7 @@ function getListCharacterNames(server)
 end
 
 -- Get the name of every character we've cached
-function getFullCharacterList()
+function getListAllCharacterNames()
     local serverList = {}
     for serverName, serverTable in pairs(TeebsClassicDB.realms) do
         serverList[serverName] = getListCharacterNames(serverName)
