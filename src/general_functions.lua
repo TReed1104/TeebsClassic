@@ -131,4 +131,8 @@ end
 
 -- Get all characters of the specified faction
 function getFactionCharacters(server, faction)
+    -- Check a valid faction was supplied
+    if faction ~= "Alliance" and faction ~= "Horde" then
+        return nil
+    end
 end
