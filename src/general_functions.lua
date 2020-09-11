@@ -128,3 +128,7 @@ function getListAllCharacterNames()
     end
     return serverList
 end
+
+-- Get all characters of the specified faction
+function getFactionCharacters(server, faction)
+end
