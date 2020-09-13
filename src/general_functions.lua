@@ -111,14 +111,15 @@ end
 
 -- Get a list of the characters we've cached on a specified server
 function getListCharacterNames(server)
+    -- Our character name list
+    local characterList = {}
     -- Check the server exists
     if TeebsClassicDB.realms[server] == nil then
-        return nil
+        return characterList
     end
-    local characterList = {}
     -- Iterate through each character on the specified server and list their names
     for characterName, characterData in pairs(TeebsClassicDB.realms[server].characters) do
-        table.insert(characterList, characterName)
+        characterList[characterName] = upperCaseFirst(characterName)
     end
     return characterList
 end
