@@ -139,14 +139,12 @@ function getServerFactionCharacterNames(server, faction)
     local characterList = {}
     -- Check the server exists
     if TeebsClassicDB.realms[server] == nil then
-        return nil
+        return characterList
     end
     -- Check a valid faction was supplied
     if faction ~= "Alliance" and faction ~= "Horde" then
-        return nil
+        return characterList
     end
-    -- Our data table for copying the names into
-    local characterList = {}
     -- Return the datatable
     return characterList
 end
