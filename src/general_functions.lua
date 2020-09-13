@@ -145,4 +145,6 @@ function getServerFactionCharacterNames(server, faction)
     end
     -- Our data table for copying the names into
     local characterList = {}
+    -- Return the datatable
+    return characterList
 end
