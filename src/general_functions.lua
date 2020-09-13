@@ -134,7 +134,7 @@ function getListAllCharacterNames()
 end
 
 -- Get all characters of the specified faction
-function getFactionCharacters(server, faction)
+function getServerFactionCharacterNames(server, faction)
     -- Check the server exists
     if TeebsClassicDB.realms[server] == nil then
         return nil
