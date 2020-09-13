@@ -143,4 +143,6 @@ function getServerFactionCharacterNames(server, faction)
     if faction ~= "Alliance" and faction ~= "Horde" then
         return nil
     end
+    -- Our data table for copying the names into
+    local characterList = {}
 end
