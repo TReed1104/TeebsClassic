@@ -139,10 +139,12 @@ function getServerFactionCharacterNames(server, faction)
     local characterList = {}
     -- Check the server exists
     if TeebsClassicDB.realms[server] == nil then
+        print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "getServerFactionCharacterNames() - Invalid Server"))
         return characterList
     end
     -- Check a valid faction was supplied
     if faction ~= "Alliance" and faction ~= "Horde" then
+        print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "getServerFactionCharacterNames() - Invalid Faction"))
         return characterList
     end
     -- Return the datatable
