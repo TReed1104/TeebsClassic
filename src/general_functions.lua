@@ -100,10 +100,11 @@ end
 
 -- Get a list of the servers with cached data
 function getListServerNames()
+    -- Server name list
     local serverList = {}
     -- Iterate through each server and list their names
     for serverName, serverTable in pairs(TeebsClassicDB.realms) do
-        table.insert(serverList, serverName)
+        serverList[serverName] = upperCaseFirst(serverName:gsub("-", " "))
     end
     return serverList
 end
