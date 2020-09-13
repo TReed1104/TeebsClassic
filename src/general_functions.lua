@@ -135,6 +135,8 @@ end
 
 -- Get all characters of the specified faction
 function getServerFactionCharacterNames(server, faction)
+    -- Our data table for copying the names into
+    local characterList = {}
     -- Check the server exists
     if TeebsClassicDB.realms[server] == nil then
         return nil
