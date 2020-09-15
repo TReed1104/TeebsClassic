@@ -151,7 +151,9 @@ function getServerFactionCharacterNames(server, faction)
     end
     -- Get the character list for the current server iterator
     for characterName, characterData in pairs(TeebsClassicDB.realms[server].characters) do
-        print(characterName)
+        -- Check the character is of the specified faction
+        if characterData.faction == faction then
+        end
     end
     -- Return the data table
     return characterList
