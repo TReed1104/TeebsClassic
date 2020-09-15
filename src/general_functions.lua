@@ -153,6 +153,6 @@ function getServerFactionCharacterNames(server, faction)
     for characterName, characterData in pairs(TeebsClassicDB.realms[server].characters) do
         print(characterName)
     end
-    -- Return the datatable
+    -- Return the data table
     return characterList
 end
