@@ -153,6 +153,7 @@ function getServerFactionCharacterNames(server, faction)
     for characterName, characterData in pairs(TeebsClassicDB.realms[server].characters) do
         -- Check the character is of the specified faction
         if characterData.faction == faction then
+            characterList[characterName] = upperCaseFirst(characterName)
         end
     end
     -- Return the data table
