@@ -159,3 +159,7 @@ function getServerFactionCharacterNames(server, faction)
     -- Return the data table
     return characterList
 end
+
+-- Get the chracter data of all characters on a specified server
+function getServerCharacterData(server)
+end
