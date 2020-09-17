@@ -120,6 +120,11 @@ function getServerFactionCharacterData(server, faction)
         print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "getServerFactionCharacterData() - Invalid Server"))
         return characterList
     end
+    -- Check a valid faction was supplied
+    if faction ~= "Alliance" and faction ~= "Horde" then
+        print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "getServerFactionCharacterData() - Invalid Faction"))
+        return characterList
+    end
     return characterList
 end
 
