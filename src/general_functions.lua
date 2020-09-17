@@ -162,4 +162,14 @@ end
 
 -- Get the chracter data of all characters on a specified server
 function getServerCharacterData(server)
+    -- Our character name list
+    local characterList = {}
+    -- Check the server exists
+    if TeebsClassicDB.realms[server] == nil then
+        return characterList
+    end
+    -- Copy the character data table
+    characterList = TeebsClassicDB.realms[server].characters
+    -- Return the copy table
+    return characterList
 end
