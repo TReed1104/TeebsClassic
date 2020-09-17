@@ -125,6 +125,9 @@ function getServerFactionCharacterData(server, faction)
         print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "getServerFactionCharacterData() - Invalid Faction"))
         return characterList
     end
+    -- Get the character list for the current server iterator
+    for characterName, characterData in pairs(TeebsClassicDB.realms[server].characters) do
+    end
     return characterList
 end
 
