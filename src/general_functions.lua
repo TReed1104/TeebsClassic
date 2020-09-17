@@ -113,6 +113,9 @@ function getServerCharacterData(server)
 end
 
 function getServerFactionCharacterData(server, faction)
+    -- Our data table for copying the character data
+    local characterList = {}
+    return characterList
 end
 
 -- Get a list of the servers with cached data
