@@ -98,6 +98,20 @@ function getCharacterData(server, characterName)
     return characterData
 end
 
+-- Get the chracter data of all characters on a specified server
+function getServerCharacterData(server)
+    -- Our character name list
+    local characterList = {}
+    -- Check the server exists
+    if TeebsClassicDB.realms[server] == nil then
+        return characterList
+    end
+    -- Copy the character data table
+    characterList = TeebsClassicDB.realms[server].characters
+    -- Return the copy table
+    return characterList
+end
+
 -- Get a list of the servers with cached data
 function getListServerNames()
     -- Server name list
@@ -160,16 +174,3 @@ function getServerFactionCharacterNames(server, faction)
     return characterList
 end
 
--- Get the chracter data of all characters on a specified server
-function getServerCharacterData(server)
-    -- Our character name list
-    local characterList = {}
-    -- Check the server exists
-    if TeebsClassicDB.realms[server] == nil then
-        return characterList
-    end
-    -- Copy the character data table
-    characterList = TeebsClassicDB.realms[server].characters
-    -- Return the copy table
-    return characterList
-end
