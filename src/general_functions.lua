@@ -112,6 +112,9 @@ function getServerCharacterData(server)
     return characterList
 end
 
+function getServerFactionCharacterData(server, faction)
+end
+
 -- Get a list of the servers with cached data
 function getListServerNames()
     -- Server name list
