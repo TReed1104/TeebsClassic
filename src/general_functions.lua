@@ -153,6 +153,7 @@ function getListCharacterNames(server)
     local characterList = {}
     -- Check the server exists
     if TeebsClassicDB.realms[server] == nil then
+        print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "getListCharacterNames() - Invalid Server"))
         return characterList
     end
     -- Iterate through each character on the specified server and list their names
