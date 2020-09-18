@@ -104,6 +104,7 @@ function getServerCharacterData(server)
     local characterList = {}
     -- Check the server exists
     if TeebsClassicDB.realms[server] == nil then
+        print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "getServerCharacterData() - Invalid Server"))
         return characterList
     end
     -- Copy the character data table
