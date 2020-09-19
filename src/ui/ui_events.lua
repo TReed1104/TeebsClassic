@@ -120,6 +120,10 @@ function eventHandlerCoreFrame(self, event, arg1, arg2, arg3, ...)
     if event == "TIME_PLAYED_MSG" then
         setCharacterDataPlayTime(arg1, arg2)
     end
+
+    -- Mailbox opens event
+    if event == "MAIL_SHOW" then
+    end
 end
 
 -- Click event for the exit button
