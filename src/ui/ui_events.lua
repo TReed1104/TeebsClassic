@@ -17,6 +17,7 @@ function onLoadCoreFrame(frame, eventHandlerFunc)
     frame:RegisterEvent("UPDATE_FACTION")
     frame:RegisterEvent("TIME_PLAYED_MSG")
     frame:RegisterEvent("UPDATE_PENDING_MAIL")
+    frame:RegisterEvent("MAIL_SHOW")
 
     -- Handle Events Triggering
     frame:SetScript("OnEvent", eventHandlerFunc)
