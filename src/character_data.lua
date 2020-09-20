@@ -282,3 +282,7 @@ function setCharacterDataReputation()
         factionIndex = factionIndex + 1     -- I miss '++' operators, damn it Lua
     end
 end
+
+-- Cache the characters mailbox data
+function setCharacterDataMail()
+end
