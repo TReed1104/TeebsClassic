@@ -288,4 +288,9 @@ function setCharacterDataMail()
     print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "To Be Implemented - setCharacterDataMail()"))
     -- Get the mailbox data from the server
     local numberOfItems, totalMailboxItems = GetInboxNumItems()
+    -- Cache the mailbox data
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].mailbox = {
+        numberOfItems = numberOfItems,
+        totalMailboxItems = totalMailboxItems
+    }
 end
