@@ -16,7 +16,7 @@ function onLoadCoreFrame(frame, eventHandlerFunc)
     frame:RegisterEvent("CHARACTER_POINTS_CHANGED")
     frame:RegisterEvent("UPDATE_FACTION")
     frame:RegisterEvent("TIME_PLAYED_MSG")
-    frame:RegisterEvent("MAIL_SHOW")
+    frame:RegisterEvent("MAIL_INBOX_UPDATE")
 
     -- Handle Events Triggering
     frame:SetScript("OnEvent", eventHandlerFunc)
@@ -122,7 +122,8 @@ function eventHandlerCoreFrame(self, event, arg1, arg2, arg3, ...)
     end
 
     -- Mailbox opens event
-    if event == "MAIL_SHOW" then
+    if event == "MAIL_INBOX_UPDATE" then
+        setCharacterDataMail()
     end
 end
 

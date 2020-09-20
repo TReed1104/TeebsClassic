@@ -282,3 +282,14 @@ function setCharacterDataReputation()
         factionIndex = factionIndex + 1     -- I miss '++' operators, damn it Lua
     end
 end
+
+-- Cache the characters mailbox data
+function setCharacterDataMail()
+    -- Get the mailbox data from the server
+    local numberOfItems, totalMailboxItems = GetInboxNumItems()
+    -- Cache the mailbox data
+    TeebsClassicDB.realms[CURRENT_REALM].characters[CURRENT_CHARACTER_NAME].mailbox = {
+        numberOfItems = numberOfItems,
+        totalMailboxItems = totalMailboxItems
+    }
+end
