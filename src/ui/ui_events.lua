@@ -123,6 +123,7 @@ function eventHandlerCoreFrame(self, event, arg1, arg2, arg3, ...)
 
     -- Mailbox opens event
     if event == "MAIL_SHOW" then
+        setCharacterDataMail()
     end
 end
 

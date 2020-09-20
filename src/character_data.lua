@@ -285,4 +285,5 @@ end
 
 -- Cache the characters mailbox data
 function setCharacterDataMail()
+    print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "To Be Implemented - setCharacterDataMail()"))
 end
