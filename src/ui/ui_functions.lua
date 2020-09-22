@@ -244,9 +244,7 @@ function interfaceGetAllReputations(character)
     local allCharacterReputationData = {}
     -- For every character cached for the current realm, collect their reputation data
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
-        allCharacterReputationData[characterName] = {
-            reputations = characterData.reputations
-        }
+        allCharacterReputationData[characterName] = characterData.reputations
     end
     -- Return our collated character reputation data
     return allCharacterReputationData
