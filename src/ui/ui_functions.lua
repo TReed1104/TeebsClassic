@@ -320,9 +320,7 @@ function interfaceGetAllTalents()
     local allCharactersTalents = {}
     -- For every character cached for the current realm, collect their talent trees
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
-        allCharactersTalents[characterName] = {
-            spec = characterData.talents
-        }
+        allCharactersTalents[characterName] = characterData.talents
     end
     -- Return our collated character talent trees
     return allCharactersTalents
