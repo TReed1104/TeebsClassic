@@ -364,9 +364,7 @@ function interfaceGetAllSecondaryProfessions()
     local allCharactersSecondaryProfessions = {}
     -- For every character cached for the current realm
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
-        allCharactersSecondaryProfessions[characterName] = {
-            professions = characterData.professions["secondary"]
-        }
+        allCharactersSecondaryProfessions[characterName] = characterData.professions["secondary"]
     end
     -- Return our collated character professions
     return allCharactersSecondaryProfessions
