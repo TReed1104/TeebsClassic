@@ -385,3 +385,7 @@ function interfaceGetAllSecondaryProfessions()
     -- Return our collated character professions
     return allCharactersSecondaryProfessions
 end
+
+function interfaceGetMailbox(character)
+end
+
