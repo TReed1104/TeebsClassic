@@ -331,9 +331,7 @@ function interfaceGetAllGold()
     local allCharactersCurrency = {}
     -- For every character cached for the current realm
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
-        allCharactersCurrency[characterName] = {
-            copper = characterData.currency.copper
-        }
+        allCharactersCurrency[characterName] = characterData.currency.copper
     end
     -- Return our collated character copper
     return allCharactersCurrency
