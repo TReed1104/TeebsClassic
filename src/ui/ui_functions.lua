@@ -387,4 +387,12 @@ function interfaceGetAllSecondaryProfessions()
 end
 
 function interfaceGetAllMailbox()
+    -- Create our data table for copying the character mailbox data into
+    local allMailboxData = {}
+    -- For every character cached for the current realm
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allMailboxData[characterName] = characterData.mailbox
+    end
+    -- Return our collated character mailbox data
+    return allMailboxData
 end
