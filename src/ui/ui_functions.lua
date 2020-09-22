@@ -270,9 +270,7 @@ function interfaceGetAllLevels()
     local allCharacterLevelData = {}
     -- For every character cached for the current realm, collect their level values
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
-        allCharacterLevelData[characterName] = {
-            currentLevel = characterData.level
-        }
+        allCharacterLevelData[characterName] = characterData.level
     end
     -- Return our collated character levels
     return allCharacterLevelData
