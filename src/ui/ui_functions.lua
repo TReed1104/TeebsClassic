@@ -389,3 +389,5 @@ end
 function interfaceGetMailbox(character)
 end
 
+function interfaceGetAllMailbox()
+end
