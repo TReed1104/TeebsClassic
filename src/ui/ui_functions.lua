@@ -244,9 +244,7 @@ function interfaceGetAllReputations(character)
     local allCharacterReputationData = {}
     -- For every character cached for the current realm, collect their reputation data
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
-        allCharacterReputationData[characterName] = {
-            reputations = characterData.reputations
-        }
+        allCharacterReputationData[characterName] = characterData.reputations
     end
     -- Return our collated character reputation data
     return allCharacterReputationData
@@ -272,9 +270,7 @@ function interfaceGetAllLevels()
     local allCharacterLevelData = {}
     -- For every character cached for the current realm, collect their level values
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
-        allCharacterLevelData[characterName] = {
-            currentLevel = characterData.level
-        }
+        allCharacterLevelData[characterName] = characterData.level
     end
     -- Return our collated character levels
     return allCharacterLevelData
@@ -313,9 +309,7 @@ function interfaceGetAllSpecs()
     local allCharactersSpecs = {}
     -- For every character cached for the current realm, collect their specs
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
-        allCharactersSpecs[characterName] = {
-            spec = characterData.talents.specialisation
-        }
+        allCharactersSpecs[characterName] = characterData.talents.specialisation
     end
     -- Return our collated character specs
     return allCharactersSpecs
@@ -326,9 +320,7 @@ function interfaceGetAllTalents()
     local allCharactersTalents = {}
     -- For every character cached for the current realm, collect their talent trees
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
-        allCharactersTalents[characterName] = {
-            spec = characterData.talents
-        }
+        allCharactersTalents[characterName] = characterData.talents
     end
     -- Return our collated character talent trees
     return allCharactersTalents
@@ -339,9 +331,7 @@ function interfaceGetAllGold()
     local allCharactersCurrency = {}
     -- For every character cached for the current realm
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
-        allCharactersCurrency[characterName] = {
-            copper = characterData.currency.copper
-        }
+        allCharactersCurrency[characterName] = characterData.currency.copper
     end
     -- Return our collated character copper
     return allCharactersCurrency
@@ -352,9 +342,7 @@ function interfaceGetAllProfessions()
     local allCharactersProfessions = {}
     -- For every character cached for the current realm
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
-        allCharactersProfessions[characterName] = {
-            professions = characterData.professions
-        }
+        allCharactersProfessions[characterName] = characterData.professions
     end
     -- Return our collated character professions
     return allCharactersProfessions
@@ -365,9 +353,7 @@ function interfaceGetAllPrimaryProfessions()
     local allCharactersPrimaryProfessions = {}
     -- For every character cached for the current realm
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
-        allCharactersPrimaryProfessions[characterName] = {
-            professions = characterData.professions["primary"]
-        }
+        allCharactersPrimaryProfessions[characterName] = characterData.professions["primary"]
     end
     -- Return our collated character professions
     return allCharactersPrimaryProfessions
@@ -378,16 +364,19 @@ function interfaceGetAllSecondaryProfessions()
     local allCharactersSecondaryProfessions = {}
     -- For every character cached for the current realm
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
-        allCharactersSecondaryProfessions[characterName] = {
-            professions = characterData.professions["secondary"]
-        }
+        allCharactersSecondaryProfessions[characterName] = characterData.professions["secondary"]
     end
     -- Return our collated character professions
     return allCharactersSecondaryProfessions
 end
 
-function interfaceGetMailbox(character)
-end
-
 function interfaceGetAllMailbox()
+    -- Create our data table for copying the character mailbox data into
+    local allMailboxData = {}
+    -- For every character cached for the current realm
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+        allMailboxData[characterName] = characterData.mailbox
+    end
+    -- Return our collated character mailbox data
+    return allMailboxData
 end
