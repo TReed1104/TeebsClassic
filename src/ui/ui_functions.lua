@@ -386,8 +386,5 @@ function interfaceGetAllSecondaryProfessions()
     return allCharactersSecondaryProfessions
 end
 
-function interfaceGetMailbox(character)
-end
-
 function interfaceGetAllMailbox()
 end
