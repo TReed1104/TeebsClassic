@@ -62,6 +62,7 @@ _G["TEEBS_CLASSIC_CONTENT_FRAMES"] = {
 	locations = { frameID = "contentFrameLocations", titleID = "frameTitleLocations", titleText = "Location" },
 	playtime = { frameID = "contentFramePlaytime", titleID = "frameTitlePlaytime", titleText = "Play Time" },
 	gold = { frameID = "contentFrameGold", titleID = "frameTitleGold", titleText = "Gold" },
+	mail = { frameID = "contentFrameMail", titleID = "frameTitleMail", titleText = "Mail" },
 	professionsAll = { frameID = "contentFrameAllProfessions", titleID = "frameTitleAllProfessions", titleText = "All Professions" },
 	professionsPrimary = { frameID = "contentFrameAllPrimaryProfessions", titleID = "frameTitleAllPrimaryProfessions", titleText = "All Primary Professions" },
 	professionsSecondary = { frameID = "contentFrameAllSecondaryProfessions", titleID = "frameTitleAllSecondaryProfessions", titleText = "All Secondary Professions" },
