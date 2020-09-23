@@ -304,6 +304,9 @@ function contentFramePopulateAllGold()
     toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.gold)
 end
 
+function contentFramePopulateAllMail()
+end
+
 function contentFramePopulateAllProfessions()
     -- Get the character data
     local professionsData = interfaceGetAllProfessions()
