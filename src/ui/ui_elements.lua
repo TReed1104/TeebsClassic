@@ -147,6 +147,16 @@ function generateMenuData_CharacterList(uiFunction, isDisabled, showExperience, 
                 menuItemText = menuItemText .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, " - " .. characterData.zone)
             end
         end
+        -- Toggle the Mailbox text
+        if showMail then
+            -- Check the mailbox data has been cached
+            if characterData.mailbox ~= nil then
+                menuItemText = menuItemText .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, " - " .. characterData.mailbox.totalMailboxItems .. " Items")
+            else
+                -- No mail data cached
+                menuItemText = menuItemText .. recolourOutputText(TEEBS_TEXT_COLOUR_WHITE, " - No mailbox data")
+            end
+        end
         -- Generate the menu item details
         local characterMenuItem = {
             disabled = isDisabled,
