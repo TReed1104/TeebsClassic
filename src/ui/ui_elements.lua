@@ -107,6 +107,7 @@ function generateMenuData_Main()
         { text = "Locations", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFramePopulateAllLocations, menuList = generateMenuData_CharacterList(nil, true, false, false, false, false, true) },
         { text = "Play Time", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFramePopulateAllPlayTime, menuList = generateMenuData_CharacterList(nil, true, false, false, false, true) },
         { text = "Gold", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFramePopulateAllGold, menuList = generateMenuData_CharacterList(nil, true, false, true) },
+        { text = "Mailbox", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = nil, menuList = generateMenuData_CharacterList(nil, true, false, false, false, false, false, true) },
         { text = "Professions", notCheckable = 1, hasArrow = true, keepShownOnClick = 0, func = clickFunctionMenuItem, arg1 = contentFramePopulateAllProfessions, menuList = professionsSubmenus },
         { text = "Close", func = function() CloseDropDownMenus() end, notCheckable = 1, }
     }
