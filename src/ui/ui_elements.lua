@@ -305,6 +305,8 @@ function contentFramePopulateAllGold()
 end
 
 function contentFramePopulateAllMail()
+    -- Get the character data
+    local mailboxData = interfaceGetAllMailbox()
     -- TODO: Link the data to the UI frame
     print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "To Be Implemented - contentFramePopulateAllMail()"))
     -- Toggle the content frame to be visible
