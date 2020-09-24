@@ -307,6 +307,8 @@ end
 function contentFramePopulateAllMail()
     -- TODO: Link the data to the UI frame
     print(recolourOutputText(TEEBS_TEXT_COLOUR_ALERT, "To Be Implemented - contentFramePopulateAllMail()"))
+    -- Toggle the content frame to be visible
+    toggleContentFrame(TEEBS_CLASSIC_CONTENT_FRAMES.mail)
 end
 
 function contentFramePopulateAllProfessions()
