@@ -522,3 +522,7 @@ function cmdGetTotalGold()
     -- Print the result
     print(recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, "Total Currency across this server is " .. formatCurrencyData(totalCurrency)))
 end
+
+-- Get a characters mailbox data
+function cmdGetCharacterMailBox(character)
+end
