@@ -525,4 +525,9 @@ end
 
 -- Get a characters mailbox data
 function cmdGetCharacterMailBox(character)
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
 end
