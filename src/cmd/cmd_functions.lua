@@ -535,4 +535,6 @@ function cmdGetCharacterMailBox(character)
         print("Mailbox data not cached")
         return
     end
+    -- Get the Character details
+    local mailboxData = TeebsClassicDB.realms[CURRENT_REALM].characters[character].mailbox
 end
