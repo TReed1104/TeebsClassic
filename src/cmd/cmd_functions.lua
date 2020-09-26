@@ -537,4 +537,6 @@ function cmdGetCharacterMailBox(character)
     end
     -- Get the Character details
     local mailboxData = TeebsClassicDB.realms[CURRENT_REALM].characters[character].mailbox
+    -- Output the results in-game
+    print(recolourNameByClass(character) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " currently has " .. mailboxData.totalMailboxItems .. " items in their mailbox"))
 end
