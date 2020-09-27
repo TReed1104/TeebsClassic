@@ -485,7 +485,11 @@ function cmdGetAllCharactersMailBox()
     -- For every character cached for the current realm
     for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
         -- Output the results in-game
-        print(recolourNameByClass(characterName) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. characterData.mailbox.totalMailboxItems .. " items in their mailbox"))
+        if characterData.mailbox ~= nil then
+            print(recolourNameByClass(characterName) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. characterData.mailbox.totalMailboxItems .. " items in their mailbox"))
+        else
+            print(recolourNameByClass(characterName) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " has no cached mailbox data"))
+        end
     end
 end
 
