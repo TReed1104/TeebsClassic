@@ -221,6 +221,24 @@ function cmdGetCharacterGold(character)
     print(recolourNameByClass(character) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " has " .. formatCurrencyData(currencyData.copper)))
 end
 
+-- Get a characters mailbox data
+function cmdGetCharacterMailBox(character)
+    -- Check the character exists
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
+        print("Unknown Charater", character)
+        return
+    end
+    -- Check if the character level has been cached
+    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].mailbox == nil then
+        print("Mailbox data not cached")
+        return
+    end
+    -- Get the Character details
+    local mailboxData = TeebsClassicDB.realms[CURRENT_REALM].characters[character].mailbox
+    -- Output the results in-game
+    print(recolourNameByClass(character) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " currently has " .. mailboxData.totalMailboxItems .. " items in their mailbox"))
+end
+
 -- Command function for retrieving a characters profession skill levels
 function cmdGetCharacterProfessions(character)
     -- Check the character exists
@@ -523,20 +541,3 @@ function cmdGetTotalGold()
     print(recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, "Total Currency across this server is " .. formatCurrencyData(totalCurrency)))
 end
 
--- Get a characters mailbox data
-function cmdGetCharacterMailBox(character)
-    -- Check the character exists
-    if TeebsClassicDB.realms[CURRENT_REALM].characters[character] == nil then
-        print("Unknown Charater", character)
-        return
-    end
-    -- Check if the character level has been cached
-    if TeebsClassicDB.realms[CURRENT_REALM].characters[character].mailbox == nil then
-        print("Mailbox data not cached")
-        return
-    end
-    -- Get the Character details
-    local mailboxData = TeebsClassicDB.realms[CURRENT_REALM].characters[character].mailbox
-    -- Output the results in-game
-    print(recolourNameByClass(character) .. recolourOutputText(TEEBS_TEXT_COLOUR_DEFAULT, " currently has " .. mailboxData.totalMailboxItems .. " items in their mailbox"))
-end
