@@ -481,7 +481,7 @@ function cmdGetAllCharactersGold()
 end
 
 -- Command function for retrieving the mailbox data of every character on the realm
-function cmdGetAllCharactersMailBox(character)
+function cmdGetAllCharactersMailBox()
 end
 
 -- Command function for retrieving the profession data of every character on the realm
