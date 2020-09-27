@@ -482,6 +482,9 @@ end
 
 -- Command function for retrieving the mailbox data of every character on the realm
 function cmdGetAllCharactersMailBox()
+    -- For every character cached for the current realm
+    for characterName, characterData in pairs(TeebsClassicDB.realms[CURRENT_REALM].characters) do
+    end
 end
 
 -- Command function for retrieving the profession data of every character on the realm
