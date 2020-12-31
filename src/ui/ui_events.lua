@@ -55,6 +55,7 @@ function eventHandlerCoreFrame(self, event, arg1, arg2, arg3, ...)
     -- Player Login Event Trigger
     if event == "PLAYER_LOGIN" then
         print("Welcome to Teebs Classic, use /teebs")
+        RequestTimePlayed();    -- Send the request to the server to query the character play time, the return data happens in the TIME_PLAYED_MSG event
     end
 
     -- Player Enter World Trigger
@@ -69,7 +70,6 @@ function eventHandlerCoreFrame(self, event, arg1, arg2, arg3, ...)
         setCharacterDataSpecialisation()
         setCharacterDataProfessions()
         setCharacterDataReputation()
-        RequestTimePlayed();    -- Send the request to the server to query the character play time, the return data happens in the TIME_PLAYED_MSG event
     end
 
     -- Player Level Up Trigger
